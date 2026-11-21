@@ -1,0 +1,401 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ArchiFrame Ajans Ofisi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: the agency drawn as an architect's floor plan (pafta) — click a room to open its agent card; KPIs and the hook bank below. */
+:root{
+  --paper:#F2F4F6; --room:#FFFFFF; --sel:#E4ECFB; --ink:#18212D; --ink-2:#55606E; --line:#C9D0D8;
+  --blue:#2D5BCC; --orange:#E2702A; --ok:#2F8A5B; --warn:#C98A12; --bad:#C2413A;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif; --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F151D; --room:#17202B; --sel:#1D2E4A; --ink:#E3E8EF; --ink-2:#97A3B2; --line:#2B3746;
+  --blue:#7FA2F2; --orange:#F08F4E; --ok:#5DBE8A; --warn:#E0B04A; --bad:#EE7A72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F151D; --room:#17202B; --sel:#1D2E4A; --ink:#E3E8EF; --ink-2:#97A3B2; --line:#2B3746;
+  --blue:#7FA2F2; --orange:#F08F4E; --ok:#5DBE8A; --warn:#E0B04A; --bad:#EE7A72; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);font-stretch:72%;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:clamp(34px,5.4vw,60px);font-weight:780;line-height:.95}
+h1 span{color:var(--blue)}
+h2{font-size:26px;font-weight:720}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.mono{font-family:var(--mono)}
+header{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+header .lead{max-width:56ch;color:var(--ink-2);margin:10px 0 0}
+.antet{border:1.5px solid var(--ink);display:grid;grid-template-columns:auto auto;font-family:var(--mono);font-size:11.5px;min-width:0}
+.antet div{padding:5px 10px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.antet div:nth-child(2n){border-right:0}
+.antet div:nth-last-child(-n+2){border-bottom:0}
+.antet b{display:block;font-weight:500;font-size:12.5px;color:var(--ink)}
+.antet small{color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+
+.accounts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--room);border-radius:999px;padding:5px 12px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--ok)}
+.dot.warn{background:var(--warn)} .dot.bad{background:var(--bad)}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.kpi{background:var(--room);padding:14px 16px;display:grid;gap:2px}
+.kpi .v{font-family:var(--display);font-stretch:80%;font-size:32px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .l{font-size:13px;color:var(--ink-2)}
+.kpi.hi .v{color:var(--orange)}
+
+.office{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start}
+@media (max-width:900px){.office{grid-template-columns:1fr}}
+.plan{background:var(--paper);border:1px solid var(--line);padding:10px;overflow-x:auto}
+.plan svg{display:block;width:100%;height:auto;min-width:560px}
+.room rect.fill{fill:var(--room);transition:fill .15s}
+.room{cursor:pointer;outline:none}
+.room:hover rect.fill{fill:var(--sel)}
+.room.on rect.fill{fill:var(--sel)}
+.room:focus-visible rect.fill{fill:var(--sel);stroke:var(--blue);stroke-width:3}
+.room.on .rname{fill:var(--blue)}
+.rname{font-family:var(--display);font-stretch:72%;font-weight:720;font-size:22px;fill:var(--ink)}
+.rsub{font-family:var(--mono);font-size:11px;fill:var(--ink-2)}
+.furn{fill:none;stroke:var(--ink-2);stroke-width:1.2}
+.wall{fill:none;stroke:var(--ink)}
+.thin{fill:none;stroke:var(--ink);stroke-width:1}
+.dim{fill:none;stroke:var(--ink-2);stroke-width:1}
+.dimt{font-family:var(--mono);font-size:12px;fill:var(--ink-2)}
+.flow{fill:none;stroke:var(--orange);stroke-width:3;stroke-dasharray:10 12;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-44}}
+@media (prefers-reduced-motion:reduce){.flow{animation:none}}
+
+.card{background:var(--room);border:1.5px solid var(--ink);padding:18px;display:grid;gap:12px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+@media (max-width:900px){.card{position:static}}
+.card h3{font-size:30px;font-weight:760;line-height:1}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid currentColor;width:max-content}
+.pill.ok{color:var(--ok)} .pill.warn{color:var(--warn)} .pill.bad{color:var(--bad)}
+.card p{margin:0}
+.card .now{border-left:3px solid var(--orange);padding-left:10px;font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:6px}
+.tools span{font-family:var(--mono);font-size:11px;background:var(--paper);border:1px solid var(--line);padding:2px 7px}
+.cmd{display:flex;gap:8px;align-items:stretch}
+.cmd code{flex:1;min-width:0;font-family:var(--mono);font-size:12.5px;background:var(--paper);border:1px solid var(--line);padding:8px 10px;overflow-wrap:anywhere}
+button{font:inherit;font-size:13px;font-weight:600;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);padding:6px 12px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.path{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);overflow-wrap:anywhere}
+
+.two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+section{display:grid;gap:14px;min-width:0}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:4px 12px;align-items:center}
+.bar .t{font-size:13.5px;grid-column:1/-1;display:flex;justify-content:space-between;gap:10px}
+.bar .t em{font-style:normal;color:var(--ink-2);font-family:var(--mono);font-size:11.5px;white-space:nowrap}
+.track{height:12px;background:var(--line)}
+.track i{display:block;height:100%;background:var(--blue)}
+.bar.win .track i{background:var(--orange)}
+.bar .n{font-family:var(--mono);font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:var(--ink-2);margin:0}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.tbl{overflow-x:auto}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:left;font-weight:500}
+th,td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td.k{font-family:var(--mono);font-size:12px;white-space:nowrap}
+.tag{font-family:var(--mono);font-size:10.5px;border:1px solid var(--line);padding:1px 6px;white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;counter-reset:s;padding:0;margin:0;list-style:none}
+.steps li{border-top:2px solid var(--ink);padding-top:8px;font-size:13.5px;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--mono);font-size:11px;color:var(--orange);display:block}
+.steps b{display:block;font-family:var(--display);font-stretch:75%;font-size:17px}
+.live{display:grid;gap:14px}
+.livehead{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.sub{font-family:var(--display);font-stretch:75%;font-size:19px;margin:0}
+.spark{width:100%;height:30px;display:block;margin-top:4px}
+.spark rect{fill:var(--blue)}
+.spark rect.last{fill:var(--orange)}
+.comments{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.comments li{background:var(--room);border:1px solid var(--line);padding:10px 12px;font-size:13.5px;min-width:0;overflow-wrap:anywhere}
+.comments li b{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--blue);display:block}
+.comments li time{font-family:var(--mono);font-size:10.5px;color:var(--ink-2)}
+td.num{font-family:var(--mono);font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpi.stale .v{opacity:.55}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">YouTube · Instagram · TikTok · Facebook</div>
+      <h1>ArchiFrame <span>Ajans Ofisi</span></h1>
+      <p class="lead">Sekiz ajan, tek kat planı. Bir odaya tıkla: o ajanın görevi, şu anki işi ve onu nasıl çalıştıracağın açılır. "Canlı panel" her dakika yenilenir. Altındaki hook bankası ve konu listesi 20 Kasım 2026, 17:39 itibarıyla alınmış sabit bir görüntüdür.</p>
+    </div>
+    <div class="antet" aria-label="Pafta anteti">
+      <div><small>Proje</small><b>Sosyal medya ajansı</b></div>
+      <div><small>Pafta</small><b>A-01 Kat planı</b></div>
+      <div><small>Ölçek</small><b>1/100</b></div>
+      <div><small>Tarih</small><b>20.11.2026</b></div>
+    </div>
+  </header>
+
+  <div class="accounts" aria-label="Bağlı hesaplar">
+    <span class="chip"><span class="dot"></span>YouTube · ArchiFrame</span>
+    <span class="chip"><span class="dot"></span>Instagram · @archiframeai</span>
+    <span class="chip"><span class="dot"></span>TikTok · archiframe1</span>
+    <span class="chip"><span class="dot"></span>Facebook · ArchiFrame Sayfası</span>
+    <span class="chip"><span class="dot warn"></span>vidIQ kredisi 4 / 150</span>
+  </div>
+
+  <section class="live" id="live" aria-live="polite">
+    <div class="livehead">
+      <h2>Canlı panel</h2>
+      <span class="chip"><span class="dot" id="liveDot"></span><span id="liveState">Bağlanıyor…</span></span>
+    </div>
+    <p class="note" id="liveNote">Sayfa her dakika Windsor.ai'ye sorar. Windsor'un kendisi veriyi yaklaşık saatte bir tazeler, yani rakamlar en fazla bir saat geride olabilir. İzlenme, beğeni, yorum, kayıt ve paylaşım <b>son 30 günde paylaşılan gönderilerin</b> toplamıdır (o gönderilerin bugüne kadarki tüm etkileşimi). Yeni takipçi bugünü içermez. YouTube analitiği 2–3 gün gecikmeli gelir. Bir kutu "—" gösteriyorsa veri alınamamıştır; tahmin yazılmaz.</p>
+    <div class="kpis">
+      <div class="kpi hi"><span class="v" id="kFollowers">—</span><span class="l">Instagram takipçi</span></div>
+      <div class="kpi"><span class="v" id="kNewF">—</span><span class="l">Yeni takipçi · son 14 gün (bugün hariç)</span><svg class="spark" id="sparkF" viewBox="0 0 140 30" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+      <div class="kpi"><span class="v" id="kViews">—</span><span class="l" id="lViews">İzlenme · son 30 günün gönderileri</span></div>
+      <div class="kpi"><span class="v" id="kLikes">—</span><span class="l">Beğeni · aynı gönderiler</span></div>
+      <div class="kpi"><span class="v" id="kComments">—</span><span class="l">Yorum · aynı gönderiler</span></div>
+      <div class="kpi"><span class="v" id="kSaves">—</span><span class="l">Kayıt · paylaşım</span></div>
+      <div class="kpi"><span class="v" id="kYt">—</span><span class="l">YouTube izlenme · beğeni · yorum (30 gün, gecikmeli)</span></div>
+      <div class="kpi"><span class="v" id="kYtSubs">—</span><span class="l">YouTube yeni abone (30 gün, gecikmeli)</span></div>
+    </div>
+    <div class="two">
+      <section>
+        <h3 class="sub">En çok beğenilen Reel'ler</h3>
+        <div class="tbl"><table><thead><tr><th>Reel</th><th>İzlenme</th><th>Beğeni</th><th>Yorum</th></tr></thead><tbody id="topReels"><tr><td colspan="4" class="note">Veri bekleniyor…</td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h3 class="sub">Son yorumlar · Instagram</h3>
+        <p class="note">Son 7 günde paylaşılan gönderilere gelen yorumlar; kendi yanıtlarımız gösterilmez.</p>
+        <ul class="comments" id="comments"><li class="note">Veri bekleniyor…</li></ul>
+      </section>
+    </div>
+  </section>
+
+  <div class="office">
+    <div class="plan"><svg id="plan" viewBox="-30 -40 1050 720" role="group" aria-label="Ajans kat planı"></svg></div>
+    <aside class="card" id="card" aria-live="polite"></aside>
+  </div>
+
+  <section>
+    <h2>İş akışı</h2>
+    <ol class="steps">
+      <li><b>Trend + veri</b>Trend avcısı fırsatları, analitik uzmanı geçen haftanın kazananlarını getirir.</li>
+      <li><b>Plan</b>Direktör haftanın 3 kısa + 1 uzun videosunu seçer.</li>
+      <li><b>Hook</b>Hook yazarı her konuya 10 hook yazar, puanlar.</li>
+      <li><b>Senaryo</b>Senarist kısa ve uzun metni, sahne sahne çıkarır.</li>
+      <li><b>Üretim</b>Stüdyo /nasil-calisir ile MP4, kapak ve 9:16 kesimi üretir.</li>
+      <li><b>Yayın</b>Yayın sorumlusu doğru saatte tüm platformlara gönderir.</li>
+      <li><b>Ölçüm</b>7 gün sonra analitik, kazanan hook'u bankaya işler.</li>
+    </ol>
+  </section>
+
+  <div class="two">
+    <section>
+      <h2>Hook bankası: kanıtlananlar</h2>
+      <p class="note">Instagram Reels, 20 Kasım 17:39 anlık görüntüsü (güncel rakamlar yukarıdaki canlı panelde). Çubuk = izlenme (aynı ölçek). Sağdaki oran = kayıt ÷ izlenme. Hesap medyanı (son 30 gün, 32 Reel) yaklaşık 1.500 izlenme.</p>
+      <div class="bars" id="bars"></div>
+      <p class="note">Ders: hata kalıbı ("neden çatlar / neden tutmadı") ve ev sahibini ilgilendiren ısıtma konuları kazanıyor. Teknik resim tanımları Instagram'da 90 ile 430 izlenmede kaldı. 20 Kasım'daki ev sorunları serisi (kombi basıncı, rutubet, topraklama, dükkân mı garaj mı) ilk saatlerde 1.100–1.900 aralığında.</p>
+    </section>
+    <section>
+      <h2>Sıradaki konular</h2>
+      <p class="note">Konu havuzu, 20 Kasım 17:39 itibarıyla. 20 Kasım'da 14 kısa video yayına alındı (1–12, 14, 15); 13 hâlâ bekliyor. Güncel sıra her zaman <span class="mono">ajans/konu-havuzu.md</span> dosyasındadır.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>#</th><th>Video</th><th>Kalıp</th></tr></thead>
+        <tbody>
+          <tr><td class="k">13</td><td>Radyatörün üstü soğuk, altı sıcak: neden?<br><span class="note">Bulutta ses hazır; görsel indirme ağ ayarını bekliyor</span></td><td><span class="tag">Hata</span></td></tr>
+          <tr><td class="k">14</td><td>Her aile müstakil evde otursa Türkiye'de ne kadar yer kaplardı?<br><span class="note">Yayında · 17:06 · ilk 30 dk: 13 izlenme</span></td><td><span class="tag">Deney</span></td></tr>
+          <tr><td class="k">15</td><td>Klima odayı nasıl hem soğutur hem ısıtır?<br><span class="note">Yayında · 17:18 · ilk 20 dk: 20 izlenme</span></td><td><span class="tag">Mekanizma</span></td></tr>
+          <tr><td class="k">16</td><td>Çatı neden akar?</td><td><span class="tag">Hata</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Bekleyen: kalorifer ve yerden ısıtma uzun YouTube videoları (yatay dosya henüz yüklenmedi).</p>
+    </section>
+  </div>
+</div>
+
+<script>
+const S = 0.02; // 1 birim = 2 cm (1/100 pafta)
+const agents = [
+  {id:'ajans-direktoru', ad:'Direktör', x:20,y:20,w:280,h:270, door:220, st:'ok', stl:'Hazır',
+   rol:'Ekibi yönetir, haftalık planı çıkarır, işleri diğer ajanlara dağıtır.',
+   now:'23–29 Kasım planı taslakta: 3 kısa + 1 uzun video.',
+   tools:['Agent','ajans/*.md','/nasil-calisir'], cmd:'ajans-direktoru ile haftayı planla'},
+  {id:'trend-avcisi', ad:'Trend Avcısı', x:300,y:20,w:220,h:270, door:440, st:'warn', stl:'Kredi az',
+   rol:'Nişteki viral ve yükselen videoları, arama hacimlerini ve trend sesleri tarar; 5 konu fırsatı çıkarır.',
+   now:'vidIQ kredisi 4/150, 15 Aralık\'ta yenilenir. O zamana kadar ücretsiz arama ve mevsim sinyalleriyle çalışır.',
+   tools:['vidiq_outliers','vidiq_trending_videos','vidiq_keyword_research','tiktok trend sesleri'], cmd:'trend-avcisi ile bu haftanın trendlerini bul'},
+  {id:'hook-yazari', ad:'Hook Yazarı', x:520,y:20,w:220,h:270, door:660, st:'ok', stl:'Hazır',
+   rol:'İlk 1–3 saniyeyi yazar: sesli hook, ekran yazısı, ilk kare, başlık, kapak metni. Her hook /25 puanlanır.',
+   now:'Sırada 5 aday: parke neden kabarır, kombi basıncı, köşede küf, mantolama mı iç yalıtım mı, radyatörün üstü soğuk.',
+   tools:['hook-bankasi.md','oyun-kitabi.md','vidiq_score_title'], cmd:'hook-yazari ile "parke neden kabarır" için hook yaz'},
+  {id:'senarist', ad:'Senarist', x:740,y:20,w:240,h:270, door:880, st:'ok', stl:'Hazır',
+   rol:'Kazanan hook ile 30–60 sn kısa ve 2–4 dk uzun senaryoyu sahne tablosuyla yazar.',
+   now:'Hook seçimini bekliyor.',
+   tools:['senaryo.md','≈14 karakter/sn bütçe'], cmd:'senarist ile kombi videosunun senaryosunu yaz'},
+  {id:'nasil-calisir', ad:'Prodüksiyon Stüdyosu', x:20,y:350,w:340,h:250, door:240, st:'ok', stl:'Hazır', skill:true,
+   rol:'Seslendirme, fotogerçekçi kesit animasyonu, kelimeye senkron yazılar, 16:9 + 9:16 MP4 ve kapak üretir. Ajan değil, mevcut /nasil-calisir becerin.',
+   now:'Kalorifer ve yerden ısıtmanın uzun versiyonları yayın bekliyor.',
+   tools:['/nasil-calisir','Speko / Cartesia ses','Canva görsel','WebCodecs MP4'], cmd:'/nasil-calisir Kombi nasıl çalışır?'},
+  {id:'yayin-sorumlusu', ad:'Yayın', x:360,y:350,w:240,h:250, door:380, st:'ok', stl:'4 platform bağlı',
+   rol:'YouTube uzun + Shorts TR/EN, Instagram Reels, TikTok ve Facebook\'a doğru saatte yayınlar, linkleri kaydeder.',
+   now:'YouTube, Instagram, TikTok ve Facebook Sayfası (ArchiFrame) bağlı; her video dördüne de gidiyor. Shorts kapağı yüklemede ekleniyor. TikTok günde en fazla 3–4 gönderi.',
+   tools:['vidiq_social_post_publish','vidiq_instagram_publish_reel','tunel-ac.ps1'], cmd:'yayin-sorumlusu ile bitmiş videoyu yayınla'},
+  {id:'analitik-uzmani', ad:'Analitik', x:600,y:350,w:200,h:250, door:620, st:'ok', stl:'Rapor hazır',
+   rol:'İzlenme, kayıt, paylaşım ve izleme süresini ölçer; kazanan hook\'ları bankaya, dersleri oyun kitabına işler.',
+   now:'Son rapor 20 Kasım. Bir sonraki ölçüm: yeni videolar yayından 7 gün sonra.',
+   tools:['Windsor get_data','performans.md','hook-bankasi.md'], cmd:'analitik-uzmani ile haftalık raporu çıkar'},
+  {id:'topluluk-yoneticisi', ad:'Topluluk', x:800,y:350,w:180,h:250, door:820, st:'warn', stl:'YT salt-okunur',
+   rol:'Yorumları okur, yanıt taslağı yazar, sık soruları video fikrine çevirir. Yanıtlar senin onayınla gider.',
+   now:'Instagram yorumları çalışıyor. YouTube bağlantısı salt-okunur; Windsor\'da tüm izinlerle yeniden bağlanmalı.',
+   tools:['Windsor reply_to_comment','yorum-log.md'], cmd:'topluluk-yoneticisi ile yorumlara bak'},
+];
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('plan');
+const el=(t,a,p=svg)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e};
+const m2=a=>(a.w*S*a.h*S).toFixed(1).replace('.',',');
+
+// Rooms
+agents.forEach((a,i)=>{
+  const g=el('g',{class:'room',tabindex:0,role:'button','aria-label':a.ad+' odası','data-i':i});
+  el('rect',{class:'fill',x:a.x,y:a.y,width:a.w,height:a.h},g);
+  el('rect',{class:'wall',x:a.x,y:a.y,width:a.w,height:a.h,'stroke-width':7},g);
+  const cx=a.x+a.w/2, top=a.y<300;
+  // furniture: desk + chair + monitor
+  const dy= top? a.y+150 : a.y+120;
+  el('rect',{class:'furn',x:cx-50,y:dy,width:100,height:42},g);
+  el('rect',{class:'furn',x:cx-22,y:dy+6,width:44,height:8},g);
+  el('circle',{class:'furn',cx:cx,cy:dy+62,r:13},g);
+  if(a.skill){ // studio: second desk + camera
+    el('rect',{class:'furn',x:a.x+30,y:a.y+40,width:60,height:60},g);
+    el('circle',{class:'furn',cx:a.x+60,cy:a.y+70,r:16},g);
+  }
+  const ly= top? a.y+52 : a.y+50;
+  const t=el('text',{class:'rname',x:cx+(a.skill?30:0),y:ly,'text-anchor':'middle'},g); t.textContent=a.ad;
+  const s=el('text',{class:'rsub',x:cx+(a.skill?30:0),y:ly+20,'text-anchor':'middle'},g); s.textContent=(a.skill?'/':'')+a.id;
+  const ar=el('text',{class:'rsub',x:cx+(a.skill?30:0),y:ly+36,'text-anchor':'middle'},g); ar.textContent=m2(a)+' m²';
+  el('circle',{cx:a.x+20,cy:a.y+20,r:7,fill:a.st==='ok'?'var(--ok)':a.st==='warn'?'var(--warn)':'var(--bad)'},g);
+});
+// Corridor + flow
+const ct=el('text',{class:'dimt',x:500,y:308,'text-anchor':'middle'}); ct.textContent='KORİDOR · iş akışı';
+el('path',{class:'flow',d:'M 40 330 L 960 330'});
+// Outer wall
+el('rect',{class:'wall',x:20,y:20,width:960,height:580,'stroke-width':12});
+// Doors (gaps + leaf + swing)
+agents.forEach(a=>{
+  const top=a.y<300, wy= top? a.y+a.h : a.y, d=a.door, w=46;
+  el('line',{x1:d,y1:wy,x2:d+w,y2:wy,stroke:'var(--paper)','stroke-width':10});
+  if(top){ el('line',{class:'thin',x1:d,y1:wy,x2:d,y2:wy-w}); el('path',{class:'thin',d:`M ${d+w} ${wy} A ${w} ${w} 0 0 0 ${d} ${wy-w}`,'stroke-dasharray':'3 3'}); }
+  else { el('line',{class:'thin',x1:d,y1:wy,x2:d,y2:wy+w}); el('path',{class:'thin',d:`M ${d+w} ${wy} A ${w} ${w} 0 0 1 ${d} ${wy+w}`,'stroke-dasharray':'3 3'}); }
+});
+// Entrance on the left of corridor
+el('line',{x1:20,y1:296,x2:20,y2:344,stroke:'var(--paper)','stroke-width':14});
+const en=el('text',{class:'dimt',x:-4,y:375,'text-anchor':'middle'}); en.textContent='GİRİŞ';
+// Dimensions
+el('line',{class:'dim',x1:20,y1:-12,x2:980,y2:-12});
+[20,300,520,740,980].forEach(x=>el('line',{class:'dim',x1:x,y1:-20,x2:x,y2:-4}));
+[[20,300],[300,520],[520,740],[740,980]].forEach(([a,b])=>{const t=el('text',{class:'dimt',x:(a+b)/2,y:-18,'text-anchor':'middle'});t.textContent=((b-a)*S).toFixed(2).replace('.',',')});
+el('line',{class:'dim',x1:1000,y1:20,x2:1000,y2:600});
+[20,290,350,600].forEach(y=>el('line',{class:'dim',x1:992,y1:y,x2:1008,y2:y}));
+[[20,290],[290,350],[350,600]].forEach(([a,b])=>{const t=el('text',{class:'dimt',x:1012,y:(a+b)/2+4});t.textContent=((b-a)*S).toFixed(2).replace('.',',')});
+// Scale bar 0–5 m = 250 units
+for(let i=0;i<5;i++) el('rect',{x:20+i*50,y:628,width:50,height:8,fill:i%2?'var(--paper)':'var(--ink)',stroke:'var(--ink)','stroke-width':1});
+['0','1','2','3','4','5 m'].forEach((v,i)=>{const t=el('text',{class:'dimt',x:20+i*50,y:656,'text-anchor':'middle'});t.textContent=v});
+const sc=el('text',{class:'dimt',x:300,y:640}); sc.textContent='A-01 KAT PLANI · ÖLÇEK 1/100';
+// North arrow
+el('circle',{class:'thin',cx:950,cy:640,r:18});
+el('path',{d:'M 950 618 L 958 648 L 950 642 L 942 648 Z',fill:'var(--ink)'});
+const nt=el('text',{class:'dimt',x:950,y:614,'text-anchor':'middle'}); nt.textContent='K';
+
+// Card
+const card=document.getElementById('card');
+function show(i){
+  const a=agents[i];
+  document.querySelectorAll('.room').forEach(r=>r.classList.toggle('on',+r.dataset.i===i));
+  card.innerHTML=`
+    <div class="eyebrow">${a.skill?'Beceri':'Ajan'} · ${m2(a)} m²</div>
+    <h3>${a.ad}</h3>
+    <span class="pill ${a.st}"><span class="dot ${a.st==='ok'?'':a.st}"></span>${a.stl}</span>
+    <p>${a.rol}</p>
+    <p class="now"><b>Şu an:</b> ${a.now}</p>
+    <div class="tools">${a.tools.map(t=>`<span>${t}</span>`).join('')}</div>
+    <div class="eyebrow">Çalıştırmak için Claude'a yaz</div>
+    <div class="cmd"><code id="cmdtxt">${a.cmd}</code><button id="copy" type="button">Kopyala</button></div>
+    <div class="path">${a.skill?'.claude/skills/nasil-calisir/SKILL.md':'.claude/agents/'+a.id+'.md'}</div>`;
+  document.getElementById('copy').onclick=async e=>{
+    const b=e.currentTarget;
+    try{await navigator.clipboard.writeText(a.cmd);b.textContent='Kopyalandı'}
+    catch{const r=document.createRange();r.selectNodeContents(document.getElementById('cmdtxt'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seçildi'}
+    setTimeout(()=>b.textContent='Kopyala',1600);
+  };
+}
+document.querySelectorAll('.room').forEach(r=>{
+  r.addEventListener('click',()=>show(+r.dataset.i));
+  r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(+r.dataset.i)}});
+});
+show(0);
+
+// ---------- Canlı panel (Windsor.ai, her dakika) ----------
+(async () => {
+  const SERVER = 'Windsor.ai for Social Media', TOOL = 'get_data', EVERY = 60000;
+  const $ = id => document.getElementById(id);
+  const fmt = n => n == null || isNaN(n) ? '—' : Number(n).toLocaleString('tr-TR');
+  const short = n => n >= 10000 ? (n/1000).toLocaleString('tr-TR',{maximumFractionDigits:1}) + ' B' : fmt(n);
+  const setState = (txt, kind) => { $('liveState').textContent = txt; $('liveDot').className = 'dot' + (kind ? ' ' + kind : ''); };
+  const stamp = r => { const t = r && r.cache && r.cache.storedAt ? new Date(r.cache.storedAt) : new Date(); return t.toLocaleTimeString('tr-TR', {hour:'2-digit', minute:'2-digit'}); };
+  const rows = r => { const p = r && r.payload; if (!p || typeof p !== 'object') return null; if (p.status && p.status !== 'done') return 'pending'; return Array.isArray(p.data) ? p.data : null; };
+  let mcp = null; try { mcp = await claude.use('mcp'); } catch (e) {}
+  if (!mcp) { setState('Canlı veri bu görünümde yok', 'warn'); $('liveNote').textContent = 'Canlı veri yalnızca claude.ai üzerinde, Windsor.ai bağlayıcısı bağlı bir hesapla açıldığında gelir.'; return; }
+  const errText = e => ({ needs_reauth:'Windsor.ai bağlantısının süresi dolmuş: claude.ai → Ayarlar → Bağlayıcılar\'dan yeniden bağla.', server_not_connected:'Windsor.ai bağlayıcısı bu hesapta yok: claude.ai → Ayarlar → Bağlayıcılar\'dan ekle.', not_in_manifest:'Bu sayfanın Windsor.ai\'ye erişimine izin verilmedi.', approval_required:'Windsor.ai erişimi için onay gerekiyor.', selection_required:'Birden fazla Windsor.ai bağlantısı var; hangisinin kullanılacağını seç.', server_unavailable:'Windsor.ai şu an yanıt vermiyor, bir sonraki yenilemede tekrar denenecek.' }[e && e.code] || 'Veri alınamadı (' + (e && e.code || 'hata') + ').');
+  const DENY = ['needs_reauth','server_not_connected','not_in_manifest','blocked_by_policy','approval_required','selection_required','not_granted','capability_disabled'];
+  let lastOk = null;
+  const watch = (input, onRows, kpiIds) => mcp.watchTool(SERVER, TOOL, input, ev => {
+    if (ev.type === 'data') { const d = rows(ev.result); if (d === 'pending') { setState('Windsor raporu hazırlıyor…', 'warn'); return; } if (!d) return; onRows(d); kpiIds.forEach(id => $(id).closest('.kpi')?.classList.remove('stale')); lastOk = stamp(ev.result); setState('Canlı · son kontrol ' + lastOk); }
+    else { const e = ev.error; if (DENY.includes(e && e.code)) { kpiIds.forEach(id => { $(id).textContent = '—'; }); } else kpiIds.forEach(id => $(id).closest('.kpi')?.classList.add('stale')); setState(errText(e), DENY.includes(e && e.code) ? 'bad' : 'warn'); }
+  }, { refetchInterval: EVERY });
+  // 1) takipçi toplamı
+  watch({ connector:'instagram', fields:['followers_count','media_count'], date_preset:'last_1dT' }, d => { $('kFollowers').textContent = fmt(d[0] && d[0].followers_count); }, ['kFollowers']);
+  // 2) günlük yeni takipçi
+  watch({ connector:'instagram', fields:['date','follower_count'], date_preset:'last_14d' }, d => {
+    d = d.slice().sort((a,b) => String(a.date).localeCompare(String(b.date))); const sum = d.reduce((s,r) => s + (+r.follower_count || 0), 0); $('kNewF').textContent = '+' + fmt(sum);
+    const svg = $('sparkF'); const mx = Math.max(1, ...d.map(r => +r.follower_count || 0)), w = 140/Math.max(1, d.length);
+    svg.innerHTML = d.map((r,i) => { const h = Math.max(1, (+r.follower_count || 0)/mx*28); return `<rect${i === d.length-1 ? ' class="last"' : ''} x="${(i*w+1).toFixed(1)}" y="${(30-h).toFixed(1)}" width="${Math.max(1,w-2).toFixed(1)}" height="${h.toFixed(1)}"><title>${r.date}: +${r.follower_count}</title></rect>`; }).join('');
+  }, ['kNewF']);
+  // 3) Reel'ler: izlenme, beğeni, yorum, kayıt, paylaşım
+  watch({ connector:'instagram', fields:['media_caption','media_views','media_total_like_count','media_total_comments_count','media_saved','media_shares','media_permalink'], date_preset:'last_30dT' }, d => {
+    const s = k => d.reduce((t,r) => t + (+r[k] || 0), 0);
+    $('kViews').textContent = short(s('media_views')); $('lViews').textContent = 'İzlenme · son 30 günün ' + d.length + ' gönderisi'; $('kLikes').textContent = fmt(s('media_total_like_count')); $('kComments').textContent = fmt(s('media_total_comments_count'));
+    $('kSaves').textContent = fmt(s('media_saved')) + ' · ' + fmt(s('media_shares'));
+    const top = d.slice().sort((a,b) => (+b.media_total_like_count||0) - (+a.media_total_like_count||0)).slice(0,6), tb = $('topReels'); tb.textContent = '';
+    top.forEach(r => { const tr = document.createElement('tr'); const td = document.createElement('td'); const t = (r.media_caption || '').split('\n')[0].slice(0, 70);
+      if (r.media_permalink) { const a = document.createElement('a'); a.href = r.media_permalink; a.target = '_blank'; a.rel = 'noopener'; a.textContent = t || 'Reel'; td.appendChild(a); } else td.textContent = t || 'Reel'; tr.appendChild(td);
+      [r.media_views, r.media_total_like_count, r.media_total_comments_count].forEach(v => { const c = document.createElement('td'); c.className = 'num'; c.textContent = fmt(v); tr.appendChild(c); }); tb.appendChild(tr); });
+  }, ['kViews','kLikes','kComments','kSaves']);
+  // 4) son yorumlar (kendi yanıtlarımız hariç)
+  watch({ connector:'instagram', fields:['date','comment_text','comment_username'], date_preset:'last_7dT' }, d => {
+    const ul = $('comments'); ul.textContent = ''; const list = d.filter(r => r.comment_username && r.comment_username !== 'archiframeai' && r.comment_text).sort((a,b) => String(b.date).localeCompare(String(a.date))).slice(0,8);
+    if (!list.length) { const li = document.createElement('li'); li.className = 'note'; li.textContent = 'Son 7 günde yeni yorum yok.'; ul.appendChild(li); return; }
+    list.forEach(r => { const li = document.createElement('li'); const b = document.createElement('b'); b.textContent = '@' + r.comment_username; const tm = document.createElement('time'); tm.textContent = ' ' + (r.date || ''); b.appendChild(tm); li.appendChild(b); li.appendChild(document.createTextNode(r.comment_text || '')); ul.appendChild(li); });
+  }, []);
+  // 5) YouTube
+  watch({ connector:'youtube', fields:['views','likes','comments','subscribers_gained'], date_preset:'last_30dT' }, d => {
+    const s = k => d.reduce((t,r) => t + (+r[k] || 0), 0); $('kYt').textContent = short(s('views')) + ' · ' + fmt(s('likes')) + ' · ' + fmt(s('comments')); $('kYtSubs').textContent = '+' + fmt(s('subscribers_gained'));
+  }, ['kYt','kYtSubs']);
+})();
+
+// Hook bars
+const hooks=[
+  ['Yerden ısıtmada seramik neden çatlar?','Hata',32091,602],
+  ['Radyatör mü, yerden ısıtma mı?','Karşılaştırma',4073,38],
+  ['Kazan bodrumda, radyatör 10. katta…','Mekanizma',3307,27],
+  ['Yerden ısıtma detayı CAD\'de böyle çizilir','Öğretici',3032,41],
+  ['Bu sitede hiçbir dairede kombi yok (20 Kas)','Mekanizma',2848,10],
+  ['Gece ışıklar söndü, şalter inmiş… (20 Kas)','Hata',2693,11],
+  ['306 cm\'lik merdiven neden tutmadı?','Hata + rakam',2592,30],
+  ['Odada radyatör yok ama yer sıcacık','Mekanizma',2460,15],
+];
+const max=33000, bars=document.getElementById('bars');
+hooks.forEach(([t,k,v,s],i)=>{
+  const d=document.createElement('div'); d.className='bar'+(i===0?' win':'');
+  d.innerHTML=`<div class="t"><span>${t}</span><em>${k}</em></div><div class="track"><i style="width:${(v/max*100).toFixed(1)}%"></i></div><div class="n">${v.toLocaleString('tr-TR')} · %${(s/v*100).toFixed(1).replace('.',',')}</div>`;
+  bars.appendChild(d);
+});
+</script>
+
+</body></html>
