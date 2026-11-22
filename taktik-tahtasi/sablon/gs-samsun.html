@@ -1,0 +1,260 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:BC;src:url(fonts/BarlowCondensed-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:BC;src:url(fonts/BarlowCondensed-Bold.ttf);font-weight:700}
+@font-face{font-family:BC;src:url(fonts/BarlowCondensed-SemiBold.ttf);font-weight:600}
+@font-face{font-family:PM;src:url(fonts/IBMPlexMono-Medium.ttf);font-weight:500}
+body{margin:0;background:#000}
+</style></head><body>
+<canvas id="c"></canvas>
+<script>
+const LAND=location.search.includes('h=1');const W=LAND?1920:1080,H=LAND?1080:1920,cv=document.getElementById('c'),ctx=cv.getContext('2d');
+const OR='#E8833A',INK='#F3EFE6',RED='#E85D5D',GRN='#7ED6A5',GOLD='#C9A96E';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const pr=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eb=x=>{if(x<=0)return 0;if(x>=1)return 1;const c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const DUR=47;
+
+// pitch geometry
+cv.width=W;cv.height=H;
+const Y0=LAND?150:640,Y1=LAND?960:1385,WT=LAND?580:700,WB=LAND?860:1060,PX=LAND?1370:540,CX=LAND?560:540;
+function P(u,v){const y=Y0+(Y1-Y0)*(0.82*v+0.18*v*v);const w=lerp(WT,WB,v);return [PX+(u-.5)*w,y,lerp(.78,1.12,v)*(LAND?.95:1)];}
+
+function seg(t,keys){ // keys: [[time,u,v],...]
+  if(t<=keys[0][0])return [keys[0][1],keys[0][2]];
+  for(let i=1;i<keys.length;i++){const a=keys[i-1],b=keys[i];
+    if(t<=b[0]){ if(t<a[0]+ (b[3]||0))return[a[1],a[2]]; const x=eio(pr(t,a[0],b[0]));return[lerp(a[1],b[1],x),lerp(a[2],b[2],x)];}}
+  const k=keys[keys.length-1];return[k[1],k[2]];
+}
+// keys are piecewise: hold then move. format [tStartMove? ...] -> simpler helper
+function mv(t,base,moves){let u=base[0],v=base[1];for(const m of moves){const x=eio(pr(t,m[0],m[1]));u=lerp(u,m[2],x);v=lerp(v,m[3],x);}return[u,v];}
+
+const OPP=[[.2,.13],[.4,.12],[.6,.12],[.8,.13],[.24,.29],[.42,.31],[.58,.31],[.76,.29]];
+const US=[
+ {n:'9',b:[.5,.2],m:[]},
+ {n:'10',b:[.5,.44],m:[]},
+ {n:'11',b:[.12,.33],m:[]},
+ {n:'7',b:[.88,.33],m:[[19.8,21.2,.7,.17],[23.6,24.4,.88,.33]]},
+ {n:'6',b:[.38,.56],m:[[15,15.9,.5,.06],[19.4,20.2,.38,.56]]},
+ {n:'8',b:[.62,.56],m:[]},
+ {n:'3',b:[.1,.72],m:[]},
+ {n:'2',b:[.9,.72],m:[[15,15.9,.7,.19],[19.4,20.2,.9,.72]]},
+ {n:'4',b:[.38,.86],m:[]},
+ {n:'5',b:[.62,.86],m:[]},
+];
+
+function txt(s,x,y,font,fill,align='left'){ctx.font=font;ctx.textAlign=align;ctx.fillStyle=fill;ctx.fillText(s,x,y);}
+function metal(s,x,y,size,scale=1,alpha=1){
+  ctx.save();ctx.globalAlpha*=alpha;ctx.translate(x,y);ctx.scale(scale,scale);
+  ctx.font=`800 ${size}px BC`;ctx.textAlign='left';
+  const g=ctx.createLinearGradient(0,-size*.8,0,0);g.addColorStop(0,'#FFFFFF');g.addColorStop(.55,'#E4E8EB');g.addColorStop(1,'#A9B3BA');
+  ctx.shadowColor='rgba(0,0,0,.45)';ctx.shadowBlur=24;ctx.shadowOffsetY=8;ctx.fillStyle=g;ctx.fillText(s,0,0);ctx.restore();
+}
+function accent(s,x,y,size,scale=1,alpha=1,col=OR){
+  ctx.save();ctx.globalAlpha*=alpha;ctx.translate(x,y);ctx.scale(scale,scale);
+  ctx.font=`800 ${size}px BC`;ctx.textAlign='left';
+  ctx.shadowColor='rgba(0,0,0,.45)';ctx.shadowBlur=20;ctx.shadowOffsetY=8;
+  const g=ctx.createLinearGradient(0,-size*.8,0,0);g.addColorStop(0,'#F7A25E');g.addColorStop(1,col);ctx.fillStyle=g;ctx.fillText(s,0,0);ctx.restore();
+}
+function rr(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);}
+
+function bg(t){
+  const g=ctx.createRadialGradient(W/2,H*.38,60,W/2,H*.45,H*.8);
+  g.addColorStop(0,'#24685A');g.addColorStop(.5,'#123B33');g.addColorStop(1,'#07181A');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  // soft stripes
+  ctx.save();ctx.globalAlpha=.05;for(let i=0;i<12;i++){if(i%2)continue;ctx.fillStyle='#fff';ctx.fillRect(0,(LAND?100:600)+i*80,W,80);}ctx.restore();
+  // vignette
+  const v=ctx.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,H*.75);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.55)');ctx.fillStyle=v;ctx.fillRect(0,0,W,H);
+}
+
+function chrome(t){
+  // tag pill
+  ctx.save();ctx.font='500 26px PM';const s='GALATASARAY · SAMSUNSPOR';const w=ctx.measureText(s).width+84;
+  rr(56,70,w,58,10);ctx.fillStyle='rgba(7,24,26,.6)';ctx.fill();ctx.strokeStyle='rgba(243,239,230,.35)';ctx.lineWidth=2;ctx.stroke();
+  ctx.beginPath();ctx.arc(88,99,11,0,7);ctx.fillStyle=OR;ctx.fill();
+  ctx.letterSpacing='4px';txt(s,112,108,'500 26px PM',INK);ctx.restore();
+  // TT mark
+  ctx.save();ctx.translate(W-104,100);ctx.beginPath();ctx.arc(0,0,40,0,7);ctx.fillStyle='rgba(7,24,26,.6)';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle=GOLD;ctx.stroke();
+  txt('TT',0,14,'800 38px BC',GOLD,'center');ctx.restore();
+  // footer
+  ctx.save();ctx.letterSpacing='2px';txt('TAKTİK ÇİZİM · TEMSİLİ · KAYNAK: ESPN, HABER SİTELERİ',LAND?70:W/2,LAND?1030:1566,'500 24px PM','rgba(243,239,230,.55)',LAND?'left':'center');ctx.restore();
+}
+
+// header states
+const HEAD=[
+ {a:0,h1:'LİDER KAZANDI',h2:'AMA 18 ŞUT YEDİ!'},
+ {a:7,h1:'OKAN BURUK',h2:'İLK 11'},
+ {a:15,h1:'GOLLER',h2:"4' TORREIRA"},
+ {a:19.5,h1:'GOLLER',h2:"53' YUNUS AKGÜN"},
+ {a:24,h1:'SAMSUNSPOR',h2:"57' BAYO"},
+ {a:29,h1:'RAKAMLAR',h2:'KAYNAK: ESPN · HABER SİTELERİ',small:true},
+ {a:37,h1:'REKOR',h2:'42 MAÇ'},
+ {a:43,h1:'LİDER KAZANDI',h2:'AMA 18 ŞUT YEDİ!'},
+];
+function header(t){
+  let i=0;for(let k=0;k<HEAD.length;k++)if(t>=HEAD[k].a)i=k;const h=HEAD[i],p=pr(t,h.a,h.a+.28),prev=i>0?HEAD[i-1]:null;
+  const h1same=prev&&prev.h1===h.h1;
+  const s1=h1same?1:lerp(1.18,1,eo(p)), a1=h1same?1:p;
+  const drift=1+0.012*Math.sin(t*.7);
+  metal(h.h1,LAND?84:70,LAND?330:300,LAND?132:148,s1*drift,a1);
+  if(h.small){ ctx.save();ctx.globalAlpha=p;ctx.letterSpacing='6px';txt(h.h2,LAND?88:74,LAND?400:380,'500 30px PM','rgba(243,239,230,.7)');ctx.restore(); }
+  else accent(h.h2,LAND?80:66,LAND?500:470,LAND?(h.h2.length>8?130:170):(h.h2.length>8?150:190),lerp(1.25,1,eo(p))*drift,p);
+}
+
+function pitchLines(alpha,draw){
+  ctx.save();ctx.globalAlpha*=alpha;ctx.strokeStyle='rgba(243,239,230,.55)';ctx.lineWidth=4;ctx.lineJoin='round';
+  const L=(pts)=>{ctx.beginPath();pts.forEach((q,i)=>{const [x,y]=P(q[0],q[1]);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();};
+  const D=draw;
+  const lim=(u0,v0,u1,v1)=>{const k=D;return [[u0,v0],[lerp(u0,u1,k),lerp(v0,v1,k)]];};
+  L(lim(0,0,1,0));L(lim(0,0,0,1));L(lim(1,0,1,1));
+  if(D>.3){const k=pr(D,.3,1);ctx.globalAlpha*=k;
+    L([[.22,0],[.22,.17],[.78,.17],[.78,0]]);L([[.38,0],[.38,.06],[.62,.06],[.62,0]]);
+    L([[0,.66],[1,.66]]);
+    ctx.beginPath();for(let a=0;a<=64;a++){const th=a/64*Math.PI*2;const [x,y]=P(.5+.13*Math.cos(th),.66+.075*Math.sin(th));a?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();
+    ctx.beginPath();for(let a=0;a<=32;a++){const th=a/32*Math.PI;const [x,y]=P(.5+.1*Math.cos(th),.17+.05*Math.sin(th));a?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();
+    // goal
+    const [gx1,gy]=P(.44,0),[gx2]=P(.56,0);ctx.strokeRect(gx1,gy-22,gx2-gx1,22);
+  }
+  ctx.restore();
+}
+function disc(u,v,sc,fill,stroke,label,glow){
+  if(sc<=0)return;const [x,y,k]=P(u,v);const r=38*k*sc;
+  ctx.save();ctx.shadowColor='rgba(0,0,0,.5)';ctx.shadowBlur=18;ctx.shadowOffsetY=10;
+  ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fillStyle=fill;ctx.fill();ctx.shadowColor='transparent';
+  ctx.lineWidth=5*k;ctx.strokeStyle=stroke;ctx.stroke();
+  if(glow){ctx.beginPath();ctx.arc(x,y,r+12*k,0,7);ctx.strokeStyle=`rgba(243,239,230,${glow})`;ctx.lineWidth=4;ctx.stroke();}
+  if(label){txt(label,x,y+r*.36,`800 ${Math.round(r*1.05)}px BC`,'#1A1208','center');}
+  ctx.restore();
+}
+function zone(u0,v0,u1,v1,col,a){
+  if(a<=0)return;ctx.save();ctx.globalAlpha*=a;ctx.beginPath();
+  [[u0,v0],[u1,v0],[u1,v1],[u0,v1]].forEach((q,i)=>{const [x,y]=P(q[0],q[1]);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.closePath();
+  ctx.fillStyle=col;ctx.globalAlpha*=.38;ctx.fill();ctx.globalAlpha/= .38;ctx.setLineDash([16,12]);ctx.lineWidth=4;ctx.strokeStyle=col;ctx.stroke();ctx.restore();
+}
+function arrow(pts,p,col,w=6){ // pts in pitch coords quadratic [a,c,b]
+  if(p<=0)return;const N=40,out=[];
+  for(let i=0;i<=N*p;i++){const s=i/N;const u=(1-s)*(1-s)*pts[0][0]+2*(1-s)*s*pts[1][0]+s*s*pts[2][0];const v=(1-s)*(1-s)*pts[0][1]+2*(1-s)*s*pts[1][1]+s*s*pts[2][1];out.push(P(u,v));}
+  if(out.length<2)return;ctx.save();ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=w;ctx.lineCap='round';ctx.setLineDash([4,16]);
+  ctx.beginPath();out.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.stroke();ctx.setLineDash([]);
+  const a=out[out.length-1],b=out[out.length-2],ang=Math.atan2(a[1]-b[1],a[0]-b[0]);
+  ctx.translate(a[0],a[1]);ctx.rotate(ang);ctx.beginPath();ctx.moveTo(10,0);ctx.lineTo(-18,-14);ctx.lineTo(-18,14);ctx.closePath();ctx.fill();ctx.restore();
+}
+
+function pitch(t){
+  if(t<7)return;
+  let alpha=pr(t,7,7.6);
+  if(t>29&&t<43)alpha=lerp(1,.1,pr(t,29,29.5));
+  if(t>=43)alpha=lerp(.1,.35,pr(t,43,43.6));
+  ctx.save();ctx.globalAlpha=alpha;
+  let s=(1+0.03*pr(t,7,15))*lerp(.9,1,eo(pr(t,7,8)));
+  ctx.translate(PX,LAND?820:1250);ctx.scale(s,s);ctx.translate(-PX,-(LAND?820:1250));
+  const zt=eio(pr(t,15,15.8))*(1-eio(pr(t,23.4,24.2))), zb=eio(pr(t,24,24.8))*(1-eio(pr(t,28.6,29.2)));
+  const ZT=LAND?.06:.12, ZBB=LAND?.04:.06, FT=LAND?400:900, FB=LAND?900:1350;
+  ctx.translate(PX,FT);ctx.scale(1+ZT*zt,1+ZT*zt);ctx.translate(-PX,-FT);
+  ctx.translate(PX,FB);ctx.scale(1+ZBB*zb,1+ZBB*zb);ctx.translate(-PX,-FB);
+  pitchLines(1,eo(pr(t,7,8.2)));
+  // Samsunspor sag kanat (bizim sol) - 57' gol bolgesi
+  if(t>=24.2&&t<29.4) zone(.04,.6,.3,.99,RED,pr(t,24.2,24.7)*(1-pr(t,28.9,29.4))*(0.65+0.35*Math.abs(Math.sin((t-24)*4))));
+  // 4' gol: serbest vurus -> Singo -> Torreira
+  if(t>=15.9&&t<19.6){arrow([[.5,.44],[.76,.32],[.7,.2]],eo(pr(t,15.9,16.9)),INK);
+    arrow([[.69,.18],[.6,.06],[.52,.06]],eo(pr(t,16.9,17.4)),INK,5);
+    arrow([[.5,.05],[.5,.02],[.5,-.02]],eo(pr(t,17.4,17.8)),OR,8);}
+  // 53' gol: Sara uzun pas -> Yunus asirtma
+  if(t>=20.3&&t<24.1){arrow([[.62,.56],[.84,.34],[.71,.18]],eo(pr(t,20.3,21.3)),INK);
+    arrow([[.7,.16],[.66,-.05],[.53,-.02]],eo(pr(t,21.6,22.4)),OR,8);}
+  // 57' gol: Mendes orta -> Bayo
+  if(t>=25.3&&t<29.2){arrow([[.13,.86],[.24,1.0],[.42,.95]],eo(pr(t,25.3,26.2)),RED,7);
+    arrow([[.42,.95],[.46,1.0],[.48,1.06]],eo(pr(t,26.2,26.7)),RED,8);}
+  OPP.forEach((q,i)=>disc(q[0],q[1],eb(pr(t,7.6+i*.1,7.9+i*.1)),INK,OR,'',0));
+  // Samsunspor hucumculari (yalniz 57' sahnesi)
+  const ex=pr(t,24.1,24.4)*(1-pr(t,28.8,29.2));
+  if(ex>0){const m=mv(t,[.08,.55],[[24.3,25.3,.13,.86]]),b=mv(t,[.5,.62],[[24.6,25.8,.42,.95]]);
+    disc(m[0],m[1],ex,INK,OR,'',0);disc(b[0],b[1],ex,INK,OR,'',.45+.35*Math.sin(t*8));}
+  US.forEach((p,i)=>{const sc=eb(pr(t,8.6+i*.1,8.9+i*.1));const [u,v]=mv(t,p.b,p.m);
+    let glow=0;
+    if(p.n==='4'&&t>11&&t<15)glow=.5+.4*Math.sin(t*8);
+    if(p.n==='6'&&t>16.9&&t<19.5)glow=.5+.4*Math.sin(t*8);
+    if(p.n==='7'&&t>21.2&&t<24)glow=.5+.4*Math.sin(t*8);
+    disc(u,v,sc,OR,'#0B1E1C',p.n,glow);});
+  ctx.restore();
+}
+
+function scoreCard(t){
+  if(t<2.6||t>7.6)return;const out=pr(t,7,7.5),inn=pr(t,2.6,3.0);
+  ctx.save();ctx.globalAlpha=inn*(1-out);ctx.translate(-out*300,0);
+  const y=LAND?300:760;
+  ctx.letterSpacing='6px';txt('21 KASIM 2026 · SÜPER LİG 12. HAFTA',PX,y,'500 30px PM','rgba(243,239,230,.75)','center');ctx.letterSpacing='0px';
+  txt('GALATASARAY',PX,y+(LAND?90:100),'800 92px BC',INK,'center');
+  const sc=eb(pr(t,2.9,3.3));ctx.save();ctx.translate(PX,y+(LAND?290:310));ctx.scale(sc,sc);ctx.shadowColor='rgba(0,0,0,.5)';ctx.shadowBlur=30;
+  txt('2 – 1',0,0,'800 250px BC',OR,'center');ctx.restore();
+  txt('SAMSUNSPOR',PX,y+(LAND?390:410),'800 92px BC',INK,'center');
+  const G=[["4'",'TORREIRA','GS'],["53'",'YUNUS AKGÜN','GS'],["57'",'BAYO','SAM']];
+  G.forEach((g,i)=>{const k=eo(pr(t,3.6+i*.35,3.9+i*.35));if(k<=0)return;ctx.save();ctx.globalAlpha*=k;ctx.translate(lerp(60,0,k),0);
+    const yy=y+(LAND?470:500)+i*(LAND?52:58);
+    txt(g[0],PX-170,yy,'500 34px PM',g[2]==='GS'?OR:INK,'right');txt(g[1],PX-140,yy,'700 44px BC',INK,'left');
+    txt(g[2],PX+230,yy,'500 26px PM','rgba(243,239,230,.6)','left');ctx.restore();});
+  ctx.restore();
+}
+
+const STATS=[{a:29.2,n:18,pre:'',l:"SAMSUNSPOR'UN ŞUTU · GS: 11"},{a:31.8,n:6,pre:'',l:"UĞURCAN'IN KURTARIŞI"},{a:34.4,n:56,pre:'%',l:'GALATASARAY TOPA SAHİP OLMA'},{a:37.2,n:42,pre:'',l:'İÇ SAHADA YENİLMEZLİK · REKOR'}];
+function stats(t){
+  STATS.forEach((s,i)=>{const end=i<STATS.length-1?STATS[i+1].a:42.9;if(t<s.a||t>end+.3)return;
+    const p=pr(t,s.a,s.a+.3),o=pr(t,end,end+.3);ctx.save();ctx.globalAlpha=p*(1-o);
+    ctx.translate(lerp(160,0,eo(p))-o*200,0);
+    const v=Math.round(s.n*eo(pr(t,s.a,s.a+.9)));
+    ctx.save();ctx.shadowColor='rgba(0,0,0,.5)';ctx.shadowBlur=30;txt(s.pre+v,PX,LAND?680:1130,LAND?'800 420px BC':'800 400px BC',OR,'center');ctx.restore();
+    ctx.letterSpacing='3px';txt(s.l,PX,LAND?790:1240,'700 60px BC',INK,'center');ctx.restore();});
+}
+
+const CAP=[
+ [0.2,2.5,'Lider kazandı ama on sekiz şut yedi.'],
+ [2.8,4.7,'Skor iki bir, Galatasaray kazandı.'],
+ [4.8,6.8,'Lider otuz bir puanda.'],
+ [7.2,10.8,'Okan Buruk beş değişiklikle çıktı, üçü zorunlu.'],
+ [11.0,14.8,'Stoperde sürpriz isim: Kaan Ayhan.'],
+ [15.2,19.3,"Dördüncü dakika: Batrakov'un serbest vuruşu Singo'ya çarptı, Torreira altıpastan attı."],
+ [19.7,23.8,"Elli üçüncü dakika: Sara'nın uzun pasında Yunus Akgün kaleciyi aştı."],
+ [24.2,28.8,"Dört dakika sonra Joe Mendes'in ortasında Bayo farkı bire indirdi."],
+ [29.2,31.6,'Samsunspor on sekiz şut çekti, Galatasaray on bir.'],
+ [31.8,34.2,'Uğurcan altı kurtarışla maçı tuttu.'],
+ [34.4,36.8,"Top yine de yüzde elli altı Galatasaray'da."],
+ [37.2,40.0,'İç sahada kırk iki maçtır yenilmiyor.'],
+ [40.1,42.8,"Fatih Terim'in kırk bir maçlık rekoru geçildi."],
+ [43.2,46.8,'Sence şans mı, Uğurcan mı, sistem mi?'],
+];
+function captions(t){
+  const c=CAP.find(c=>t>=c[0]&&t<c[1]);if(!c)return;
+  const words=c[2].split(' '),n=words.length,per=(c[1]-c[0])/n;const wi=Math.min(n-1,Math.floor((t-c[0])/per));
+  const g=Math.floor(wi/3),chunk=words.slice(g*3,g*3+3),act=wi-g*3,pin=pr(t,c[0]+g*3*per,c[0]+g*3*per+.12);
+  const big=t>=43;const size=big?84:76;ctx.font=`800 ${size}px BC`;
+  const sp=22,ws=chunk.map(w=>ctx.measureText(w.toLocaleUpperCase('tr')).width);const tot=ws.reduce((a,b)=>a+b,0)+sp*(chunk.length-1);
+  const y=LAND?(big?760:800):(big?1150:1492);
+  ctx.save();ctx.translate(LAND?CX:W/2,y);ctx.scale(lerp(.9,1,eb(pin)),lerp(.9,1,eb(pin)));
+  rr(-tot/2-30,-size*.86,tot+60,size*1.18,18);ctx.fillStyle='rgba(5,16,16,.78)';ctx.fill();
+  let x=-tot/2;chunk.forEach((w,i)=>{txt(w.toLocaleUpperCase('tr'),x,0,`800 ${size}px BC`,i===act?OR:INK,'left');x+=ws[i]+sp;});
+  ctx.restore();
+}
+
+function hook(t){
+  if(t>3)return;const p=eb(pr(t,0,.35)),o=pr(t,2.5,3);
+  ctx.save();ctx.globalAlpha=1-o;ctx.translate(PX,LAND?700:1180);ctx.rotate(-.06);ctx.scale(lerp(1.6,1,p)*(1-o*.3),lerp(1.6,1,p)*(1-o*.3));
+  ctx.shadowColor='rgba(0,0,0,.5)';ctx.shadowBlur=40;
+  const g=ctx.createLinearGradient(0,-500,0,100);g.addColorStop(0,'#F7A25E');g.addColorStop(1,OR);
+  txt('18',0,180,'800 640px BC',g,'center');ctx.shadowColor='transparent';
+  const c=0;ctx.strokeStyle='#0B1E1C';ctx.lineWidth=14;ctx.lineJoin='miter';ctx.beginPath();
+  const pts=[[-170,-330],[-60,-210],[-120,-90],[10,20],[-40,140],[60,260]];
+  const n=Math.max(2,Math.ceil(pts.length*c));pts.slice(0,n).forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));if(c>0)ctx.stroke();
+  ctx.restore();
+}
+window.render=function(t){
+  ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.letterSpacing='0px';
+  bg(t);hook(t);pitch(t);scoreCard(t);stats(t);header(t);chrome(t);captions(t);
+  // flash on slam
+  for(const a of [0,2.6,7,15,19.5,24,29,37,43]){const k=1-pr(t,a,a+.18);if(t>=a&&k>0){ctx.fillStyle=`rgba(255,255,255,${.18*k})`;ctx.fillRect(0,0,W,H);}}
+};
+window.DUR=DUR;
+</script></body></html>
