@@ -27,3 +27,8 @@ Bağlantılar:
 - https://www.fotomac.com.tr/galatasaray/2026/11/22/okan-buruk-fark-yaratti-yeni-rekor
 
 Üretim: `cd taktik-tahtasi/sablon && python3 ses_gs.py && SCENE=gs-samsun.html OUT=gs_ node render.js full` (yatay için başına `LAND=1`), ardından ses `audio_gs.wav` ile birleştirilir.
+
+## Seslendirme ve görseller (22 Kasım 2026)
+- Seslendirme: ElevenLabs, "Cem – Deep documentary narrator" (mimarlık videolarındaki ses), eleven_v4. Ham kayıt: `seslendirme-cem.mp3`; cümleler `sablon/seslendirme_yerlestir.py` ile sahnelere yerleştirildi.
+- Seslendirmeli videolar: `gs-samsunspor-dikey-ses.mp4`, `gs-samsunspor-yatay-ses.mp4`.
+- Armalar ve oyuncu fotoğrafları: `sablon/img/KAYNAKLAR.md`.
