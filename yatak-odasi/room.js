@@ -4,18 +4,18 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 
 // ---------- ÖLÇÜLER (taslaktan) ----------
 export const R = {
-  W: 266,          // oda genişliği (x)
+  W: 381,          // oda genişliği (x) = koridor 100 + koridor duvarı 15 + 266
   L: 262,          // oda derinliği (z) = kolon 32 + 230
   H: 260,          // tavan (varsayım)
   BEAM: 220,       // kiriş altı
   T: 20,           // duvar kalınlığı
   col: { x0: 0, x1: 14, z0: 0, z1: 32 },          // kolon 14x32
-  pier: { x0: 246, x1: 266, z0: 0, z1: 40 },      // sağ üst duvar çıkıntısı
-  winTop: { x0: 75, x1: 155, sill: 90, head: 210 },
+  pier: { x0: 361, x1: 381, z0: 0, z1: 40 },      // sağ üst duvar çıkıntısı
+  winTop: { x0: 110, x1: 210, sill: 90, head: 210 },
   winRight: { z0: 45, z1: 100, sill: 90, head: 210 },
   balcony: { z0: 100, z1: 182, head: 210 },       // balkon kapısı, menteşe z=182
   niche: { z0: 182, z1: 242, d: 11 },             // 60 x 11 niş
-  entry: { x0: 0, x1: 90, head: 210 },            // koridor ağzı / oda kapısı
+  entry: { x0: 0, x1: 100, wall: 15 },             // koridor 100 + koridor duvarı 15 (açık geçiş)
 };
 
 const M = {};
@@ -120,8 +120,8 @@ export function buildShell() {
   // döşeme + koridor döşemesi
   const fl = floorPlane(W + 11, L, M.floor);
   fl.rotation.x = -Math.PI / 2; fl.position.set((W + 11) / 2, 0, L / 2); fl.receiveShadow = true; tag(fl, 'floor');
-  const fl2 = floorPlane(90, 120, M.floor);
-  fl2.rotation.x = -Math.PI / 2; fl2.position.set(45, 0, L + 60); fl2.receiveShadow = true; tag(fl2, 'floor');
+  const fl2 = floorPlane(100, 120, M.floor);
+  fl2.rotation.x = -Math.PI / 2; fl2.position.set(50, 0, L + 60); fl2.receiveShadow = true; tag(fl2, 'floor');
   // tavan
   const cl = new THREE.Mesh(new THREE.PlaneGeometry(W + 11, L), M.ceil);
   cl.rotation.x = Math.PI / 2; cl.position.set((W + 11) / 2, H, L / 2); tag(cl, 'ceiling');
@@ -145,8 +145,7 @@ export function buildShell() {
   // alt duvar + koridor ağzı
   const e = R.entry;
   tag(box(e.x1, W + T, 0, H, L, L + T, M.wall), 'wallBottom');
-  tag(box(e.x0, e.x1, e.head, H, L, L + T, M.wall), 'wallBottom');
-  tag(box(e.x1, e.x1 + 15, 0, H, L + T, L + 120, M.wall), 'wallBottom');
+  tag(box(e.x1, e.x1 + e.wall, 0, H, L + T, L + 120, M.wall), 'wallBottom');
   tag(box(0, 0.6, 0, BEAM, R.col.z1, L, M.accent), 'accent');
   // kolon, çıkıntı
   tag(box(R.col.x0, R.col.x1, 0, H, R.col.z0, R.col.z1, M.wall), 'column');
@@ -163,7 +162,6 @@ export function buildShell() {
   tag(windowX(wt.x0, wt.x1, wt.sill, wt.head, -T / 2), 'window');
   tag(windowZ(wr.z0, wr.z1, wr.sill, wr.head, W + T / 2), 'window');
   tag(balconyDoor(), 'window');
-  tag(entryDoor(), 'door');
   return g;
 }
 
@@ -200,108 +198,88 @@ function balconyDoor() {
   g.add(box(x - 7, x - 3.5, 100, 103, z0 + 4, z0 + 16, M.brass)); // kol
   return g;
 }
-function entryDoor() {
-  const { x0, x1, head } = R.entry; const g = new THREE.Group(); const z = R.L + R.T / 2;
-  g.add(box(x0, x0 + 5, 0, head, z - 11, z + 11, M.door));
-  g.add(box(x1 - 5, x1, 0, head, z - 11, z + 11, M.door));
-  g.add(box(x0, x1, head - 5, head, z - 11, z + 11, M.door));
-  // kanat kapalı — kasaya menteşeli (x=5)
-  const leaf = box(0, 80, 0, head - 6, -2, 2, M.door); leaf.position.set(40, (head - 6) / 2, 0);
-  const piv = new THREE.Group(); piv.position.set(x0 + 5, 0, z - 9); piv.rotation.y = 0; piv.add(leaf);
-  const h = box(70, 78, 98, 101, -5, -2, M.brass); piv.add(h);
-  g.add(piv);
-  return g;
-}
-
 // ---------- MOBİLYALAR ----------
 export const FURN = {
-  yatak: { ad: 'Yatak (baza + başlık)', olcu: '146 × 198 cm, başlık h:105 — şilte 140×190', fn: bed },
-  komodin: { ad: 'Dar komodin', olcu: '40 × 30 × 52 cm', fn: nightstand },
-  gardirop: { ad: 'Gardırop (2 kapaklı)', olcu: '78 × 60 × 215 cm (kiriş altı 220\'ye göre)', fn: wardrobe },
-  sifonyer: { ad: 'Şifonyer + ayna', olcu: '75 × 40 × 78 cm, ayna 55 × 80', fn: dresser },
-  hali: { ad: 'Halı', olcu: '110 × 140 cm', fn: rug },
+  yatak: { ad: 'Yatak (baza + başlık)', olcu: '158 × 212 cm, başlık h:105 — şilte 150×200', fn: bed },
+  komodin: { ad: 'Komodin', olcu: '45 × 30 × 52 cm', fn: nightstand },
+  gardirop: { ad: 'Sürgü kapaklı gardırop', olcu: '165 × 62 × 215 cm (kiriş altı 220\'ye göre)', fn: wardrobe },
+  masa: { ad: 'Makyaj / çalışma masası + ayna + tabure', olcu: '120 × 50 × 76 cm, ayna Ø60', fn: desk },
+  hali: { ad: 'Halı', olcu: '170 × 120 cm', fn: rug },
   aydinlatma: { ad: 'Aydınlatma', olcu: 'Ø45 sarkıt + 2 aplik', fn: lights },
   perde: { ad: 'Tül perdeler', olcu: '2 pencere', fn: curtains },
-  radyator: { ad: 'Panel radyatör', olcu: '60 × 60 cm', fn: radiator },
+  radyator: { ad: 'Panel radyatör', olcu: '70 × 60 cm', fn: radiator },
   bitki: { ad: 'Saksı bitki', olcu: 'Ø30, h:110', fn: plant },
 };
 
 function bed() {
   const g = new THREE.Group(); g.name = 'yatak';
-  // başlık: x 0-6, z 32-176
-  g.add(box(0, 6, 25, 105, 32, 176, M.greige, 3));
-  for (let i = 0; i < 6; i++) { const z = 34 + i * 23.3; g.add(box(5, 9, 30, 102, z, z + 22, M.greige, 2)); }
-  // baza
-  g.add(box(9, 198, 10, 34, 33, 175, M.greige, 3));
-  [[14, 38], [14, 170], [193, 38], [193, 170]].forEach(([x, z]) => g.add(cyl(x, z, 0, 10, 2.2, M.oakDark)));
-  // şilte
-  g.add(box(10, 197, 34, 56, 34, 174, M.linen, 5));
-  // nevresim + yatak örtüsü
-  g.add(box(62, 198.5, 54, 60, 33, 175, M.linen, 3));
-  g.add(box(150, 199, 56.5, 61, 32.5, 175.5, M.sage, 2));
-  // yastıklar
-  g.add(box(12, 30, 56, 74, 38, 102, M.linen, 7)); g.add(box(12, 30, 56, 74, 106, 170, M.linen, 7));
-  g.add(box(28, 40, 56, 70, 50, 90, M.terra, 5)); g.add(box(28, 40, 56, 70, 118, 158, M.sage, 5));
+  // başlık: x 0-6, z 32-190
+  g.add(box(0, 6, 25, 105, 32, 190, M.greige, 3));
+  for (let i = 0; i < 6; i++) { const z = 34 + i * 25.7; g.add(box(5, 9, 30, 102, z, z + 24.5, M.greige, 2)); }
+  g.add(box(9, 214, 10, 34, 33, 189, M.greige, 3));
+  [[15, 39], [15, 183], [208, 39], [208, 183]].forEach(([x, z]) => g.add(cyl(x, z, 0, 10, 2.2, M.oakDark)));
+  g.add(box(10, 211, 34, 56, 36, 186, M.linen, 5));
+  g.add(box(70, 212.5, 54, 60, 35, 187, M.linen, 3));
+  g.add(box(165, 213, 56.5, 61, 34.5, 187.5, M.sage, 2));
+  g.add(box(12, 30, 56, 74, 41, 108, M.linen, 7)); g.add(box(12, 30, 56, 74, 114, 181, M.linen, 7));
+  g.add(box(28, 40, 56, 70, 54, 94, M.terra, 5)); g.add(box(28, 40, 56, 70, 128, 168, M.sage, 5));
   return g;
 }
 function nightstand() {
   const g = new THREE.Group(); g.name = 'komodin';
-  g.add(box(14.5, 53.5, 10, 52, 0.5, 30, M.oak, 1));
-  g.add(box(16, 52, 32, 48, 29.5, 31, M.oak, 0.5));
-  g.add(box(30, 38, 39, 41, 31, 32.5, M.brass));
-  [[17, 4], [51, 4], [17, 27], [51, 27]].forEach(([x, z]) => g.add(cyl(x, z, 0, 10, 1.2, M.black)));
-  // masa lambası
-  g.add(cyl(26, 14, 52, 54, 6, M.brass)); g.add(cyl(26, 14, 54, 72, 0.8, M.brass));
-  const sh = cyl(26, 14, 70, 84, 9, M.linen, 24, 6); sh.material = M.lampGlow; g.add(sh);
+  g.add(box(14.5, 58.5, 10, 52, 0.5, 30, M.oak, 1));
+  g.add(box(16, 57, 32, 48, 29.5, 31, M.oak, 0.5));
+  g.add(box(32, 41, 39, 41, 31, 32.5, M.brass));
+  [[18, 4], [55, 4], [18, 27], [55, 27]].forEach(([x, z]) => g.add(cyl(x, z, 0, 10, 1.2, M.black)));
+  g.add(cyl(28, 14, 52, 54, 6, M.brass)); g.add(cyl(28, 14, 54, 72, 0.8, M.brass));
+  const sh = cyl(28, 14, 70, 84, 9, M.linen, 24, 6); sh.material = M.lampGlow; g.add(sh);
   return g;
 }
 function wardrobe() {
   const g = new THREE.Group(); g.name = 'gardirop';
-  // gövde x 206-266, z 184-262, h 215 (ön yüz x=206)
-  g.add(box(208, 266, 0, 215, 184, 262, M.white));
-  g.add(box(206, 208, 8, 214, 184.5, 222.8, M.white, 0.6));
-  g.add(box(206, 208, 8, 214, 223.2, 261.5, M.white, 0.6));
-  g.add(box(206, 208, 0, 8, 186, 260, M.oakDark)); // baza
-  g.add(box(203.5, 206, 90, 150, 220, 221.5, M.oak)); g.add(box(203.5, 206, 90, 150, 224.5, 226, M.oak));
-  // kapak üstünde ayna
-  g.add(box(205.6, 206, 40, 190, 230, 255, M.mirror));
+  // gövde x 216-381, z 202-262, h 215 — 3 sürgü kapak (öne bakar, -z)
+  g.add(box(216, 381, 0, 215, 202, 262, M.white));
+  g.add(box(216, 381, 0, 8, 199, 202, M.oakDark));
+  const pw = 55;
+  [[216, 200, M.white], [216 + pw, 198, M.mirror], [216 + 2 * pw, 200, M.white]].forEach(([x, z, m], i) => {
+    g.add(box(x + 0.5, x + pw - 0.5, 8, 213, z, z + 2, m, 0.5));
+    if (m === M.mirror) { g.add(box(x, x + 2, 8, 213, z - 0.5, z + 2.2, M.oak)); g.add(box(x + pw - 2, x + pw, 8, 213, z - 0.5, z + 2.2, M.oak)); }
+    else g.add(box(i === 0 ? x + pw - 6 : x + 4, i === 0 ? x + pw - 4 : x + 6, 70, 160, z - 2, z, M.oak));
+  });
+  g.add(box(216, 381, 213, 215, 197, 202, M.white));
   return g;
 }
-function dresser() {
-  const g = new THREE.Group(); g.name = 'sifonyer';
-  g.add(box(92, 167, 10, 78, 222, 262, M.oak, 1));
-  for (let i = 0; i < 3; i++) {
-    const y0 = 13 + i * 21.5;
-    g.add(box(93.5, 165.5, y0, y0 + 20.5, 221.2, 222.2, M.oak, 0.4));
-    g.add(box(118, 141, y0 + 15, y0 + 16.5, 220, 221.2, M.brass));
-  }
-  [[96, 258], [163, 258], [96, 226], [163, 226]].forEach(([x, z]) => g.add(cyl(x, z, 0, 10, 1.4, M.black)));
-  // ayna (yuvarlatılmış)
-  const mg = new RoundedBoxGeometry(55, 80, 1.5, 4, 12);
-  const mi = new THREE.Mesh(mg, M.mirror); mi.position.set(129.5, 135, 261); g.add(mi);
-  const mf = new THREE.Mesh(new RoundedBoxGeometry(58, 83, 1.2, 4, 13), M.oak); mf.position.set(129.5, 135, 261.6); g.add(mf);
-  // üst aksesuar
-  g.add(cyl(105, 245, 78, 96, 5, M.pot)); g.add(cyl(155, 242, 78, 81, 7, M.brass));
+function desk() {
+  const g = new THREE.Group(); g.name = 'masa';
+  g.add(box(235, 355, 73, 76, 0, 50, M.oak, 1));
+  g.add(box(240, 350, 61, 73, 2, 46, M.oak, 0.6));
+  g.add(box(282, 308, 66, 67.5, 46, 47.5, M.brass));
+  [[239, 4], [351, 4], [239, 46], [351, 46]].forEach(([x, z]) => g.add(cyl(x, z, 0, 61, 1.6, M.black)));
+  const mi = new THREE.Mesh(new THREE.CylinderGeometry(30, 30, 1.5, 48), M.mirror); mi.rotation.x = Math.PI / 2; mi.position.set(295, 140, 1.2); g.add(mi);
+  const mf = new THREE.Mesh(new THREE.TorusGeometry(30.5, 1.4, 12, 64), M.brass); mf.position.set(295, 140, 1.5); g.add(mf);
+  // tabure
+  g.add(cyl(295, 78, 40, 46, 18, M.greige, 32)); [0, 1, 2, 3].forEach(i => { const a = i * Math.PI / 2 + 0.78; g.add(cyl(295 + Math.cos(a) * 12, 78 + Math.sin(a) * 12, 0, 40, 1.2, M.brass)); });
+  // aksesuar
+  g.add(cyl(250, 25, 76, 92, 5, M.pot)); g.add(box(320, 345, 76, 79, 15, 35, M.linen));
   return g;
 }
 function rug() {
   const g = new THREE.Group(); g.name = 'hali';
-  const m = new THREE.Mesh(new THREE.BoxGeometry(110, 1, 140), M.rug); m.position.set(195, 0.5, 106);
-  m.material.map.repeat.set(1, 1); m.receiveShadow = true; g.add(m); return g;
+  const m = new THREE.Mesh(new THREE.BoxGeometry(170, 1, 120), M.rug); m.position.set(215, 0.5, 130);
+  m.receiveShadow = true; g.add(m); return g;
 }
 function lights() {
   const g = new THREE.Group(); g.name = 'aydinlatma';
-  // sarkıt (kirişler arası, oda ortası)
-  g.add(cyl(133, 131, R.H - 0.5, R.H, 6, M.white));
-  g.add(cyl(133, 131, 225, R.H, 0.3, M.black));
+  const cx = 190, cz = 131;
+  g.add(cyl(cx, cz, R.H - 0.5, R.H, 6, M.white));
+  g.add(cyl(cx, cz, 225, R.H, 0.3, M.black));
   const shade = new THREE.Mesh(new THREE.SphereGeometry(22, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xe3d6c0, roughness: 0.9, side: THREE.DoubleSide }));
-  shade.position.set(133, 205, 131); shade.scale.y = 0.9; g.add(shade);
-  const bulb = new THREE.Mesh(new THREE.SphereGeometry(4, 16, 8), M.lampGlow); bulb.position.set(133, 205, 131); g.add(bulb);
-  // başlık üstü aplikler
-  [60, 148].forEach(z => {
+  shade.position.set(cx, 205, cz); shade.scale.y = 0.9; g.add(shade);
+  const bulb = new THREE.Mesh(new THREE.SphereGeometry(4, 16, 8), M.lampGlow); bulb.position.set(cx, 205, cz); g.add(bulb);
+  [56, 166].forEach(z => {
     g.add(box(0, 3, 128, 140, z - 4, z + 4, M.brass));
     g.add(box(3, 18, 135, 137, z - 1, z + 1, M.brass));
-    const s = cyl(20, z, 120, 136, 7, M.lampGlow, 20, 4); g.add(s);
+    g.add(cyl(20, z, 120, 136, 7, M.lampGlow, 20, 4));
   });
   return g;
 }
@@ -312,26 +290,23 @@ function curtains() {
     for (let i = 0; i < p.count; i++) p.setZ(i, Math.sin(p.getX(i) * 0.9) * 2.2);
     geo.computeVertexNormals(); const m = new THREE.Mesh(geo, M.curtain); m.castShadow = true; return m;
   };
-  // üst pencere: iki yanda toplanmış tül
-  [[50, 30], [180, 30]].forEach(([cx, w]) => { const c = pleat(w, 205); c.position.set(cx, 113, 5); g.add(c); });
-  const rod = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 180, 12), M.brass); rod.rotation.z = Math.PI / 2; rod.position.set(115, 216, 5); g.add(rod);
-  // sağ pencere + balkon kapısı: tek yanda toplanmış
+  [[95, 30], [221, 20]].forEach(([cx, w]) => { const c = pleat(w, 205); c.position.set(cx, 113, 5); g.add(c); });
+  const rod = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 160, 12), M.brass); rod.rotation.z = Math.PI / 2; rod.position.set(158, 216, 5); g.add(rod);
   const c2 = pleat(36, 205); c2.rotation.y = -Math.PI / 2; c2.position.set(R.W - 5, 113, 58); g.add(c2);
   const rod2 = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 150, 12), M.brass); rod2.rotation.x = Math.PI / 2; rod2.position.set(R.W - 5, 216, 115); g.add(rod2);
   return g;
 }
 function radiator() {
   const g = new THREE.Group(); g.name = 'radyator';
-  for (let i = 0; i < 15; i++) g.add(box(86 + i * 4, 89 + i * 4, 15, 75, 3, 10, M.radiator));
+  for (let i = 0; i < 17; i++) g.add(box(125 + i * 4.1, 128 + i * 4.1, 15, 75, 3, 10, M.radiator));
   return g;
 }
 function plant() {
   const g = new THREE.Group(); g.name = 'bitki';
-  const x = 232, z = 72;
+  const x = 350, z = 75;
   g.add(cyl(x, z, 0, 32, 15, M.pot, 28, 17));
-  const leafMat = M.leaf;
   for (let i = 0; i < 14; i++) {
-    const l = new THREE.Mesh(new THREE.SphereGeometry(10, 12, 8), leafMat);
+    const l = new THREE.Mesh(new THREE.SphereGeometry(10, 12, 8), M.leaf);
     const a = i * 2.4, r = 6 + (i % 4) * 3;
     l.scale.set(0.5, 1.6, 0.18); l.position.set(x + Math.cos(a) * r, 55 + (i % 5) * 11, z + Math.sin(a) * r);
     l.rotation.set(Math.sin(a) * 0.6, a, Math.cos(a) * 0.6); l.castShadow = true; g.add(l);
@@ -357,7 +332,7 @@ export function addLights(scene, { interior = true } = {}) {
   sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.6;
   scene.add(sun, sun.target);
   if (interior) {
-    const p = new THREE.PointLight(0xffd9a8, 9000, 0, 1.6); p.position.set(133, 195, 131); scene.add(p);
-    const p2 = new THREE.PointLight(0xffd9a8, 1500, 0, 1.8); p2.position.set(30, 120, 104); scene.add(p2);
+    const p = new THREE.PointLight(0xffd9a8, 9000, 0, 1.6); p.position.set(190, 195, 131); scene.add(p);
+    const p2 = new THREE.PointLight(0xffd9a8, 1500, 0, 1.8); p2.position.set(30, 120, 111); scene.add(p2);
   }
 }

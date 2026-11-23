@@ -5,23 +5,24 @@ Elle çizilmiş taslaktan modellendi. Ölçüler cm.
 ## Taslaktan okunan / varsayılan ölçüler
 | Öğe | Değer | Kaynak |
 |---|---|---|
-| Oda iç ölçüsü | 266 × 262 | 266 taslakta; 262 = kolon 32 + 230 |
+| Oda iç ölçüsü | 381 × 262 | 381 = koridor 100 + koridor duvarı 15 + 266; 262 = kolon 32 + 230 |
+| Koridor | 100 iç genişlik, duvar 15 | kullanıcıdan |
 | Kolon (sol üst) | 14 × 32 | taslak |
 | Kiriş altı | 220 | taslak |
 | Tavan | 260 | **varsayım** |
 | Niş (sağ duvar) | 60 × 11 | taslak |
-| Pencere (üst duvar) | 80 genişlik, parapet 90 | **varsayım** (taslakta ölçü yok) |
+| Pencere (üst duvar) | 100 genişlik, parapet 90 | **varsayım** (taslakta ölçü yok) |
 | Pencere + balkon kapısı (sağ duvar) | 55 + 80 | **varsayım** |
-| Oda kapısı (koridordan) | 80 | **varsayım** |
+| Koridordan giriş | açık geçiş (kapı taslakta yok) | taslak |
 
 ## Tefriş
-- Yatak 140×190 (dış 146×198, başlık h105) — sol duvarda
-- Dar komodin 40×30 — kolon ile pencere arasında
-- Gardırop 78×60×215 — sağ alt köşede, kiriş altı 220'ye göre
-- Şifonyer 75×40×78 + ayna 55×80
-- Halı 110×140, Ø45 sarkıt, 2 aplik, tül perdeler, saksı bitki
+- Yatak 150×200 (dış 158×212, başlık h105) — sol duvarda, koridor geçişi için ayakucu tarafında 73 cm boşluk
+- Komodin 45×30 — kolon ile pencere arasında
+- Sürgü kapaklı gardırop 165×62×215 — alt duvarda, kiriş altı 220'ye göre; orta kapak ayna
+- Makyaj / çalışma masası 120×50 + Ø60 ayna + tabure — üst duvarda, pencere ile çıkıntı arasında
+- Halı 170×120, Ø45 sarkıt, 2 aplik, tül perdeler, radyatör, saksı bitki
 
-Notlar: Balkon kapısı yatak ayakucunu teğet geçer (~85° açılır). Şifonyer genişliği, gardırop kapağı tam açılsın diye 75 cm tutuldu.
+Balkon kapısının açılım alanı (80 cm) tamamen boş kalır.
 
 ## Dosyalar
 - `gorseller/00-tefris-plani.png` — ölçülü 2B plan
