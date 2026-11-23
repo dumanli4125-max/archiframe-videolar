@@ -1,0 +1,220 @@
+[
+ {
+  "name": "01-kusbakisi-giris-yonu.png",
+  "q": {
+   "view": "iso",
+   "exp": 0.9,
+   "w": 1800,
+   "h": 1200,
+   "hide": "ceiling,wallBottom,wallLeft,accent,door,beamBottom",
+   "cam": {
+    "p": [
+     -250,
+     540,
+     600
+    ],
+    "t": [
+     135,
+     30,
+     125
+    ],
+    "fov": 38
+   }
+  }
+ },
+ {
+  "name": "02-kusbakisi-pencere-yonu.png",
+  "q": {
+   "view": "iso",
+   "exp": 0.9,
+   "w": 1800,
+   "h": 1200,
+   "hide": "ceiling,wallTop,wallRight,beam,pier",
+   "cam": {
+    "p": [
+     620,
+     540,
+     -230
+    ],
+    "t": [
+     130,
+     30,
+     140
+    ],
+    "fov": 38
+   }
+  }
+ },
+ {
+  "name": "03-ic-giristen.png",
+  "q": {
+   "view": "in",
+   "exp": 0.85,
+   "w": 1800,
+   "h": 1200,
+   "cam": {
+    "p": [
+     40,
+     160,
+     238
+    ],
+    "t": [
+     200,
+     105,
+     40
+    ],
+    "fov": 80
+   }
+  }
+ },
+ {
+  "name": "04-ic-balkon-kapisindan.png",
+  "q": {
+   "view": "in",
+   "exp": 0.85,
+   "w": 1800,
+   "h": 1200,
+   "cam": {
+    "p": [
+     250,
+     158,
+     140
+    ],
+    "t": [
+     40,
+     85,
+     175
+    ],
+    "fov": 78
+   }
+  }
+ },
+ {
+  "name": "05-ic-pencereden.png",
+  "q": {
+   "view": "in",
+   "exp": 0.85,
+   "w": 1800,
+   "h": 1200,
+   "cam": {
+    "p": [
+     225,
+     160,
+     28
+    ],
+    "t": [
+     70,
+     80,
+     250
+    ],
+    "fov": 78
+   }
+  }
+ },
+ {
+  "name": "06-ust-gorunus.png",
+  "q": {
+   "view": "plan",
+   "exp": 0.9,
+   "w": 1400,
+   "h": 1400,
+   "hide": "ceiling,beam,beamBottom"
+  }
+ },
+ {
+  "name": "m-yatak.png",
+  "q": {
+   "view": "furn",
+   "key": "yatak",
+   "az": 0.9,
+   "el": 0.38,
+   "w": 1400,
+   "h": 1000
+  }
+ },
+ {
+  "name": "m-komodin.png",
+  "q": {
+   "view": "furn",
+   "key": "komodin",
+   "az": 0.55,
+   "el": 0.3,
+   "w": 1000,
+   "h": 1000
+  }
+ },
+ {
+  "name": "m-gardirop.png",
+  "q": {
+   "view": "furn",
+   "key": "gardirop",
+   "az": -1.0,
+   "el": 0.2,
+   "w": 1100,
+   "h": 1150
+  }
+ },
+ {
+  "name": "m-sifonyer.png",
+  "q": {
+   "view": "furn",
+   "key": "sifonyer",
+   "az": 2.55,
+   "el": 0.25,
+   "w": 1000,
+   "h": 1100
+  }
+ },
+ {
+  "name": "m-hali.png",
+  "q": {
+   "view": "furn",
+   "key": "hali",
+   "az": 0.6,
+   "el": 0.7,
+   "w": 1000,
+   "h": 800
+  }
+ },
+ {
+  "name": "m-bitki.png",
+  "q": {
+   "view": "furn",
+   "key": "bitki",
+   "az": 0.6,
+   "el": 0.2,
+   "w": 800,
+   "h": 1000
+  }
+ },
+ {
+  "name": "m-tum-set.png",
+  "q": {
+   "view": "furn",
+   "az": -0.55,
+   "el": 0.85,
+   "nolabel": 1,
+   "w": 1600,
+   "h": 1100
+  }
+ },
+ {
+  "name": "yatak-odasi.glb",
+  "glb": true,
+  "q": {
+   "view": "iso",
+   "cam": {
+    "p": [
+     0,
+     0,
+     0
+    ],
+    "t": [
+     1,
+     0,
+     0
+    ]
+   }
+  }
+ }
+]

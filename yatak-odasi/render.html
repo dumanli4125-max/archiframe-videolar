@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"./three/build/three.module.js","three/addons/":"./three/examples/jsm/"}}</script>
+<style>html,body{margin:0;background:#fff}canvas{display:block}</style></head><body>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { R, FURN, buildShell, buildFurniture, addLights } from './room.js';
+
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1600, H = +q.get('h') || 1000;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = +q.get('exp') || 1.0;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(q.get('bg') || '#f3f0eb');
+const pm = new THREE.PMREMGenerator(renderer);
+scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = 0.55;
+
+const view = q.get('view') || 'iso';
+let cam;
+window.__api = {};
+
+let LBL = 9;
+function labelSprite(text, size = 26) {
+  const c = document.createElement('canvas'); const g = c.getContext('2d');
+  g.font = `600 ${size * 2}px Inter, Arial`; const w = g.measureText(text).width + 30;
+  c.width = w; c.height = size * 2 + 20; g.font = `600 ${size * 2}px Inter, Arial`;
+  g.fillStyle = 'rgba(255,255,255,0.92)'; g.fillRect(0, 0, c.width, c.height);
+  g.fillStyle = '#7a3e1d'; g.textBaseline = 'middle'; g.fillText(text, 15, c.height / 2);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, depthTest: false }));
+  s.scale.set(c.width / c.height * LBL, LBL, 1); s.renderOrder = 999; return s;
+}
+function dim(a, b, text, grp) {
+  const m = new THREE.LineBasicMaterial({ color: 0x7a3e1d, depthTest: false });
+  const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), m); l.renderOrder = 998; grp.add(l);
+  const d = b.clone().sub(a).normalize(); const perp = new THREE.Vector3(-d.z, 0, d.x); if (perp.lengthSq() < .1) perp.set(1, 0, 0);
+  [a, b].forEach(p => { const t = new THREE.Line(new THREE.BufferGeometry().setFromPoints([p.clone().addScaledVector(perp, 3).add(new THREE.Vector3(0, 3, 0)), p.clone().addScaledVector(perp, -3).add(new THREE.Vector3(0, -3, 0))]), m); t.renderOrder = 998; grp.add(t); });
+  const s = labelSprite(text); s.position.copy(a).add(b).multiplyScalar(0.5); grp.add(s);
+}
+
+if (view === 'furn') {
+  const key = q.get('key');
+  const f = buildFurniture(key); scene.add(f);
+  scene.background = new THREE.Color('#f6f3ee');
+  const bb = new THREE.Box3().setFromObject(f); const c = bb.getCenter(new THREE.Vector3()); const s = bb.getSize(new THREE.Vector3());
+  f.position.set(-c.x, -bb.min.y, -c.z);
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(2000, 2000), new THREE.ShadowMaterial({ opacity: 0.18 }));
+  ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  addLights(scene, { interior: false });
+  LBL = Math.max(s.x, s.y, s.z) * 0.055;
+  const lk = q.get('nolabel') ? null : new THREE.Group(); 
+  if (lk) {
+    const x0 = -s.x / 2, x1 = s.x / 2, z0 = -s.z / 2, z1 = s.z / 2, off = 12;
+    dim(new THREE.Vector3(x0, 0, z1 + off), new THREE.Vector3(x1, 0, z1 + off), `${Math.round(s.x)} cm`, lk);
+    dim(new THREE.Vector3(x1 + off, 0, z0), new THREE.Vector3(x1 + off, 0, z1), `${Math.round(s.z)} cm`, lk);
+    dim(new THREE.Vector3(x0 - off, 0, z1), new THREE.Vector3(x0 - off, s.y, z1), `${Math.round(s.y)} cm`, lk);
+    scene.add(lk);
+  }
+  const az = +(q.get('az') ?? 0.75), el = +(q.get('el') ?? 0.42);
+  const r = Math.max(s.x, s.y, s.z) * 2.25;
+  cam = new THREE.PerspectiveCamera(30, W / H, 1, 5000);
+  cam.position.set(Math.sin(az) * Math.cos(el) * r, s.y / 2 + Math.sin(el) * r, Math.cos(az) * Math.cos(el) * r);
+  cam.lookAt(0, s.y * 0.42, 0);
+} else {
+  const shell = buildShell(); scene.add(shell);
+  const furn = buildFurniture(); scene.add(furn);
+  addLights(scene);
+  const hide = (q.get('hide') || '').split(',').filter(Boolean);
+  shell.traverse(o => { if (hide.includes(o.userData.tag)) o.visible = false; });
+  const v = JSON.parse(q.get('cam') || 'null');
+  if (view === 'plan') {
+    const pad = 40; const a = W / H; const hh = (R.L + 2 * pad + 120) / 2; 
+    cam = new THREE.OrthographicCamera(-hh * a, hh * a, hh, -hh, 1, 2000);
+    cam.position.set(R.W / 2, 1000, R.L / 2 + 40); cam.up.set(0, 0, -1); cam.lookAt(R.W / 2, 0, R.L / 2 + 40);
+  } else {
+    cam = new THREE.PerspectiveCamera(v.fov || 60, W / H, 1, 5000);
+    cam.position.set(...v.p); cam.lookAt(...v.t);
+  }
+  window.__api.exportGLB = () => new Promise(res => {
+    new GLTFExporter().parse(scene, ab => {
+      let s = ''; const u = new Uint8Array(ab); for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode.apply(null, u.subarray(i, i + 8192));
+      res(btoa(s));
+    }, e => res('ERR ' + e), { binary: true, onlyVisible: true });
+  });
+}
+renderer.render(scene, cam);
+window.__done = true;
+</script></body></html>
