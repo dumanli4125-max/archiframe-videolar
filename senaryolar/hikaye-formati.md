@@ -9,14 +9,15 @@ Hikâye kalıbında cevap **saklanır**, bir insanın derdinin içinden çıkar.
 
 | # | Bölüm | Süre | Ne olur |
 |---|-------|------|---------|
-| 1 | **Sahne** | 0–6 sn | Yer + tarih + kişi. Olayın tam ortasından aç. Ekranda sinematik başlık kartı: `OKAYAMA · 1965` |
-| 2 | **Dert** | 6–16 sn | Kahraman neyi çözemiyor? Tek cümlelik soru. |
+| 1 | **Kanca** | 0–6 sn | İlk cümle doğrudan konuyu ve merak unsurunu söyler ("Her gün üstüne bastığın bu sarı taşlar süs değil."). İlk karede konu görüntüsü, büyük başlık ve altyazı hazır olur; açılış kartı, kararma ya da bekleme yok. |
+| 2 | **Sahne + dert** | 6–16 sn | Yer, tarih ve kişi tek cümlede geçer; ekranda kısa bir damga olur (`OKAYAMA · 1965`). Kahraman neyi çözemiyor? Tek cümlelik soru. |
 | 3 | **Deneme** | 16–34 sn | Ne yaptı, ne ters gitti, kim "olmaz" dedi. Rakam ve tarih burada. |
 | 4 | **Dönüm** | 34–46 sn | Buluş anı = videonun bilgisi. "Neden?" sorusunun cevabı burada verilir. |
 | 5 | **Bugün** | 46–55 sn | İzleyicinin kendi evine/sokağına dönüş. Son cümle açılıştaki ayrıntıya geri bağlanır. |
 
 Kurallar:
-- "Kısa cevap", "Ters köşe", "Özetle" yok. Cevap 4. bölümden önce söylenmez.
+- Kanca ilk saniyede başlar: video yer-tarih kartıyla açılmaz, ses ilk karede konuya girer. (Kanal sahibinin 25 Kasım 2026 geri bildirimi: "girişte çok bekliyorsun, asıl konuyu girişte vurgula.")
+- "Kısa cevap", "Ters köşe", "Özetle" yok. Kanca konuyu ve merakı verir; nasıl ve neden sorusunun cevabı 4. bölümden önce söylenmez.
 - Şimdiki zaman kullan ("döşeniyor", "duruyor"): olay izleyicinin önünde oluyor.
 - Her hikâyede en az bir tarih, bir yer, bir isim, bir rakam.
 - Emin olunmayan anekdot "anlatılana göre" ile verilir; uydurma diyalog yok.
@@ -31,20 +32,26 @@ Seslendirme: mevcut ayarlarla aynı (ElevenLabs `eleven_v3`, ses `c9eIhSvMHBxtYh
 Mevcut konu: *Kaldırımdaki Sarı Taşlar Kimin İçin?* · Başlık önerisi: **Kaldırımdaki Sarı Taşları Kim, Kimin İçin İcat Etti? #shorts**
 
 ```
-[warmly] Japonya, Okayama. Yıl 1965. Seiichi Miyake'nin bir arkadaşı yavaş yavaş görmeyi kaybediyor.
+[curious] Her gün üstüne bastığın bu sarı taşlar süs değil. Bir adam, görmeyi kaybeden arkadaşı için icat etti.
 
-Miyake bir mühendis. Aklı tek bir soruda: yolun bittiği yeri, karşıya geçilecek noktayı, gözü görmeyen biri nereden bilecek?
+[warmly] Japonya, Okayama, 1965. Seiichi Miyake bir mühendis. Bir arkadaşı yavaş yavaş görmeyi kaybediyor.
+
+Aklı tek bir soruda: yolun bittiği yeri, karşıya geçilecek noktayı, gözü görmeyen biri nereden bilecek?
 
 [curious] Sonra bir fikir geliyor. Yol, ayağa konuşsa? Kendi parasıyla, üstü kabartmalı bloklar yaptırıyor.
 
-18 Mart 1967. İlk bloklar Okayama'da, görme engelliler okulunun orada yere döşeniyor. İki işaret var. Uzun çizgiler: bu yönde yürü. Yuvarlak kabarcıklar: dikkat, önünde tehlike var. Rengi de parlak, az gören gözler seçebilsin diye.
+18 Mart 1967. İlk bloklar Okayama'da, görme engelliler okulunun orada döşeniyor.
+
+İki işaret var. Uzun çizgiler: bu yönde yürü. Yuvarlak kabarcıklar: dikkat, önünde tehlike var.
 
 On yıl sonra Japon demiryolları bunu zorunlu tutuyor. Ardından dünya.
 
-[warmly] Bugün kaldırımda bastığın sarı taşlar süs değil. Bir adamın, arkadaşı sokağa tek başına çıkabilsin diye yazdığı mektup. Üstüne park edilen her araba, o mektubun bir satırını siliyor.
+[warmly] Bugün bastığın her sarı taş, o adamın arkadaşına yazdığı bir mektup. Üstüne park edilen her araba, o mektubun bir satırını siliyor.
 ```
 
-Sahneler: (1) başlık kartı `OKAYAMA · 1965`, 60'lar Japon sokağı · (2) atölyede çizim masası, yan yana yürüyen iki arkadaş · (3) elde kabartmalı beton blok, yakın plan · (4) `18 MART 1967` — yaya geçidi önüne döşenen ilk bloklar; çizgi/kabarcık üstten grafik · (5) tren peronu kenarında sarı şerit · (6) bugünün Türkiye kaldırımı, sarı taşın üstüne park etmiş araba.
+Sahneler: (1) kanca: bugünün kaldırımı, sarı şerit üstünde yürüyenler + büyük başlık `SARI TAŞLARI KİM İCAT ETTİ?`; ardından elde kabartmalı blok · (2) damga `OKAYAMA · 1965`, yan yana yürüyen iki arkadaş · (3) kaldırım kenarında baston · (4) atölyede bloğa dokunan el · (5) `18 MART 1967`, ilk blokları döşeyen işçiler · (6) çizgi/kabarcık şeması · (7) tren peronu kenarında sarı şerit · (8) yağmurlu kaldırımda sarı şerit, ardından üstüne park etmiş araba.
+
+Güncel video (`sari-taslar-hikaye-dikey-yt.mp4`) bu metinle yapıldı; seslendirme: `01-sari-taslar-kancali-ses.mp3`, 52,7 sn. Instagram ve Facebook'ta 25 Kasım'da yayınlanan sürüm, yer-tarih kartıyla açılan önceki metindi.
 
 ## 2. Şehrin Üstündeki Gri Örtü — "Londra'nın Kaybolduğu Beş Gün"
 
