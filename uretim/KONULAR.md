@@ -47,5 +47,34 @@ Durum: ✅ yayınlandı · 🎬 üretildi · ⏳ sırada
 | 31 | Algoritma | "Bu videoyu sen mi seçtin, o mu seni?" | Akış seni şekillendiriyor | ⏳ |
 | 32 | Fazla çalışmak | "Yorgunluk övünülecek bir şey mi?" | "Hiç izin kullanmadım" gururu | ⏳ |
 
+## C) Beyin, psikoloji ve etkileşimli testler (piekattentioncom'dan ilham, bizim tarzımızla)
+
+Bu sayfada en çok izlenenler: 15 saniyelik dikkat testi (2,9 Mn), akıldan geçeni bilme (1,9 Mn),
+7,5 saat uyku (1,5 Mn), şifre unutma (1,5 Mn), DEHB'li sohbet (1,3 Mn), "neden kaçtı?" (614 B).
+Testler izleyiciyi sonuna kadar tutuyor ve yorumda cevap yazdırıyor. Bu yüzden etkileşimi en yüksek tür bu.
+Görselleri ve karakterleri kopyalamıyoruz; fikri SEN karakteri ve gece mavisi/kehribar paletiyle yeniden kuruyoruz.
+
+| # | Konu | Kanca | Video fikri | Tür | Durum |
+|---|------|-------|-------------|-----|-------|
+| 33 | 15 saniyelik dikkat testi | "15 saniye. Değişen şeyi bulabilecek misin?" | Odada bir eşya sessizce değişir; sonda tekrar göster | Test | ⏳ |
+| 34 | Aklından geçeni biliyorum | "Bir sayı tut. Söylemeden bileceğim." | Sayı/hayvan hilesi adım adım; sonda cevap | Test | ⏳ |
+| 35 | 7,5 saat mi 8 saat mi | "8 saat uyudun, neden hâlâ yorgunsun?" | 90 dakikalık uyku döngüsü, ortasında uyanan SEN | Bilgi | ⏳ |
+| 36 | Şifreyi neden unutuyoruz | "Yeni şifre ne? Daha az önce yazmıştın." | Kısa süreli bellek, kapıdan geçince unutma etkisi | Bilgi | ⏳ |
+| 37 | Dikkati dağınık biriyle sohbet | "Bi dakka... ne diyordum?" | Konudan konuya atlayan sohbet, çay bardakları | Bilgi | ⏳ |
+| 38 | Neden kaçtı? | "Gece yarısı neden yataktan kaçtı?" | Uyku felci / gece kalkma, gizem havası | Gizem | ⏳ |
+| 39 | Takip edebilir misin? | "Ambulansı gözünle takip et." | Bardak/araç karıştırma oyunu, sonda cevap | Test | ⏳ |
+| 40 | Oturunca bacak sallamak | "Otururken bacağın neden sallanır?" | Huzursuzluk, enerji atma, sinir sistemi | Bilgi | ⏳ |
+| 41 | Duydu ama yapmadı | "Duydu. Peki neden yapmadı?" | Çok adımlı talimat; 1. adım tamam, gerisi uçtu | Bilgi | ⏳ |
+| 42 | Bakmadın bile, dikkatin dağıldı | "Telefona bakmadın bile. Dikkatin neden gitti?" | Masadaki telefonun varlığı bile odağı düşürür | Bilgi | ⏳ |
+| 43 | Zeki çocuk tuzağı | "Sana hep 'zeki' mi dediler?" | Övgü korkusu, hata yapmaktan kaçan yetişkin | Bilgi | ⏳ |
+| 44 | Daldan dala | "Bir işe başlayıp beşini yarım bıraktın mı?" | Sincap gibi işten işe atlama | Bilgi | ⏳ |
+| 45 | Seviyorum ama unuttum | "Doğum gününü unuttun. Sevmiyor musun?" | Unutkanlık ≠ ilgisizlik | Bilgi | ⏳ |
+| 46 | Türkçe kolay mı? | "Bu cümleyi ilk seferde doğru oku." | Okuma/algı oyunu, harf karışıklığı | Test | ⏳ |
+
+### Günlük karışım (günde 3 video)
+- 12:30 → Test veya bilgi videosu (C) — yüksek tutma, yorumda cevap
+- 18:30 → Toplumsal hikâye (A veya B)
+- 21:30 → Toplumsal hikâye (A veya B) — duygusal final, kaydetme/paylaşım alır
+
 Kanca kuralları: soru ile başla, ikinci kişi ("sen") kullan, ilk 2 saniyede sayı/fiyat/saat gibi somut bir şey ver,
 sonda izleyicinin bugün yapabileceği küçük bir eylem söyle.
