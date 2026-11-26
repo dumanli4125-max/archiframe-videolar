@@ -1,0 +1,734 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 4.72,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Uçağa binerken elin titriyor. Arabaya binerken... hiç düşündün mü?",
+  "transkript": "Uçağa binerken elin titriyor. Arabaya binerken hiç düşündün mu?",
+  "bitis": 4.9,
+  "kelimeler": [
+   {
+    "k": "Uçağa",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 0.4
+   },
+   {
+    "k": "binerken",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 0.7
+   },
+   {
+    "k": "elin",
+    "bas": 1.0,
+    "son": 1.2,
+    "mutlak": 1.3
+   },
+   {
+    "k": "titriyor.",
+    "bas": 1.2,
+    "son": 1.8,
+    "mutlak": 1.5
+   },
+   {
+    "k": "Arabaya",
+    "bas": 2.3,
+    "son": 2.6,
+    "mutlak": 2.6
+   },
+   {
+    "k": "binerken",
+    "bas": 2.6,
+    "son": 3.4,
+    "mutlak": 2.9
+   },
+   {
+    "k": "hiç",
+    "bas": 3.8,
+    "son": 4.0,
+    "mutlak": 4.1
+   },
+   {
+    "k": "düşündün",
+    "bas": 4.0,
+    "son": 4.4,
+    "mutlak": 4.3
+   },
+   {
+    "k": "mu?",
+    "bas": 4.4,
+    "son": 4.6,
+    "mutlak": 4.7
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 5.25,
+  "sure": 5.2,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Havalimanı. Koltuğa yapıştın, avuçların terli. Kemer çoktan takılı.",
+  "transkript": "Havalimanı. Koltuğa yapıştın, avuçların terli. Kemer çoktan takılı.",
+  "bitis": 10.25,
+  "kelimeler": [
+   {
+    "k": "Havalimanı.",
+    "bas": 0.1,
+    "son": 0.6,
+    "mutlak": 5.35
+   },
+   {
+    "k": "Koltuğa",
+    "bas": 1.2,
+    "son": 1.6,
+    "mutlak": 6.45
+   },
+   {
+    "k": "yapıştın,",
+    "bas": 1.6,
+    "son": 2.3,
+    "mutlak": 6.85
+   },
+   {
+    "k": "avuçların",
+    "bas": 2.4,
+    "son": 2.9,
+    "mutlak": 7.65
+   },
+   {
+    "k": "terli.",
+    "bas": 2.9,
+    "son": 3.3,
+    "mutlak": 8.15
+   },
+   {
+    "k": "Kemer",
+    "bas": 3.9,
+    "son": 4.2,
+    "mutlak": 9.15
+   },
+   {
+    "k": "çoktan",
+    "bas": 4.2,
+    "son": 4.6,
+    "mutlak": 9.45
+   },
+   {
+    "k": "takılı.",
+    "bas": 4.6,
+    "son": 5.0,
+    "mutlak": 9.85
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 10.85,
+  "sure": 3.92,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Uçak kalkıyor. Gözler kapalı, eller koltukta.",
+  "transkript": "Uçak kalkıyor. Gözler kapalı, eller koltukta.",
+  "bitis": 14.55,
+  "kelimeler": [
+   {
+    "k": "Uçak",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 10.95
+   },
+   {
+    "k": "kalkıyor.",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 11.25
+   },
+   {
+    "k": "Gözler",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 12.65
+   },
+   {
+    "k": "kapalı,",
+    "bas": 2.2,
+    "son": 2.7,
+    "mutlak": 13.05
+   },
+   {
+    "k": "eller",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 13.75
+   },
+   {
+    "k": "koltukta.",
+    "bas": 3.2,
+    "son": 3.7,
+    "mutlak": 14.05
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 14.9,
+  "sure": 5.52,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Hostes gülümsese, rahatlıyorsun. Ufak bir sarsıntı olsa... duaya başlıyorsun.",
+  "transkript": "Hostes gülümsese rahatlıyorsun. Ufak bir sarsıntı olsa duaya başlıyorsun.",
+  "bitis": 20.3,
+  "kelimeler": [
+   {
+    "k": "Hostes",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 15.0
+   },
+   {
+    "k": "gülümsese",
+    "bas": 0.5,
+    "son": 1.2,
+    "mutlak": 15.4
+   },
+   {
+    "k": "rahatlıyorsun.",
+    "bas": 1.3,
+    "son": 2.0,
+    "mutlak": 16.2
+   },
+   {
+    "k": "Ufak",
+    "bas": 2.7,
+    "son": 3.0,
+    "mutlak": 17.6
+   },
+   {
+    "k": "bir",
+    "bas": 3.0,
+    "son": 3.1,
+    "mutlak": 17.9
+   },
+   {
+    "k": "sarsıntı",
+    "bas": 3.1,
+    "son": 3.6,
+    "mutlak": 18.0
+   },
+   {
+    "k": "olsa",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 18.5
+   },
+   {
+    "k": "duaya",
+    "bas": 4.4,
+    "son": 4.7,
+    "mutlak": 19.3
+   },
+   {
+    "k": "başlıyorsun.",
+    "bas": 4.7,
+    "son": 5.4,
+    "mutlak": 19.6
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 20.65,
+  "sure": 4.56,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "İndin, oh be. Arabaya bindin. Kemer? Boş ver, yakın zaten.",
+  "transkript": "İndin. Oh be. Arabaya bindin. Kemer? Boş ver. Yakın zaten.",
+  "bitis": 25.05,
+  "kelimeler": [
+   {
+    "k": "İndin.",
+    "bas": 0.1,
+    "son": 0.6,
+    "mutlak": 20.75
+   },
+   {
+    "k": "Oh",
+    "bas": 0.6,
+    "son": 0.8,
+    "mutlak": 21.25
+   },
+   {
+    "k": "be.",
+    "bas": 0.8,
+    "son": 1.1,
+    "mutlak": 21.45
+   },
+   {
+    "k": "Arabaya",
+    "bas": 1.2,
+    "son": 1.6,
+    "mutlak": 21.85
+   },
+   {
+    "k": "bindin.",
+    "bas": 1.6,
+    "son": 1.9,
+    "mutlak": 22.25
+   },
+   {
+    "k": "Kemer?",
+    "bas": 2.2,
+    "son": 2.6,
+    "mutlak": 22.85
+   },
+   {
+    "k": "Boş",
+    "bas": 3.0,
+    "son": 3.3,
+    "mutlak": 23.65
+   },
+   {
+    "k": "ver.",
+    "bas": 3.3,
+    "son": 3.5,
+    "mutlak": 23.95
+   },
+   {
+    "k": "Yakın",
+    "bas": 3.8,
+    "son": 4.1,
+    "mutlak": 24.45
+   },
+   {
+    "k": "zaten.",
+    "bas": 4.1,
+    "son": 4.4,
+    "mutlak": 24.75
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 25.4,
+  "sure": 4.08,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Bir elde telefon, radyo sonuna kadar açık. Gaza bastın.",
+  "transkript": "Bir elde telefon, radyo sonuna kadar açık. Gaza bastın.",
+  "bitis": 29.4,
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.3,
+    "mutlak": 25.5
+   },
+   {
+    "k": "elde",
+    "bas": 0.3,
+    "son": 0.5,
+    "mutlak": 25.7
+   },
+   {
+    "k": "telefon,",
+    "bas": 0.5,
+    "son": 1.2,
+    "mutlak": 25.9
+   },
+   {
+    "k": "radyo",
+    "bas": 1.3,
+    "son": 1.7,
+    "mutlak": 26.7
+   },
+   {
+    "k": "sonuna",
+    "bas": 1.7,
+    "son": 2.0,
+    "mutlak": 27.1
+   },
+   {
+    "k": "kadar",
+    "bas": 2.0,
+    "son": 2.2,
+    "mutlak": 27.4
+   },
+   {
+    "k": "açık.",
+    "bas": 2.2,
+    "son": 2.6,
+    "mutlak": 27.6
+   },
+   {
+    "k": "Gaza",
+    "bas": 3.3,
+    "son": 3.5,
+    "mutlak": 28.7
+   },
+   {
+    "k": "bastın.",
+    "bas": 3.5,
+    "son": 4.0,
+    "mutlak": 28.9
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 30.25,
+  "sure": 3.44,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "metin": "Halbuki kaza riski... arabada kat kat daha fazla.",
+  "transkript": "Halbuki kaza riski arabada kat kat daha fazla.",
+  "bitis": 33.55,
+  "kelimeler": [
+   {
+    "k": "Halbuki",
+    "bas": 0.3,
+    "son": 0.6,
+    "mutlak": 30.55
+   },
+   {
+    "k": "kaza",
+    "bas": 0.6,
+    "son": 1.0,
+    "mutlak": 30.85
+   },
+   {
+    "k": "riski",
+    "bas": 1.0,
+    "son": 1.5,
+    "mutlak": 31.25
+   },
+   {
+    "k": "arabada",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 32.05
+   },
+   {
+    "k": "kat",
+    "bas": 2.2,
+    "son": 2.4,
+    "mutlak": 32.45
+   },
+   {
+    "k": "kat",
+    "bas": 2.4,
+    "son": 2.6,
+    "mutlak": 32.65
+   },
+   {
+    "k": "daha",
+    "bas": 2.6,
+    "son": 2.9,
+    "mutlak": 32.85
+   },
+   {
+    "k": "fazla.",
+    "bas": 2.9,
+    "son": 3.3,
+    "mutlak": 33.15
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 33.9,
+  "sure": 2.96,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Korktuğun şey nadir, ama haberlere çıkıyor.",
+  "transkript": "Korktuğun şey nadir ama haberlere çıkıyor.",
+  "bitis": 36.6,
+  "kelimeler": [
+   {
+    "k": "Korktuğun",
+    "bas": 0.1,
+    "son": 0.6,
+    "mutlak": 34.0
+   },
+   {
+    "k": "şey",
+    "bas": 0.6,
+    "son": 0.8,
+    "mutlak": 34.5
+   },
+   {
+    "k": "nadir",
+    "bas": 0.8,
+    "son": 1.5,
+    "mutlak": 34.7
+   },
+   {
+    "k": "ama",
+    "bas": 1.5,
+    "son": 1.7,
+    "mutlak": 35.4
+   },
+   {
+    "k": "haberlere",
+    "bas": 1.7,
+    "son": 2.2,
+    "mutlak": 35.6
+   },
+   {
+    "k": "çıkıyor.",
+    "bas": 2.2,
+    "son": 2.7,
+    "mutlak": 36.1
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 36.95,
+  "sure": 4.0,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Her gün yaptığın şey... sıradan. O yüzden korkmuyorsun.",
+  "transkript": "Her gün yaptığın şey sıradan. O yüzden korkmuyorsun.",
+  "bitis": 40.75,
+  "kelimeler": [
+   {
+    "k": "Her",
+    "bas": 0.1,
+    "son": 0.3,
+    "mutlak": 37.05
+   },
+   {
+    "k": "gün",
+    "bas": 0.3,
+    "son": 0.5,
+    "mutlak": 37.25
+   },
+   {
+    "k": "yaptığın",
+    "bas": 0.5,
+    "son": 0.9,
+    "mutlak": 37.45
+   },
+   {
+    "k": "şey",
+    "bas": 0.9,
+    "son": 1.2,
+    "mutlak": 37.85
+   },
+   {
+    "k": "sıradan.",
+    "bas": 1.6,
+    "son": 2.1,
+    "mutlak": 38.55
+   },
+   {
+    "k": "O",
+    "bas": 2.8,
+    "son": 2.9,
+    "mutlak": 39.75
+   },
+   {
+    "k": "yüzden",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 39.85
+   },
+   {
+    "k": "korkmuyorsun.",
+    "bas": 3.2,
+    "son": 3.8,
+    "mutlak": 40.15
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 41.6,
+  "sure": 4.48,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Telefona bildirim geldi. Baktın. Önünde... fren lambaları.",
+  "transkript": "Telefona bildirim geldi. Baktın. Önünde fren lambaları.",
+  "bitis": 45.9,
+  "kelimeler": [
+   {
+    "k": "Telefona",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 41.7
+   },
+   {
+    "k": "bildirim",
+    "bas": 0.5,
+    "son": 0.9,
+    "mutlak": 42.1
+   },
+   {
+    "k": "geldi.",
+    "bas": 0.9,
+    "son": 1.4,
+    "mutlak": 42.5
+   },
+   {
+    "k": "Baktın.",
+    "bas": 1.7,
+    "son": 2.1,
+    "mutlak": 43.3
+   },
+   {
+    "k": "Önünde",
+    "bas": 2.7,
+    "son": 3.2,
+    "mutlak": 44.3
+   },
+   {
+    "k": "fren",
+    "bas": 3.5,
+    "son": 3.8,
+    "mutlak": 45.1
+   },
+   {
+    "k": "lambaları.",
+    "bas": 3.8,
+    "son": 4.3,
+    "mutlak": 45.4
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 46.25,
+  "sure": 4.56,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Frene asıldın. Son anda durdun. Ellerin titriyor... bu sefer arabada.",
+  "transkript": "Frene asıldın. Son anda durdun. Ellerin titriyor. Bu sefer arabada.",
+  "bitis": 50.65,
+  "kelimeler": [
+   {
+    "k": "Frene",
+    "bas": 0.2,
+    "son": 0.4,
+    "mutlak": 46.45
+   },
+   {
+    "k": "asıldın.",
+    "bas": 0.4,
+    "son": 1.1,
+    "mutlak": 46.65
+   },
+   {
+    "k": "Son",
+    "bas": 1.2,
+    "son": 1.4,
+    "mutlak": 47.45
+   },
+   {
+    "k": "anda",
+    "bas": 1.4,
+    "son": 1.7,
+    "mutlak": 47.65
+   },
+   {
+    "k": "durdun.",
+    "bas": 1.7,
+    "son": 2.2,
+    "mutlak": 47.95
+   },
+   {
+    "k": "Ellerin",
+    "bas": 2.4,
+    "son": 2.9,
+    "mutlak": 48.65
+   },
+   {
+    "k": "titriyor.",
+    "bas": 2.9,
+    "son": 3.5,
+    "mutlak": 49.15
+   },
+   {
+    "k": "Bu",
+    "bas": 3.6,
+    "son": 3.7,
+    "mutlak": 49.85
+   },
+   {
+    "k": "sefer",
+    "bas": 3.7,
+    "son": 4.0,
+    "mutlak": 49.95
+   },
+   {
+    "k": "arabada.",
+    "bas": 4.0,
+    "son": 4.4,
+    "mutlak": 50.25
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 51.6,
+  "sure": 4.88,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "metin": "Bugün arabaya binince... önce kemeri tak. Telefonu arka koltuğa at.",
+  "transkript": "Bugün arabaya binince önce kemeri tak. Telefonu arka koltuğa at.",
+  "bitis": 56.3,
+  "kelimeler": [
+   {
+    "k": "Bugün",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 51.7
+   },
+   {
+    "k": "arabaya",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 52.0
+   },
+   {
+    "k": "binince",
+    "bas": 0.7,
+    "son": 1.2,
+    "mutlak": 52.3
+   },
+   {
+    "k": "önce",
+    "bas": 1.9,
+    "son": 2.2,
+    "mutlak": 53.5
+   },
+   {
+    "k": "kemeri",
+    "bas": 2.2,
+    "son": 2.5,
+    "mutlak": 53.8
+   },
+   {
+    "k": "tak.",
+    "bas": 2.5,
+    "son": 2.7,
+    "mutlak": 54.1
+   },
+   {
+    "k": "Telefonu",
+    "bas": 3.4,
+    "son": 3.8,
+    "mutlak": 55.0
+   },
+   {
+    "k": "arka",
+    "bas": 3.8,
+    "son": 4.1,
+    "mutlak": 55.4
+   },
+   {
+    "k": "koltuğa",
+    "bas": 4.1,
+    "son": 4.5,
+    "mutlak": 55.7
+   },
+   {
+    "k": "at.",
+    "bas": 4.5,
+    "son": 4.7,
+    "mutlak": 56.1
+   }
+  ]
+ }
+}

@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır, videodaki başlangıç sn, hız, tempo, metin. Tümü transcribe ile doğrulandı.
+# l04 ilk denemede "Hostes gülse" -> "Hostes Gülseren" duyuldu; "Hostes gülümsese," yapılıp yeniden üretildi.
+l01 0.3   0.85  1.0  Uçağa binerken elin titriyor. Arabaya binerken... hiç düşündün mü?
+l02 5.25  0.85  1.0  Havalimanı. Koltuğa yapıştın, avuçların terli. Kemer çoktan takılı.
+l03 10.85 0.85  1.0  Uçak kalkıyor. Gözler kapalı, eller koltukta.
+l04 14.9  0.85  1.0  Hostes gülümsese, rahatlıyorsun. Ufak bir sarsıntı olsa... duaya başlıyorsun.
+l05 20.65 0.85  1.0  İndin, oh be. Arabaya bindin. Kemer? Boş ver, yakın zaten.
+l06 25.4  0.85  1.0  Bir elde telefon, radyo sonuna kadar açık. Gaza bastın.
+l07 30.25 0.8  1.0  Halbuki kaza riski... arabada kat kat daha fazla.
+l08 33.9  0.85  1.0  Korktuğun şey nadir, ama haberlere çıkıyor.
+l09 36.95 0.85  1.0  Her gün yaptığın şey... sıradan. O yüzden korkmuyorsun.
+l10 41.6  0.85  1.0  Telefona bildirim geldi. Baktın. Önünde... fren lambaları.
+l11 46.25 0.85  1.0  Frene asıldın. Son anda durdun. Ellerin titriyor... bu sefer arabada.
+l12 51.6  0.8  1.0  Bugün arabaya binince... önce kemeri tak. Telefonu arka koltuğa at.
