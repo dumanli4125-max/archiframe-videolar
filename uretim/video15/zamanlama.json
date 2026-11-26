@@ -1,0 +1,458 @@
+{
+ "l01": {
+  "bas": 0.3,
+  "sure": 3.76,
+  "son": 4.06,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "metin": "Birine yardım ederken... ona balık mı veriyorsun, olta mı?",
+  "kelimeler": [
+   {
+    "k": "ederken",
+    "bas": 0.8,
+    "son": 1.3,
+    "mutlak": 1.1
+   },
+   {
+    "k": "balık",
+    "bas": 1.9,
+    "son": 2.2,
+    "mutlak": 2.2
+   },
+   {
+    "k": "olta",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 3.5
+   }
+  ]
+ },
+ "l02": {
+  "bas": 4.3,
+  "sure": 5.01,
+  "son": 9.31,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Her akşam aynı saat, aynı iskele. Yaşlı balıkçı oltasını atmış, bekliyor.",
+  "kelimeler": [
+   {
+    "k": "saat",
+    "bas": 1.0,
+    "son": 1.5,
+    "mutlak": 5.23
+   },
+   {
+    "k": "iskele",
+    "bas": 1.9,
+    "son": 2.4,
+    "mutlak": 6.08
+   },
+   {
+    "k": "balıkçı",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 7.29
+   },
+   {
+    "k": "oltasını",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 7.66
+   },
+   {
+    "k": "bekliyor",
+    "bas": 4.7,
+    "son": 5.3,
+    "mutlak": 8.69
+   }
+  ]
+ },
+ "l03": {
+  "bas": 9.6,
+  "sure": 4.71,
+  "son": 14.31,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Bir genç geldi, karnı aç. Balıkçı kovadan bir balık çıkardı, uzattı.",
+  "kelimeler": [
+   {
+    "k": "genç",
+    "bas": 0.2,
+    "son": 0.5,
+    "mutlak": 9.79
+   },
+   {
+    "k": "aç",
+    "bas": 1.5,
+    "son": 1.8,
+    "mutlak": 11.0
+   },
+   {
+    "k": "Balıkçı",
+    "bas": 2.4,
+    "son": 2.8,
+    "mutlak": 11.84
+   },
+   {
+    "k": "balık",
+    "bas": 3.4,
+    "son": 3.7,
+    "mutlak": 12.78
+   },
+   {
+    "k": "uzattı",
+    "bas": 4.4,
+    "son": 5.0,
+    "mutlak": 13.71
+   }
+  ]
+ },
+ "l04": {
+  "bas": 14.6,
+  "sure": 4.86,
+  "son": 19.46,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Genç ateşte pişirdi, yedi, gitti. Ertesi akşam... yine geldi.",
+  "kelimeler": [
+   {
+    "k": "pişirdi",
+    "bas": 0.8,
+    "son": 1.4,
+    "mutlak": 15.35
+   },
+   {
+    "k": "yedi",
+    "bas": 1.7,
+    "son": 2.2,
+    "mutlak": 16.19
+   },
+   {
+    "k": "gitti",
+    "bas": 2.3,
+    "son": 2.7,
+    "mutlak": 16.75
+   },
+   {
+    "k": "Ertesi",
+    "bas": 3.4,
+    "son": 3.8,
+    "mutlak": 17.78
+   },
+   {
+    "k": "geldi",
+    "bas": 4.8,
+    "son": 5.1,
+    "mutlak": 19.09
+   }
+  ]
+ },
+ "l05": {
+  "bas": 19.7,
+  "sure": 5.91,
+  "son": 25.61,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Salı, çarşamba, perşembe... Her akşam bir balık. Her akşam biraz daha uzun bekledi.",
+  "kelimeler": [
+   {
+    "k": "Salı",
+    "bas": 0.1,
+    "son": 0.7,
+    "mutlak": 19.79
+   },
+   {
+    "k": "çarşamba",
+    "bas": 0.8,
+    "son": 1.6,
+    "mutlak": 20.45
+   },
+   {
+    "k": "perşembe",
+    "bas": 1.7,
+    "son": 2.3,
+    "mutlak": 21.29
+   },
+   {
+    "k": "balık",
+    "bas": 3.5,
+    "son": 4.0,
+    "mutlak": 22.97
+   },
+   {
+    "k": "uzun",
+    "bas": 5.4,
+    "son": 5.8,
+    "mutlak": 24.75
+   },
+   {
+    "k": "bekledi",
+    "bas": 5.8,
+    "son": 6.1,
+    "mutlak": 25.12
+   }
+  ]
+ },
+ "l06": {
+  "bas": 25.9,
+  "sure": 3.29,
+  "son": 29.19,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Karnı doyuyordu ama... gururu her gün biraz eksiliyordu.",
+  "kelimeler": [
+   {
+    "k": "doyuyordu",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 26.27
+   },
+   {
+    "k": "gururu",
+    "bas": 1.8,
+    "son": 2.1,
+    "mutlak": 27.58
+   },
+   {
+    "k": "eksiliyordu",
+    "bas": 2.7,
+    "son": 3.4,
+    "mutlak": 28.42
+   }
+  ]
+ },
+ "l07": {
+  "bas": 29.5,
+  "sure": 5.01,
+  "son": 34.51,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Sen de kardeşine her ay borç veriyorsun. Ay sonu geliyor... yine aynı yerdesiniz.",
+  "kelimeler": [
+   {
+    "k": "kardeşine",
+    "bas": 0.5,
+    "son": 1.0,
+    "mutlak": 29.97
+   },
+   {
+    "k": "ay",
+    "bas": 1.2,
+    "son": 1.3,
+    "mutlak": 30.62
+   },
+   {
+    "k": "borç",
+    "bas": 1.3,
+    "son": 1.6,
+    "mutlak": 30.71
+   },
+   {
+    "k": "sonu",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 32.21
+   },
+   {
+    "k": "yine",
+    "bas": 4.0,
+    "son": 4.3,
+    "mutlak": 33.24
+   },
+   {
+    "k": "yerdesiniz",
+    "bas": 4.5,
+    "son": 5.2,
+    "mutlak": 33.71
+   }
+  ]
+ },
+ "l08": {
+  "bas": 34.8,
+  "sure": 4.79,
+  "son": 39.59,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Bir akşam balıkçı kovayı kapattı. Genci yanına oturttu, oltayı eline verdi.",
+  "kelimeler": [
+   {
+    "k": "kovayı",
+    "bas": 1.0,
+    "son": 1.4,
+    "mutlak": 35.73
+   },
+   {
+    "k": "kapattı",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 36.11
+   },
+   {
+    "k": "oturttu",
+    "bas": 3.2,
+    "son": 3.8,
+    "mutlak": 37.79
+   },
+   {
+    "k": "oltayı",
+    "bas": 4.0,
+    "son": 4.4,
+    "mutlak": 38.54
+   },
+   {
+    "k": "verdi",
+    "bas": 4.6,
+    "son": 5.0,
+    "mutlak": 39.1
+   }
+  ]
+ },
+ "l09": {
+  "bas": 39.9,
+  "sure": 5.61,
+  "son": 45.51,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "İpi nasıl atacağını gösterdi. İlki boş. İkincisi boş. Sonra... ip gerildi!",
+  "kelimeler": [
+   {
+    "k": "gösterdi",
+    "bas": 1.0,
+    "son": 1.7,
+    "mutlak": 40.83
+   },
+   {
+    "k": "boş",
+    "bas": 2.3,
+    "son": 2.8,
+    "mutlak": 42.05
+   },
+   {
+    "k": "boş",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 43.26
+   },
+   {
+    "k": "Sonra",
+    "bas": 4.4,
+    "son": 4.9,
+    "mutlak": 44.01
+   },
+   {
+    "k": "gerildi",
+    "bas": 5.5,
+    "son": 5.9,
+    "mutlak": 45.04
+   }
+  ]
+ },
+ "l10": {
+  "bas": 45.8,
+  "sure": 6.36,
+  "son": 52.16,
+  "hiz": 0.85,
+  "tempo": 1.07,
+  "metin": "Genç kendi balığını çekti, kahkahayı bastı. Ertesi gün o, başka birine olta tutmayı gösteriyordu.",
+  "kelimeler": [
+   {
+    "k": "çekti",
+    "bas": 1.1,
+    "son": 1.7,
+    "mutlak": 46.83
+   },
+   {
+    "k": "kahkahayı",
+    "bas": 1.9,
+    "son": 2.4,
+    "mutlak": 47.58
+   },
+   {
+    "k": "Ertesi",
+    "bas": 3.5,
+    "son": 3.9,
+    "mutlak": 49.07
+   },
+   {
+    "k": "olta",
+    "bas": 5.3,
+    "son": 5.6,
+    "mutlak": 50.75
+   },
+   {
+    "k": "gösteriyordu",
+    "bas": 5.9,
+    "son": 6.6,
+    "mutlak": 51.31
+   }
+  ]
+ },
+ "l11": {
+  "bas": 52.5,
+  "sure": 3.68,
+  "son": 56.18,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "metin": "Balık, bir akşamlık. Olta, bir ömürlük.",
+  "kelimeler": [
+   {
+    "k": "Balık",
+    "bas": 0.1,
+    "son": 0.6,
+    "mutlak": 52.6
+   },
+   {
+    "k": "akşamlık",
+    "bas": 0.9,
+    "son": 1.5,
+    "mutlak": 53.4
+   },
+   {
+    "k": "Olta",
+    "bas": 2.1,
+    "son": 2.6,
+    "mutlak": 54.6
+   },
+   {
+    "k": "ömürlük",
+    "bas": 3.1,
+    "son": 3.6,
+    "mutlak": 55.6
+   }
+  ]
+ },
+ "l12": {
+  "bas": 56.6,
+  "sure": 5.6,
+  "son": 62.2,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "metin": "Bu hafta birine yardım edeceksen... sadece verme. Yanında otur, göster.",
+  "kelimeler": [
+   {
+    "k": "edeceksen",
+    "bas": 1.2,
+    "son": 1.8,
+    "mutlak": 57.8
+   },
+   {
+    "k": "verme",
+    "bas": 2.8,
+    "son": 3.1,
+    "mutlak": 59.4
+   },
+   {
+    "k": "otur",
+    "bas": 4.1,
+    "son": 4.6,
+    "mutlak": 60.7
+   },
+   {
+    "k": "göster",
+    "bas": 4.9,
+    "son": 5.4,
+    "mutlak": 61.5
+   }
+  ]
+ }
+}

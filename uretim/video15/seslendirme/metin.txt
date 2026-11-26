@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır = dosya, videodaki başlangıç saniyesi, hız, tempo.
+l01 0.3   0.85  1.0  Birine yardım ederken... ona balık mı veriyorsun, olta mı?
+l02 4.3   0.85  1.07  Her akşam aynı saat, aynı iskele. Yaşlı balıkçı oltasını atmış, bekliyor.
+l03 9.6   0.85  1.07  Bir genç geldi, karnı aç. Balıkçı kovadan bir balık çıkardı, uzattı.
+l04 14.6  0.85  1.07  Genç ateşte pişirdi, yedi, gitti. Ertesi akşam... yine geldi.
+l05 19.7  0.85  1.07  Salı, çarşamba, perşembe... Her akşam bir balık. Her akşam biraz daha uzun bekledi.
+l06 25.9  0.85  1.07  Karnı doyuyordu ama... gururu her gün biraz eksiliyordu.
+l07 29.5  0.85  1.07  Sen de kardeşine her ay borç veriyorsun. Ay sonu geliyor... yine aynı yerdesiniz.
+l08 34.8  0.85  1.07  Bir akşam balıkçı kovayı kapattı. Genci yanına oturttu, oltayı eline verdi.
+l09 39.9  0.85  1.07  İpi nasıl atacağını gösterdi. İlki boş. İkincisi boş. Sonra... ip gerildi!
+l10 45.8  0.85  1.07  Genç kendi balığını çekti, kahkahayı bastı. Ertesi gün o, başka birine olta tutmayı gösteriyordu.
+l11 52.5  0.8  1.0  Balık, bir akşamlık. Olta, bir ömürlük.
+l12 56.6  0.8  1.0  Bu hafta birine yardım edeceksen... sadece verme. Yanında otur, göster.

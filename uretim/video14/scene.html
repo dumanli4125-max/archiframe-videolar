@@ -229,10 +229,10 @@ function everyday(t){room();fade(0.3,'5,10,20');
   days.forEach((d,i)=>{const a=sm(37.05+i*0.17,37.35+i*0.17,t);if(a<=0)return;const x=135+i*135,y=760;ctx.save();ctx.globalAlpha=a;
     rr(x-58,y-90,116,180,16);ctx.fillStyle='rgba(16,30,54,.96)';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle=hexA(CR,0.5);ctx.stroke();
     txt(d,x,y-60,26,CR,'center',800);carIcon(x,y+20,0.62,CO);ctx.restore();});
-  stamp(L('SIRADAN','ORDINARY'),540,935,TE,sm(38.55,38.9,t),-0.06,60);
+  stamp(L('SIRADAN','ORDINARY'),540,915,TE,sm(38.55,38.9,t),-0.06,60);
   // SEN omuz silker, rahat
   const sh=sm(39.75,40.1,t);
-  const f=sen({x:520,y:STAND_Y,...blend({...POSE.stand,ua:14,fa:30},POSE.shrug,sh),facing:1});
+  const f=sen({x:520,y:STAND_Y+30,...blend({...POSE.stand,ua:14,fa:30},POSE.shrug,sh),facing:1});
   if(sh>0.5){happyEyes(f,1,1,CO);mouth(f,1,1,0.9);}else mouth(f,1,1,0.5);
 }
 
