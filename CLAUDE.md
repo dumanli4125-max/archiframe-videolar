@@ -105,4 +105,4 @@ Ajan: `yerellestirici` (`.claude/agents/yerellestirici.md`).
 - **Kontrol:** `bash uretim/kit/stills.sh uretim/videoNN <zamanlar> <klasör> en`
 - **Render:** `bash uretim/kit/build.sh uretim/videoNN en` → `videolar/en/<meta.cikti_en>`
 - **meta.json:** `cikti_en`, `baslik_en`, `ig_aciklama_en`, `hashtagler_en`, `yt_baslik_en`.
-- Kanal adı: `kit/engine.js` → `HANDLES.en` (şimdilik `@syntetic.en`, kesinleşince güncellenir).
+- İngilizce sayfa adı: **@syntetic.en** (`kit/engine.js` → `HANDLES.en`). Instagram: syntetic.en.

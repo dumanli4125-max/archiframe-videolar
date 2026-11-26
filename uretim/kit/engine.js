@@ -7,7 +7,7 @@ const C = {
 };
 // Dil: sahne URL'sinde ?lang=en varsa İngilizce sürüm. Metinlerde L('Türkçe','English') kullan.
 const LANG = new URLSearchParams(location.search).get('lang') || 'tr';
-const HANDLES = {tr:'@syntetic.tr', en:'@syntetic.en'};   // İngilizce sayfa adı kesinleşince burada güncelle
+const HANDLES = {tr:'@syntetic.tr', en:'@syntetic.en'};
 let HANDLE = HANDLES[LANG] || HANDLES.tr;
 const L = (tr, en) => (LANG === 'en' && en !== undefined) ? en : tr;
 const W = 1080, H = 1920, FLOOR = 1400;
