@@ -1,0 +1,795 @@
+{
+ "l01": {
+  "sure": 3.36,
+  "bas": 0.3,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Did you lose it when your washing machine broke? Be honest.",
+  "kelimeler": [
+   {
+    "k": "Did",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "you",
+    "bas": 0.3,
+    "son": 0.4
+   },
+   {
+    "k": "lose",
+    "bas": 0.4,
+    "son": 0.6
+   },
+   {
+    "k": "it",
+    "bas": 0.6,
+    "son": 0.7
+   },
+   {
+    "k": "when",
+    "bas": 0.7,
+    "son": 0.8
+   },
+   {
+    "k": "your",
+    "bas": 0.8,
+    "son": 1.0
+   },
+   {
+    "k": "washing",
+    "bas": 1.0,
+    "son": 1.3
+   },
+   {
+    "k": "machine",
+    "bas": 1.3,
+    "son": 1.6
+   },
+   {
+    "k": "broke?",
+    "bas": 1.6,
+    "son": 2.0
+   },
+   {
+    "k": "Be",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "honest.",
+    "bas": 2.8,
+    "son": 3.3
+   }
+  ]
+ },
+ "l02": {
+  "sure": 5.81,
+  "bas": 4.6,
+  "hiz": 1.0,
+  "tempo": 1.06,
+  "metin": "It shook, and shook... and stopped. Red light blinking. And you started grumbling.",
+  "kelimeler": [
+   {
+    "k": "It",
+    "bas": 0.09,
+    "son": 0.38
+   },
+   {
+    "k": "shook,",
+    "bas": 0.38,
+    "son": 0.75
+   },
+   {
+    "k": "and",
+    "bas": 0.94,
+    "son": 1.13
+   },
+   {
+    "k": "shook...",
+    "bas": 1.13,
+    "son": 1.42
+   },
+   {
+    "k": "and",
+    "bas": 1.98,
+    "son": 2.08
+   },
+   {
+    "k": "stopped.",
+    "bas": 2.08,
+    "son": 2.64
+   },
+   {
+    "k": "Red",
+    "bas": 2.92,
+    "son": 3.11
+   },
+   {
+    "k": "light",
+    "bas": 3.11,
+    "son": 3.4
+   },
+   {
+    "k": "blinking.",
+    "bas": 3.4,
+    "son": 3.87
+   },
+   {
+    "k": "And",
+    "bas": 4.53,
+    "son": 4.62
+   },
+   {
+    "k": "you",
+    "bas": 4.62,
+    "son": 4.81
+   },
+   {
+    "k": "started",
+    "bas": 4.81,
+    "son": 5.09
+   },
+   {
+    "k": "grumbling.",
+    "bas": 5.09,
+    "son": 5.66
+   }
+  ]
+ },
+ "l03": {
+  "sure": 5.76,
+  "bas": 10.3,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "You grabbed your phone: When can the repair guy come? The answer: two... hours.",
+  "kelimeler": [
+   {
+    "k": "You",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "grabbed",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "your",
+    "bas": 0.6,
+    "son": 0.7
+   },
+   {
+    "k": "phone:",
+    "bas": 0.7,
+    "son": 1.4
+   },
+   {
+    "k": "When",
+    "bas": 1.6,
+    "son": 1.9
+   },
+   {
+    "k": "can",
+    "bas": 1.9,
+    "son": 2.0
+   },
+   {
+    "k": "the",
+    "bas": 2.0,
+    "son": 2.1
+   },
+   {
+    "k": "repair",
+    "bas": 2.1,
+    "son": 2.5
+   },
+   {
+    "k": "guy",
+    "bas": 2.5,
+    "son": 2.6
+   },
+   {
+    "k": "come?",
+    "bas": 2.6,
+    "son": 3.1
+   },
+   {
+    "k": "The",
+    "bas": 3.3,
+    "son": 3.6
+   },
+   {
+    "k": "answer:",
+    "bas": 3.6,
+    "son": 4.1
+   },
+   {
+    "k": "two...",
+    "bas": 4.4,
+    "son": 5.0
+   },
+   {
+    "k": "hours.",
+    "bas": 5.0,
+    "son": 5.6
+   }
+  ]
+ },
+ "l04": {
+  "sure": 3.92,
+  "bas": 16.3,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Two hours of grumbling. Why does this always happen to me?",
+  "kelimeler": [
+   {
+    "k": "Two",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "hours",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "of",
+    "bas": 0.7,
+    "son": 0.8
+   },
+   {
+    "k": "grumbling.",
+    "bas": 0.8,
+    "son": 1.4
+   },
+   {
+    "k": "Why",
+    "bas": 2.2,
+    "son": 2.4
+   },
+   {
+    "k": "does",
+    "bas": 2.4,
+    "son": 2.5
+   },
+   {
+    "k": "this",
+    "bas": 2.5,
+    "son": 2.7
+   },
+   {
+    "k": "always",
+    "bas": 2.7,
+    "son": 3.1
+   },
+   {
+    "k": "happen",
+    "bas": 3.1,
+    "son": 3.4
+   },
+   {
+    "k": "to",
+    "bas": 3.4,
+    "son": 3.5
+   },
+   {
+    "k": "me?",
+    "bas": 3.5,
+    "son": 3.8
+   }
+  ]
+ },
+ "l05": {
+  "sure": 3.04,
+  "bas": 20.5,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Hold on. Think back. That little house.",
+  "kelimeler": [
+   {
+    "k": "Hold",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "on.",
+    "bas": 0.4,
+    "son": 0.8
+   },
+   {
+    "k": "Think",
+    "bas": 1.0,
+    "son": 1.1
+   },
+   {
+    "k": "back.",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "That",
+    "bas": 2.0,
+    "son": 2.3
+   },
+   {
+    "k": "little",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "house.",
+    "bas": 2.5,
+    "son": 3.0
+   }
+  ]
+ },
+ "l06": {
+  "sure": 4.0,
+  "bas": 23.9,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Your mom never waited for a machine. She'd set out a tub and get to work.",
+  "kelimeler": [
+   {
+    "k": "Your",
+    "bas": 0.2,
+    "son": 0.3
+   },
+   {
+    "k": "mom",
+    "bas": 0.3,
+    "son": 0.6
+   },
+   {
+    "k": "never",
+    "bas": 0.6,
+    "son": 0.8
+   },
+   {
+    "k": "waited",
+    "bas": 0.8,
+    "son": 1.1
+   },
+   {
+    "k": "for",
+    "bas": 1.1,
+    "son": 1.2
+   },
+   {
+    "k": "a",
+    "bas": 1.2,
+    "son": 1.3
+   },
+   {
+    "k": "machine.",
+    "bas": 1.3,
+    "son": 1.7
+   },
+   {
+    "k": "She'd",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "set",
+    "bas": 2.5,
+    "son": 2.7
+   },
+   {
+    "k": "out",
+    "bas": 2.7,
+    "son": 2.8
+   },
+   {
+    "k": "a",
+    "bas": 2.8,
+    "son": 2.9
+   },
+   {
+    "k": "tub",
+    "bas": 2.9,
+    "son": 3.2
+   },
+   {
+    "k": "and",
+    "bas": 3.2,
+    "son": 3.3
+   },
+   {
+    "k": "get",
+    "bas": 3.3,
+    "son": 3.5
+   },
+   {
+    "k": "to",
+    "bas": 3.5,
+    "son": 3.6
+   },
+   {
+    "k": "work.",
+    "bas": 3.6,
+    "son": 3.9
+   }
+  ]
+ },
+ "l07": {
+  "sure": 5.52,
+  "bas": 29.2,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Dead of winter, ice-cold water... She'd scrub, wring it out, and scrub again.",
+  "kelimeler": [
+   {
+    "k": "Dead",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "of",
+    "bas": 0.4,
+    "son": 0.5
+   },
+   {
+    "k": "winter,",
+    "bas": 0.5,
+    "son": 1.1
+   },
+   {
+    "k": "ice-cold",
+    "bas": 1.3,
+    "son": 1.8
+   },
+   {
+    "k": "water...",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "She'd",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "scrub,",
+    "bas": 2.8,
+    "son": 3.6
+   },
+   {
+    "k": "wring",
+    "bas": 3.7,
+    "son": 4.0
+   },
+   {
+    "k": "it",
+    "bas": 4.0,
+    "son": 4.0
+   },
+   {
+    "k": "out,",
+    "bas": 4.0,
+    "son": 4.4
+   },
+   {
+    "k": "and",
+    "bas": 4.5,
+    "son": 4.6
+   },
+   {
+    "k": "scrub",
+    "bas": 4.6,
+    "son": 5.0
+   },
+   {
+    "k": "again.",
+    "bas": 5.0,
+    "son": 5.4
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.65,
+  "bas": 35.3,
+  "hiz": 1.0,
+  "tempo": 1.03,
+  "metin": "Now and then, she'd blow on her hands. Bright red.",
+  "kelimeler": [
+   {
+    "k": "Now",
+    "bas": 0.19,
+    "son": 0.49
+   },
+   {
+    "k": "and",
+    "bas": 0.49,
+    "son": 0.58
+   },
+   {
+    "k": "then,",
+    "bas": 0.58,
+    "son": 0.97
+   },
+   {
+    "k": "she'd",
+    "bas": 1.07,
+    "son": 1.36
+   },
+   {
+    "k": "blow",
+    "bas": 1.36,
+    "son": 1.55
+   },
+   {
+    "k": "on",
+    "bas": 1.55,
+    "son": 1.65
+   },
+   {
+    "k": "her",
+    "bas": 1.65,
+    "son": 1.84
+   },
+   {
+    "k": "hands.",
+    "bas": 1.84,
+    "son": 2.23
+   },
+   {
+    "k": "Bright",
+    "bas": 2.91,
+    "son": 3.3
+   },
+   {
+    "k": "red.",
+    "bas": 3.3,
+    "son": 3.59
+   }
+  ]
+ },
+ "l09": {
+  "sure": 2.64,
+  "bas": 39.0,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Ever hear her complain? Not once.",
+  "kelimeler": [
+   {
+    "k": "Ever",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "hear",
+    "bas": 0.4,
+    "son": 0.6
+   },
+   {
+    "k": "her",
+    "bas": 0.6,
+    "son": 0.7
+   },
+   {
+    "k": "complain?",
+    "bas": 0.7,
+    "son": 1.4
+   },
+   {
+    "k": "Not",
+    "bas": 1.7,
+    "son": 2.0
+   },
+   {
+    "k": "once.",
+    "bas": 2.0,
+    "son": 2.6
+   }
+  ]
+ },
+ "l10": {
+  "sure": 4.8,
+  "bas": 42.8,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Twenty... years. Every week, same tub, same cold water.",
+  "kelimeler": [
+   {
+    "k": "Twenty...",
+    "bas": 0.2,
+    "son": 0.8
+   },
+   {
+    "k": "years.",
+    "bas": 0.9,
+    "son": 1.4
+   },
+   {
+    "k": "Every",
+    "bas": 2.0,
+    "son": 2.3
+   },
+   {
+    "k": "week,",
+    "bas": 2.3,
+    "son": 2.7
+   },
+   {
+    "k": "same",
+    "bas": 2.8,
+    "son": 3.1
+   },
+   {
+    "k": "tub,",
+    "bas": 3.1,
+    "son": 3.6
+   },
+   {
+    "k": "same",
+    "bas": 3.7,
+    "son": 4.0
+   },
+   {
+    "k": "cold",
+    "bas": 4.0,
+    "son": 4.2
+   },
+   {
+    "k": "water.",
+    "bas": 4.2,
+    "son": 4.6
+   }
+  ]
+ },
+ "l11": {
+  "sure": 4.24,
+  "bas": 47.8,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "You waited two hours for a repair guy. The whole building heard about it.",
+  "kelimeler": [
+   {
+    "k": "You",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "waited",
+    "bas": 0.4,
+    "son": 0.8
+   },
+   {
+    "k": "two",
+    "bas": 0.8,
+    "son": 1.0
+   },
+   {
+    "k": "hours",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "for",
+    "bas": 1.4,
+    "son": 1.5
+   },
+   {
+    "k": "a",
+    "bas": 1.5,
+    "son": 1.6
+   },
+   {
+    "k": "repair",
+    "bas": 1.6,
+    "son": 2.0
+   },
+   {
+    "k": "guy.",
+    "bas": 2.0,
+    "son": 2.3
+   },
+   {
+    "k": "The",
+    "bas": 2.8,
+    "son": 2.9
+   },
+   {
+    "k": "whole",
+    "bas": 2.9,
+    "son": 3.1
+   },
+   {
+    "k": "building",
+    "bas": 3.1,
+    "son": 3.5
+   },
+   {
+    "k": "heard",
+    "bas": 3.5,
+    "son": 3.8
+   },
+   {
+    "k": "about",
+    "bas": 3.8,
+    "son": 4.1
+   },
+   {
+    "k": "it.",
+    "bas": 4.1,
+    "son": 4.2
+   }
+  ]
+ },
+ "l12": {
+  "sure": 4.0,
+  "bas": 52.2,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Call your mom tonight. And next time you see her... kiss her hands.",
+  "kelimeler": [
+   {
+    "k": "Call",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "your",
+    "bas": 0.4,
+    "son": 0.6
+   },
+   {
+    "k": "mom",
+    "bas": 0.6,
+    "son": 0.8
+   },
+   {
+    "k": "tonight.",
+    "bas": 0.8,
+    "son": 1.5
+   },
+   {
+    "k": "And",
+    "bas": 1.6,
+    "son": 1.7
+   },
+   {
+    "k": "next",
+    "bas": 1.7,
+    "son": 2.0
+   },
+   {
+    "k": "time",
+    "bas": 2.0,
+    "son": 2.2
+   },
+   {
+    "k": "you",
+    "bas": 2.2,
+    "son": 2.3
+   },
+   {
+    "k": "see",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "her...",
+    "bas": 2.5,
+    "son": 2.9
+   },
+   {
+    "k": "kiss",
+    "bas": 3.0,
+    "son": 3.2
+   },
+   {
+    "k": "her",
+    "bas": 3.2,
+    "son": 3.3
+   },
+   {
+    "k": "hands.",
+    "bas": 3.3,
+    "son": 3.8
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+# Voice: Cartesia "Kyle" (sonic-3.5, Speko, speed 1.0). Line = file, start sec in video, tempo in mix, text.
+l01 0.3   1.0   Did you lose it when your washing machine broke? Be honest.
+l02 4.6   1.06  It shook, and shook... and stopped. Red light blinking. And you started grumbling.
+l03 10.3  1.0   You grabbed your phone: When can the repair guy come? The answer: two... hours.
+l04 16.3  1.0   Two hours of grumbling. Why does this always happen to me?
+l05 20.5  1.0   Hold on. Think back. That little house.
+l06 23.9  1.0   Your mom never waited for a machine. She'd set out a tub and get to work.
+l07 29.2  1.0   Dead of winter, ice-cold water... She'd scrub, wring it out, and scrub again.
+l08 35.3  1.03  Now and then, she'd blow on her hands. Bright red.
+l09 39.0  1.0   Ever hear her complain? Not once.
+l10 42.8  1.0   Twenty... years. Every week, same tub, same cold water.
+l11 47.8  1.0   You waited two hours for a repair guy. The whole building heard about it.
+l12 52.2  1.0   Call your mom tonight. And next time you see her... kiss her hands.

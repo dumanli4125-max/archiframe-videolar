@@ -8,16 +8,18 @@
 const DURATION = 58.5;
 const RED = '#ff4d4d';
 const T_STOP = 6.5;      // "durdu"
-const T_GRUMBLE = 8.7;   // "söylenmeye"
+const T_GRUMBLE = L(8.7, 9.4);   // "söylenmeye" / "grumbling"
 const T_ASK = 12.0;      // "servis ne zaman gelir"
 const T_REPLY = 13.9;    // "cevap geldi"
 const T_IKI = 14.9;      // "iki... saat"
 const T_PAST_IN = 21.3, T_PAST = 22.2, T_PAST_OUT = 47.1, T_NOW = 47.6;
-const T_BLOW = 35.6, T_RED = 37.9, T_YIL = 42.9, T_FINAL = 51.9;
+const T_BLOW = L(35.6, 36.1), T_RED = L(37.9, 38.2), T_YIL = 42.9, T_FINAL = 51.9;
+const T_REST = L(41.3, 40.6);   // "Duymadın" / "Not once"
+const T_CALL2 = L(54.25, 53.8), T_END = L(55.6, 56.1);
 
 // ---------- yardımcılar ----------
 function bigTag(text,x,y,color,alpha,sc=1){if(alpha<=0)return;ctx.save();ctx.translate(x,y);ctx.scale(sc,sc);tag(text,0,0,color,alpha);ctx.restore();}
-function msgCard(x,y,title,msg,a,col,icon,right='şimdi'){
+function msgCard(x,y,title,msg,a,col,icon,right=L('şimdi','now')){
   if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.translate(x,y+(1-a)*14);
   rr(-400,-62,800,124,26);ctx.fillStyle='rgba(16,30,54,0.96)';glow('rgba(0,0,0,.6)',30);ctx.fill();noGlow();
   ctx.lineWidth=2;ctx.strokeStyle=hexA(col,0.55);ctx.stroke();
@@ -81,8 +83,8 @@ function bathroom(t,now2){
   const shake=now2?0:(t<T_STOP?(t<1.0?sm(0,0.4,t):1)*(0.8+0.3*Math.sin(t*3)):0);
   const err=now2||t>=T_STOP;
   washer(t,shake,err);
-  if(!now2){tag('BANYO',540,1470,C.teal,sm(0.4,1.0,t)*(1-sm(5.6,6.2,t)));
-    tag('HATA',785,990,RED,sm(T_STOP+0.2,T_STOP+0.6,t)*(1-sm(10.0,10.4,t)));}
+  if(!now2){tag(L('BANYO','BATHROOM'),540,1470,C.teal,sm(0.4,1.0,t)*(1-sm(5.6,6.2,t)));
+    tag(L('HATA','ERROR'),785,990,RED,sm(T_STOP+0.2,T_STOP+0.6,t)*(1-sm(10.0,10.4,t)));}
 
   // ---- SEN
   let o, x=400, f=1, phoneOn=false, phoneLit=false, buzz=0;
@@ -163,7 +165,7 @@ function past(t){
   // ---- ANNEN (çömelmiş, ovuyor)
   const blow=sm(T_BLOW-0.3,T_BLOW+0.1,t)*(1-sm(37.6,38.1,t));
   const wring=sm(32.5,32.8,t)*(1-sm(34.2,34.6,t));
-  const rest=sm(41.3,41.6,t)*(1-sm(42.6,42.9,t));   // "Duymadın" — doğrulur, çocuğa bakar
+  const rest=sm(T_REST,T_REST+0.3,t)*(1-sm(T_REST+1.3,T_REST+1.6,t));   // "Duymadın" — doğrulur, çocuğa bakar
   const sc=Math.sin(t*9);
   let o={lean:28+sc*3,th:100,sh:-10,th2:96,sh2:-14,ua:55+sc*10,fa:30+Math.sin(t*9+0.6)*14,ua2:58-sc*9,fa2:36-Math.sin(t*9+0.6)*12,eyes:'open',look:6,nod:2};
   o=blend(o,{lean:18,ua:78+Math.sin(t*6)*4,fa:100,ua2:72-Math.sin(t*6)*4,fa2:92,look:2},wring);
@@ -197,13 +199,13 @@ function past(t){
   tag('SEN',kid.head[0],kid.head[1]-64,C.coral,sm(25.0,25.6,t));
 
   // etiketler
-  tag('YILLAR ÖNCE',540,1475,C.amber,sm(22.6,23.2,t)*(1-sm(28.5,29.0,t)));
-  tag('KIŞ',880,440,'#e9eef7',sm(29.3,29.8,t)*(1-sm(34.6,35.0,t)));
-  tag('SU BUZ GİBİ',620,1475,C.teal,sm(30.5,30.9,t)*(1-sm(34.6,35.0,t)));
+  tag(L('YILLAR ÖNCE','YEARS AGO'),540,1475,C.amber,sm(22.6,23.2,t)*(1-sm(28.5,29.0,t)));
+  tag(L('KIŞ','WINTER'),880,440,'#e9eef7',sm(29.3,29.8,t)*(1-sm(34.6,35.0,t)));
+  tag(L('SU BUZ GİBİ','ICE-COLD WATER'),620,1475,C.teal,sm(30.5,30.9,t)*(1-sm(34.6,35.0,t)));
   // 20 YIL
   const ya=sm(T_YIL,T_YIL+0.3,t)*(1-sm(46.8,47.2,t));
-  if(ya>0){const pop=1+0.25*(1-sm(T_YIL,T_YIL+0.4,t));bigText('20 YIL',540,610,130*pop,C.amber,ya,900);
-    tag('HER HAFTA',540,715,C.cream,sm(44.6,45.0,t)*(1-sm(46.8,47.2,t)));}
+  if(ya>0){const pop=1+0.25*(1-sm(T_YIL,T_YIL+0.4,t));bigText(L('20 YIL','20 YEARS'),540,610,L(130,108)*pop,C.amber,ya,900);
+    tag(L('HER HAFTA','EVERY WEEK'),540,715,C.cream,sm(44.6,45.0,t)*(1-sm(46.8,47.2,t)));}
 }
 // sepya / sıcak ton
 function warmTone(a){if(a<=0)return;ctx.save();
@@ -214,7 +216,7 @@ function warmTone(a){if(a<=0)return;ctx.save();
 
 // ---------- ALTYAZILAR ----------
 const Wt='#fff', A=C.amber, Co=C.coral, Te=C.teal;
-function caps(t){
+function caps(t){ if(LANG==='en') return capsEN(t);
   caption([[['Çamaşır makinen ',Wt],['bozuldu',A]],[['diye ',Wt],['sinirlendin ',Co],['mi?',Wt]]],0.2,2.85,t,68);
   caption([[['Hadi, ',Wt],['doğru söyle.',A]]],2.85,4.45,t,74);
   caption([[['Makine titredi, titredi...',Wt]],[['durdu.',RED]]],4.6,7.4,t);
@@ -238,14 +240,44 @@ function caps(t){
   caption([[['Sen ',Wt],['iki saat',Co]],[['servis bekledin,',Wt]]],47.8,49.8,t);
   caption([[['Apartmanı',Wt]],[['ayağa ',Wt],['kaldırdın.',Co]]],49.8,51.6,t);
 }
+function capsEN(t){
+  caption([[['Did you ',Wt],['lose it',Co],[' when your',Wt]],[['washing machine ',Wt],['broke?',A]]],0.2,2.75,t,68);
+  caption([[['Be ',Wt],['honest.',A]]],2.75,4.45,t,74);
+  caption([[['It shook, and shook...',Wt]],[['and stopped.',RED]]],4.6,7.45,t);
+  caption([[['Red light blinking.',Wt]],[['And you started ',Wt],['grumbling.',Co]]],7.45,10.2,t);
+  caption([[['You ',Wt],['grabbed',A],[' your phone:',Wt]]],10.3,13.55,t);
+  caption([[['The answer:',Wt]],[['two... hours.',A]]],13.55,16.15,t);
+  caption([[['Two hours ',A],['of grumbling.',Wt]]],16.3,18.45,t);
+  caption([[['Why does this',Wt]],[['always happen ',Wt],['to me?',Co]]],18.45,20.2,t);
+  caption([[['Hold on.',Wt]]],20.5,21.45,t,80);
+  caption([[['Think ',A],['back.',Wt]],[['That little house.',Wt]]],21.45,23.7,t);
+  caption([[['Your mom ',Wt],['never waited',A]],[['for a machine.',Wt]]],23.9,26.15,t);
+  caption([[['She\'d set out a tub',Wt]],[['and ',Wt],['get to work.',A]]],26.15,29.05,t);
+  caption([[['Dead of winter,',Wt]],[['ice-cold',Te],[' water...',Wt]]],29.2,31.75,t);
+  caption([[['She\'d scrub, wring it out,',Wt]],[['and ',Wt],['scrub again.',A]]],31.75,35.05,t);
+  caption([[['Now and then,',Wt]],[['she\'d ',Wt],['blow on her hands.',Te]]],35.3,38.15,t);
+  caption([[['Bright ',Wt],['red.',Co]]],38.15,39.1,t,72);
+  caption([[['Ever hear her',Wt]],[['complain?',A]]],39.0,40.6,t);
+  caption([[['Not once.',A]]],40.6,42.65,t,80);
+  caption([[['Twenty years.',A]]],42.8,44.75,t,74);
+  caption([[['Every week, same tub,',Wt]],[['same ',Wt],['cold water.',Te]]],44.75,47.1,t);
+  caption([[['You waited ',Wt],['two hours',Co]],[['for a repair guy.',Wt]]],47.8,50.5,t);
+  caption([[['The whole building',Wt]],[['heard ',Wt],['about it.',Co]]],50.5,52.1,t);
+}
 function finale(t){
   fade(sm(T_FINAL,T_FINAL+0.6,t)*0.86,'5,10,20');
+  if(LANG==='en'){
+    caption([[['Call ',A],['your mom',A]],[['tonight.',Wt]]],52.2,DURATION+1,t,86,720);
+    caption([[['And next time you see her...',Wt]]],T_CALL2,DURATION+1,t,56,935);
+    caption([[['Kiss ',Wt],['her hands.',Co]]],55.0,DURATION+1,t,86,1030);
+  } else {
   caption([[['Bu akşam',Wt]],[['anneni ',A],['ara.',A]]],52.2,DURATION+1,t,86,720);
   caption([[['Ellerinden ',Wt],['öp.',Co]]],54.25,DURATION+1,t,86,960);
+  }
   const ca=sm(53.0,53.4,t);
-  if(ca>0){msgCard(W/2,1160,'ANNEM','Aranıyor...',ca,C.teal,'☎','');
+  if(ca>0){msgCard(W/2,1160,L('ANNEM','MOM'),L('Aranıyor...','Calling...'),ca,C.teal,'☎','');
     ctx.save();ctx.globalAlpha=ca;for(let i=0;i<3;i++){const r_=((t*40)+i*14)%42;ctx.strokeStyle=hexA(C.teal,(1-r_/42));ctx.lineWidth=3;ctx.beginPath();ctx.arc(W/2-336,1162,36+r_,-0.9,0.9);ctx.stroke();}ctx.restore();}
-  endCard(t,55.6);
+  endCard(t,T_END);
 }
 
 function scene(t){
@@ -253,11 +285,11 @@ function scene(t){
     bathroom(t,false);
     // mesajlar
     const ma=sm(T_ASK,T_ASK+0.25,t)*(1-sm(16.0,16.4,t));
-    msgCard(W/2,520,'SEN','Servis ne zaman gelir?',ma,C.coral,'S','şimdi');
+    msgCard(W/2,520,L('SEN','YOU'),L('Servis ne zaman gelir?','When can the repair guy come?'),ma,C.coral,L('S','Y'));
     const ra=sm(T_REPLY,T_REPLY+0.25,t)*(1-sm(16.0,16.4,t));
-    msgCard(W/2,660,'SERVİS','Usta 2 saat sonra gelir.',ra,C.amber,'⚙','şimdi');
+    msgCard(W/2,660,L('SERVİS','REPAIR SERVICE'),L('Usta 2 saat sonra gelir.','Technician arrives in 2 hours.'),ra,C.amber,'⚙');
     const sa=sm(T_IKI,T_IKI+0.25,t)*(1-sm(20.4,20.9,t));
-    bigTag('2 SAAT',790,820,C.coral,sa,1.6+0.4*(1-sm(T_IKI,T_IKI+0.4,t)));
+    bigTag(L('2 SAAT','2 HOURS'),790,820,C.coral,sa,1.6+0.4*(1-sm(T_IKI,T_IKI+0.4,t)));
     fade(sm(T_PAST_IN,T_PAST,t),'120,82,48');
   } else if(t<T_NOW){
     past(t);
@@ -267,8 +299,8 @@ function scene(t){
   } else {
     bathroom(t,true);
     const a=sm(48.1,48.5,t)*(1-sm(51.7,52.1,t));
-    bigTag('2 SAAT',290,640,C.coral,a,1.3);
-    bigTag('20 YIL',780,640,C.amber,sm(48.6,49.0,t)*(1-sm(51.7,52.1,t)),2.1);
+    bigTag(L('2 SAAT','2 HOURS'),290,640,C.coral,a,1.3);
+    bigTag(L('20 YIL','20 YEARS'),780,640,C.amber,sm(48.6,49.0,t)*(1-sm(51.7,52.1,t)),2.1);
     bigText('vs',535,640,40,'rgba(239,228,207,.6)',sm(48.6,49.0,t)*(1-sm(51.7,52.1,t)),700);
     fade(1-sm(T_NOW,T_NOW+0.6,t),'5,10,20');
   }
