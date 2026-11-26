@@ -1,0 +1,608 @@
+{
+ "l01": {
+  "sure": 4.0,
+  "bas": 0.3,
+  "hiz": 0.85,
+  "metin": "Çamaşır makinen bozuldu diye sinirlendin mi? Hadi, doğru söyle.",
+  "kelimeler": [
+   {
+    "k": "Çamaşır",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "makinen",
+    "bas": 0.6,
+    "son": 1.0
+   },
+   {
+    "k": "bozuldu",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "diye",
+    "bas": 1.4,
+    "son": 1.5
+   },
+   {
+    "k": "sinirlendin",
+    "bas": 1.5,
+    "son": 2.3
+   },
+   {
+    "k": "mi?",
+    "bas": 2.3,
+    "son": 2.3
+   },
+   {
+    "k": "Hadi,",
+    "bas": 2.9,
+    "son": 3.1
+   },
+   {
+    "k": "doğru",
+    "bas": 3.3,
+    "son": 3.5
+   },
+   {
+    "k": "söyle.",
+    "bas": 3.5,
+    "son": 3.8
+   }
+  ]
+ },
+ "l02": {
+  "sure": 5.44,
+  "bas": 4.6,
+  "hiz": 0.85,
+  "metin": "Makine titredi, titredi... durdu. Kırmızı ışık yanıyor. Sen başladın söylenmeye.",
+  "kelimeler": [
+   {
+    "k": "Makine",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "titredi,",
+    "bas": 0.5,
+    "son": 1.1
+   },
+   {
+    "k": "titredi,",
+    "bas": 1.2,
+    "son": 1.7
+   },
+   {
+    "k": "durdu.",
+    "bas": 1.9,
+    "son": 2.3
+   },
+   {
+    "k": "Kırmızı",
+    "bas": 2.9,
+    "son": 3.2
+   },
+   {
+    "k": "ışık",
+    "bas": 3.2,
+    "son": 3.5
+   },
+   {
+    "k": "yanıyor.",
+    "bas": 3.5,
+    "son": 4.0
+   },
+   {
+    "k": "Sen",
+    "bas": 4.1,
+    "son": 4.3
+   },
+   {
+    "k": "başladın",
+    "bas": 4.3,
+    "son": 4.8
+   },
+   {
+    "k": "söylenmeye.",
+    "bas": 4.8,
+    "son": 5.3
+   }
+  ]
+ },
+ "l03": {
+  "sure": 5.68,
+  "bas": 10.3,
+  "hiz": 0.8,
+  "metin": "Telefonu kaptın, yazdın: Servis ne zaman gelir? Cevap geldi: İki... saat sonra.",
+  "kelimeler": [
+   {
+    "k": "Telefonu",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "kaptın,",
+    "bas": 0.4,
+    "son": 1.1
+   },
+   {
+    "k": "yazdın,",
+    "bas": 1.2,
+    "son": 1.7
+   },
+   {
+    "k": "servis",
+    "bas": 1.7,
+    "son": 2.0
+   },
+   {
+    "k": "ne",
+    "bas": 2.0,
+    "son": 2.2
+   },
+   {
+    "k": "zaman",
+    "bas": 2.2,
+    "son": 2.4
+   },
+   {
+    "k": "gelir?",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "Cevap",
+    "bas": 3.3,
+    "son": 3.6
+   },
+   {
+    "k": "geldi.",
+    "bas": 3.6,
+    "son": 4.0
+   },
+   {
+    "k": "iki",
+    "bas": 4.6,
+    "son": 4.9
+   },
+   {
+    "k": "saat",
+    "bas": 4.9,
+    "son": 5.2
+   },
+   {
+    "k": "sonra.",
+    "bas": 5.2,
+    "son": 5.5
+   }
+  ]
+ },
+ "l04": {
+  "sure": 3.68,
+  "bas": 16.3,
+  "hiz": 0.85,
+  "metin": "İki saat söylendin durdun. Bu makine de hep beni mi bulur?",
+  "kelimeler": [
+   {
+    "k": "İki",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "saat",
+    "bas": 0.2,
+    "son": 0.5
+   },
+   {
+    "k": "söylendin,",
+    "bas": 0.5,
+    "son": 1.2
+   },
+   {
+    "k": "durdun.",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "Bu",
+    "bas": 2.2,
+    "son": 2.2
+   },
+   {
+    "k": "makine de",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "hep",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "beni",
+    "bas": 2.8,
+    "son": 3.1
+   },
+   {
+    "k": "mi",
+    "bas": 3.1,
+    "son": 3.1
+   },
+   {
+    "k": "bulur?",
+    "bas": 3.1,
+    "son": 3.5
+   }
+  ]
+ },
+ "l05": {
+  "sure": 2.96,
+  "bas": 20.5,
+  "hiz": 0.85,
+  "metin": "Dur bir. Küçüklüğünü hatırla. O küçük evi.",
+  "kelimeler": [
+   {
+    "k": "Dur",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "bir.",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "Küçüklüğünü",
+    "bas": 0.8,
+    "son": 1.3
+   },
+   {
+    "k": "hatırla.",
+    "bas": 1.3,
+    "son": 1.8
+   },
+   {
+    "k": "O",
+    "bas": 2.2,
+    "son": 2.3
+   },
+   {
+    "k": "küçük",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "evi.",
+    "bas": 2.6,
+    "son": 2.8
+   }
+  ]
+ },
+ "l06": {
+  "sure": 4.96,
+  "bas": 23.9,
+  "hiz": 0.85,
+  "metin": "Annen... makine beklemezdi. Leğeni koyardı ortaya, başlardı.",
+  "kelimeler": [
+   {
+    "k": "Annen",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "makine",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "beklemezdi.",
+    "bas": 1.4,
+    "son": 1.9
+   },
+   {
+    "k": "Leğeni",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "koyardı",
+    "bas": 3.0,
+    "son": 3.4
+   },
+   {
+    "k": "ortaya,",
+    "bas": 3.4,
+    "son": 3.9
+   },
+   {
+    "k": "başlardı.",
+    "bas": 4.1,
+    "son": 4.7
+   }
+  ]
+ },
+ "l07": {
+  "sure": 5.76,
+  "bas": 29.2,
+  "hiz": 0.85,
+  "metin": "Kış kıyamet, su buz gibi... Çamaşırı ovardı, sıkardı, bir daha ovardı.",
+  "kelimeler": [
+   {
+    "k": "Kış",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "kıyamet,",
+    "bas": 0.2,
+    "son": 1.0
+   },
+   {
+    "k": "su",
+    "bas": 1.1,
+    "son": 1.3
+   },
+   {
+    "k": "buz",
+    "bas": 1.3,
+    "son": 1.6
+   },
+   {
+    "k": "gibi.",
+    "bas": 1.6,
+    "son": 1.8
+   },
+   {
+    "k": "Çamaşırı",
+    "bas": 2.4,
+    "son": 2.9
+   },
+   {
+    "k": "ovardı,",
+    "bas": 2.9,
+    "son": 3.5
+   },
+   {
+    "k": "sıkardı,",
+    "bas": 3.6,
+    "son": 4.4
+   },
+   {
+    "k": "bir",
+    "bas": 4.6,
+    "son": 4.8
+   },
+   {
+    "k": "daha",
+    "bas": 4.8,
+    "son": 5.0
+   },
+   {
+    "k": "ovardı.",
+    "bas": 5.0,
+    "son": 5.6
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.36,
+  "bas": 35.3,
+  "hiz": 0.85,
+  "metin": "Arada bir ellerine üflerdi. Elleri kıpkırmızı.",
+  "kelimeler": [
+   {
+    "k": "Arada",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "bir",
+    "bas": 0.3,
+    "son": 0.4
+   },
+   {
+    "k": "ellerine",
+    "bas": 0.4,
+    "son": 0.9
+   },
+   {
+    "k": "üflerdi.",
+    "bas": 0.9,
+    "son": 1.5
+   },
+   {
+    "k": "Elleri",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "kıpkırmızı.",
+    "bas": 2.6,
+    "son": 3.2
+   }
+  ]
+ },
+ "l09": {
+  "sure": 2.96,
+  "bas": 39.0,
+  "hiz": 0.85,
+  "metin": "Bir kere şikâyet ettiğini duydun mu? Duymadın.",
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "kere",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "şikâyet",
+    "bas": 0.4,
+    "son": 1.0
+   },
+   {
+    "k": "ettiğini",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "duydun",
+    "bas": 1.4,
+    "son": 1.6
+   },
+   {
+    "k": "mu?",
+    "bas": 1.6,
+    "son": 1.8
+   },
+   {
+    "k": "Duymadın.",
+    "bas": 2.4,
+    "son": 2.7
+   }
+  ]
+ },
+ "l10": {
+  "sure": 4.16,
+  "bas": 42.8,
+  "hiz": 0.8,
+  "metin": "Yirmi... yıl. Her hafta aynı leğen, aynı soğuk su.",
+  "kelimeler": [
+   {
+    "k": "Yirmi",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "yıl.",
+    "bas": 0.9,
+    "son": 1.2
+   },
+   {
+    "k": "Her",
+    "bas": 1.8,
+    "son": 1.9
+   },
+   {
+    "k": "hafta",
+    "bas": 1.9,
+    "son": 2.2
+   },
+   {
+    "k": "aynı",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "leğen,",
+    "bas": 2.5,
+    "son": 3.1
+   },
+   {
+    "k": "aynı",
+    "bas": 3.3,
+    "son": 3.6
+   },
+   {
+    "k": "soğuk",
+    "bas": 3.6,
+    "son": 3.9
+   },
+   {
+    "k": "su.",
+    "bas": 3.9,
+    "son": 4.1
+   }
+  ]
+ },
+ "l11": {
+  "sure": 3.52,
+  "bas": 47.8,
+  "hiz": 0.8,
+  "metin": "Sen iki saat servis bekledin, apartmanı ayağa kaldırdın.",
+  "kelimeler": [
+   {
+    "k": "Sen",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "iki",
+    "bas": 0.4,
+    "son": 0.5
+   },
+   {
+    "k": "saat",
+    "bas": 0.5,
+    "son": 0.9
+   },
+   {
+    "k": "servis",
+    "bas": 0.9,
+    "son": 1.2
+   },
+   {
+    "k": "bekledin,",
+    "bas": 1.2,
+    "son": 1.8
+   },
+   {
+    "k": "apartmanı",
+    "bas": 2.1,
+    "son": 2.6
+   },
+   {
+    "k": "ayağa",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "kaldırdın.",
+    "bas": 2.8,
+    "son": 3.4
+   }
+  ]
+ },
+ "l12": {
+  "sure": 2.96,
+  "bas": 52.2,
+  "hiz": 0.8,
+  "metin": "Bu akşam anneni ara. Ellerinden öp.",
+  "kelimeler": [
+   {
+    "k": "Bu",
+    "bas": 0.2,
+    "son": 0.3
+   },
+   {
+    "k": "akşam",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "anneni",
+    "bas": 0.8,
+    "son": 1.2
+   },
+   {
+    "k": "ara.",
+    "bas": 1.2,
+    "son": 1.4
+   },
+   {
+    "k": "Ellerinden",
+    "bas": 2.1,
+    "son": 2.6
+   },
+   {
+    "k": "öp.",
+    "bas": 2.6,
+    "son": 2.8
+   }
+  ]
+ }
+}

@@ -103,21 +103,17 @@ function thought(t,a){ if(a<=0)return; // SEN'in kafasındaki "beklenen" oda: ya
 
 function scene(t){
   const vt=vtime(t);
-  // ---------- 0–3.9 kanca: büyük geri sayım halkası
-  if(t<4.3){
-    room(); fade(0.72,'5,10,20');
-    const a=1-sm(3.7,4.2,t), pulse=1+0.04*Math.sin(t*5);
-    ctx.save();ctx.translate(W/2,900);ctx.scale(2.2*pulse,2.2*pulse);countdown(0,0,85,15,15,a);ctx.restore();
-    bigText('SANİYE',W/2,1180,52,C.amber,a*sm(0.4,0.9,t),800);
-    caption([[['Değişen şeyi','#fff']],[['bulabilecek misin?','#ffb547']]],0.2,3.8,t,80,230);
-    fade(sm(3.6,4.3,t)*(1-sm(4.0,4.3,t))*0.5,'5,10,20');
-    if(t<3.9) return;
-  }
-  // ---------- oda (giriş + test + cevap)
+  // ---------- oda (giriş + test + cevap); 3.9'dan önce yalnız boş zemin
   const ringK = sm(34.8,35.4,t);
   const ghost = sm(37.2,37.8,t)*(1-sm(45.6,46.2,t));
-  if(t>=3.9 && t<46.8){
-    ctx.save(); ctx.globalAlpha=sm(3.9,4.5,t); roomScene(t,vt,{ring:ringK*(1-sm(45.6,46.2,t)),ghost}); ctx.restore();
+  if(t>=3.9) roomScene(t,vt,{ring:ringK*(1-sm(45.6,46.2,t)),ghost}); else room();
+  // ---------- 0–3.9 kanca: büyük geri sayım halkası (karanlık perde 3.9–4.6 arası açılır)
+  if(t<4.6){
+    fade(0.72*(1-sm(3.9,4.6,t)),'5,10,20');
+    const a=1-sm(3.7,4.2,t), pulse=1+0.04*Math.sin(t*5);
+    if(a>0){ctx.save();ctx.translate(W/2,900);ctx.scale(2.2*pulse,2.2*pulse);countdown(0,0,85,15,15,a);ctx.restore();}
+    bigText('SANİYE',W/2,1180,52,C.amber,a*sm(0.4,0.9,t),800);
+    caption([[['Değişen şeyi','#fff']],[['bulabilecek misin?','#ffb547']]],0.2,3.8,t,80,230);
   }
   // giriş altyazıları
   caption([[['Herkes','#fff']],[['"ben ','#fff'],['dikkatliyim','#5fd3c6'],['" der.','#fff']]],3.9,6.1,t,70);

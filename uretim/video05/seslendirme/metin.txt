@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır = dosya, videodaki başlangıç sn, hız, metin.
+l01 0.3   0.85  Çamaşır makinen bozuldu diye sinirlendin mi? Hadi, doğru söyle.
+l02 4.6   0.85  Makine titredi, titredi... durdu. Kırmızı ışık yanıyor. Sen başladın söylenmeye.
+l03 10.3  0.8  Telefonu kaptın, yazdın: Servis ne zaman gelir? Cevap geldi: İki... saat sonra.
+l04 16.3  0.85  İki saat söylendin durdun. Bu makine de hep beni mi bulur?
+l05 20.5  0.85  Dur bir. Küçüklüğünü hatırla. O küçük evi.
+l06 23.9  0.85  Annen... makine beklemezdi. Leğeni koyardı ortaya, başlardı.
+l07 29.2  0.85  Kış kıyamet, su buz gibi... Çamaşırı ovardı, sıkardı, bir daha ovardı.
+l08 35.3  0.85  Arada bir ellerine üflerdi. Elleri kıpkırmızı.
+l09 39.0  0.85  Bir kere şikâyet ettiğini duydun mu? Duymadın.
+l10 42.8  0.8  Yirmi... yıl. Her hafta aynı leğen, aynı soğuk su.
+l11 47.8  0.8  Sen iki saat servis bekledin, apartmanı ayağa kaldırdın.
+l12 52.2  0.8  Bu akşam anneni ara. Ellerinden öp.

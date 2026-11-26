@@ -1,0 +1,328 @@
+{
+ "l01": {
+  "sure": 2.88,
+  "metin": "Annen en son ne zaman aradı? Sen açtın mı?",
+  "kelimeler": [
+   {
+    "k": "Annen",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "aradı",
+    "bas": 1.4,
+    "son": 1.7
+   },
+   {
+    "k": "Sen",
+    "bas": 2.2,
+    "son": 2.3
+   },
+   {
+    "k": "açtın",
+    "bas": 2.3,
+    "son": 2.6
+   }
+  ]
+ },
+ "l02": {
+  "sure": 4.64,
+  "metin": "Salı günü, toplantıdasın. Telefon titriyor. Ekranda yazıyor: Annem.",
+  "kelimeler": [
+   {
+    "k": "toplantıdasın",
+    "bas": 1.0,
+    "son": 1.8
+   },
+   {
+    "k": "Telefon",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "titriyor",
+    "bas": 2.6,
+    "son": 3.4
+   },
+   {
+    "k": "annem",
+    "bas": 4.2,
+    "son": 4.5
+   }
+  ]
+ },
+ "l03": {
+  "sure": 2.96,
+  "metin": "Reddettin. Bir mesaj attın: Sonra ararım.",
+  "kelimeler": [
+   {
+    "k": "Reddettin",
+    "bas": 0.1,
+    "son": 1.1
+   },
+   {
+    "k": "mesaj",
+    "bas": 1.4,
+    "son": 1.6
+   },
+   {
+    "k": "sonra",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "ararım",
+    "bas": 2.5,
+    "son": 2.8
+   }
+  ]
+ },
+ "l04": {
+  "sure": 5.36,
+  "metin": "Ertesi akşam yine aradı. Sen arkadaşlarla dışarıdasın, muhabbet koyu. Yine: Sonra.",
+  "kelimeler": [
+   {
+    "k": "Ertesi",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "aradı",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "arkadaşlarla",
+    "bas": 2.2,
+    "son": 2.9
+   },
+   {
+    "k": "muhabbet",
+    "bas": 3.7,
+    "son": 4.1
+   },
+   {
+    "k": "yine",
+    "bas": 4.6,
+    "son": 4.8
+   },
+   {
+    "k": "sonra",
+    "bas": 4.8,
+    "son": 5.2
+   }
+  ]
+ },
+ "l05": {
+  "sure": 5.44,
+  "metin": "Öbür tarafta annen, masaya iki bardak çay koymuş. Telefon elinde, bekliyor.",
+  "kelimeler": [
+   {
+    "k": "annen",
+    "bas": 0.7,
+    "son": 1.2
+   },
+   {
+    "k": "iki",
+    "bas": 1.9,
+    "son": 2.1
+   },
+   {
+    "k": "bardak",
+    "bas": 2.1,
+    "son": 2.5
+   },
+   {
+    "k": "çay",
+    "bas": 2.5,
+    "son": 2.8
+   },
+   {
+    "k": "Telefon",
+    "bas": 3.6,
+    "son": 4.0
+   },
+   {
+    "k": "bekliyor",
+    "bas": 4.6,
+    "son": 5.2
+   }
+  ]
+ },
+ "l06": {
+  "sure": 4.48,
+  "metin": "Cevapsız arama... bir. İki. Beş... On iki.",
+  "kelimeler": [
+   {
+    "k": "Cevapsız",
+    "bas": 0.1,
+    "son": 0.8
+   },
+   {
+    "k": "bir",
+    "bas": 1.3,
+    "son": 1.5
+   },
+   {
+    "k": "iki",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "beş",
+    "bas": 3.0,
+    "son": 3.4
+   },
+   {
+    "k": "on iki",
+    "bas": 3.9,
+    "son": 4.2
+   }
+  ]
+ },
+ "l07": {
+  "sure": 3.44,
+  "metin": "Bir gün bir mesaj düşüyor: Yemek yaptım, gelirsin diye.",
+  "kelimeler": [
+   {
+    "k": "mesaj",
+    "bas": 0.5,
+    "son": 0.9
+   },
+   {
+    "k": "Yemek",
+    "bas": 1.6,
+    "son": 1.9
+   },
+   {
+    "k": "gelirsin",
+    "bas": 2.6,
+    "son": 3.1
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.12,
+  "metin": "Sonra ararım dedin. O sonra... hiç gelmedi.",
+  "kelimeler": [
+   {
+    "k": "Sonra",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "O",
+    "bas": 1.4,
+    "son": 1.5
+   },
+   {
+    "k": "sonra",
+    "bas": 1.5,
+    "son": 1.9
+   },
+   {
+    "k": "hiç",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "gelmedi",
+    "bas": 2.6,
+    "son": 3.0
+   }
+  ]
+ },
+ "l09": {
+  "sure": 5.44,
+  "metin": "Bir akşam dayanamadın, bu sefer sen aradın. Çalıyor... çalıyor... açan yok.",
+  "kelimeler": [
+   {
+    "k": "dayanamadın",
+    "bas": 0.5,
+    "son": 1.3
+   },
+   {
+    "k": "aradın",
+    "bas": 2.0,
+    "son": 2.3
+   },
+   {
+    "k": "Çalıyor",
+    "bas": 2.9,
+    "son": 3.4
+   },
+   {
+    "k": "çalıyor",
+    "bas": 3.8,
+    "son": 4.3
+   },
+   {
+    "k": "Açan",
+    "bas": 4.7,
+    "son": 5.0
+   },
+   {
+    "k": "yok",
+    "bas": 5.0,
+    "son": 5.3
+   }
+  ]
+ },
+ "l10": {
+  "sure": 5.44,
+  "metin": "Tam kapatacakken, bir ses geliyor. ... Yavrum... Sesini duydum ya, yeter.",
+  "kelimeler": [
+   {
+    "k": "kapatacakken",
+    "bas": 0.3,
+    "son": 1.3
+   },
+   {
+    "k": "ses",
+    "bas": 1.5,
+    "son": 1.8
+   },
+   {
+    "k": "geliyor",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "Yavrum",
+    "bas": 2.9,
+    "son": 3.3
+   },
+   {
+    "k": "sesini",
+    "bas": 3.7,
+    "son": 4.1
+   },
+   {
+    "k": "yeter",
+    "bas": 4.8,
+    "son": 5.2
+   }
+  ]
+ },
+ "l11": {
+  "sure": 2.48,
+  "metin": "Bu videoyu kapat. Anneni ara.",
+  "kelimeler": [
+   {
+    "k": "kapat",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "Anneni",
+    "bas": 1.7,
+    "son": 2.1
+   },
+   {
+    "k": "ara",
+    "bas": 2.1,
+    "son": 2.4
+   }
+  ]
+ }
+}

@@ -1,0 +1,548 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 2.8,
+  "hiz": 0.85,
+  "metin": "Dışarıda herkese gülüyorsun. Peki evde?",
+  "kelimeler": [
+   {
+    "k": "Dışarıda",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "herkese",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "gülüyorsun.",
+    "bas": 1.0,
+    "son": 1.6
+   },
+   {
+    "k": "Peki",
+    "bas": 2.1,
+    "son": 2.3
+   },
+   {
+    "k": "evde?",
+    "bas": 2.3,
+    "son": 2.6
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 3.6,
+  "sure": 3.76,
+  "hiz": 0.85,
+  "metin": "Sabah işe girdin. Patron kötü bir espri yaptı... güldün.",
+  "kelimeler": [
+   {
+    "k": "Sabah",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "işe",
+    "bas": 0.4,
+    "son": 0.6
+   },
+   {
+    "k": "girdin.",
+    "bas": 0.6,
+    "son": 1.1
+   },
+   {
+    "k": "Patron",
+    "bas": 1.5,
+    "son": 1.8
+   },
+   {
+    "k": "kötü",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "bir",
+    "bas": 2.2,
+    "son": 2.3
+   },
+   {
+    "k": "espri",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "yaptı.",
+    "bas": 2.6,
+    "son": 3.0
+   },
+   {
+    "k": "Güldün.",
+    "bas": 3.2,
+    "son": 3.6
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 7.9,
+  "sure": 3.52,
+  "hiz": 0.85,
+  "metin": "Müşteri bağırdı, çağırdı... sen yine güldün.",
+  "kelimeler": [
+   {
+    "k": "Müşteri",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "bağırdı,",
+    "bas": 0.5,
+    "son": 1.2
+   },
+   {
+    "k": "çağırdı.",
+    "bas": 1.3,
+    "son": 1.9
+   },
+   {
+    "k": "Sen",
+    "bas": 2.5,
+    "son": 2.8
+   },
+   {
+    "k": "yine",
+    "bas": 2.8,
+    "son": 3.0
+   },
+   {
+    "k": "güldün.",
+    "bas": 3.0,
+    "son": 3.5
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 11.9,
+  "sure": 4.8,
+  "hiz": 0.85,
+  "metin": "Markette kasiyere gülümsedin. Apartmanın kapısında, görevliye bile.",
+  "kelimeler": [
+   {
+    "k": "Markette",
+    "bas": 0.1,
+    "son": 0.7
+   },
+   {
+    "k": "kasiyere",
+    "bas": 0.7,
+    "son": 1.2
+   },
+   {
+    "k": "gülümsedin.",
+    "bas": 1.2,
+    "son": 1.7
+   },
+   {
+    "k": "Apartmanın",
+    "bas": 2.5,
+    "son": 3.0
+   },
+   {
+    "k": "kapısında",
+    "bas": 3.0,
+    "son": 3.6
+   },
+   {
+    "k": "görevliye",
+    "bas": 3.8,
+    "son": 4.4
+   },
+   {
+    "k": "bile.",
+    "bas": 4.4,
+    "son": 4.6
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 17.2,
+  "sure": 3.52,
+  "hiz": 0.8,
+  "metin": "Bir günde... tam yirmi gülümseme. Hepsi dışarıya.",
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "günde",
+    "bas": 0.2,
+    "son": 0.8
+   },
+   {
+    "k": "tam",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "20",
+    "bas": 1.4,
+    "son": 1.7
+   },
+   {
+    "k": "gülümseme.",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "Hepsi",
+    "bas": 2.6,
+    "son": 3.0
+   },
+   {
+    "k": "dışarıya.",
+    "bas": 3.0,
+    "son": 3.4
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 22.4,
+  "sure": 4.0,
+  "hiz": 0.85,
+  "metin": "Sonra eve geldin. Annen kanepede, kardeşin masada.",
+  "kelimeler": [
+   {
+    "k": "Sonra",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "eve",
+    "bas": 0.5,
+    "son": 0.7
+   },
+   {
+    "k": "geldin.",
+    "bas": 0.7,
+    "son": 1.2
+   },
+   {
+    "k": "Annen",
+    "bas": 1.6,
+    "son": 2.0
+   },
+   {
+    "k": "kanepede,",
+    "bas": 2.0,
+    "son": 2.6
+   },
+   {
+    "k": "kardeşin",
+    "bas": 2.9,
+    "son": 3.4
+   },
+   {
+    "k": "masada.",
+    "bas": 3.4,
+    "son": 3.8
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 26.9,
+  "sure": 3.2,
+  "hiz": 0.85,
+  "metin": "Annen \"hoş geldin\" dedi. \"Yemek hazır\" dedi.",
+  "kelimeler": [
+   {
+    "k": "Annen",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "hoş",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "geldin",
+    "bas": 0.8,
+    "son": 1.1
+   },
+   {
+    "k": "dedi.",
+    "bas": 1.1,
+    "son": 1.3
+   },
+   {
+    "k": "Yemek",
+    "bas": 2.0,
+    "son": 2.3
+   },
+   {
+    "k": "hazır",
+    "bas": 2.3,
+    "son": 2.7
+   },
+   {
+    "k": "dedi.",
+    "bas": 2.8,
+    "son": 3.1
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 30.6,
+  "sure": 4.4,
+  "hiz": 0.85,
+  "metin": "Sen bir \"hı\" bile demedin. Odana girdin, kapıyı kapattın.",
+  "kelimeler": [
+   {
+    "k": "Sen",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "bir",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "hı",
+    "bas": 1.0,
+    "son": 1.2
+   },
+   {
+    "k": "bile",
+    "bas": 1.2,
+    "son": 1.4
+   },
+   {
+    "k": "demedin.",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "Odana",
+    "bas": 2.5,
+    "son": 2.8
+   },
+   {
+    "k": "girdin,",
+    "bas": 2.8,
+    "son": 3.2
+   },
+   {
+    "k": "kapıyı",
+    "bas": 3.4,
+    "son": 3.7
+   },
+   {
+    "k": "kapattın.",
+    "bas": 3.7,
+    "son": 4.2
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 36.2,
+  "sure": 3.44,
+  "hiz": 0.8,
+  "metin": "Annen elindeki tabağı... sessizce masaya bıraktı.",
+  "kelimeler": [
+   {
+    "k": "Annen",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "elindeki",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "tabağı",
+    "bas": 1.0,
+    "son": 1.5
+   },
+   {
+    "k": "sessizce",
+    "bas": 1.9,
+    "son": 2.5
+   },
+   {
+    "k": "masaya",
+    "bas": 2.5,
+    "son": 2.8
+   },
+   {
+    "k": "bıraktı.",
+    "bas": 2.8,
+    "son": 3.3
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 40.2,
+  "sure": 4.0,
+  "hiz": 0.8,
+  "metin": "Bütün gülümsemeleri dışarıda harcadın. Eve bir tane bile kalmadı.",
+  "kelimeler": [
+   {
+    "k": "Bütün",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "gülümsemeleri",
+    "bas": 0.4,
+    "son": 1.0
+   },
+   {
+    "k": "dışarıda",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "harcadın.",
+    "bas": 1.4,
+    "son": 1.9
+   },
+   {
+    "k": "Eve",
+    "bas": 2.4,
+    "son": 2.6
+   },
+   {
+    "k": "bir",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "tane",
+    "bas": 2.8,
+    "son": 3.1
+   },
+   {
+    "k": "bile",
+    "bas": 3.1,
+    "son": 3.3
+   },
+   {
+    "k": "kalmadı.",
+    "bas": 3.3,
+    "son": 3.8
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 44.9,
+  "sure": 4.64,
+  "hiz": 0.85,
+  "metin": "Patron yarın seni unutur. Annen ise her akşam, kapıda seni bekliyor.",
+  "kelimeler": [
+   {
+    "k": "Patron",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "yarın",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "seni",
+    "bas": 0.8,
+    "son": 1.0
+   },
+   {
+    "k": "unutur.",
+    "bas": 1.0,
+    "son": 1.6
+   },
+   {
+    "k": "Annen",
+    "bas": 1.8,
+    "son": 2.1
+   },
+   {
+    "k": "ise",
+    "bas": 2.1,
+    "son": 2.3
+   },
+   {
+    "k": "her",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "akşam",
+    "bas": 2.5,
+    "son": 3.1
+   },
+   {
+    "k": "kapıda",
+    "bas": 3.3,
+    "son": 3.6
+   },
+   {
+    "k": "seni",
+    "bas": 3.6,
+    "son": 3.9
+   },
+   {
+    "k": "bekliyor.",
+    "bas": 3.9,
+    "son": 4.4
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 50.3,
+  "sure": 3.28,
+  "hiz": 0.8,
+  "metin": "Bu akşam kapıdan girerken... önce evdekilere gül.",
+  "kelimeler": [
+   {
+    "k": "Bu",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "akşam",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "kapıdan",
+    "bas": 0.6,
+    "son": 1.0
+   },
+   {
+    "k": "girerken",
+    "bas": 1.0,
+    "son": 1.6
+   },
+   {
+    "k": "önce",
+    "bas": 2.1,
+    "son": 2.4
+   },
+   {
+    "k": "evdekilere",
+    "bas": 2.4,
+    "son": 2.9
+   },
+   {
+    "k": "gül.",
+    "bas": 2.9,
+    "son": 3.2
+   }
+  ]
+ }
+}

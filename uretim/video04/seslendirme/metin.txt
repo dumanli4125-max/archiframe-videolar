@@ -1,0 +1,12 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   0.85  Annen en son ne zaman aradı? Sen açtın mı?
+l02 3.6   0.85  Salı günü, toplantıdasın. Telefon titriyor. Ekranda yazıyor: Annem.
+l03 8.6   0.85  Reddettin. Bir mesaj attın: Sonra ararım.
+l04 12.1  0.85  Ertesi akşam yine aradı. Sen arkadaşlarla dışarıdasın, muhabbet koyu. Yine: Sonra.
+l05 18.0  0.85  Öbür tarafta annen, masaya iki bardak çay koymuş. Telefon elinde, bekliyor.
+l06 24.4  0.8   Cevapsız arama... bir. İki. Beş... On iki.
+l07 29.4  0.8   Bir gün bir mesaj düşüyor: Yemek yaptım, gelirsin diye.
+l08 33.4  0.8   Sonra ararım dedin. O sonra... hiç gelmedi.
+l09 37.5  0.85  Bir akşam dayanamadın, bu sefer sen aradın. Çalıyor... çalıyor... açan yok.
+l10 44.6  0.8   Tam kapatacakken, bir ses geliyor. ... Yavrum... Sesini duydum ya, yeter.
+l11 51.0  0.8   Bu videoyu kapat. Anneni ara.

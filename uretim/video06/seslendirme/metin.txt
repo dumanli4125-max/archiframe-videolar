@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır, videodaki başlangıç sn, hız, metin. Tümü transcribe ile doğrulandı.
+# l05 ilk denemede "on iki" -> "18" duyuldu; "yirmi" ile yeniden üretildi (doğru: 20).
+l01 0.3   0.85  Dışarıda herkese gülüyorsun. Peki evde?
+l02 3.6   0.85  Sabah işe girdin. Patron kötü bir espri yaptı... güldün.
+l03 7.9   0.85  Müşteri bağırdı, çağırdı... sen yine güldün.
+l04 11.9  0.85  Markette kasiyere gülümsedin. Apartmanın kapısında, görevliye bile.
+l05 17.2  0.8  Bir günde... tam yirmi gülümseme. Hepsi dışarıya.
+l06 22.4  0.85  Sonra eve geldin. Annen kanepede, kardeşin masada.
+l07 26.9  0.85  Annen "hoş geldin" dedi. "Yemek hazır" dedi.
+l08 30.6  0.85  Sen bir "hı" bile demedin. Odana girdin, kapıyı kapattın.
+l09 36.2  0.8  Annen elindeki tabağı... sessizce masaya bıraktı.
+l10 40.2  0.8  Bütün gülümsemeleri dışarıda harcadın. Eve bir tane bile kalmadı.
+l11 44.9  0.85  Patron yarın seni unutur. Annen ise her akşam, kapıda seni bekliyor.
+l12 50.3  0.8  Bu akşam kapıdan girerken... önce evdekilere gül.

@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi.
+# l02, l08, l12 hız 0.8, diğerleri 0.85. l03-l10 miks sırasında %6 hızlandırılır (atempo 1.06).
+l01 0.3   Gece ikide neden uyanıyorsun? Hadi, bir düşün.
+l02 3.9   Saat... gece ikiyi yedi geçiyor. Ev zifiri karanlık. Kalktın, bir bardak su içeyim dedin.
+l03 11.1  Mutfağa geçtin, lambayı yaktın. Musluktan bir bardak su doldurdun.
+l04 15.8  Gün içinde vakit yok ya... Kafan da gece ikide mesaiye başlıyor.
+l05 19.85 Kira mı dersin, yarınki toplantı mı... Hepsi aynı anda kapıyı çalıyor.
+l06 24.65 Kredi kartının borcu. Annene söyleyemediğin o laf. Cevap vermediğin o mesaj...
+l07 30.7  Bir bardak su içmeye kalktın. Bir saattir pencerenin önündesin.
+l08 34.85 Saat olmuş... üç... kırk. Sabah da işe gideceksin, biliyorsun.
+l09 40.1  Çekmeceden bir kâğıt, bir kalem aldın. Aklındakini tek tek yazdın.
+l10 44.55 Kira, toplantı, o mesaj... Hepsi kâğıtta duruyor. Sabah bakarsın.
+l11 49.7  Omuzların indi. Yatağa döndün, ışığı kapattın.
+l12 53.3  Bu gece yine uyanırsan... telefonu değil, kâğıdı al. Yaz, bırak... ve uyu.
