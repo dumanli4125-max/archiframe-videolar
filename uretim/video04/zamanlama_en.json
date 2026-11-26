@@ -1,0 +1,391 @@
+{
+ "l01": {
+  "sure": 2.96,
+  "bas": 0.3,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "When did your mom last call? Did you pick up?",
+  "kelimeler": [
+   {
+    "k": "When",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "mom",
+    "bas": 0.6,
+    "son": 1.0
+   },
+   {
+    "k": "call",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "Did",
+    "bas": 2.1,
+    "son": 2.2
+   },
+   {
+    "k": "pick",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "up",
+    "bas": 2.6,
+    "son": 2.8
+   }
+  ]
+ },
+ "l02": {
+  "sure": 5.2,
+  "bas": 3.6,
+  "hiz": 1.0,
+  "tempo": 1.03,
+  "metin": "Tuesday, you're in a meeting. Phone buzzes. The screen says: Mom.",
+  "kelimeler": [
+   {
+    "k": "Tuesday",
+    "bas": 0.1,
+    "son": 0.78
+   },
+   {
+    "k": "meeting",
+    "bas": 1.26,
+    "son": 1.65
+   },
+   {
+    "k": "Phone",
+    "bas": 2.23,
+    "son": 2.52
+   },
+   {
+    "k": "buzzes",
+    "bas": 2.52,
+    "son": 3.01
+   },
+   {
+    "k": "screen",
+    "bas": 3.5,
+    "son": 3.79
+   },
+   {
+    "k": "Mom",
+    "bas": 4.56,
+    "son": 4.95
+   }
+  ]
+ },
+ "l03": {
+  "sure": 3.76,
+  "bas": 8.6,
+  "hiz": 1.0,
+  "tempo": 1.04,
+  "metin": "You hit decline. Then a quick text: I'll call you later.",
+  "kelimeler": [
+   {
+    "k": "decline",
+    "bas": 0.38,
+    "son": 1.06
+   },
+   {
+    "k": "text",
+    "bas": 1.83,
+    "son": 2.21
+   },
+   {
+    "k": "I'll",
+    "bas": 2.79,
+    "son": 2.88
+   },
+   {
+    "k": "later",
+    "bas": 3.17,
+    "son": 3.56
+   }
+  ]
+ },
+ "l04": {
+  "sure": 5.76,
+  "bas": 12.1,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Next evening, she calls again. You're out with friends, having fun. Again: Later.",
+  "kelimeler": [
+   {
+    "k": "Next",
+    "bas": 0.2,
+    "son": 0.5
+   },
+   {
+    "k": "again",
+    "bas": 1.6,
+    "son": 2.0
+   },
+   {
+    "k": "friends",
+    "bas": 3.0,
+    "son": 3.5
+   },
+   {
+    "k": "fun",
+    "bas": 3.9,
+    "son": 4.5
+   },
+   {
+    "k": "Again",
+    "bas": 4.6,
+    "son": 5.1
+   },
+   {
+    "k": "later",
+    "bas": 5.2,
+    "son": 5.6
+   }
+  ]
+ },
+ "l05": {
+  "sure": 5.92,
+  "bas": 18.0,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Meanwhile, your mom has set two cups of tea on the table. Phone in hand, she waits.",
+  "kelimeler": [
+   {
+    "k": "Meanwhile",
+    "bas": 0.2,
+    "son": 0.9
+   },
+   {
+    "k": "mom",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "two",
+    "bas": 1.9,
+    "son": 2.1
+   },
+   {
+    "k": "cups",
+    "bas": 2.1,
+    "son": 2.4
+   },
+   {
+    "k": "tea",
+    "bas": 2.5,
+    "son": 2.8
+   },
+   {
+    "k": "Phone",
+    "bas": 4.2,
+    "son": 4.4
+   },
+   {
+    "k": "waits",
+    "bas": 5.4,
+    "son": 5.8
+   }
+  ]
+ },
+ "l06": {
+  "sure": 4.0,
+  "bas": 24.4,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Missed calls... one. Two. Five... Twelve.",
+  "kelimeler": [
+   {
+    "k": "Missed",
+    "bas": 0.2,
+    "son": 0.5
+   },
+   {
+    "k": "one",
+    "bas": 1.2,
+    "son": 1.8
+   },
+   {
+    "k": "two",
+    "bas": 2.0,
+    "son": 2.4
+   },
+   {
+    "k": "five",
+    "bas": 2.8,
+    "son": 3.3
+   },
+   {
+    "k": "twelve",
+    "bas": 3.4,
+    "son": 4.1
+   }
+  ]
+ },
+ "l07": {
+  "sure": 4.24,
+  "bas": 29.4,
+  "hiz": 1.0,
+  "tempo": 1.02,
+  "metin": "Then a text comes in: I cooked. Thought you might come by.",
+  "kelimeler": [
+   {
+    "k": "text",
+    "bas": 0.49,
+    "son": 0.78
+   },
+   {
+    "k": "cooked",
+    "bas": 1.96,
+    "son": 2.35
+   },
+   {
+    "k": "Thought",
+    "bas": 3.04,
+    "son": 3.24
+   },
+   {
+    "k": "by",
+    "bas": 3.73,
+    "son": 4.02
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.6,
+  "bas": 33.4,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "You said: Later. That later... never came.",
+  "kelimeler": [
+   {
+    "k": "said",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "Later",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "later",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "never",
+    "bas": 2.9,
+    "son": 3.2
+   },
+   {
+    "k": "came",
+    "bas": 3.2,
+    "son": 3.5
+   }
+  ]
+ },
+ "l09": {
+  "sure": 6.8,
+  "bas": 37.5,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "One night, you can't take it. This time, you call her. It rings... and rings... No answer.",
+  "kelimeler": [
+   {
+    "k": "night",
+    "bas": 0.4,
+    "son": 0.9
+   },
+   {
+    "k": "call",
+    "bas": 3.2,
+    "son": 3.5
+   },
+   {
+    "k": "rings",
+    "bas": 4.2,
+    "son": 4.8
+   },
+   {
+    "k": "rings",
+    "bas": 5.1,
+    "son": 5.5
+   },
+   {
+    "k": "No",
+    "bas": 6.0,
+    "son": 6.3
+   },
+   {
+    "k": "answer",
+    "bas": 6.3,
+    "son": 6.7
+   }
+  ]
+ },
+ "l10": {
+  "sure": 6.24,
+  "bas": 44.6,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Just as you're about to hang up, a voice. ... Sweetheart... I heard your voice. That's enough.",
+  "kelimeler": [
+   {
+    "k": "hang",
+    "bas": 0.9,
+    "son": 1.1
+   },
+   {
+    "k": "voice",
+    "bas": 1.7,
+    "son": 2.3
+   },
+   {
+    "k": "Sweetheart",
+    "bas": 2.4,
+    "son": 3.6
+   },
+   {
+    "k": "heard",
+    "bas": 3.8,
+    "son": 4.1
+   },
+   {
+    "k": "enough",
+    "bas": 5.6,
+    "son": 6.1
+   }
+  ]
+ },
+ "l11": {
+  "sure": 2.24,
+  "bas": 51.0,
+  "hiz": 1.0,
+  "tempo": 1.0,
+  "metin": "Close this video. Call your mom.",
+  "kelimeler": [
+   {
+    "k": "Close",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "video",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "Call",
+    "bas": 1.4,
+    "son": 1.7
+   },
+   {
+    "k": "mom",
+    "bas": 1.8,
+    "son": 2.2
+   }
+  ]
+ }
+}

@@ -6,6 +6,8 @@
 // 04 — Annenin aramaları. Üst panel: SEN'in dünyası, alt panel: annenin evi.
 // VO başlangıçları (audio.py ile aynı): l01 0.3, l02 3.6, l03 8.6, l04 12.1, l05 18.0, l06 24.4, l07 29.4, l08 33.4, l09 37.5, l10 44.6, l11 51.0
 const DURATION = 57.5;
+// EN: sayaç vuruşları İngilizce sayı kelimelerine oturur (one/two/five/twelve)
+const HITS = L([25.7,26.6,27.4,28.3],[25.6,26.4,27.2,27.85]);
 const PT = 400, PB = 1080, PH = 640, FY = 540, S = 0.75;   // panel üstleri, yükseklik, panel içi zemin, karakter ölçeği
 const SIT_Y = FY-55, STAND_YP = FY-142*S, TOP = FY-100;    // oturan/ayakta kalça, masa üstü
 let SENPH = null, MOMPH = null;                             // telefonların global konumları (hat için)
@@ -55,9 +57,9 @@ function callCard(x,y,sc,a,state,t,buzz=0){if(a<=0)return;
   rr(-330,-80,660,160,40);ctx.fillStyle='rgba(16,30,54,0.97)';glow('rgba(0,0,0,.6)',30);ctx.fill();noGlow();
   ctx.lineWidth=3;ctx.strokeStyle=hexA(state==='rejected'?C.coral:C.amber,0.6);ctx.stroke();
   ctx.fillStyle=C.cream;ctx.beginPath();ctx.arc(-250,0,50,0,7);ctx.fill();
-  ctx.fillStyle=C.ink;ctx.font='800 50px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('A',-250,3);
-  ctx.textAlign='left';ctx.fillStyle=C.amber;ctx.font='800 46px Inter';ctx.letterSpacing='4px';ctx.fillText('ANNEM',-172,-20);ctx.letterSpacing='0px';
-  ctx.font='500 30px Inter';ctx.fillStyle=state==='rejected'?C.coral:'rgba(233,238,247,.8)';ctx.fillText(state==='rejected'?'reddedildi':'arıyor...',-172,30);
+  ctx.fillStyle=C.ink;ctx.font='800 50px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(L('A','M'),-250,3);
+  ctx.textAlign='left';ctx.fillStyle=C.amber;ctx.font='800 46px Inter';ctx.letterSpacing='4px';ctx.fillText(L('ANNEM','MOM'),-172,-20);ctx.letterSpacing='0px';
+  ctx.font='500 30px Inter';ctx.fillStyle=state==='rejected'?C.coral:'rgba(233,238,247,.8)';ctx.fillText(state==='rejected'?L('reddedildi','declined'):L('arıyor...','calling...'),-172,30);
   const pul=state==='ring'?1+0.08*Math.sin(t*12):1;
   ctx.save();ctx.translate(165,0);if(state==='rejected'){glow(C.coral,30);ctx.scale(1.12,1.12);}ctx.fillStyle='#e0483a';ctx.beginPath();ctx.arc(0,0,44,0,7);ctx.fill();noGlow();
   ctx.rotate(2.3);ctx.fillStyle='#fff';rr(-22,-7,44,14,7);ctx.fill();ctx.restore();
@@ -65,7 +67,7 @@ function callCard(x,y,sc,a,state,t,buzz=0){if(a<=0)return;
   ctx.rotate(-0.8);ctx.fillStyle='#fff';rr(-22,-7,44,14,7);ctx.fill();ctx.restore();
   ctx.restore();}
 // mesaj kartı
-function msgCard(x,y,sc,a,title,msg,letter='A'){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.translate(x,y+(1-a)*14);ctx.scale(sc,sc);
+function msgCard(x,y,sc,a,title,msg,letter=L('A','M')){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.translate(x,y+(1-a)*14);ctx.scale(sc,sc);
   ctx.font='500 32px Inter';const mw=Math.max(ctx.measureText(msg).width,180);const w=mw+190,hx=-w/2;
   rr(hx,-62,w,124,28);ctx.fillStyle='rgba(16,30,54,0.97)';glow('rgba(0,0,0,.6)',30);ctx.fill();noGlow();ctx.lineWidth=2;ctx.strokeStyle=hexA(C.teal,0.55);ctx.stroke();
   ctx.fillStyle=C.cream;ctx.beginPath();ctx.arc(hx+64,0,36,0,7);ctx.fill();ctx.fillStyle=C.ink;ctx.font='800 34px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(letter,hx+64,2);
@@ -97,9 +99,9 @@ function topOffice(t){
   const s=senFig({x:930,y:SIT_Y,facing:-1,...SITP,lean:lerp(2,10,look),ua:lerp(22,58,reach),fa:lerp(64,78,reach),look:look*5,eyes:buzzOn?'wide':'open'});
   tableP(570,1000);
   const ph=[855,TOP-4];miniPhone(ph[0],ph[1],{flat:true,lit:t>5.9&&t<9.2,col:t>8.7?C.coral:C.amber,ring:buzzOn?1:0,t});
-  tag('TOPLANTI',170,50,C.teal);
+  tag(L('TOPLANTI','MEETING'),170,50,C.teal);
   callCard(640,175,0.72,sm(5.9,6.2,t)*(1-sm(9.3,9.7,t)),t>8.7?'rejected':'ring',t,buzzOn?1:0);
-  bubble(780,150,'Sonra ararım.',sm(10.8,11.05,t)*(1-sm(11.9,12.0,t)));
+  const b3=L(10.8,11.3);bubble(780,150,L('Sonra ararım.',"I'll call you later."),sm(b3,b3+0.25,t)*(1-sm(11.9,12.0,t)));
 }
 function topCafe(t){
   panelBg('#0c1830','#081224');
@@ -123,9 +125,9 @@ function topCafe(t){
   tableP(420,600);
   teaGlass(470,TOP,0,t);ctx.fillStyle=hexA(C.amber,0.8);rr(520,TOP-34,22,34,4);ctx.fill();
   miniPhone(560,TOP-4,{flat:true,lit:t>13.2&&t<16.7,col:t>16.2?C.coral:C.amber,ring:buzzOn?1:0,t});
-  tag('DIŞARIDA',170,50,C.amber);
+  tag(L('DIŞARIDA','OUT'),170,50,C.amber);
   callCard(560,175,0.72,sm(13.2,13.5,t)*(1-sm(16.45,16.7,t)),t>16.2?'rejected':'ring',t,buzzOn?1:0);
-  bubble(700,170,'Sonra.',sm(16.7,16.95,t)*(1-sm(17.7,17.95,t)));
+  const b4=L(16.7,17.15);bubble(700,170,L('Sonra.','Later.'),sm(b4,b4+0.25,t)*(1-sm(17.7,17.95,t)));
 }
 const DAY=[[3.3,1],[11.8,1],[12.3,0],[24.8,0],[25.2,1],[25.7,1],[26.1,0],[26.6,0],[27.0,1],[27.4,1],[27.9,0],[28.3,0],[28.8,0],[29.4,1],[36.5,1],[37.4,0]];
 function topDesk(t){
@@ -143,13 +145,13 @@ function topDesk(t){
   // dizüstü
   ctx.fillStyle='#2c4772';ctx.fillRect(600,TOP-6,150,6);ctx.save();ctx.translate(745,TOP-6);ctx.rotate(-1.75);rr(0,-4,100,8,3);ctx.fillStyle='#2c4772';ctx.fill();ctx.restore();
   ctx.save();glow(C.teal,30);ctx.fillStyle=hexA(C.teal,0.25);ctx.beginPath();ctx.moveTo(745,TOP-6);ctx.lineTo(728,TOP-104);ctx.lineTo(735,TOP-104);ctx.lineTo(752,TOP-6);ctx.fill();ctx.restore();
-  const hits=[25.7,26.6,27.4,28.3,29.9];const near=hits.some(h=>t>h&&t<h+0.7);
+  const hits=[...HITS,29.9];const near=hits.some(h=>t>h&&t<h+0.7);
   miniPhone(820,TOP-4,{flat:true,lit:near,col:C.amber,ring:near&&t<29.9?1:0,t});
-  const dn=t<25.7?'':t<26.6?'ÇARŞAMBA':t<27.4?'CUMA':t<28.3?'PAZAR':t<29.4?'2 HAFTA':'';
-  tag('İŞ',170,50,C.teal,dn?0:1);
+  const dn=t<HITS[0]?'':t<HITS[1]?L('ÇARŞAMBA','WEDNESDAY'):t<HITS[2]?L('CUMA','FRIDAY'):t<HITS[3]?L('PAZAR','SUNDAY'):t<29.4?L('2 HAFTA','2 WEEKS'):'';
+  tag(L('İŞ','WORK'),170,50,C.teal,dn?0:1);
   if(dn) tag(dn,900,50,C.amber);
-  msgCard(540,175,0.82,sm(29.9,30.15,t)*(1-sm(33.0,33.3,t)),'ANNEM','Yemek yaptım, gelirsin diye.');
-  bubble(600,150,'Sonra ararım.',sm(33.6,33.85,t)*(1-sm(35.4,35.7,t)));
+  msgCard(540,175,0.82,sm(29.9,30.15,t)*(1-sm(33.0,33.3,t)),L('ANNEM','MOM'),L('Yemek yaptım, gelirsin diye.','I cooked. Thought you might come by.'));
+  bubble(600,150,L('Sonra ararım.',"I'll call you later."),sm(33.6,33.85,t)*(1-sm(35.4,35.7,t)));
 }
 function topHome(t){
   panelBg('#101f38','#0a1528');
@@ -227,17 +229,17 @@ function momHome(t){
   const ringOn=t>40.4&&t<46.1;
   if(phoneHeld==='ear'||phoneHeld==='low'){
     const p=[m.hand[0]+4*f,m.hand[1]-12];
-    miniPhone(p[0],p[1],{lit:callA||redial||warm>0||(t>10.9&&t<11.9)||(t>16.8&&t<17.6)||(t>29.4&&t<30.1),col:C.amber,ring:(callA||redial)&&phoneHeld==='ear'?0.6:0,t,rot:f*-0.3});
+    miniPhone(p[0],p[1],{lit:callA||redial||warm>0||(t>L(10.9,11.35)&&t<11.9)||(t>L(16.8,17.2)&&t<17.6)||(t>29.4&&t<30.1),col:C.amber,ring:(callA||redial)&&phoneHeld==='ear'?0.6:0,t,rot:f*-0.3});
     MOMPH=[p[0],p[1]+PB];
   } else {miniPhone(560,TOP-4,{flat:true,lit:ringOn,col:C.amber,ring:ringOn?1:0,t});MOMPH=[560,TOP-4+PB];}
-  tag('ANNENİN EVİ',200,50,C.cream);
+  tag(L('ANNENİN EVİ',"MOM'S PLACE"),200,50,C.cream);
   // annenin telefonuna düşen mesajlar
-  msgCard(330,235,0.9,sm(10.9,11.15,t)*(1-sm(11.9,12.1,t)),'YAVRUM','Sonra ararım.','Y');
-  msgCard(330,235,0.9,sm(16.8,17.0,t)*(1-sm(17.7,17.9,t)),'YAVRUM','Sonra.','Y');
+  const m3=L(10.9,11.35);msgCard(330,235,0.9,sm(m3,m3+0.25,t)*(1-sm(11.9,12.1,t)),L('YAVRUM','SWEETIE'),L('Sonra ararım.',"I'll call you later."),L('Y','S'));
+  const m4=L(16.8,17.2);msgCard(330,235,0.9,sm(m4,m4+0.2,t)*(1-sm(17.7,17.9,t)),L('YAVRUM','SWEETIE'),L('Sonra.','Later.'),L('Y','S'));
   // sıcak final
   if(warm>0){const g=ctx.createRadialGradient(m.head[0],m.head[1],10,m.head[0],m.head[1],420);g.addColorStop(0,hexA(C.amber,0.22*warm));g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,PH);}
-  bubble(420,125,'Yavrum...',sm(47.4,47.7,t)*(1-sm(48.1,48.3,t)));
-  bubble(420,125,'Sesini duydum ya, yeter.',sm(48.3,48.6,t)*(1-sm(50.6,51.0,t)));
+  bubble(420,125,L('Yavrum...','Sweetheart...'),sm(47.4,47.7,t)*(1-sm(48.1,48.3,t)));
+  bubble(420,125,L('Sesini duydum ya, yeter.',"I heard your voice. That's enough."),sm(48.3,48.6,t)*(1-sm(50.6,51.0,t)));
 }
 
 // ================= PANEL ÇERÇEVESİ =================
@@ -263,10 +265,16 @@ function hook(t){
   callCard(W/2,700,1.2,sm(0.4,0.8,t),'ring',t,1);
 }
 function hookCaps(t){
+  if(LANG==='en'){
+    caption([[['When did ','#fff'],['your mom','#ffb547']],[['last call?','#fff']]],0.2,2.3,t,80,215);
+    caption([[['Did ','#fff'],['you','#ff6b5b'],[' pick up?','#fff']]],2.3,3.45,t,92,250);
+    return;
+  }
   caption([[['Annen ','#fff'],['en son','#ffb547']],[['ne zaman aradı?','#fff']]],0.2,2.15,t,80,215);
   caption([[['Sen ','#ff6b5b'],['açtın mı?','#fff']]],2.15,3.45,t,92,250);
 }
 function caps(t){
+  if(LANG==='en'){capsEn(t);return;}
   caption([[['Salı günü, ','#fff'],['toplantıdasın.','#5fd3c6']]],3.6,5.8,t);
   caption([[['Telefon titriyor.','#fff']],[['Ekranda: ','#fff'],['ANNEM','#ffb547']]],5.8,8.5,t);
   caption([[['Reddettin.','#ff6b5b']],[['Bir mesaj: "Sonra ararım."','#fff']]],8.6,12.0,t);
@@ -276,7 +284,7 @@ function caps(t){
   caption([[['Öbür tarafta ','#fff'],['annen...','#ffb547']]],18.0,19.6,t);
   caption([[['Masaya ','#fff'],['iki bardak','#ffb547']],[['çay koymuş.','#fff']]],19.6,21.5,t);
   caption([[['Telefon elinde,','#fff']],[['bekliyor.','#ffb547']]],21.5,24.1,t);
-  const nums=[[25.7,'1'],[26.6,'2'],[27.4,'5'],[28.3,'12']].filter(n=>t>n[0]).map(n=>n[1]).join('... ');
+  const nums=[[HITS[0],'1'],[HITS[1],'2'],[HITS[2],'5'],[HITS[3],'12']].filter(n=>t>n[0]).map(n=>n[1]).join('... ');
   caption([[['Cevapsız arama...','#fff']],[[nums||' ','#ff6b5b']]],24.4,29.1,t,70);
   caption([[['Bir gün bir mesaj düşüyor:','#fff']]],29.4,30.9,t);
   caption([[['"Yemek yaptım,','#fff']],[['gelirsin diye."','#ffb547']]],30.9,33.2,t,70);
@@ -289,13 +297,35 @@ function caps(t){
   caption([[['"Yavrum... ','#ffb547']],[['sesini duydum ya, yeter."','#fff']]],47.3,50.7,t,66);
 }
 
+function capsEn(t){
+  caption([[['Tuesday, ','#fff'],["you're in a meeting.",'#5fd3c6']]],3.6,5.8,t);
+  caption([[['Phone buzzes.','#fff']],[['The screen says: ','#fff'],['MOM','#ffb547']]],5.8,8.5,t);
+  caption([[['You hit decline.','#ff6b5b']],[['Then a text: "I\'ll call you later."','#fff']]],8.6,12.0,t,56);
+  caption([[['Next evening, ','#fff'],['she calls again.','#ffb547']]],12.1,14.4,t,58);
+  caption([[["You're out with friends,",'#fff']],[['having fun.','#5fd3c6']]],14.4,16.6,t);
+  caption([[['Again: ','#fff'],['"Later."','#ff6b5b']]],16.6,17.9,t,74);
+  caption([[['Meanwhile, ','#fff'],['your mom...','#ffb547']]],18.0,19.8,t);
+  caption([[['Two cups of tea','#ffb547']],[['on the table.','#fff']]],19.8,22.0,t);
+  caption([[['Phone in hand,','#fff']],[['she waits.','#ffb547']]],22.0,24.1,t);
+  const nums=[[HITS[0],'1'],[HITS[1],'2'],[HITS[2],'5'],[HITS[3],'12']].filter(n=>t>n[0]).map(n=>n[1]).join('... ');
+  caption([[['Missed calls...','#fff']],[[nums||' ','#ff6b5b']]],24.4,29.1,t,70);
+  caption([[['Then a text comes in:','#fff']]],29.4,31.1,t);
+  caption([[['"I cooked.','#fff']],[['Thought you might come by."','#ffb547']]],31.1,33.2,t,62);
+  caption([[['You said: ','#fff'],['"Later."','#ff6b5b']]],33.4,35.0,t);
+  caption([[['That later...','#fff']],[['never came.','#ff6b5b']]],35.0,37.2,t,72);
+  caption([[["One night, you can't take it.",'#fff']],[['This time, ','#fff'],['you call her.','#ffb547']]],37.5,41.4,t,58);
+  caption([[['It rings... and rings...','#5fd3c6']]],41.4,43.3,t,66);
+  caption([[['No answer.','#ff6b5b']]],43.3,44.4,t,74);
+  caption([[["Just as you're about to hang up,",'#fff']],[['a voice.','#fff']]],44.6,47.0,t,56);
+  caption([[['"Sweetheart... ','#ffb547']],[["I heard your voice. That's enough.\"",'#fff']]],47.0,50.7,t,54);
+}
 // ================= SAYAÇ (paneller arası) =================
 function counter(t){
   const a=sm(25.5,25.75,t)*(1-sm(36.9,37.3,t));if(a<=0)return;
-  const n=t<25.7?0:t<26.6?1:t<27.4?2:t<28.3?5:12;
-  const last=[25.7,26.6,27.4,28.3].filter(h=>t>h).pop()||0;const pop=last?1+0.25*Math.exp(-(t-last)*7):1;
+  const n=t<HITS[0]?0:t<HITS[1]?1:t<HITS[2]?2:t<HITS[3]?5:12;
+  const last=HITS.filter(h=>t>h).pop()||0;const pop=last?1+0.25*Math.exp(-(t-last)*7):1;
   ctx.save();ctx.globalAlpha=a;card(W/2,1060,560,96,{stroke:C.coral,r:48});
-  ctx.font='800 32px Inter';ctx.letterSpacing='4px';ctx.fillStyle='#e9eef7';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('CEVAPSIZ ARAMA',W/2-230,1062);ctx.letterSpacing='0px';
+  ctx.font='800 32px Inter';ctx.letterSpacing='4px';ctx.fillStyle='#e9eef7';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(L('CEVAPSIZ ARAMA','MISSED CALLS'),W/2-230,1062);ctx.letterSpacing='0px';
   ctx.translate(W/2+200,1060);ctx.scale(pop,pop);ctx.fillStyle=C.coral;glow(C.coral,25);ctx.beginPath();ctx.arc(0,0,40,0,7);ctx.fill();noGlow();
   ctx.fillStyle='#fff';ctx.font='800 44px Inter';ctx.textAlign='center';ctx.fillText(String(n),0,3);ctx.restore();
 }
@@ -322,8 +352,8 @@ function scene(t){
   caps(t);
   // final
   fade(sm(50.8,51.5,t)*0.9,'5,10,20');
-  bigText('Bu videoyu kapat.',W/2,820,84,'#fff',sm(51.2,51.6,t));
-  bigText('Anneni ara.',W/2,960,120,C.amber,sm(52.6,53.0,t));
+  bigText(L('Bu videoyu kapat.','Close this video.'),W/2,820,84,'#fff',sm(51.2,51.6,t));
+  const f2=L(52.6,52.4);bigText(L('Anneni ara.','Call your mom.'),W/2,960,120,C.amber,sm(f2,f2+0.4,t));
   endCard(t,54.0);
 }
 K.run(DURATION, scene);

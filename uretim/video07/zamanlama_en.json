@@ -1,0 +1,415 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 3.36,
+  "hiz": 1.0,
+  "metin": "Why do you wake up at 2 a.m.? Think about it.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "wake",
+    "bas": 0.8,
+    "son": 1.0
+   },
+   {
+    "k": "2 a.m.",
+    "bas": 1.2,
+    "son": 2.0
+   },
+   {
+    "k": "Think",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "it",
+    "bas": 3.1,
+    "son": 3.3
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 3.9,
+  "sure": 5.12,
+  "hiz": 1.0,
+  "metin": "It's... two-oh-seven a.m. The house is pitch dark. You get up for a glass of water.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "It's",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "two-oh-seven",
+    "bas": 0.7,
+    "son": 1.4
+   },
+   {
+    "k": "dark",
+    "bas": 2.8,
+    "son": 3.4
+   },
+   {
+    "k": "get up",
+    "bas": 3.7,
+    "son": 4.0
+   },
+   {
+    "k": "water",
+    "bas": 4.6,
+    "son": 5.0
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 11.1,
+  "sure": 3.84,
+  "hiz": 1.0,
+  "metin": "Into the kitchen, light on. You fill a glass from the tap.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "kitchen",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "light",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "on",
+    "bas": 1.4,
+    "son": 1.6
+   },
+   {
+    "k": "fill",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "tap",
+    "bas": 3.3,
+    "son": 3.6
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 15.8,
+  "sure": 4.0,
+  "hiz": 1.0,
+  "metin": "No time to think all day... so your brain clocks in at two.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "No",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "day",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "brain",
+    "bas": 2.4,
+    "son": 2.8
+   },
+   {
+    "k": "clocks",
+    "bas": 2.8,
+    "son": 3.2
+   },
+   {
+    "k": "two",
+    "bas": 3.4,
+    "son": 3.8
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 19.85,
+  "sure": 4.0,
+  "hiz": 1.0,
+  "metin": "Rent? Tomorrow's meeting? They all come knocking at once.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "Rent",
+    "bas": 0.2,
+    "son": 0.8
+   },
+   {
+    "k": "Tomorrow's",
+    "bas": 1.1,
+    "son": 1.5
+   },
+   {
+    "k": "meeting",
+    "bas": 1.5,
+    "son": 2.0
+   },
+   {
+    "k": "knocking",
+    "bas": 2.9,
+    "son": 3.3
+   },
+   {
+    "k": "once",
+    "bas": 3.4,
+    "son": 3.9
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 24.65,
+  "sure": 5.44,
+  "hiz": 1.0,
+  "metin": "The credit card bill. What you never told your mom. That text you never answered...",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "credit",
+    "bas": 0.2,
+    "son": 0.5
+   },
+   {
+    "k": "bill",
+    "bas": 0.8,
+    "son": 1.1
+   },
+   {
+    "k": "never told",
+    "bas": 1.8,
+    "son": 2.4
+   },
+   {
+    "k": "mom",
+    "bas": 2.6,
+    "son": 2.9
+   },
+   {
+    "k": "text",
+    "bas": 3.8,
+    "son": 4.3
+   },
+   {
+    "k": "answered",
+    "bas": 4.9,
+    "son": 5.3
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 30.7,
+  "sure": 3.28,
+  "hiz": 1.0,
+  "metin": "You got up for water. Now it's been an hour at the window.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "water",
+    "bas": 0.7,
+    "son": 1.3
+   },
+   {
+    "k": "hour",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "window",
+    "bas": 2.8,
+    "son": 3.2
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 34.85,
+  "sure": 5.2,
+  "hiz": 1.0,
+  "metin": "It's now... three... forty. And you've got work in the morning. You know that.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "now",
+    "bas": 0.3,
+    "son": 0.9
+   },
+   {
+    "k": "three",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "forty",
+    "bas": 1.9,
+    "son": 2.5
+   },
+   {
+    "k": "work",
+    "bas": 3.4,
+    "son": 3.7
+   },
+   {
+    "k": "know",
+    "bas": 4.6,
+    "son": 4.8
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 40.1,
+  "sure": 4.64,
+  "hiz": 1.05,
+  "metin": "You grab a pen and paper from the drawer. And write it all down, one by one.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "pen",
+    "bas": 0.6,
+    "son": 1.0
+   },
+   {
+    "k": "paper",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "drawer",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "write",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "down",
+    "bas": 3.0,
+    "son": 3.6
+   },
+   {
+    "k": "one by one",
+    "bas": 3.7,
+    "son": 4.5
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 44.55,
+  "sure": 5.76,
+  "hiz": 1.08,
+  "metin": "Rent, the meeting, that text... It's all on paper now. That's a morning problem.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "Rent",
+    "bas": 0.1,
+    "son": 0.8
+   },
+   {
+    "k": "meeting",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "text",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "paper",
+    "bas": 3.2,
+    "son": 3.6
+   },
+   {
+    "k": "morning",
+    "bas": 4.7,
+    "son": 5.1
+   },
+   {
+    "k": "problem",
+    "bas": 5.1,
+    "son": 5.6
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 49.85,
+  "sure": 3.12,
+  "hiz": 1.0,
+  "metin": "Your shoulders drop. Back to bed... lights off.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "shoulders",
+    "bas": 0.3,
+    "son": 0.7
+   },
+   {
+    "k": "drop",
+    "bas": 0.7,
+    "son": 1.1
+   },
+   {
+    "k": "bed",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "Lights",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "off",
+    "bas": 2.6,
+    "son": 3.0
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 53.3,
+  "sure": 6.08,
+  "hiz": 1.0,
+  "metin": "Next time you wake up at night... grab a pen, not your phone. Write it down, let it go... and sleep.",
+  "not": "kelime zamanları dosyaya göre (tempo öncesi)",
+  "kelimeler": [
+   {
+    "k": "night",
+    "bas": 1.1,
+    "son": 1.5
+   },
+   {
+    "k": "pen",
+    "bas": 1.9,
+    "son": 2.4
+   },
+   {
+    "k": "phone",
+    "bas": 2.8,
+    "son": 3.4
+   },
+   {
+    "k": "Write",
+    "bas": 3.6,
+    "son": 3.8
+   },
+   {
+    "k": "go",
+    "bas": 4.6,
+    "son": 5.0
+   },
+   {
+    "k": "sleep",
+    "bas": 5.6,
+    "son": 6.0
+   }
+  ]
+ }
+}
