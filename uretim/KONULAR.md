@@ -5,6 +5,39 @@ sonda somut bir cümle. Format örneği: `video01` (Mesai Bitmiyor).
 
 Durum: ✅ yayınlandı · 🎬 üretildi · ⏳ sırada
 
+## ÖNCELİKLİ YAPIM SIRASI — referans sayfanın en çok izlenenden en aza (kullanıcı talimatı)
+
+Fikir referanstaki sahneden ilham alır; hikâye, karakter ve metin bizim (halk ağzı, SEN mercan).
+
+| Sıra | Video | Referans izlenme | Referans sahne | Bizim hikâyemiz / kanca | Durum |
+|---|---|---|---|---|---|
+| 1 | 05 | 9,9 Mn | Leğende elde yıkayan "biri", yanında gergin SEN | **Annen elde yıkardı.** "Çamaşır makinen bozuldu diye sinirlendin mi?" Makine bozulunca söylenen SEN, annenin yıllarca leğende yıkadığı ellerini hatırlar. Final: "Bu akşam anneni ara, ellerinden öp." | ⏳ |
+| 2 | 06 | 3,1 Mn | Evde anne, kardeş; kapıda gülümseyen SEN | **Dışarıda güler yüz, evde surat.** "Dışarıda herkese gülüyorsun. Peki evde?" Patrona, müşteriye, kasiyere gülümseyen SEN eve gelince tek kelime etmez. Final: "Gülümsemenin en güzelini eve sakla." | ⏳ |
+| 3 | 07 | 910 B | Gece, mutfakta musluk başında tek başına SEN | **Gece ikide mutfak.** "Gece ikide neden uyanıyorsun?" Su içmeye kalkan SEN'in kafasında borç, iş, söylenmemiş sözler döner. Final: somut, kısa bir rahatlama önerisi (kâğıda yaz, telefonu uzak tut). | ⏳ |
+| 4 | 08 | 794 B | Mor ışık, masada SEN, "temiz/kirli" | **Fotoğraf temiz, hayat dağınık.** "Paylaştığın fotoğrafın arkasında ne var?" Kadrajın dışı: dağınık ev, borç, yorgunluk. Herkes temizini paylaşır, SEN kendi kirlisini başkasının temiziyle kıyaslar. | ⏳ |
+| 5 | 09 | 689 B | Kalabalık "onlar", ayrı duran SEN, "yetmiyor" | **Maaş neden yetmiyor?** "Maaşın yatıyor, üç günde bitiyor. Neden?" Kira, fatura, market, taksit maaşı paylaşır; SEN'e kalan bozukluk. | ⏳ |
+| 6 | 10 | 251 B | Toplum: bal "normal", arı yemek "iğrenç" | **Normal dediğin ne?** (KONULAR #10) | ⏳ |
+| 7 | 11 | 215 B | Banyoda sarılan sevgililer | **Sabah telaşında sarılmak.** "En son ne zaman sebepsiz sarıldın?" | ⏳ |
+| 8 | 12 | 190 B | Metroda "sıradan" SEN | **Metroda sıradan** (KONULAR #11) | ⏳ |
+| 9 | 13 | 152 B | Saat üstünde çocuk, oyuncaklar | **Oyuncak yağmuru** (KONULAR #13) | ⏳ |
+| 10 | 14 | 127 B | Yolculuk başına risk: uçak/araba | **Uçak mı araba mı** (KONULAR #09) | ⏳ |
+| 11 | 15 | 119 B | Balıkçı | **Balık mı olta mı** (KONULAR #18) | ⏳ |
+| 12 | 16 | 109 B | Sultan ve halk, terazi | **Sultan ve kalabalık**: "Kalabalık neden hep aynı yere bakar?" | ⏳ |
+| 13 | 17 | 76,4 B | Aynı fabrika, aynı kumaş, logo | **Logo farkı** (KONULAR #04) | ⏳ |
+| 14 | 18 | 44,6 B | Aynı davranış, eşofmanlı | **Eşofmanlı adam** (KONULAR #06) | ⏳ |
+| 15 | 19 | 33,4 B | Uygulama konum izni | **Uygulama izinleri** (KONULAR #05) | ⏳ |
+| 16 | 20 | 25,6 B | SEN ve telefon | **Telefonun saati** (KONULAR #14) | ⏳ |
+| 17 | 21 | 23,6 B | Elektrik direği; SEN, iş arkadaşı, arkadaş, komşu | **Aynı kablo, aynı dert**: herkes aynı faturayı ödüyor, kimse konuşmuyor | ⏳ |
+| 18 | 22 | 21,6 B | Terazi: bizden / onlar | **Biz ve onlar** (KONULAR #08) | ⏳ |
+| 19 | 23 | 18 B | Alkış; temizlikçi, garson, konuk | **Görünmez emek** (KONULAR #12) | ⏳ |
+| 20 | 24 | 17,8 B | Sahnede tek başına SEN | **Sahnedeki sen** (KONULAR #15) | ⏳ |
+| 21 | 25 | 17,3 B | Ücretli ders, seven | **Sevdiğin iş mi, paralı iş mi?** | ⏳ |
+| 22 | 26 | 16,4 B | Ücret, korku, açlık, patron | **Korku, açlık, ücret** (KONULAR #03) | ⏳ |
+| 23 | 27 | 15,4 B | Haydutlar, kral, halk | **Haydutlar ve kral** (KONULAR #07) | ⏳ |
+| 24 | 28 | 12,5 B | Çarklar | **Çarkı kim çeviriyor** (KONULAR #02) | ⏳ |
+
+Not: 02 (dikkat testi), 03 (taksit), 04 (annenin aramaları) bu sıradan önce üretime girmişti; hazır stokta tutulur.
+
 ## A) Referans sayfadaki temalardan uyarlananlar (aynı fikir, bizim hikâyemiz)
 
 | # | Konu | Kanca (ilk 2 sn) | Hikâye fikri | Durum |
