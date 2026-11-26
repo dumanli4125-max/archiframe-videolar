@@ -1,12 +1,13 @@
-# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden), hız 0.85 (l02, l10: 0.8). Satır = dosya, başlangıç saniyesi
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi.
+# l02 ve l10 hız 0.8, diğerleri 0.85. l03-l09 miks sırasında %6 hızlandırılır (atempo 1.06).
 l01 0.3   Mesain kaçta bitiyor? Hadi, düşünmeden söyle.
 l02 4.0   Kâğıtta yazan belli. Akşam... saat altı. Bilgisayarı kapattın, montunu kaptın...
-l03 10.3  Kapıdan çıktın mı, iş işte kalır. Hadi canım... Sen buna inandın mı?
-l04 15.35 Saat dokuz buçuk. Yemek yenmiş, çay demlenmiş. Kanepeye bir uzandın... Oh be.  (%7 hızlandırıldı)
-l05 21.4  Derken telefon titriyor. Bakıyorsun, patron. Müsait misin? Ufak bir şey.
-l06 27.4  Ufak bir şeymiş... Bir cevap yazıyorsun. Arkasından bir mesaj daha. Sonra bir tane daha.
-l07 34.0  İçeriden çocuğun sesi geliyor: Masal okur musun? Sen de diyorsun ki: Bir dakika.
-l08 39.0  O bir dakika hiç gelmiyor. Odasının ışığı sönüyor. Saat olmuş on bir.
-l09 44.3  Bu saatler için sana tek kuruş ödenmiyor. Ama sen her akşam, gönüllü gibi çalışıyorsun.
-l10 50.6  Patron sekiz saatin parasını veriyor. Akşamlarını ise... sen bedavaya veriyorsun.
-l11 56.6  Bu akşam telefonu sessize al. Git, o masalı oku.
+l03 10.3  Kapıdan çıktın mı, iş işte kalır derler. Derler de... bizim patron öyle demiyor.
+l04 15.6  Saat dokuz buçuk. Karnın doymuş, çayın demlenmiş. Kanepeye bir kuruldun... Oh be, dünya varmış.
+l05 22.2  Tam o sırada telefon titriyor. Kim mi? Kim olacak, patron. Müsait misin? Ufak bir şey.
+l06 28.4  Ufak bir şeymiş... İki dakika dedin, bir cevap yazdın. Arkası kesilmedi tabii. Mesaj üstüne mesaj.
+l07 35.1  İçeriden ufaklığın sesi geliyor: Masal okur musun? Sen ekrana dalmışsın: Bir dakika.
+l08 39.9  O bir dakika hiç gelmiyor. Ufaklık beklemiş, beklemiş... ışığı sönmüş. Saat olmuş on bir.
+l09 46.5  Bu saatler için cebine tek kuruş girmiyor. Ama sen her akşam, beleşe mesai yapıyorsun.
+l10 52.4  Patron sekiz saatin parasını veriyor. Akşamlarını ise... sen bedavaya veriyorsun.
+l11 58.6  Bu akşam telefonu sessize al. Git, o masalı oku.
