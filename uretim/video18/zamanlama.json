@@ -1,0 +1,316 @@
+{
+ "l01": {
+  "sure": 3.68,
+  "baslangic": 0.3,
+  "metin": "Aynı davranış, farklı kıyafet. Sence hangisi kaba?",
+  "kelimeler": [
+   {
+    "k": "davranış",
+    "bas": 0.4,
+    "son": 1.1
+   },
+   {
+    "k": "kıyafet",
+    "bas": 1.6,
+    "son": 2.3
+   },
+   {
+    "k": "kaba",
+    "bas": 3.2,
+    "son": 3.6
+   }
+  ]
+ },
+ "l02": {
+  "sure": 4.16,
+  "baslangic": 4.4,
+  "metin": "Bir banka. Sabah, uzun bir sıra. Herkes sırasını bekliyor.",
+  "kelimeler": [
+   {
+    "k": "banka",
+    "bas": 0.2,
+    "son": 0.8
+   },
+   {
+    "k": "sıra",
+    "bas": 2.0,
+    "son": 2.3
+   },
+   {
+    "k": "bekliyor",
+    "bas": 3.5,
+    "son": 4.0
+   }
+  ]
+ },
+ "l03": {
+  "sure": 3.68,
+  "baslangic": 8.9,
+  "metin": "Takım elbiseli bir adam geldi. Sırayı kesti, en öne geçti.",
+  "kelimeler": [
+   {
+    "k": "Takım",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "geldi",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "kesti",
+    "bas": 2.1,
+    "son": 2.6
+   },
+   {
+    "k": "geçti",
+    "bas": 3.1,
+    "son": 3.5
+   }
+  ]
+ },
+ "l04": {
+  "sure": 3.6,
+  "baslangic": 13.0,
+  "metin": "Telefonla bağıra bağıra konuşuyor. Kimse bir şey demedi.",
+  "kelimeler": [
+   {
+    "k": "Telefonla",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "bağıra",
+    "bas": 0.6,
+    "son": 1.3
+   },
+   {
+    "k": "Kimse",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "demedi",
+    "bas": 3.1,
+    "son": 3.6
+   }
+  ]
+ },
+ "l05": {
+  "sure": 3.6,
+  "baslangic": 17.0,
+  "metin": "Sen de gülümsedin. Acelesi var herhalde. Önemli biri.",
+  "kelimeler": [
+   {
+    "k": "gülümsedin",
+    "bas": 0.4,
+    "son": 1.0
+   },
+   {
+    "k": "Acelesi",
+    "bas": 1.3,
+    "son": 1.7
+   },
+   {
+    "k": "Önemli",
+    "bas": 2.8,
+    "son": 3.2
+   }
+  ]
+ },
+ "l06": {
+  "sure": 4.16,
+  "baslangic": 21.4,
+  "metin": "Ertesi gün, aynı banka. Eşofmanlı bir adam aynısını yaptı.",
+  "kelimeler": [
+   {
+    "k": "Ertesi",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "Eşofmanlı",
+    "bas": 2.2,
+    "son": 2.7
+   },
+   {
+    "k": "aynısını",
+    "bas": 3.2,
+    "son": 3.6
+   },
+   {
+    "k": "yaptı",
+    "bas": 3.6,
+    "son": 4.0
+   }
+  ]
+ },
+ "l07": {
+  "sure": 3.28,
+  "baslangic": 25.9,
+  "metin": "Herkes ayaklandı. Ne biçim adam bu! Sıraya geçsene!",
+  "kelimeler": [
+   {
+    "k": "ayaklandı",
+    "bas": 0.4,
+    "son": 1.2
+   },
+   {
+    "k": "Ne biçim",
+    "bas": 1.3,
+    "son": 1.7
+   },
+   {
+    "k": "Sıraya",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "geçsene",
+    "bas": 2.7,
+    "son": 3.2
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.68,
+  "baslangic": 29.8,
+  "metin": "Davranış aynı. Değişen... sadece kıyafet.",
+  "kelimeler": [
+   {
+    "k": "Davranış",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "aynı",
+    "bas": 0.6,
+    "son": 0.9
+   },
+   {
+    "k": "Değişen",
+    "bas": 1.4,
+    "son": 1.9
+   },
+   {
+    "k": "kıyafet",
+    "bas": 3.0,
+    "son": 3.5
+   }
+  ]
+ },
+ "l09": {
+  "sure": 5.28,
+  "baslangic": 34.4,
+  "metin": "Bir akşam koşudan döndün. Eşofmanlısın, terlisin. Markete girdin.",
+  "kelimeler": [
+   {
+    "k": "koşudan",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "Eşofmanlısın",
+    "bas": 2.1,
+    "son": 2.9
+   },
+   {
+    "k": "terlisin",
+    "bas": 3.2,
+    "son": 3.8
+   },
+   {
+    "k": "Markete",
+    "bas": 4.3,
+    "son": 4.7
+   }
+  ]
+ },
+ "l10": {
+  "sure": 4.24,
+  "baslangic": 40.1,
+  "metin": "Kasiyer seni tepeden süzdü. Görevli peşinden dolaşmaya başladı.",
+  "kelimeler": [
+   {
+    "k": "Kasiyer",
+    "bas": 0.1,
+    "son": 0.7
+   },
+   {
+    "k": "süzdü",
+    "bas": 1.4,
+    "son": 1.9
+   },
+   {
+    "k": "Görevli",
+    "bas": 2.3,
+    "son": 2.7
+   },
+   {
+    "k": "peşinden",
+    "bas": 2.7,
+    "son": 3.2
+   }
+  ]
+ },
+ "l11": {
+  "sure": 5.04,
+  "baslangic": 44.8,
+  "metin": "Hiçbir şey yapmadın. Ama o bakışı... ilk kez kendi üstünde hissettin.",
+  "kelimeler": [
+   {
+    "k": "yapmadın",
+    "bas": 0.7,
+    "son": 1.1
+   },
+   {
+    "k": "bakışı",
+    "bas": 2.0,
+    "son": 2.5
+   },
+   {
+    "k": "kendi",
+    "bas": 3.6,
+    "son": 3.9
+   },
+   {
+    "k": "hissettin",
+    "bas": 4.3,
+    "son": 5.0
+   }
+  ]
+ },
+ "l12": {
+  "sure": 5.6,
+  "baslangic": 50.6,
+  "metin": "Bir dahaki sefere, birini yargılamadan önce... kıyafetine değil, yaptığına bak.",
+  "kelimeler": [
+   {
+    "k": "sefere",
+    "bas": 0.6,
+    "son": 1.2
+   },
+   {
+    "k": "yargılamadan",
+    "bas": 1.8,
+    "son": 2.4
+   },
+   {
+    "k": "kıyafetine",
+    "bas": 3.2,
+    "son": 3.9
+   },
+   {
+    "k": "yaptığına",
+    "bas": 4.7,
+    "son": 5.1
+   },
+   {
+    "k": "bak",
+    "bas": 5.1,
+    "son": 5.4
+   }
+  ]
+ }
+}

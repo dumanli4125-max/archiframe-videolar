@@ -189,7 +189,7 @@ function carScene(t,o={}){const pos=roadPos(t);const sh=o.shake||0;
 function chart(t){room();fade(0.35,'5,10,20');
   const a=sm(30.15,30.6,t);if(a<=0)return;ctx.save();ctx.globalAlpha=a;
   card(540,960,860,940,{stroke:AM});
-  ctx.save();ctx.font='800 40px Inter';ctx.letterSpacing='5px';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=AM;glow(AM,16);ctx.fillText(L('YOLCULUK BAŞINA RİSK','RISK PER TRIP'),540,560);ctx.restore();
+  ctx.save();ctx.font='800 40px Inter';ctx.letterSpacing='5px';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=AM;glow(AM,16);ctx.fillText(L('KİLOMETRE BAŞINA RİSK','RISK PER MILE'),540,560);ctx.restore();
   const base=1290;ctx.strokeStyle=hexA(CR,0.5);ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(160,base);ctx.lineTo(920,base);ctx.stroke();
   // UÇAK çubuğu: küçücük
   const hp=26*sm(30.7,31.2,t);ctx.fillStyle=TE;glow(TE,20);rr(250,base-hp-2,180,hp+2,8);ctx.fill();noGlow();

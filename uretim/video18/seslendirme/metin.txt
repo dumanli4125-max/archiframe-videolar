@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   0.85  Aynı davranış, farklı kıyafet. Sence hangisi kaba?
+l02 4.4   0.85  Bir banka. Sabah, uzun bir sıra. Herkes sırasını bekliyor.
+l03 8.9   0.85  Takım elbiseli bir adam geldi. Sırayı kesti, en öne geçti.
+l04 13.0  0.85  Telefonla bağıra bağıra konuşuyor. Kimse bir şey demedi.
+l05 17.0  0.85  Sen de gülümsedin. Acelesi var herhalde. Önemli biri.
+l06 21.4  0.85  Ertesi gün, aynı banka. Eşofmanlı bir adam aynısını yaptı.
+l07 25.9  0.85  Herkes ayaklandı. Ne biçim adam bu! Sıraya geçsene!
+l08 29.8  0.8   Davranış aynı. Değişen... sadece kıyafet.
+l09 34.4  0.85  Bir akşam koşudan döndün. Eşofmanlısın, terlisin. Markete girdin.
+l10 40.1  0.85  Kasiyer seni tepeden süzdü. Görevli peşinden dolaşmaya başladı.
+l11 44.8  0.85  Hiçbir şey yapmadın. Ama o bakışı... ilk kez kendi üstünde hissettin.
+l12 50.6  0.8   Bir dahaki sefere, birini yargılamadan önce... kıyafetine değil, yaptığına bak.
