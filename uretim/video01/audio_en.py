@@ -17,7 +17,10 @@ vo=np.zeros(N); act=np.zeros(N)
 for st,n,tp in VO:
     a=load(f'{HERE}/seslendirme_en/{n}.wav',tp).copy(); a/=np.sqrt(np.mean(a**2))+1e-9; a*=0.12
     i=int(st*SR); L=min(len(a),N-i); vo[i:i+L]+=a[:L]; act[i:i+L]=1
-k=int(0.25*SR); duck=np.convolve(act,np.ones(k)/k,'same'); duck=1-0.55*duck
+k=int(0.25*SR)
+# np.convolve(act,np.ones(k)/k,'same') ile aynı sonuç, kayan toplamla (dakikalar yerine milisaniye)
+cs=np.concatenate([[0],np.cumsum(act)]); o=(k-1)//2; ii=np.arange(N)
+duck=(cs[np.clip(ii+k-o,0,N)]-cs[np.clip(ii-o,0,N)])/k; duck=1-0.55*duck
 # --- ambiyans
 lfo=0.6+0.4*np.sin(2*np.pi*0.07*t)
 pad=(np.sin(2*np.pi*55*t)+0.6*np.sin(2*np.pi*82.4*t)+0.35*np.sin(2*np.pi*110.3*t)+0.25*np.sin(2*np.pi*164.8*t)+0.12*np.sin(2*np.pi*246.9*t))*lfo

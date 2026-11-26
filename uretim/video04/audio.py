@@ -53,4 +53,16 @@ steps(40.9, 46.0, rate=0.55, g=0.07)                      # annenin yavaş adım
 click(46.3, 0.15)                                         # açtı
 for o, f in [(47.4, 261.6), (48.4, 329.6), (49.4, 392), (51.0, 349.2), (52.6, 392), (53.6, 523.3)]:
     m.note(o, f, 0.07, 2.8)                               # sıcak final
-m.write(sys.argv[1])
+
+# Kitteki write() ile aynı miks; yalnız ducking yumuşatması np.convolve yerine kümülatif toplamla (aynı sonuç, çok daha hızlı)
+import wave
+def write_fast(path):
+    k = int(0.25 * SR); c = np.concatenate([[0.0], np.cumsum(m.act)]); h = k // 2
+    i = np.arange(m.N); lo = np.clip(i - h, 0, m.N); hi = np.clip(i - h + k, 0, m.N)
+    duck = 1 - 0.55 * (c[hi] - c[lo]) / k
+    out = m.v + (m.music + m.sfx) * duck
+    out *= np.clip((m.D - m.t) / 2, 0, 1)
+    out /= np.max(np.abs(out)) * 1.12
+    w = wave.open(path, 'w'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+    w.writeframes((out * 32767).astype(np.int16).tobytes()); w.close()
+write_fast(sys.argv[1])

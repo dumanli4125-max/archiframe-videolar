@@ -291,7 +291,7 @@ function caps(t){
 
 // ================= SAYAÇ (paneller arası) =================
 function counter(t){
-  const a=sm(24.6,25.0,t)*(1-sm(36.9,37.3,t));if(a<=0)return;
+  const a=sm(25.5,25.75,t)*(1-sm(36.9,37.3,t));if(a<=0)return;
   const n=t<25.7?0:t<26.6?1:t<27.4?2:t<28.3?5:12;
   const last=[25.7,26.6,27.4,28.3].filter(h=>t>h).pop()||0;const pop=last?1+0.25*Math.exp(-(t-last)*7):1;
   ctx.save();ctx.globalAlpha=a;card(W/2,1060,560,96,{stroke:C.coral,r:48});

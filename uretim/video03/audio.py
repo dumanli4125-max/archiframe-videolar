@@ -53,4 +53,16 @@ m.thud(50.68, f=45, gain=0.35)
 # FİNAL
 for t0, f in [(51.5, 220), (53.78, 185), (56.1, 261.6), (57.8, 329.6), (59.6, 392)]:
     m.note(t0, f)
-m.write(sys.argv[1])
+# hızlı ducking (kitteki np.convolve k=11025 çok yavaş): aynı hareketli ortalama, cumsum ile
+import wave
+from audio_kit import SR
+def fast_write(self, path):
+    k = int(0.25 * SR); c = np.cumsum(np.concatenate([np.zeros(1), self.act]))
+    i = np.arange(self.N); lo = np.clip(i - k // 2, 0, self.N); hi = np.clip(i - k // 2 + k, 0, self.N)
+    duck = 1 - 0.55 * (c[hi] - c[lo]) / k
+    out = self.v + (self.music + self.sfx) * duck
+    out *= np.clip((self.D - self.t) / 2, 0, 1)
+    out /= np.max(np.abs(out)) * 1.12
+    w = wave.open(path, 'w'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+    w.writeframes((out * 32767).astype(np.int16).tobytes()); w.close()
+fast_write(m, sys.argv[1])
