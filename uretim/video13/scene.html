@@ -6,6 +6,10 @@
 // 13 — Oyuncak yağmuru. Satır başlangıçları (audio.py VO ile AYNI):
 // l01 0.3 | l02 5.0 | l03 10.2 | l04 15.9 | l05 20.4 | l06 26.1 | l07 30.3 | l08 34.2 | l09 39.5 | l10 43.1 | l11 48.2 | l12 53.4
 const DURATION = 61.5;
+const T=(tr,en)=>L(tr,en); // EN: olay zamanı kaydırma (yalnız İngilizce)
+// EN saat gösterimi 12 saatlik (8:58 → 9:00)
+const fmtL=M=>{if(LANG!=='en')return fmt(M);M=Math.floor(M);let h=Math.floor(M/60)%12;if(h===0)h=12;return h+':'+String(M%60).padStart(2,'0');};
+const NINE=T(6.65,6.5);
 const AM=C.amber, CO=C.coral, TE=C.teal, CR=C.cream, WH='#fff';
 
 // ---------- SAAT KADRANI (zemin) ----------
@@ -23,8 +27,8 @@ const MT=[];(function(){let m=0;for(let i=0;i<=DURATION*100+10;i++){MT.push(m);m
 function cum(t){const i=Math.max(0,Math.min(MT.length-1,Math.floor(t*100)));return MT[i];}
 function clockMin(t){
   if(t<5.0)return 23*60+10+cum(t);                 // kanca: gece geç saat
-  if(t<26.1){if(t<6.65)return 20*60+58+(t-5.0)*0.6;   // "dokuz" kelimesinde 21:00
-    return 21*60+(t-6.65)*0.5;}
+  if(t<26.1){if(t<NINE)return 20*60+58+(t-5.0)*0.6;   // "dokuz"/"nine" kelimesinde 21:00
+    return 21*60+(t-NINE)*0.5;}
   if(t<43.0)return 21*60+cum(t)-cum(26.1);
   return 21*60+cum(t)-cum(43.0);
 }
@@ -55,7 +59,7 @@ function dial(t,{dim=0,warm=0}={}){
   ctx.restore();
 }
 function bg(t,{door:dl=0.2,dimW=0}={}){room();windowNight(110,700,320,300,{moon:true,city:true});frame(560,760);door(960,dl);ceilingLamp(560,0.5,1060);}
-function digital(t,a=1){ if(a<=0)return; const M=clockMin(t);clockPanel(540,470,fmt(M),0,a);}
+function digital(t,a=1){ if(a<=0)return; const M=clockMin(t);clockPanel(540,470,fmtL(M),0,a);}
 function dayPanel(text,a=1,pulse=0){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.font='800 52px Inter';ctx.letterSpacing='3px';
   const w=ctx.measureText(text).width+80;rr(540-w/2,412,w,116,18);ctx.fillStyle='#0a1426';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle=hexA(AM,0.4+0.5*pulse);ctx.stroke();
   ctx.textAlign='center';ctx.textBaseline='middle';glow(AM,18+pulse*26);ctx.fillStyle=AM;ctx.fillText(text,542,472);ctx.restore();}
@@ -143,14 +147,14 @@ function senSitting(t,{eyes='open',type=true,a=1}={}){stool(SX);
 function sHook(t){
   bg(t);dial(t);
   drawPile(t,{all:true});
-  const look=sm(2.2,2.6,t);
+  const look=sm(T(2.2,2.7),T(2.6,3.1),t);
   const k=kid({x:KX,s:0.72,...blend({...POSE.stand,ua:30,fa:70},{...POSE.stand,ua:60,fa:120,ua2:20,fa2:40},look),facing:look>0.5?1:-1,eyes:look>0.5?'wide':'open'});
   if(look<0.5)robot(k.hand[0]-10,k.hand[1]+40,0.45);
   senSitting(t);
   drawToys(t,{all:true});
-  bubble(KX+130,990,L('Benimle oynar mısın?','Will you play with me?'),sm(3.0,3.3,t));
-  caption(L([[['Çocuğuna en son',WH]],[['ne ',WH],['aldın?',AM]]],[[['When did you last buy',WH]],[['your kid ',WH],['something?',AM]]]),0.2,2.25,t,74);
-  caption(L([[['Peki en son ne zaman',WH]],[['onunla ',WH],['oynadın?',CO]]],[[['And when did you last',WH]],[['actually ',WH],['play with them?',CO]]]),2.25,4.8,t,70);
+  bubble(KX+130,990,L('Benimle oynar mısın?','Will you play with me?'),sm(T(3.0,3.5),T(3.3,3.8),t));
+  caption(L([[['Çocuğuna en son',WH]],[['ne ',WH],['aldın?',AM]]],[[['When did you last buy',WH]],[['your kid ',WH],['something?',AM]]]),0.2,T(2.25,2.75),t,74);
+  caption(L([[['Peki en son ne zaman',WH]],[['onunla ',WH],['oynadın?',CO]]],[[['And when did you last',WH]],[['play with them?',CO]]]),T(2.25,2.75),4.8,t,70);
 }
 
 // ---------- SAHNE 1: İLK AKŞAM (5.0 – 26.1) ----------
@@ -217,17 +221,17 @@ function sFirst(t){
     car(cx,cy,0.7);
     if(t<14.4){ctx.save();ctx.globalAlpha=1-sm(13.45,14.4,t);for(let j=0;j<8;j++){const an=j/8*Math.PI*2,r=30+60*sm(13.45,14.3,t);ctx.fillStyle=BOXCOL[j%6];ctx.beginPath();ctx.arc(cx+Math.cos(an)*r,cy-30+Math.sin(an)*r*0.7,6,0,7);ctx.fill();}ctx.restore();}
   }
-  bubble(K.head[0]-60,K.head[1]-150,L('Benimle oynar mısın?','Will you play with me?'),sm(21.8,22.1,t)*(1-sm(24.6,24.9,t)));
+  bubble(K.head[0]-60,K.head[1]-150,L('Benimle oynar mısın?','Will you play with me?'),sm(T(21.8,22.4),T(22.1,22.7),t)*(1-sm(24.6,24.9,t)));
   bubble(SX+10,900,L('Şimdi değil.','Not now.'),sm(24.85,25.05,t)*(1-sm(25.8,26.0,t)),CO);
   // altyazılar
   caption(L([[['Akşam oldu...',WH]],[['saat ',WH],['dokuz.',AM]]],[[['Evening...',WH]],[["nine o'clock.",AM]]]),5.0,7.65,t,74);
   caption(L([[['Kapıdan girdin,',WH]],[['elinde bir ',WH],['paket.',AM]]],[[['You walk in',WH]],[['with a ',WH],['gift.',AM]]]),7.65,10.0,t,72);
-  caption(L([[['Ufaklık koşa koşa geldi,',WH]],[['kaptı ',WH],['paketi.',AM]]],[[['Your kid comes running,',WH]],[['grabs the ',WH],['box.',AM]]]),10.2,13.3,t,66);
-  caption(L([[['Bir ',WH],['araba!',TE]],[['Sevindi, ',AM],['sarıldı.',AM]]],[[['A toy ',WH],['car!',TE]],[['Big smile. ',AM],['Big hug.',AM]]]),13.3,15.8,t,72);
+  caption(L([[['Ufaklık koşa koşa geldi,',WH]],[['kaptı ',WH],['paketi.',AM]]],[[['Your kid comes running,',WH]],[['grabs the ',WH],['box.',AM]]]),T(10.2,10.6),T(13.3,12.65),t,66);
+  caption(L([[['Bir ',WH],['araba!',TE]],[['Sevindi, ',AM],['sarıldı.',AM]]],[[['A toy ',WH],['car!',TE]],[['Big smile, ',AM],['big hug.',AM]]]),T(13.3,12.65),15.8,t,72);
   caption(L([[['Sen daha montunu',WH]],[['çıkarmadan...',WH]]],[[['Before your coat',WH]],[['is even off...',WH]]]),15.9,17.85,t,70);
   caption(L([[['telefon ',TE],['elinde,',WH]],[['laptop ',TE],['kucağında.',WH]]],[[['phone ',TE],['in hand,',WH]],[['laptop ',TE],['on your lap.',WH]]]),17.85,20.25,t,70);
-  caption(L([[['Ufaklık arabayı getirdi:',WH]],[['“Benimle oynar mısın?”',AM]]],[[['Your kid brings the car:',WH]],[['“Will you play with me?”',AM]]]),20.4,23.35,t,64);
-  caption(L([[['Kafanı kaldırmadın:',WH]],[['“Şimdi değil.”',CO]]],[[["You don't look up:",WH]],[['“Not now.”',CO]]]),23.35,25.9,t,70);
+  caption(L([[['Ufaklık arabayı getirdi:',WH]],[['“Benimle oynar mısın?”',AM]]],[[['Your kid brings the car:',WH]],[['“Will you play with me?”',AM]]]),20.4,T(23.35,23.7),t,64);
+  caption(L([[['Kafanı kaldırmadın:',WH]],[['“Şimdi değil.”',CO]]],[[["You don't even look up:",WH]],[['“Not now.”',CO]]]),T(23.35,23.7),25.9,t,70);
 }
 
 // ---------- SAHNE 2: GÜNLER AKAR (26.1 – 43.0) ----------
@@ -244,10 +248,10 @@ function sDays(t){
   // çocuk: her yeni oyuncakta sevinir, sonra SEN'e bakar
   let joy=0;for(const k of TOYS)joy=Math.max(joy,sm(k.tf+0.2,k.tf+0.4,t)*(1-sm(k.tf+0.8,k.tf+1.0,t)));
   for(const p of PILE)joy=Math.max(joy,0.5*sm(p.tf,p.tf+0.15,t)*(1-sm(p.tf+0.3,p.tf+0.45,t)));
-  const lookSen=sm(37.8,38.2,t);
+  const lookSen=sm(T(37.8,38.3),T(38.2,38.7),t);
   let o=blend({...POSE.stand,lean:12,ua:40+Math.sin(t*5)*18,fa:60,ua2:30,fa2:40},{...POSE.stand,ua:150,fa:170,ua2:150,fa2:170},joy);
   o=blend(o,{...POSE.stand,ua:80,fa:100,ua2:60,fa2:110},lookSen);
-  const reach=sm(41.5,41.9,t);o=blend(o,{...POSE.stand,ua:120,fa:130,ua2:110,fa2:130,lean:-4},reach);
+  const reach=sm(T(41.5,42.0),T(41.9,42.4),t);o=blend(o,{...POSE.stand,ua:120,fa:130,ua2:110,fa2:130,lean:-4},reach);
   const sad=sm(39.8,40.3,t)*(1-reach);o=blend(o,{...POSE.sad,ua:10,fa:20},sad*0.8);
   let y=standY(ks)-(joy>0.3?Math.abs(Math.sin(t*10))*18*joy:0);
   const facing=lookSen>0.5?1:-1;
@@ -257,18 +261,18 @@ function sDays(t){
   drawToys(t,{a:1-spot*0.65});
   // spot: çocuk ve SEN aydınlık, gerisi karanlık
   if(spot>0){ctx.save();ctx.globalAlpha=spot*0.55;const g=ctx.createRadialGradient(600,1200,200,600,1200,700);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,1)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);ctx.restore();}
-  bubble(K.head[0]+60,K.head[1]-190,L('Benimle oynar mısın?','Will you play with me?'),sm(38.3,38.6,t)*(1-sm(39.9,40.2,t)));
-  bubble(SX+10,900,L('Şimdi değil.','Not now.'),sm(38.95,39.15,t)*(1-sm(40.0,40.3,t)),CO);
+  bubble(K.head[0]+60,K.head[1]-190,L('Benimle oynar mısın?','Will you play with me?'),sm(T(38.3,38.6),T(38.6,38.9),t)*(1-sm(39.9,40.2,t)));
+  bubble(SX+10,900,L('Şimdi değil.','Not now.'),sm(T(38.95,39.1),T(39.15,39.3),t)*(1-sm(40.0,40.3,t)),CO);
   if(t>34.5&&t<37.6)tag(L('OYUNCAKÇI','TOY STORE'),170,960,AM,sm(34.7,35.1,t)*(1-sm(37.2,37.6,t)));
   // altyazılar
   caption(L([[['Ertesi akşam',WH]],[['bir ',WH],['ayıcık.',AM]]],[[['Next night,',WH]],[['a ',WH],['teddy bear.',AM]]]),26.1,28.2,t,74);
   caption(L([[['Sonra bir ',WH],['robot.',AM]],[['Sonra ',WH],['tablet.',TE]]],[[['Then a ',WH],['robot.',AM]],[['Then a ',WH],['tablet.',TE]]]),28.2,30.15,t,74);
-  caption(L([[['Vaktin yok',WH]],[['ama ',WH],['paran',AM],[' var.',WH]]],[[['No time,',WH]],[['but plenty of ',WH],['money.',AM]]]),30.3,32.0,t,74);
-  caption(L([[['Oyuncak aldın,',AM]],[['kafan rahat.',WH]]],[[['Buy a toy,',AM]],[['problem solved.',WH]]]),32.0,34.05,t,74);
-  caption(L([[['Odası',WH]],[['oyuncakçıya ',AM],['döndü.',WH]]],[[['Their room turns',WH]],[['into a ',WH],['toy store.',AM]]]),34.2,36.1,t,72);
-  caption(L([[['Her yenisiyle',WH]],[['biraz oynadı...',WH]]],[[['Plays with each one',WH]],[['for a minute...',WH]]]),36.1,37.8,t,72);
-  caption(L([[['sonra dönüp',WH]],[['sana ',CO],['baktı.',WH]]],[[['then looks',WH]],[['over at ',WH],['you.',CO]]]),37.8,39.35,t,74);
-  caption(L([[['Ama o, oyuncağı değil...',WH]],[['seni istiyordu.',CO]]],[[["They didn't want toys...",WH]],[['they wanted ',WH],['you.',CO]]]),39.5,42.8,t,68);
+  caption(L([[['Vaktin yok',WH]],[['ama ',WH],['paran',AM],[' var.',WH]]],[[['No time,',WH]],[['but plenty of ',WH],['cash.',AM]]]),30.3,T(32.0,32.6),t,74);
+  caption(L([[['Oyuncak aldın,',AM]],[['kafan rahat.',WH]]],[[['Buy a toy,',AM]],[['done.',WH]]]),T(32.0,32.6),34.05,t,74);
+  caption(L([[['Odası',WH]],[['oyuncakçıya ',AM],['döndü.',WH]]],[[["The room's a",WH]],[['toy store',AM],[' now.',WH]]]),34.2,T(36.1,36.2),t,72);
+  caption(L([[['Her yenisiyle',WH]],[['biraz oynadı...',WH]]],[[['Each toy lasts',WH]],[['a minute...',WH]]]),T(36.1,36.2),T(37.8,38.35),t,72);
+  caption(L([[['sonra dönüp',WH]],[['sana ',CO],['baktı.',WH]]],[[['then they look',WH]],[['over at ',WH],['you.',CO]]]),T(37.8,38.35),T(39.35,39.45),t,74);
+  caption(L([[['Ama o, oyuncağı değil...',WH]],[['seni istiyordu.',CO]]],[[["But they didn't want toys...",WH]],[['they wanted ',WH],['you.',CO]]]),39.5,42.8,t,L(68,62));
 }
 
 // ---------- SAHNE 3: DÖNÜM (43.0 – 53.4+) ----------
@@ -314,21 +318,21 @@ function sTurn(t){
   else {bx=ballX(t);}
   rot=bx/15;
   ball(bx,by,15,rot);
-  if(t>44.0&&t<45.4)tag(L('ELİ BOŞ','EMPTY-HANDED'),Math.min(sx,880),P.head[1]-160,TE,sm(44.0,44.3,t)*(1-sm(45.0,45.4,t)));
+  if(t>44.0&&t<45.4)tag(L('ELİ BOŞ','EMPTY-HANDED'),Math.min(sx,L(880,800)),P.head[1]-160,TE,sm(T(44.0,44.4),T(44.3,44.65),t)*(1-sm(45.0,45.4,t)));
   // altyazılar
-  caption(L([[['Bir akşam',WH]],[['eve ',WH],['eli boş',TE],[' geldin.',WH]]],[[['One night, you come home',WH]],[['empty-handed.',TE]]]),43.1,45.25,t,70);
-  caption(L([[['Yere oturdun,',AM]],[['eski topu ona yuvarladın.',WH]]],[[['You sit on the floor,',AM]],[['roll them the old ball.',WH]]]),45.25,48.05,t,64);
-  caption(L([[['Ufaklık kahkahayı bastı,',AM]],[['topu geri yolladı.',WH]]],[[['Your kid cracks up',AM]],[['and rolls it back.',WH]]]),48.2,51.35,t,66);
-  caption(L([[['O akşam saate',WH]],[['hiç ',WH],['bakmadın.',TE]]],[[['That night, you never',WH]],[['checked ',WH],['the time.',TE]]]),51.35,53.25,t,72);
+  caption(L([[['Bir akşam',WH]],[['eve ',WH],['eli boş',TE],[' geldin.',WH]]],[[['One night, you come home',WH]],[['empty-handed.',TE]]]),43.1,T(45.25,45.7),t,70);
+  caption(L([[['Yere oturdun,',AM]],[['eski topu ona yuvarladın.',WH]]],[[['You sit on the floor,',AM]],[['roll them the old ball.',WH]]]),T(45.25,45.7),48.05,t,64);
+  caption(L([[['Ufaklık kahkahayı bastı,',AM]],[['topu geri yolladı.',WH]]],[[['Your kid cracks up',AM]],[['and rolls it right back.',WH]]]),48.2,T(51.35,50.75),t,66);
+  caption(L([[['O akşam saate',WH]],[['hiç ',WH],['bakmadın.',TE]]],[[['That night, you never',WH]],[['look at ',WH],['the clock.',TE]]]),T(51.35,50.75),53.25,t,72);
 }
 
 // ---------- FİNAL (53.4 – 61.5) ----------
 function sFinal(t){
-  bigText(L('Bu akşam hediye alma.','Tonight, skip the gift.'),540,560,70,WH,sm(53.6,54.0,t));
-  bigText(L('Yere otur...','Sit on the floor...'),540,690,70,AM,sm(55.2,55.6,t));
-  bigText(L('Sadece 10 dakika','Just ten minutes.'),540,840,92,AM,sm(56.6,57.0,t));
-  bigText(L('onunla oyna.','Play with them.'),540,960,92,CO,sm(57.9,58.3,t));
-  endCard(t,59.0);
+  bigText(L('Bu akşam hediye alma.',"Don't buy a gift tonight."),540,560,L(70,64),WH,sm(53.6,54.0,t));
+  bigText(L('Yere otur...','Sit on the floor...'),540,690,70,AM,sm(T(55.2,55.4),T(55.6,55.8),t));
+  bigText(L('Sadece 10 dakika','Just ten minutes.'),540,840,92,AM,sm(T(56.6,56.95),T(57.0,57.35),t));
+  bigText(L('onunla oyna.','Play.'),540,960,L(92,110),CO,sm(T(57.9,58.6),T(58.3,59.0),t));
+  endCard(t,T(59.0,59.6));
 }
 
 function scene(t){
