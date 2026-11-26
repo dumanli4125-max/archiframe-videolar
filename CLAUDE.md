@@ -85,3 +85,24 @@ videolar/             çıktı MP4'ler (NN-kisa-ad.mp4)
 - YouTube Shorts: vidIQ'ya bağlı kanal üzerinden (Syntetic / eski taktiktahtası).
 - Her paylaşım `uretim/YAYIN_LOG.md`'ye tarih, platform, dosya, link olarak yazılır; `KONULAR.md`'de durum ✅ yapılır.
 - Şifre/kimlik bilgisi asla depoya, loga ya da zamanlanmış görev metnine yazılmaz.
+
+## İngilizce sürüm (her video için)
+
+Her Türkçe videonun İngilizce eşi üretilir; İngilizce YouTube kanalında ve İngilizce Instagram sayfasında paylaşılır.
+Ajan: `yerellestirici` (`.claude/agents/yerellestirici.md`).
+
+- **Aynı sahne, aynı zaman çizelgesi.** İngilizce satır, Türkçe satırın zaman aralığına sığacak şekilde yazılır
+  (sığmazsa `tempo` 0.92–1.08 arası; daha kısa ise sorun yok, sessizlik kalır).
+- **Çeviri değil yeniden yazım:** Amerikan gündelik konuşma dili, arkadaşına anlatır gibi ("Guess who? Your boss.",
+  "Easy, right?"). Türk kültürüne özgü öğeler evrenselleştirilir (çay → coffee/tea olabilir; "Oğlum" yerine "kiddo").
+  Kanca yine ikinci şahıs soru: "What time does your workday actually end?"
+- **Ses:** Speko, Cartesia "Kyle" `c961b81c-a935-4c17-bfb3-ba2239de8c2f`, model `sonic-3.5`, speed 1.0 (gerekirse 0.9), `language:"en"`.
+  Dosyalar `seslendirme_en/lXX.wav`; transcribe ile (`language:"en"`) doğrula.
+- **Metin:** scene.html içinde tüm görünen metinler `L('Türkçe','English')` ile; altyazı `caption(L(trLines, enLines), ...)`.
+  Sık etiketler (SEN→YOU, OFİS→OFFICE, EV→HOME...) motor tarafından otomatik çevrilir (`TAG_EN`), diğerleri `tag(L('..','..'),...)`.
+  Bildirim, balon, kart metinleri de `L()` ile.
+- **Ses miksi:** `audio_en.py` (audio.py'nin kopyası, VO yolları `seslendirme_en/`).
+- **Kontrol:** `bash uretim/kit/stills.sh uretim/videoNN <zamanlar> <klasör> en`
+- **Render:** `bash uretim/kit/build.sh uretim/videoNN en` → `videolar/en/<meta.cikti_en>`
+- **meta.json:** `cikti_en`, `baslik_en`, `ig_aciklama_en`, `hashtagler_en`, `yt_baslik_en`.
+- Kanal adı: `kit/engine.js` → `HANDLES.en` (şimdilik `@syntetic.en`, kesinleşince güncellenir).

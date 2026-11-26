@@ -20,7 +20,7 @@ function scene(t){
   // yürüyen ikinci karakter (krem), 1-5 sn arası soldan sağa
   const u=clamp((t-1)/4), pw=(t-1)*8.5;
   if(t>1&&t<5.2) figure({x:lerp(-80,760,u),y:STAND_Y-walkBob(pw),color:C.cream,s:0.9,...walk(pw)});
-  caption([[['Örnek ','#fff'],['altyazı.','#ffb547']]],0.2,3,t);
+  caption(L([[['Örnek ','#fff'],['altyazı.','#ffb547']]],[[['Sample ','#fff'],['caption.','#ffb547']]]),0.2,3,t);
   caption([[['Telefon ','#fff'],['titriyor.','#ff6b5b']]],3,6,t);
   fade(sm(6,6.5,t)*0.84,'5,10,20');
   endCard(t,6.3);

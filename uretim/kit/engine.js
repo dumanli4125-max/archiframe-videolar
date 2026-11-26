@@ -5,7 +5,11 @@ const C = {
   line:'#2a4166', amber:'#ffb547', coral:'#ff6b5b', cream:'#efe4cf',
   teal:'#5fd3c6', ink:'#081120'
 };
-let HANDLE = '@syntetic.tr';
+// Dil: sahne URL'sinde ?lang=en varsa İngilizce sürüm. Metinlerde L('Türkçe','English') kullan.
+const LANG = new URLSearchParams(location.search).get('lang') || 'tr';
+const HANDLES = {tr:'@syntetic.tr', en:'@syntetic.en'};   // İngilizce sayfa adı kesinleşince burada güncelle
+let HANDLE = HANDLES[LANG] || HANDLES.tr;
+const L = (tr, en) => (LANG === 'en' && en !== undefined) ? en : tr;
 const W = 1080, H = 1920, FLOOR = 1400;
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
 
@@ -65,7 +69,12 @@ function shade(hex,k){const n=parseInt(hex.slice(1),16);let r=n>>16,g=(n>>8)&255
   const f=v=>Math.round(k<0?v*(1+k):v+(255-v)*k);return '#'+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,'0')).join('');}
 
 // ---------- UI parçaları ----------
+// İngilizce sürümde sık etiketler otomatik çevrilir; listede olmayanlar için tag(L('TR','EN'),...) kullan.
+const TAG_EN={'SEN':'YOU','OFİS':'OFFICE','EV':'HOME','MESAİ':'OVERTIME','ÇOCUĞUN':'YOUR KID','ÇOCUK':'KID','ANNE':'MOM','ANNEN':'YOUR MOM','ANNEM':'MOM',
+  'BABA':'DAD','KARDEŞ':'SIBLING','PATRON':'BOSS','MÜŞTERİ':'CUSTOMER','KASİYER':'CASHIER','MUTFAK':'KITCHEN','SATICI':'SELLER','BANKA':'BANK',
+  'MAAŞ':'SALARY','KİRA':'RENT','FATURA':'BILLS','TAKSİT':'INSTALLMENT','MARKET':'GROCERIES','HERKES':'EVERYONE','KOMŞU':'NEIGHBOR','ARKADAŞ':'FRIEND'};
 function tag(text,x,y,color,alpha=1,strike=0){
+  if(LANG==='en'&&TAG_EN[text])text=TAG_EN[text];
   ctx.save();ctx.globalAlpha=alpha;ctx.font='700 26px Inter';ctx.letterSpacing='5px';
   const w=ctx.measureText(text).width+34;ctx.textAlign='center';ctx.textBaseline='middle';
   rr(x-w/2,y-22,w,44,22);ctx.fillStyle=hexA(color,0.13);ctx.fill();ctx.lineWidth=2;ctx.strokeStyle=hexA(color,0.8);ctx.stroke();
@@ -196,7 +205,7 @@ function countdown(x,y,r,remaining,total,alpha=1){ctx.save();ctx.globalAlpha=alp
   ctx.font='800 64px Inter';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(Math.ceil(remaining)),x,y+2);ctx.restore();}
 // Kapanış kartı (son 2-3 sn)
 function endCard(t,t0){const a=sm(t0,t0+0.6,t);if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.textAlign='center';ctx.font='700 40px Inter';ctx.letterSpacing='6px';ctx.fillStyle=C.amber;ctx.fillText(HANDLE.toUpperCase(),W/2,1380);
-  ctx.font='500 32px Inter';ctx.letterSpacing='1px';ctx.fillStyle='rgba(239,228,207,.7)';ctx.fillText('Takip et, sorgulamaya devam et.',W/2,1440);ctx.restore();}
+  ctx.font='500 32px Inter';ctx.letterSpacing='1px';ctx.fillStyle='rgba(239,228,207,.7)';ctx.fillText(L('Takip et, sorgulamaya devam et.','Follow for more. Keep questioning.'),W/2,1440);ctx.restore();}
 
 // ================== SON İŞLEM + ÇALIŞTIRICI ==================
 function post(t,frameNo){

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Kontrol kareleri: bash uretim/kit/stills.sh uretim/videoNN 2,10,25,40 <çıktı_klasörü>  → <çıktı>/sheet.png
+# Kontrol kareleri: bash uretim/kit/stills.sh uretim/videoNN 2,10,25,40 <çıktı_klasörü> [en]  → <çıktı>/sheet.png
 set -euo pipefail
 DIR=$(cd "$1" && pwd); ROOT=$(cd "$(dirname "$0")/../.." && pwd); OUTD=$3; mkdir -p "$OUTD"; rm -f "$OUTD"/s_*.png
-node "$ROOT/uretim/render.js" "$DIR/scene.html" --stills "$2" "$OUTD"
+node "$ROOT/uretim/render.js" "$DIR/scene.html${4:+?lang=$4}" --stills "$2" "$OUTD"
 python3 - "$OUTD" <<'PY'
 import sys,glob
 from PIL import Image
