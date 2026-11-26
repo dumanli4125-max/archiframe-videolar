@@ -127,10 +127,10 @@ function notif(x,y,title,msg,a,scale=1){
   rr(-400,-62,800,124,26);ctx.fillStyle='rgba(16,30,54,0.96)';glow('rgba(0,0,0,.6)',30);ctx.fill();noGlow();
   ctx.lineWidth=2;ctx.strokeStyle=hexA(C.amber,0.5);ctx.stroke();
   rr(-370,-34,68,68,16);ctx.fillStyle=C.amber;ctx.fill();
-  ctx.fillStyle=C.ink;ctx.font='800 34px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('P',-336,2);
+  ctx.fillStyle=C.ink;ctx.font='800 34px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText((title||'P').trim().charAt(0),-336,2);
   ctx.textAlign='left';ctx.fillStyle=C.amber;ctx.font='800 28px Inter';ctx.letterSpacing='3px';ctx.fillText(title,-280,-20);
   ctx.letterSpacing='0px';ctx.fillStyle='#e9eef7';ctx.font='500 32px Inter';ctx.fillText(msg,-280,22);
-  ctx.fillStyle='rgba(233,238,247,.45)';ctx.font='500 24px Inter';ctx.textAlign='right';ctx.fillText('şimdi',370,-20);
+  ctx.fillStyle='rgba(233,238,247,.45)';ctx.font='500 24px Inter';ctx.textAlign='right';ctx.fillText(L('şimdi','now'),370,-20);
   ctx.restore();
 }
 
