@@ -1,0 +1,12 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden), hız 0.85. Satır = dosya, başlangıç saniyesi
+l01 0.3   Mesain saat kaçta bitiyor? Düşünmeden söyle.
+l02 4.0   Sözleşmende yazıyor: saat altı. Bilgisayarı kapatırsın, montunu alırsın...
+l03 9.3   Kapıdan çıktığın an, akşam senindir. En azından... öyle sanırsın.
+l04 14.8  Saat dokuz buçuğu geçiyor. Nihayet kanepedesin. Ev sessiz... Günün ilk sakin anı.
+l05 21.4  Sonra telefon titrer. Ekranda patronunun adı. Müsait misin? Ufak bir şey.
+l06 27.4  Ufak bir şey, dersin. Cevap yazarsın. Bir mesaj daha gelir... sonra bir tane daha.
+l07 34.0  İçeriden küçük bir ses gelir: Masal okur musun? Bir dakika, dersin.
+l08 39.0  O dakika... hiç gelmez. Işık söner. Saat on biri geçmiştir.
+l09 44.3  Kimse sana bu saatler için para ödemiyor. Ama sen, her akşam, biraz daha veriyorsun.
+l10 50.6  Maaşın, sekiz saatini ödüyor. Akşamlarını ise... bedavaya veriyorsun.
+l11 56.3  Bu akşam telefonu sessize al. O saatler, senin.
