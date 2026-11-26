@@ -54,4 +54,15 @@ m.thud(48.6, f=40, gain=0.22)
 m.thud(52.0, f=38, gain=0.25)
 for b in (53.0, 54.6):                # arama sesi
     m.sfx += 0.05*(np.sin(2*np.pi*425*t)) * ((t > b) & (t < b + 1.0))
-m.write(sys.argv[1])
+# Kit'teki write() ile aynı miks; ducking yumuşatması np.convolve yerine kümülatif toplamla (aynı sonuç, çok daha hızlı).
+def write_fast(m, path):
+    import wave
+    k = int(0.25 * SR); c = np.cumsum(np.concatenate([np.zeros(k // 2 + 1), m.act, np.zeros(k)]))
+    avg = (c[k:k + m.N] - c[:m.N]) / k
+    duck = 1 - 0.55 * avg
+    out = m.v + (m.music + m.sfx) * duck
+    out *= np.clip((m.D - m.t) / 2, 0, 1)
+    out /= np.max(np.abs(out)) * 1.12
+    w = wave.open(path, 'w'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+    w.writeframes((out * 32767).astype(np.int16).tobytes()); w.close()
+write_fast(m, sys.argv[1])
