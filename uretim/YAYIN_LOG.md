@@ -18,3 +18,8 @@
 | 30.11.2026 18:30 (planlı, Studio/Chrome) | YouTube Syntetic | 11-sebepsiz-sarilmak.mp4 | https://youtube.com/shorts/rCx7Tq84wwI |
 | 30.11.2026 21:30 (planlı, Studio/Chrome) | YouTube Syntetic | 12-metroda-siradan.mp4 | https://youtube.com/shorts/qOhUG5BYnPQ |
 | 01.12.2026 12:30 (planlı, Studio/Chrome) | YouTube Syntetic | 13-oyuncak-yagmuru.mp4 | https://youtube.com/shorts/qV5sIvXwYtA |
+| 01.12.2026 18:30 (planlı, Studio/Chrome) | YouTube Syntetic | 14-ucak-mi-araba-mi.mp4 | https://youtube.com/shorts/MWAR1qU1CT0 |
+| 01.12.2026 21:30 (planlı, Studio/Chrome) | YouTube Syntetic | 15-balik-mi-olta-mi.mp4 | https://youtube.com/shorts/0xTvSwip2vs |
+| 02.12.2026 12:30 (planlı, Studio/Chrome) | YouTube Syntetic | 16-kalabalik-ayni-yere-bakar.mp4 | https://youtube.com/shorts/pE1-kzHWPfo |
+| 02.12.2026 18:30 (planlı, Studio/Chrome) | YouTube Syntetic | 17-logo-farki.mp4 | https://youtube.com/shorts/s_dEFNyb5qs |
+| 02.12.2026 21:30 (BEKLİYOR — 27.11 YouTube günlük yükleme sınırı; 28.11 yüklenecek) | YouTube Syntetic | 18-esofmanli-adam.mp4 | — |
