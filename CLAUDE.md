@@ -107,3 +107,11 @@ Ajan: `yerellestirici` (`.claude/agents/yerellestirici.md`).
 - **Render:** `bash uretim/kit/build.sh uretim/videoNN en` → `videolar/en/<meta.cikti_en>`
 - **meta.json:** `cikti_en`, `baslik_en`, `ig_aciklama_en`, `hashtagler_en`, `yt_baslik_en`.
 - İngilizce sayfa adı: **@syntetic.en** (`kit/engine.js` → `HANDLES.en`). Instagram: syntetic.en.
+
+## Kullanım bütçesi (paylaşımlar aksamasın)
+
+- Stok kuralı: her an en az 7 günlük (21 TR + 21 EN) hazır video. Paylaşım stoktan yapılır; üretim duraklasa da yayın aksamaz.
+- Günlük üretim 3 küçük tura bölünür (03:13, 11:13, 23:13 TR saati). Her tur en fazla 1 TR + 1 EN video üretir.
+- Aynı anda en fazla 2 ajan. Türkçe üretim varsayılan model, İngilizce yerelleştirme `yerellestirici` (model: sonnet).
+- Kullanım sınırı hatası (429 / "limit") gelirse: yarım işi commit'le, yeni ajan başlatma, turu bitir; sonraki tur kaldığı yerden devam eder.
+- Stok 7 günün üstündeyse tur hiçbir şey üretmez (bütçe boşa harcanmaz).
