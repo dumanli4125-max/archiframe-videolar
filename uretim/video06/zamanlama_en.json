@@ -1,0 +1,433 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 2.96,
+  "hiz": 1.0,
+  "metin": "You smile at everyone out there. But at home?",
+  "kelimeler": [
+   {
+    "k": "smile",
+    "bas": 0.2,
+    "son": 0.7
+   },
+   {
+    "k": "everyone",
+    "bas": 0.8,
+    "son": 1.0
+   },
+   {
+    "k": "there",
+    "bas": 1.2,
+    "son": 1.4
+   },
+   {
+    "k": "But",
+    "bas": 2.3,
+    "son": 2.4
+   },
+   {
+    "k": "home",
+    "bas": 2.5,
+    "son": 2.8
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 3.6,
+  "sure": 3.68,
+  "hiz": 1.0,
+  "metin": "At work, your boss makes a lame joke... and you laugh.",
+  "kelimeler": [
+   {
+    "k": "work",
+    "bas": 0.2,
+    "son": 0.8
+   },
+   {
+    "k": "boss",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "lame",
+    "bas": 1.6,
+    "son": 2.1
+   },
+   {
+    "k": "joke",
+    "bas": 2.1,
+    "son": 2.5
+   },
+   {
+    "k": "laugh",
+    "bas": 3.1,
+    "son": 3.6
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 7.9,
+  "sure": 4.0,
+  "hiz": 1.0,
+  "metin": "A customer yells and screams at you... and you still smile.",
+  "kelimeler": [
+   {
+    "k": "customer",
+    "bas": 0.2,
+    "son": 0.7
+   },
+   {
+    "k": "yells",
+    "bas": 0.7,
+    "son": 1.2
+   },
+   {
+    "k": "screams",
+    "bas": 1.3,
+    "son": 1.8
+   },
+   {
+    "k": "still",
+    "bas": 3.0,
+    "son": 3.3
+   },
+   {
+    "k": "smile",
+    "bas": 3.3,
+    "son": 3.8
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 11.9,
+  "sure": 4.16,
+  "hiz": 1.0,
+  "metin": "You smile at the cashier. Even at the doorman in your building.",
+  "kelimeler": [
+   {
+    "k": "smile",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "cashier",
+    "bas": 1.0,
+    "son": 1.6
+   },
+   {
+    "k": "Even",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "doorman",
+    "bas": 2.8,
+    "son": 3.4
+   },
+   {
+    "k": "building",
+    "bas": 3.6,
+    "son": 4.1
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 17.2,
+  "sure": 4.4,
+  "hiz": 1.0,
+  "metin": "In one day... twenty smiles. All of them out there.",
+  "kelimeler": [
+   {
+    "k": "one",
+    "bas": 0.2,
+    "son": 0.5
+   },
+   {
+    "k": "day",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "20",
+    "bas": 1.6,
+    "son": 2.0
+   },
+   {
+    "k": "smiles",
+    "bas": 2.0,
+    "son": 2.6
+   },
+   {
+    "k": "all",
+    "bas": 3.3,
+    "son": 3.6
+   },
+   {
+    "k": "there",
+    "bas": 4.0,
+    "son": 4.3
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 22.4,
+  "sure": 4.32,
+  "hiz": 1.0,
+  "metin": "Then you get home. Mom's on the couch, your little brother's at the table.",
+  "kelimeler": [
+   {
+    "k": "home",
+    "bas": 0.7,
+    "son": 1.0
+   },
+   {
+    "k": "Mom's",
+    "bas": 1.7,
+    "son": 2.0
+   },
+   {
+    "k": "couch",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "brother's",
+    "bas": 3.3,
+    "son": 3.6
+   },
+   {
+    "k": "table",
+    "bas": 3.8,
+    "son": 4.2
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 26.9,
+  "sure": 3.6,
+  "hiz": 1.0,
+  "metin": "Mom says, \"Welcome home!\" Then, \"Dinner's ready.\"",
+  "kelimeler": [
+   {
+    "k": "Mom",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "welcome",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "home",
+    "bas": 1.3,
+    "son": 1.5
+   },
+   {
+    "k": "Then",
+    "bas": 2.1,
+    "son": 2.4
+   },
+   {
+    "k": "dinner's",
+    "bas": 2.8,
+    "son": 3.1
+   },
+   {
+    "k": "ready",
+    "bas": 3.1,
+    "son": 3.4
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 31.2,
+  "sure": 3.52,
+  "hiz": 1.0,
+  "metin": "You don't even say hi. You go to your room and shut the door.",
+  "kelimeler": [
+   {
+    "k": "hi",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "room",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "shut",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "door",
+    "bas": 3.1,
+    "son": 3.4
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 35.9,
+  "sure": 3.92,
+  "hiz": 1.0,
+  "metin": "Mom stands there with the plate... then quietly sets it down.",
+  "kelimeler": [
+   {
+    "k": "Mom",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "plate",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "quietly",
+    "bas": 2.5,
+    "son": 3.0
+   },
+   {
+    "k": "sets",
+    "bas": 3.0,
+    "son": 3.3
+   },
+   {
+    "k": "down",
+    "bas": 3.4,
+    "son": 3.8
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 40.2,
+  "sure": 4.0,
+  "hiz": 1.0,
+  "metin": "You spent every smile out there. Not a single one left for home.",
+  "kelimeler": [
+   {
+    "k": "spent",
+    "bas": 0.3,
+    "son": 0.5
+   },
+   {
+    "k": "smile",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "there",
+    "bas": 1.4,
+    "son": 1.7
+   },
+   {
+    "k": "Not",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "single",
+    "bas": 2.5,
+    "son": 3.0
+   },
+   {
+    "k": "left",
+    "bas": 3.2,
+    "son": 3.5
+   },
+   {
+    "k": "home",
+    "bas": 3.6,
+    "son": 3.9
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 44.9,
+  "sure": 4.88,
+  "hiz": 1.0,
+  "metin": "Your boss will forget you by tomorrow. But Mom? She's waiting at that door every night.",
+  "kelimeler": [
+   {
+    "k": "boss",
+    "bas": 0.3,
+    "son": 0.6
+   },
+   {
+    "k": "forget",
+    "bas": 0.7,
+    "son": 1.0
+   },
+   {
+    "k": "tomorrow",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "Mom",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "waiting",
+    "bas": 3.4,
+    "son": 3.7
+   },
+   {
+    "k": "door",
+    "bas": 4.0,
+    "son": 4.2
+   },
+   {
+    "k": "night",
+    "bas": 4.4,
+    "son": 4.7
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 50.3,
+  "sure": 4.48,
+  "hiz": 1.0,
+  "metin": "Tonight, when you walk through that door... save your first smile for them.",
+  "kelimeler": [
+   {
+    "k": "Tonight",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "walk",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "door",
+    "bas": 1.6,
+    "son": 2.0
+   },
+   {
+    "k": "save",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "first",
+    "bas": 3.1,
+    "son": 3.6
+   },
+   {
+    "k": "smile",
+    "bas": 3.6,
+    "son": 4.0
+   },
+   {
+    "k": "them",
+    "bas": 4.1,
+    "son": 4.4
+   }
+  ]
+ }
+}
