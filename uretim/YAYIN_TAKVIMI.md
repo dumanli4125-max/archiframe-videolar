@@ -24,11 +24,11 @@ Stok kuralı: her an en az 7 günlük (21 TR + 21 EN) hazır video. Günlük ür
 | Pzt 30.11 | 18:30 | 11 Sebepsiz sarılmak | 21:00 | 11 (EN) | ✅ |
 | Pzt 30.11 | 21:30 | 12 Metroda sıradan | 01:00 | 12 (EN) | ✅ |
 | Sal 01.12 | 12:30 | 13 Oyuncak yağmuru | 17:00 | 13 (EN) | ✅ |
-| Sal 01.12 | 18:30 | 14 Uçak mı araba mı | 21:00 | 14 (EN) | 🎬 |
-| Sal 01.12 | 21:30 | 15 Balık mı olta mı | 01:00 | 15 (EN) | 🎬 |
-| Çar 02.12 | 12:30 | 16 Kalabalık aynı yere bakar | 17:00 | 16 (EN) | 🎬 |
-| Çar 02.12 | 18:30 | 17 Logo farkı | 21:00 | 17 (EN) | 🎬 |
-| Çar 02.12 | 21:30 | 18 Eşofmanlı adam | 01:00 | 18 (EN) | 🎬 |
+| Sal 01.12 | 18:30 | 14 Uçak mı araba mı | 21:00 | 14 (EN) | ✅ |
+| Sal 01.12 | 21:30 | 15 Balık mı olta mı | 01:00 | 15 (EN) | ✅ |
+| Çar 02.12 | 12:30 | 16 Kalabalık aynı yere bakar | 17:00 | 16 (EN) | ✅ |
+| Çar 02.12 | 18:30 | 17 Logo farkı | 21:00 | 17 (EN) | ✅ |
+| Çar 02.12 | 21:30 | 18 Eşofmanlı adam | 01:00 | 18 (EN) | ✅ |
 | Per 03.12 | 12:30 | 19 Uygulama izinleri | 17:00 | 19 (EN) | ⏳ |
 | Per 03.12 | 18:30 | 20 Telefonun saati | 21:00 | 20 (EN) | ⏳ |
 | Per 03.12 | 21:30 | 21 Aynı kablo, aynı dert | 01:00 | 21 (EN) | ⏳ |
