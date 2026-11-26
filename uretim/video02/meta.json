@@ -2,6 +2,33 @@
  "cikti": "02-dikkat-testi.mp4",
  "baslik": "15 saniyelik dikkat testi",
  "ig_aciklama": "15 saniye. Odada bir şey yavaş yavaş değişiyor. Gözünü ayırmadan bak, değişeni bulabilecek misin?\nBulduysan cevabını yoruma yaz, bulamadıysan sorun yok: beyin değişeni değil, beklediğini görür.\nArkadaşını etiketle, bakalım o bulabilecek mi?",
- "hashtagler": ["#dikkattesti", "#testi", "#dikkat", "#beyin", "#psikoloji", "#bulmaca", "#farkıbul", "#zekatesti", "#syntetic", "#keşfet"],
- "yt_baslik": "15 saniyelik dikkat testi: Değişeni bulabilecek misin? #shorts"
+ "hashtagler": [
+  "#dikkattesti",
+  "#testi",
+  "#dikkat",
+  "#beyin",
+  "#psikoloji",
+  "#bulmaca",
+  "#farkıbul",
+  "#zekatesti",
+  "#syntetic",
+  "#keşfet"
+ ],
+ "yt_baslik": "15 saniyelik dikkat testi: Değişeni bulabilecek misin? #shorts",
+ "cikti_en": "02-attention-test.mp4",
+ "baslik_en": "15-second attention test",
+ "ig_aciklama_en": "15 seconds. Something in this room slowly changes. Don't look away. Can you spot it?\nGot it? Drop your answer in the comments. Missed it? No worries: your brain sees what it expects, not what changes.\nTag a friend and see if they can spot it.",
+ "hashtagler_en": [
+  "#attentiontest",
+  "#spotthedifference",
+  "#braintest",
+  "#puzzle",
+  "#psychology",
+  "#brain",
+  "#changeblindness",
+  "#iqtest",
+  "#syntetic",
+  "#fyp"
+ ],
+ "yt_baslik_en": "15-second attention test: Can you spot what changes? #shorts"
 }

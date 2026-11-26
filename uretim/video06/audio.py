@@ -1,8 +1,23 @@
 import sys
 import numpy as np
-from audio_kit import Mix
+from audio_kit import Mix, SR
+import wave
+
+class FastMix(Mix):
+    # kit'teki write() ile aynı sonuç; ducking için 11025 örneklik np.convolve yerine kümülatif toplam (çok daha hızlı)
+    def write(self, path):
+        k = int(0.25 * SR); h = (k - 1) // 2
+        c = np.concatenate([[0.0], np.cumsum(self.act)])
+        i = np.arange(self.N); lo = np.clip(i + h - k + 1, 0, self.N); hi = np.clip(i + h + 1, 0, self.N)
+        duck = 1 - 0.55 * (c[hi] - c[lo]) / k
+        out = self.v + (self.music + self.sfx) * duck
+        out *= np.clip((self.D - self.t) / 2, 0, 1)
+        out /= np.max(np.abs(out)) * 1.12
+        w = wave.open(path, 'w'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
+        w.writeframes((out * 32767).astype(np.int16).tobytes()); w.close()
+
 D = 57.5
-m = Mix(D=D)
+m = FastMix(D=D)
 # anlatım (scene.html ile aynı başlangıçlar)
 VO = [(0.3,'l01'),(3.6,'l02'),(7.9,'l03'),(11.9,'l04'),(17.2,'l05'),(22.4,'l06'),
       (26.9,'l07'),(30.6,'l08'),(36.2,'l09'),(40.2,'l10'),(44.9,'l11'),(50.3,'l12')]

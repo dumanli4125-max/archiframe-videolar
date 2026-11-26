@@ -1,0 +1,238 @@
+{
+ "l01": {
+  "sure": 3.12,
+  "baslangic": 0.3,
+  "metin": "Fifteen seconds... Can you spot what changes?",
+  "kelimeler": [
+   {
+    "k": "15",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "seconds",
+    "bas": 0.8,
+    "son": 1.4
+   },
+   {
+    "k": "spot",
+    "bas": 1.9,
+    "son": 2.3
+   },
+   {
+    "k": "changes",
+    "bas": 2.4,
+    "son": 3.0
+   }
+  ]
+ },
+ "l02": {
+  "sure": 2.72,
+  "baslangic": 3.9,
+  "metin": "Everyone says they're observant. Let's find out.",
+  "kelimeler": [
+   {
+    "k": "Everyone",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "observant",
+    "bas": 0.8,
+    "son": 1.4
+   },
+   {
+    "k": "Let's",
+    "bas": 1.9,
+    "son": 2.2
+   },
+   {
+    "k": "find out",
+    "bas": 2.2,
+    "son": 2.6
+   }
+  ]
+ },
+ "l03": {
+  "sure": 4.64,
+  "baslangic": 7.3,
+  "metin": "Something in this room will slowly change. Don't look away. Here we go.",
+  "kelimeler": [
+   {
+    "k": "Something",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "slowly",
+    "bas": 1.2,
+    "son": 1.8
+   },
+   {
+    "k": "change",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "Don't",
+    "bas": 2.9,
+    "son": 3.1
+   },
+   {
+    "k": "look away",
+    "bas": 3.1,
+    "son": 3.5
+   },
+   {
+    "k": "Here we go",
+    "bas": 4.0,
+    "son": 4.6
+   }
+  ]
+ },
+ "l04": {
+  "sure": 4.16,
+  "baslangic": 27.8,
+  "metin": "Time's up. Did you spot it? Drop your answer in the comments.",
+  "kelimeler": [
+   {
+    "k": "Time's up",
+    "bas": 0.2,
+    "son": 1.1
+   },
+   {
+    "k": "Did you spot it",
+    "bas": 1.3,
+    "son": 2.3
+   },
+   {
+    "k": "Drop",
+    "bas": 2.6,
+    "son": 2.9
+   },
+   {
+    "k": "comments",
+    "bas": 3.6,
+    "son": 4.1
+   }
+  ]
+ },
+ "l05": {
+  "sure": 4.64,
+  "baslangic": 33.0,
+  "metin": "Let's rewind. Look at the pillow on the couch... It slowly vanished.",
+  "kelimeler": [
+   {
+    "k": "rewind",
+    "bas": 0.4,
+    "son": 1.0
+   },
+   {
+    "k": "Look",
+    "bas": 1.5,
+    "son": 1.7
+   },
+   {
+    "k": "pillow",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "couch",
+    "bas": 2.4,
+    "son": 2.9
+   },
+   {
+    "k": "It slowly",
+    "bas": 3.4,
+    "son": 4.0
+   },
+   {
+    "k": "vanished",
+    "bas": 4.0,
+    "son": 4.5
+   }
+  ]
+ },
+ "l06": {
+  "sure": 3.12,
+  "baslangic": 37.8,
+  "metin": "If you missed it, don't worry. Most people miss it.",
+  "kelimeler": [
+   {
+    "k": "missed",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "don't worry",
+    "bas": 1.1,
+    "son": 1.7
+   },
+   {
+    "k": "Most people",
+    "bas": 2.2,
+    "son": 2.7
+   },
+   {
+    "k": "miss it",
+    "bas": 2.7,
+    "son": 3.1
+   }
+  ]
+ },
+ "l07": {
+  "sure": 3.92,
+  "baslangic": 41.9,
+  "metin": "Your brain doesn't see what changes... it sees what it expects.",
+  "kelimeler": [
+   {
+    "k": "brain",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "changes",
+    "bas": 1.4,
+    "son": 2.2
+   },
+   {
+    "k": "sees",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "expects",
+    "bas": 3.2,
+    "son": 3.7
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.04,
+  "baslangic": 46.0,
+  "metin": "Tag a friend. Let's see if they can spot it.",
+  "kelimeler": [
+   {
+    "k": "Tag",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "friend",
+    "bas": 0.4,
+    "son": 1.0
+   },
+   {
+    "k": "Let's see",
+    "bas": 1.6,
+    "son": 2.1
+   },
+   {
+    "k": "spot it",
+    "bas": 2.5,
+    "son": 3.0
+   }
+  ]
+ }
+}

@@ -257,7 +257,7 @@ function scene(t){
     const ra=sm(T_REPLY,T_REPLY+0.25,t)*(1-sm(16.0,16.4,t));
     msgCard(W/2,660,'SERVİS','Usta 2 saat sonra gelir.',ra,C.amber,'⚙','şimdi');
     const sa=sm(T_IKI,T_IKI+0.25,t)*(1-sm(20.4,20.9,t));
-    bigTag('2 SAAT',820,820,C.coral,sa,1.6+0.4*(1-sm(T_IKI,T_IKI+0.4,t)));
+    bigTag('2 SAAT',790,820,C.coral,sa,1.6+0.4*(1-sm(T_IKI,T_IKI+0.4,t)));
     fade(sm(T_PAST_IN,T_PAST,t),'120,82,48');
   } else if(t<T_NOW){
     past(t);

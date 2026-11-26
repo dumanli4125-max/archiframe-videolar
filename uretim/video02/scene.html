@@ -9,6 +9,7 @@ const DURATION = 52.4;
 const T0 = 12.5, T1 = 27.5;               // test penceresi (15 sn)
 const CX = 330, CY = 1222;                 // yastık merkezi
 const SOFA_X = 250, SOFA_W = 440, SEN_X = 540;
+const T=(tr,en)=>L(tr,en);              // dile göre küçük zaman kaydırması
 
 // ---- sanal zaman: test, başa sarma ve hızlı oynatma aynı oda fonksiyonunu kullanır
 function vtime(t){
@@ -80,15 +81,15 @@ function tapeFX(t, dir, a){ // dir: -1 geri, +1 ileri
   for(let i=0;i<2;i++){const x=x0+i*52;ctx.beginPath();
     if(dir<0){ctx.moveTo(x+50,y0-30);ctx.lineTo(x+50,y0+30);ctx.lineTo(x,y0);}else{ctx.moveTo(x,y0-30);ctx.lineTo(x,y0+30);ctx.lineTo(x+50,y0);}
     ctx.closePath();ctx.fill();}
-  ctx.font='800 56px Inter';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(dir<0?'BAŞA SAR':'8x',x0+130,y0+3);
+  ctx.font='800 56px Inter';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(dir<0?L('BAŞA SAR','REWIND'):'8x',x0+130,y0+3);
   ctx.restore();
 }
 function commentBox(a){ if(a<=0)return; const dy=(1-a)*20;
   card(W/2,860+dy,780,130,{alpha:a,stroke:C.teal});
   ctx.save();ctx.globalAlpha=a;ctx.fillStyle=C.coral;ctx.beginPath();ctx.arc(W/2-310,860+dy,36,0,7);ctx.fill();
   ctx.fillStyle='rgba(233,238,247,.55)';ctx.font='500 38px Inter';ctx.textAlign='left';ctx.textBaseline='middle';
-  const blinkC=(window.__t*2%1)<0.5?'|':'';ctx.fillText('Yorum ekle...'+blinkC,W/2-250,862+dy);
-  ctx.fillStyle=C.teal;ctx.font='800 34px Inter';ctx.textAlign='right';ctx.fillText('Paylaş',W/2+350,862+dy);ctx.restore();
+  const blinkC=(window.__t*2%1)<0.5?'|':'';ctx.fillText(L('Yorum ekle...','Add a comment...')+blinkC,W/2-250,862+dy);
+  ctx.fillStyle=C.teal;ctx.font='800 34px Inter';ctx.textAlign='right';ctx.fillText(L('Paylaş','Post'),W/2+350,862+dy);ctx.restore();
 }
 function thought(t,a){ if(a<=0)return; // SEN'in kafasındaki "beklenen" oda: yastık yerinde
   ctx.save();ctx.globalAlpha=a;ctx.fillStyle=C.cream;glow('rgba(0,0,0,.5)',24);
@@ -97,7 +98,7 @@ function thought(t,a){ if(a<=0)return; // SEN'in kafasındaki "beklenen" oda: ya
   // mini kanepe + yastık
   ctx.fillStyle='#24406b';rr(560,770,280,46,18);ctx.fill();rr(545,810,310,66,18);ctx.fill();
   ctx.save();ctx.translate(615,792);ctx.rotate(-0.14);rr(-40,-32,80,64,18);ctx.fillStyle='#c98a4b';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#8f5c2e';ctx.stroke();ctx.restore();
-  ctx.font='800 26px Inter';ctx.letterSpacing='4px';ctx.fillStyle=C.ink;ctx.textAlign='center';ctx.fillText('BEKLENEN',700,712);
+  ctx.font='800 26px Inter';ctx.letterSpacing='4px';ctx.fillStyle=C.ink;ctx.textAlign='center';ctx.fillText(L('BEKLENEN','EXPECTED'),700,712);
   ctx.restore();
 }
 
@@ -112,22 +113,22 @@ function scene(t){
     fade(0.72*(1-sm(3.9,4.6,t)),'5,10,20');
     const a=1-sm(3.7,4.2,t), pulse=1+0.04*Math.sin(t*5);
     if(a>0){ctx.save();ctx.translate(W/2,900);ctx.scale(2.2*pulse,2.2*pulse);countdown(0,0,85,15,15,a);ctx.restore();}
-    bigText('SANİYE',W/2,1180,52,C.amber,a*sm(0.4,0.9,t),800);
-    caption([[['Değişen şeyi','#fff']],[['bulabilecek misin?','#ffb547']]],0.2,3.8,t,80,230);
+    bigText(L('SANİYE','SECONDS'),W/2,1180,52,C.amber,a*sm(0.4,0.9,t),800);
+    caption(L([[['Değişen şeyi','#fff']],[['bulabilecek misin?','#ffb547']]],[[['Can you spot','#fff']],[['what changes?','#ffb547']]]),0.2,3.8,t,80,230);
   }
   // giriş altyazıları
-  caption([[['Herkes','#fff']],[['"ben ','#fff'],['dikkatliyim','#5fd3c6'],['" der.','#fff']]],3.9,6.1,t,70);
-  caption([[['Bakalım ','#fff'],['öyle mi?','#ffb547']]],6.1,7.25,t,74);
-  caption([[['Bu odada bir şey','#fff']],[['yavaş yavaş ','#ffb547'],['değişecek.','#fff']]],7.3,9.9,t,68);
-  caption([[['Gözünü ','#fff'],['ayırma.','#ff6b5b']]],9.9,11.3,t,74);
-  caption([[['Başlıyoruz!','#ffb547']]],11.3,12.6,t,80);
+  caption(L([[['Herkes','#fff']],[['"ben ','#fff'],['dikkatliyim','#5fd3c6'],['" der.','#fff']]],[[['Everyone says','#fff']],[["they're ",'#fff'],['observant.','#5fd3c6']]]),3.9,T(6.1,5.75),t,70);
+  caption(L([[['Bakalım ','#fff'],['öyle mi?','#ffb547']]],[[["Let's ",'#fff'],['find out.','#ffb547']]]),T(6.1,5.75),7.25,t,74);
+  caption(L([[['Bu odada bir şey','#fff']],[['yavaş yavaş ','#ffb547'],['değişecek.','#fff']]],[[['Something in this room','#fff']],[['will ','#fff'],['slowly ','#ffb547'],['change.','#fff']]]),7.3,T(9.9,10.1),t,68);
+  caption(L([[['Gözünü ','#fff'],['ayırma.','#ff6b5b']]],[[["Don't ",'#fff'],['look away.','#ff6b5b']]]),T(9.9,10.1),11.3,t,74);
+  caption(L([[['Başlıyoruz!','#ffb547']]],[[['Here we go!','#ffb547']]]),11.3,12.6,t,80);
 
   // ---------- geri sayım (test + geri sarma + hızlı oynatma)
   const cdA = Math.max(sm(11.4,11.9,t)*(1-sm(28.3,28.8,t)), sm(33.1,33.4,t)*(1-sm(37.3,37.8,t)));
   if(cdA>0){ const rem = 15-clamp(vt-T0,0,15);
     const pop = (t>T0&&t<T1)? 1+0.06*Math.max(0,1-((t-T0)%1)*4) : 1;
     ctx.save();ctx.translate(W/2,450);ctx.scale(pop,pop);countdown(0,0,85,rem,15,cdA);ctx.restore(); }
-  if(t>T0-0.2 && t<T1+0.3) tag('DİKKAT TESTİ',W/2,250,C.amber,sm(T0-0.2,T0+0.3,t)*(1-sm(T1,T1+0.3,t)));
+  if(t>T0-0.2 && t<T1+0.3) tag(L('DİKKAT TESTİ','ATTENTION TEST'),W/2,250,C.amber,sm(T0-0.2,T0+0.3,t)*(1-sm(T1,T1+0.3,t)));
 
   // ---------- süre doldu
   const endA=sm(27.5,27.9,t)*(1-sm(32.9,33.2,t));
@@ -135,32 +136,32 @@ function scene(t){
   if(t>27.5&&t<27.7) fade(0.35*(1-(t-27.5)/0.2),'255,181,71');
   bigText('?',W/2,640,220,C.amber,sm(29.0,29.4,t)*(1-sm(32.9,33.2,t))*(0.85+0.15*Math.sin(t*5)),900);
   commentBox(sm(30.1,30.5,t)*(1-sm(32.9,33.2,t)));
-  caption([[['Süre ','#fff'],['doldu.','#ff6b5b']]],27.8,29.0,t,78);
-  caption([[['Buldun mu?','#ffb547']]],29.0,30.1,t,80);
-  caption([[['Cevabını','#fff']],[['yoruma yaz.','#5fd3c6']]],30.1,33.0,t,74);
+  caption(L([[['Süre ','#fff'],['doldu.','#ff6b5b']]],[[["Time's ",'#fff'],['up.','#ff6b5b']]]),27.8,29.0,t,78);
+  caption(L([[['Buldun mu?','#ffb547']]],[[['Did you spot it?','#ffb547']]]),29.0,T(30.1,30.3),t,80);
+  caption(L([[['Cevabını','#fff']],[['yoruma yaz.','#5fd3c6']]],[[['Drop your answer','#fff']],[['in the comments.','#5fd3c6']]]),T(30.1,30.3),33.0,t,74);
 
   // ---------- başa sar / hızlı oynat
   tapeFX(t,-1,sm(33.1,33.3,t)*(1-sm(34.4,34.6,t)));
   tapeFX(t, 1,sm(35.4,35.6,t)*(1-sm(37.0,37.2,t)));
-  caption([[['Başa ','#fff'],['saralım.','#ffb547']]],33.0,34.2,t,78);
-  caption([[['Kanepedeki','#fff']],[['yastığa ','#ffb547'],['bak...','#fff']]],34.2,35.9,t,74);
-  caption([[['Yavaş yavaş','#fff']],[['kayboldu.','#ffb547']]],35.9,37.8,t,74);
+  caption(L([[['Başa ','#fff'],['saralım.','#ffb547']]],[[["Let's ",'#fff'],['rewind.','#ffb547']]]),33.0,34.2,t,78);
+  caption(L([[['Kanepedeki','#fff']],[['yastığa ','#ffb547'],['bak...','#fff']]],[[['Look at the ','#fff'],['pillow','#ffb547']],[['on the couch...','#fff']]]),34.2,T(35.9,36.3),t,74);
+  caption(L([[['Yavaş yavaş','#fff']],[['kayboldu.','#ffb547']]],[[['It slowly','#fff']],[['vanished.','#ffb547']]]),T(35.9,36.3),37.8,t,74);
   if(t>37.2&&t<46.2){ // ding anı: halka parlar + etiket
     const fl=Math.max(0,1-(t-37.2)/0.5); if(fl>0){ctx.save();ctx.globalAlpha=fl*0.6;ctx.strokeStyle=C.amber;ctx.lineWidth=6;ctx.beginPath();ctx.arc(CX,CY,100+60*(1-fl),0,7);ctx.stroke();ctx.restore();}
-    tag('YASTIK',CX,1085,C.amber,sm(37.2,37.6,t)*(1-sm(45.6,46.2,t)));
+    tag(L('YASTIK','PILLOW'),CX,1085,C.amber,sm(37.2,37.6,t)*(1-sm(45.6,46.2,t)));
   }
 
   // ---------- açıklama
-  caption([[['Fark etmediysen','#fff']],[['sorun yok.','#5fd3c6']]],37.8,40.0,t,74);
-  caption([[['Çoğu insan','#fff']],[['göremiyor.','#ff6b5b']]],40.0,41.85,t,74);
-  caption([[['Çünkü beyin,','#fff']],[['değişeni değil...','#fff']]],41.9,44.4,t,74);
-  caption([[['beklediğini','#ffb547']],[['görür.','#fff']]],44.4,46.0,t,80);
+  caption(L([[['Fark etmediysen','#fff']],[['sorun yok.','#5fd3c6']]],[[['If you missed it,','#fff']],[["don't worry.",'#5fd3c6']]]),37.8,40.0,t,74);
+  caption(L([[['Çoğu insan','#fff']],[['göremiyor.','#ff6b5b']]],[[['Most people','#fff']],[['miss it.','#ff6b5b']]]),40.0,41.85,t,74);
+  caption(L([[['Çünkü beyin,','#fff']],[['değişeni değil...','#fff']]],[[["Your brain doesn't see",'#fff']],[['what changes...','#fff']]]),41.9,44.4,t,74);
+  caption(L([[['beklediğini','#ffb547']],[['görür.','#fff']]],[[['it sees what','#fff']],[['it expects.','#ffb547']]]),44.4,46.0,t,80);
   thought(t, sm(43.0,43.5,t)*(1-sm(45.8,46.3,t)));
 
   // ---------- final
   fade(sm(46.0,46.8,t)*0.86,'5,10,20');
-  caption([[['Arkadaşını ','#fff'],['etiketle.','#ffb547']]],46.1,DURATION+1,t,74,760);
-  caption([[['O ','#fff'],['bulabilecek mi?','#ff6b5b']]],47.9,DURATION+1,t,74,880);
+  caption(L([[['Arkadaşını ','#fff'],['etiketle.','#ffb547']]],[[['Tag ','#fff'],['a friend.','#ffb547']]]),46.1,DURATION+1,t,74,760);
+  caption(L([[['O ','#fff'],['bulabilecek mi?','#ff6b5b']]],[[['Can ','#fff'],['they spot it?','#ff6b5b']]]),T(47.9,47.6),DURATION+1,t,74,880);
   endCard(t,49.6);
 }
 K.run(DURATION, scene);
