@@ -35,7 +35,8 @@ function figure(o){
   const L={torso:118*s,r:40*s,ua:62*s,fa:58*s,th:72*s,sh:70*s,w:19*s,body:60*s};
   const P=(p,a,l)=>{const v=V(a,l);return [p[0]+v[0]*f,p[1]+v[1]];};
   const hip=[o.x,o.y];
-  const sh=P(hip,180-(o.lean||0),L.torso);
+  const br=Math.sin((window.__t||0)*2.4+(o.x||0)*0.01)*1.5;
+  const sh=P(hip,180-(o.lean||0)-br,L.torso+br);
   const limbCol=o.limb||shade(col,-0.18);
   ctx.save();ctx.globalAlpha=o.alpha??1;ctx.lineCap='round';ctx.lineJoin='round';
   const limb=(root,a1,a2,l1,l2,c)=>{const j=P(root,a1,l1),e=P(j,a2,l2);
@@ -57,8 +58,9 @@ function figure(o){
   // gözler
   ctx.fillStyle=C.ink;ctx.strokeStyle=C.ink;ctx.lineWidth=5*s;
   const ey=hc[1]-4*s+(o.look||0)*s;
+  const bt=((window.__t||0)+(o.x||0)*0.003)%3.1; const blink=bt<0.12&&o.eyes!=='tired';
   for(const dx of [10,27]){const ex=hc[0]+dx*f*s;
-    if(o.eyes==='tired'){ctx.beginPath();ctx.moveTo(ex-6*s,ey);ctx.lineTo(ex+6*s,ey);ctx.stroke();}
+    if(o.eyes==='tired'||blink){ctx.beginPath();ctx.moveTo(ex-6*s,ey);ctx.lineTo(ex+6*s,ey);ctx.stroke();}
     else if(o.eyes==='wide'){ctx.beginPath();ctx.arc(ex,ey,6.5*s,0,7);ctx.fill();}
     else{ctx.beginPath();ctx.arc(ex,ey,5*s,0,7);ctx.fill();}}
   ctx.restore();
@@ -190,8 +192,8 @@ function office(t){
 
   caption([[['Mesain saat ','#fff'],['kaçta','#ffb547']],[['bitiyor?','#fff']]],0,2.3,t,84,210);
   caption([[['Sözleşmede yazan: ','#fff'],['18:00','#ffb547']]],2.4,5.6,t);
-  caption([[['Çıktın. ','#fff'],['Özgürsün.','#5fd3c6']]],5.7,7.4,t);
-  caption([[['...öyle sanıyorsun.','#fff']]],7.4,9,t);
+  caption([[['Kapıdan çıktın.','#fff']],[['Akşam artık ','#fff'],['senin.','#5fd3c6']]],5.7,7.4,t);
+  caption([[['En azından öyle sanıyorsun.','#fff']]],7.4,9,t);
 }
 
 // ---------- SAHNE 3-4: EV ----------
@@ -241,7 +243,7 @@ function home(t){
   const buzz=t>11&&t<11.9?Math.sin(t*90)*4:0;
   const slump=sm(15,20,t);
   const figP={x:440,y:1300,color:C.coral,lean:lerp(-6,16,slump),th:90,sh:0,th2:86,sh2:-4,
-    ua:lerp(28,34,slump),fa:lerp(140,122,slump),ua2:lerp(22,30,slump),fa2:lerp(146,128,slump),
+    ua:lerp(28,34,slump),fa:lerp(140,122,slump)+(t>14?Math.sin(t*26)*4:0),ua2:lerp(22,30,slump),fa2:lerp(146,128,slump)+(t>14?Math.sin(t*26+1.5)*4:0),
     eyes:t<11?'open':(t<14?'wide':'tired'),nod:lerp(6,14,slump),nodY:lerp(0,6,slump)};
   const fig=figure(figP);
   // telefon
@@ -273,18 +275,18 @@ function home(t){
   shown.slice().reverse().forEach((n,i)=>{const a=sm(n[0],n[0]+0.25,t);const sc=0.9+0.1*a;
     const y=560+i*140; notif(W/2,y,n[1],n[2],a*(1-i*0.18)*(1-sm(20.6,21,t)),sc);});
 
-  caption([[['21:47','#ffb547'],['. Kanepedesin.','#fff']]],9.6,11.1,t);
-  caption([[['Telefon titredi.','#fff']]],11.1,14,t);
-  caption([[['Ofisten ','#fff'],['çıktın.','#5fd3c6']]],14,17.4,t,66);
-  caption([[['Ofis senden ','#fff'],['çıkmadı.','#ff6b5b']]],17.4,21,t,66);
+  caption([[['21:47','#ffb547'],['. Nihayet kanepedesin.','#fff']]],9.6,11.1,t);
+  caption([[['Telefon titriyor.','#fff']],[['Ekranda patronunun adı.','#ffb547']]],11.1,14,t);
+  caption([[['Saatler geçiyor.','#fff']],[['Sen hâlâ ','#fff'],['cevap yazıyorsun.','#ffb547']]],14,17.4,t);
+  caption([[['Evdesin.','#fff']],[['Ama akşamın ','#fff'],['yine işe gitti.','#ff6b5b']]],17.4,21,t);
 }
 
 // ---------- SAHNE 5: FİNAL ----------
 function finale(t){
   home(Math.min(t,20.995));
   ctx.fillStyle=`rgba(5,10,20,${0.82*sm(21,21.6,t)})`;ctx.fillRect(0,0,W,H);
-  caption([[['Maaşın ','#fff'],['8 saati','#ffb547']],[['ödüyor.','#fff']]],21.4,27,t,80,780);
-  caption([[['Telefonun kalan','#fff']],[['16 saati','#ff6b5b'],[' alıyor.','#fff']]],22.9,27,t,80,1040);
+  caption([[['Maaşın','#fff']],[['sekiz saatini ','#ffb547'],['ödüyor.','#fff']]],21.4,27,t,74,760);
+  caption([[['Akşamlarını ise','#fff']],[['bedavaya ','#ff6b5b'],['veriyorsun.','#fff']]],22.9,27,t,74,1020);
   const a=sm(24.6,25.2,t);
   if(a>0){ctx.save();ctx.globalAlpha=a;ctx.textAlign='center';ctx.font='700 40px Inter';ctx.letterSpacing='6px';ctx.fillStyle=C.amber;ctx.fillText(HANDLE.toUpperCase(),W/2,1420);
     ctx.font='500 32px Inter';ctx.letterSpacing='1px';ctx.fillStyle='rgba(239,228,207,.7)';ctx.fillText('Takip et, sorgulamaya devam et.',W/2,1480);ctx.restore();}
@@ -303,6 +305,7 @@ function post(t,frame){
 
 const DURATION=27;
 function render(t,frame=0){
+  window.__t=t;
   ctx.save();ctx.letterSpacing='0px';
   if(t<9){office(t);ctx.fillStyle=`rgba(0,0,0,${sm(8.3,9,t)})`;ctx.fillRect(0,0,W,H);}
   else if(t<21){home(t);ctx.fillStyle=`rgba(0,0,0,${1-sm(9,9.6,t)})`;ctx.fillRect(0,0,W,H);}
