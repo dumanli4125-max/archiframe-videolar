@@ -3,27 +3,314 @@
 <canvas id="c" width="1080" height="1920"></canvas>
 <script src="../kit/engine.js"></script>
 <script>
-// ŞABLON — kopyala: cp -r uretim/sablon uretim/videoNN
-// Zaman çizelgesi: anlatım satırlarının başlangıçları audio.py'deki VO ile AYNI olmalı.
-const DURATION = 8;
-function scene(t){
+// 11 — Sabah telaşında sarılmak. Satır başlangıçları audio.py VO ile AYNI.
+// l01 0.3 · l02 4.8 · l03 9.9 · l04 13.9 · l05 20.8 · l06 25.3 · l07 29.1 · l08 32.4 · l09 36.0 · l10 40.3 · l11 45.0 · l12 50.6
+const DURATION = 59.0;
+const AM=C.amber, CO=C.coral, TE=C.teal, CR=C.cream;
+const SEV=L('SEVGİLİ','PARTNER');
+
+// ---------- yardımcılar ----------
+let REF=0; // 1 = aynadaki yansıma çiziliyor (etiket/balon yok, soluk)
+function mouth(fig,f,s,k){const h=fig.head,x=h[0]+18*f*s,y=h[1]+15*s;ctx.save();ctx.strokeStyle=C.ink;ctx.lineWidth=5*s;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(x-12*s,y-3*s*k);ctx.quadraticCurveTo(x,y+13*s*k,x+12*s,y-3*s*k);ctx.stroke();ctx.restore();}
+function happyEyes(fig,f,s,col){const h=fig.head,ey=h[1]-4*s;ctx.save();
+  for(const dx of [10,27]){const ex=h[0]+dx*f*s;ctx.fillStyle=col;ctx.beginPath();ctx.arc(ex,ey,8.5*s,0,7);ctx.fill();
+    ctx.strokeStyle=C.ink;ctx.lineWidth=5*s;ctx.lineCap='round';ctx.beginPath();ctx.arc(ex,ey+4*s,7*s,Math.PI*1.15,Math.PI*1.85);ctx.stroke();}
+  ctx.restore();}
+function heart(x,y,r,col,a=1){if(a<=0)return;ctx.save();ctx.globalAlpha*=a;ctx.fillStyle=col;glow(col,18);ctx.beginPath();
+  ctx.moveTo(x,y+r*0.9);ctx.bezierCurveTo(x-r*1.6,y-r*0.2,x-r*0.7,y-r*1.4,x,y-r*0.45);ctx.bezierCurveTo(x+r*0.7,y-r*1.4,x+r*1.6,y-r*0.2,x,y+r*0.9);ctx.fill();ctx.restore();}
+function heartLine(x,y,r,col,a=1,dash=true){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.strokeStyle=col;ctx.lineWidth=5;if(dash)ctx.setLineDash([14,12]);glow(col,14);ctx.beginPath();
+  ctx.moveTo(x,y+r*0.9);ctx.bezierCurveTo(x-r*1.6,y-r*0.2,x-r*0.7,y-r*1.4,x,y-r*0.45);ctx.bezierCurveTo(x+r*0.7,y-r*1.4,x+r*1.6,y-r*0.2,x,y+r*0.9);ctx.stroke();ctx.restore();}
+// karakter (yansımada soluk, etiketsiz)
+function person(o,label,labelCol,lx=0){const p=figure({...o,alpha:(o.alpha??1)*(REF?0.3:1),glow:REF?false:o.glow});
+  if(label&&!REF)tag(label,p.head[0]+lx,p.head[1]-(o.s||1)*92,labelCol,o.alpha??1);return p;}
+function say(x,y,text,a,color){if(!REF)bubble(x,y,text,a,color);}
+function walker(x,p,f,s=1,extra={}){return {x,y:standY(s)-walkBob(p),s,facing:f,...walk(p),...extra};}
+// diş fırçası (el -> ağız yönünde)
+function brush(hx,hy,f,col,foam=0){ctx.save();ctx.lineCap='round';ctx.strokeStyle=col;ctx.lineWidth=7;ctx.beginPath();ctx.moveTo(hx-f*6,hy+8);ctx.lineTo(hx+f*30,hy-8);ctx.stroke();
+  ctx.fillStyle='#f6efe0';ctx.fillRect(hx+f*26-4,hy-16,10,8);
+  if(foam>0){ctx.globalAlpha*=foam;ctx.fillStyle='#f6efe0';for(let i=0;i<4;i++){ctx.beginPath();ctx.arc(hx+f*(34+((i*7)%10)),hy-12+((i*5)%9),4+(i%2)*2,0,7);ctx.fill();}}
+  ctx.restore();}
+function phoneOf(p,f,lit,t,extra={}){phone(p.hand[0]+f*6,p.hand[1]-16,{lit,rot:-0.35*f,t,...extra});}
+function cup(x,y,n){ctx.save();if(n>0){ctx.lineCap='round';ctx.lineWidth=7;[[CO,-8,-0.18],[TE,8,0.18]].slice(0,n).forEach(([c,dx,r])=>{ctx.strokeStyle=c;ctx.beginPath();ctx.moveTo(x+dx,y-10);ctx.lineTo(x+dx+r*90,y-84);ctx.stroke();
+  ctx.fillStyle='#f6efe0';ctx.beginPath();ctx.arc(x+dx+r*92,y-88,6,0,7);ctx.fill();});}
+  rr(x-24,y-46,48,48,8);ctx.fillStyle='#2f6b62';ctx.fill();ctx.restore();}
+function tiles(){ctx.save();ctx.strokeStyle=hexA(TE,0.07);ctx.lineWidth=2;for(let x=0;x<=W;x+=90){ctx.beginPath();ctx.moveTo(x,560);ctx.lineTo(x,FLOOR);ctx.stroke();}
+  for(let y=560;y<=FLOOR;y+=90){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}ctx.restore();}
+const MIR={x:320,y:640,w:440,h:400};
+function mirror(lit){ctx.save();rr(MIR.x,MIR.y,MIR.w,MIR.h,22);const g=ctx.createLinearGradient(MIR.x,MIR.y,MIR.x+MIR.w,MIR.y+MIR.h);g.addColorStop(0,'#1a3355');g.addColorStop(1,'#0e1f38');ctx.fillStyle=g;ctx.fill();
+  ctx.globalAlpha=0.08+0.08*lit;ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(MIR.x+60,MIR.y);ctx.lineTo(MIR.x+140,MIR.y);ctx.lineTo(MIR.x+40,MIR.y+MIR.h);ctx.lineTo(MIR.x-40,MIR.y+MIR.h);ctx.closePath();ctx.fill();ctx.restore();}
+function mirrorFrame(pulse=0){ctx.save();ctx.lineWidth=8;ctx.strokeStyle=pulse>0?hexA(AM,0.4+0.6*pulse):'#2c4772';if(pulse>0)glow(AM,30*pulse);rr(MIR.x,MIR.y,MIR.w,MIR.h,22);ctx.stroke();ctx.restore();}
+function mirrorLamp(a){ctx.save();ctx.fillStyle='#22385c';rr(400,596,280,22,10);ctx.fill();if(a>0){ctx.globalAlpha=a;glow(AM,40);ctx.fillStyle=AM;rr(410,604,260,8,4);ctx.fill();}ctx.restore();noGlow();if(a>0)lampCone(540,618,760,780,a*0.75);}
+function counter(sinkPulse=0){ctx.fillStyle='#1b3156';ctx.fillRect(260,1186,560,214);ctx.strokeStyle=hexA(C.line,0.9);ctx.lineWidth=3;ctx.strokeRect(300,1220,220,150);ctx.strokeRect(560,1220,220,150);
+  ctx.fillStyle='#24406b';rr(240,1160,600,28,10);ctx.fill();
+  ctx.save();ctx.fillStyle='#0a1426';ctx.beginPath();ctx.ellipse(540,1166,70,9,0,0,7);ctx.fill();
+  ctx.strokeStyle=sinkPulse>0?hexA(AM,0.5+0.5*sinkPulse):'#8aa0c0';if(sinkPulse>0)glow(AM,24*sinkPulse);ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(540,1160);ctx.lineTo(540,1112);ctx.quadraticCurveTo(540,1096,560,1100);ctx.lineTo(572,1104);ctx.stroke();ctx.restore();}
+function bathRoom(lit){room();tiles();mirror(lit);mirrorLamp(lit);}
+// yansıma: oyuncuları aynada küçük, ters ve soluk çiz
+function reflect(drawActors,t){ctx.save();rr(MIR.x,MIR.y,MIR.w,MIR.h,22);ctx.clip();ctx.translate(540,1120);ctx.scale(-0.62,0.62);ctx.translate(-540,-STAND_Y);REF=1;drawActors(t);REF=0;ctx.restore();}
+// kısa ikon "pop" (ayakkabı, anahtar)
+function popIcon(kind,x,y,t0,t){const u=(t-t0)/1.3;if(u<0||u>1)return;const a=Math.min(1,u*6)*(1-sm(0.65,1,u));ctx.save();ctx.globalAlpha=a;ctx.translate(x,y-u*70);
+  ctx.fillStyle='rgba(16,30,54,.92)';ctx.strokeStyle=hexA(AM,0.8);ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,54,0,7);ctx.fill();ctx.stroke();
+  ctx.fillStyle=AM;ctx.strokeStyle=AM;glow(AM,16);
+  if(kind==='shoe'){ctx.beginPath();ctx.moveTo(-30,-14);ctx.lineTo(-6,-14);ctx.quadraticCurveTo(0,4,30,6);ctx.quadraticCurveTo(36,16,28,20);ctx.lineTo(-30,20);ctx.closePath();ctx.fill();}
+  else{ctx.lineWidth=7;ctx.beginPath();ctx.arc(-14,-6,14,0,7);ctx.stroke();ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(30,18);ctx.moveTo(18,11);ctx.lineTo(12,22);ctx.moveTo(26,16);ctx.lineTo(21,26);ctx.stroke();}
+  ctx.restore();}
+function msgCard(x,y,from,msg,a){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.translate(x,y+(1-a)*20);
+  rr(-330,-70,660,140,28);ctx.fillStyle='rgba(16,30,54,0.96)';glow('rgba(0,0,0,.6)',30);ctx.fill();noGlow();ctx.lineWidth=2;ctx.strokeStyle=hexA(TE,0.6);ctx.stroke();
+  ctx.fillStyle=CR;ctx.beginPath();ctx.arc(-262,0,36,0,7);ctx.fill();ctx.fillStyle=C.ink;ctx.beginPath();ctx.arc(-252,-4,4,0,7);ctx.arc(-238,-4,4,0,7);ctx.fill();
+  ctx.textAlign='left';ctx.textBaseline='middle';ctx.font='800 26px Inter';ctx.letterSpacing='3px';ctx.fillStyle=TE;ctx.fillText(from,-205,-24);
+  ctx.letterSpacing='0px';ctx.font='600 38px Inter';ctx.fillStyle='#e9eef7';ctx.fillText(msg,-205,20);
+  ctx.font='500 24px Inter';ctx.fillStyle='rgba(233,238,247,.45)';ctx.textAlign='right';ctx.fillText('23:48',305,-24);ctx.restore();}
+// sebep kartları
+function reasonCard(x,y,kind,label,a,stamp){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.translate(x,y-(1-a)*80);
+  card(0,0,290,330,{stroke:AM});
+  ctx.translate(0,-40);ctx.fillStyle=AM;ctx.strokeStyle=AM;glow(AM,16);
+  if(kind==='cake'){ctx.fillStyle=CR;rr(-62,-10,124,70,10);ctx.fill();ctx.fillStyle=CO;ctx.fillRect(-62,14,124,10);ctx.fillStyle=TE;ctx.fillRect(-4,-44,8,34);ctx.fillStyle=AM;ctx.beginPath();ctx.ellipse(0,-54,8,13,0,0,7);ctx.fill();}
+  else if(kind==='gift'){ctx.fillStyle=TE;rr(-60,-24,120,90,8);ctx.fill();ctx.fillStyle=AM;ctx.fillRect(-9,-24,18,90);ctx.fillRect(-66,-34,132,22);ctx.lineWidth=7;ctx.beginPath();ctx.ellipse(-20,-46,20,12,-0.4,0,7);ctx.ellipse(20,-46,20,12,0.4,0,7);ctx.stroke();}
+  else{ctx.strokeStyle='#2f6b62';ctx.lineWidth=6;for(const r of [-0.35,0,0.35]){ctx.beginPath();ctx.moveTo(0,60);ctx.lineTo(Math.sin(r)*70,-20);ctx.stroke();}
+    [[-24,-28,CO],[0,-36,AM],[24,-28,CO]].forEach(([fx,fy,c])=>{ctx.fillStyle=c;ctx.beginPath();ctx.arc(fx,fy,18,0,7);ctx.fill();});}
+  noGlow();ctx.translate(0,40);
+  ctx.font='800 34px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.letterSpacing='2px';ctx.fillStyle=CR;ctx.fillText(label,0,112);
+  if(stamp>0){ctx.save();ctx.globalAlpha=a*stamp;ctx.rotate(-0.22);const s=1+0.6*(1-stamp);ctx.scale(s,s);ctx.strokeStyle=CO;ctx.lineWidth=6;rr(-110,-38,220,76,12);ctx.stroke();
+    ctx.font='800 40px Inter';ctx.letterSpacing='5px';ctx.fillStyle=CO;ctx.fillText(L('SEBEP','REASON'),3,2);ctx.restore();}
+  ctx.restore();}
+
+// ================= SAHNELER =================
+// Banyo 1 (0 – 13.85): loş kanca, ışık yanar, 07:12, ikisi de fırça + telefon
+function actors1(t){
+  const bs=t>10.4, bp=t>11.5;
+  const sw=Math.sin(t*16), sw2=Math.sin(t*15+1.3);
+  const sp=person({x:400,y:STAND_Y,color:CO,...POSE.stand,facing:-1,ua:28,fa:140,ua2:bs?36+5*sw:10,fa2:bs?165:16,look:4,nodY:3},'SEN',CO);
+  if(bs)brush(sp.handB[0],sp.handB[1],-1,CO,sm(10.6,11.2,t));
+  mouth(sp,-1,1,-0.15);
+  phoneOf(sp,-1,t>13.0,t);
+  const pp=person({x:690,y:STAND_Y,color:CR,...POSE.stand,facing:1,ua:28,fa:140,ua2:bp?36+5*sw2:10,fa2:bp?165:16,look:4,nodY:3},SEV,CR);
+  if(bp)brush(pp.handB[0],pp.handB[1],1,TE,sm(11.7,12.3,t));
+  mouth(pp,1,1,-0.15);
+  phoneOf(pp,1,t>13.0,t);
+}
+function sBath1(t){
+  const lit=0.18+0.82*sm(4.85,5.25,t);
+  bathRoom(lit);
+  reflect(actors1,t);mirrorFrame();
+  counter();cup(290,1160,0);
+  actors1(t);
+  // kanca: aralarında kesik çizgili kalp + ?
+  const ha=sm(0.4,1.0,t)*(1-sm(4.3,4.9,t));
+  if(ha>0){const pu=1+0.06*Math.sin(t*6);heartLine(545,900,60*pu,CO,ha*0.9);bigText('?',545,880,64,CO,ha);}
+  fade((1-lit)*0.5,'5,10,20');
+  if(t>5.6){const flip=t>6.75;clockPanel(540,480,flip?'07:12':'07:11',flip?1-sm(6.75,7.6,t):0,sm(5.6,5.9,t));}
+  tag(L('BANYO','BATHROOM'),540,580,TE,sm(5.2,5.6,t));
+}
+// Koridor (13.85 – 20.6): telaş
+const HALLX=[[13.9,420],[14.6,650],[15.3,300],[16.0,580],[16.8,360],[17.8,740],[18.9,800],[19.8,1030]];
+function sHall(t){
+  room();tag('EV',540,580,AM);frame(110,700);
+  const op=sm(17.7,18.0,t)*(1-sm(19.85,19.95,t));
+  door(880,op);
+  ctx.fillStyle='#2c4772';ctx.fillRect(700,860,120,10);ctx.fillRect(720,870,8,26);ctx.fillRect(780,870,8,26); // askılık
+  clockPanel(540,480,fmt(7*60+24+(t-13.9)*2.6),0,1);
+  // SEVGİLİ: telefonda; "Görüşürüz" anında başını kaldırır, el yarım kalkar, sonra düşer
+  const look=t>18.9, wave_=t>19.1&&t<19.9, after=t>20.0;
+  const pp=person({x:220,y:STAND_Y,color:CR,...POSE.stand,facing:1,ua:look?(wave_?110+10*Math.sin(t*12):40):28,fa:look?(wave_?150:60):140,ua2:10,fa2:16,
+    look:look?-2:4,nodY:after?7:3,eyes:look&&!after?'wide':(after?'tired':'open'),lean:after?9:3},SEV,CR);
+  mouth(pp,1,1,after?-0.6:-0.1);
+  if(!look||after)phoneOf(pp,1,false,t);
+  // SEN: gidip gelir, kapıdan çıkar
+  const x=keyed(t,HALLX), x2=keyed(t+0.05,HALLX), f=x2>=x?1:-1;
+  const a=1-sm(19.5,19.85,t);
+  if(a>0){const sp=person({...walker(x,t*12,f),color:CO,lean:12,alpha:a,ua2:30,fa2:60},'SEN',CO);mouth(sp,f,1,0);
+    popIcon('shoe',sp.head[0],sp.head[1]-200,16.0,t);popIcon('key',sp.head[0],sp.head[1]-200,16.8,t);}
+}
+// Kanepe (20.6 – 25.2)
+function sSofa(t){
+  room();windowNight(640,640,300,330,{moon:true,city:true});
+  tag(L('AKŞAM','EVENING'),540,580,AM);clockPanel(540,480,'21:40',0,1);floorLamp(130,0.35);
+  sofa(220,640);
+  const sc=Math.sin(t*9)*3, sc2=Math.sin(t*8+2)*3;
+  const sp=person({x:390,y:1300,color:CO,...POSE.sitPhone,facing:-1,fa:140+sc,look:4,nodY:3},'SEN',CO);mouth(sp,-1,1,-0.2);
+  const pp=person({x:700,y:1300,color:CR,...POSE.sitPhone,facing:1,fa:140+sc2,look:4,nodY:3},SEV,CR);mouth(pp,1,1,-0.2);
+  const two=sm(23.2,23.6,t);
+  phoneOf(sp,-1,false,t,{color:TE});phoneOf(pp,1,false,t,{color:TE});
+  if(two>0){ctx.save();ctx.globalAlpha=two;ctx.setLineDash([12,12]);ctx.strokeStyle=hexA(CO,0.8);ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(545,1000);ctx.lineTo(545,1340);ctx.stroke();ctx.restore();
+    for(const p of [[sp,-1],[pp,1]]){const hx=p[0].hand[0]+p[1]*6,hy=p[0].hand[1]-16;ctx.save();ctx.globalAlpha=two*(0.6+0.4*Math.sin(t*8));ctx.strokeStyle=TE;ctx.lineWidth=4;glow(TE,20);ctx.beginPath();ctx.arc(hx,hy,52,0,7);ctx.stroke();ctx.restore();}}
+}
+// Yatak (25.2 – 29.0)
+function sBed(t){
+  room();windowNight(640,640,300,330,{moon:true});
+  const off=sm(28.0,28.3,t);
+  // komodin lambası
+  ctx.fillStyle='#1d3254';ctx.fillRect(40,1200,90,200);ctx.save();ctx.globalAlpha=1-off*0.85;ctx.fillStyle=AM;glow(AM,40);ctx.beginPath();ctx.moveTo(55,1150);ctx.lineTo(115,1150);ctx.lineTo(100,1105);ctx.lineTo(70,1105);ctx.closePath();ctx.fill();ctx.restore();noGlow();
+  if(off<1)lampCone(85,1150,300,250,1-off);
+  bed(190,760);
+  const typ=t<25.6?Math.sin(t*30)*5:0;
+  const sp=person({x:340,y:1236,color:CO,...POSE.sitPhone,th:90,sh:90,th2:88,sh2:88,facing:1,look:4,nodY:3},'SEN',CO,-40);
+  const pp=person({x:500,y:1236,color:CR,...POSE.sitPhone,th:90,sh:90,th2:88,sh2:88,facing:1,fa:140+typ,look:4,nodY:3},SEV,CR,40);
+  mouth(sp,1,1,-0.2);mouth(pp,1,1,-0.2);
+  // yorgan bacakların üstünde
+  ctx.fillStyle='#2b4a7a';rr(300,1196,640,70,26);ctx.fill();ctx.fillStyle=hexA(CR,0.08);rr(300,1196,640,14,8);ctx.fill();
+  const got=t>25.55;
+  phoneOf(sp,1,got&&t<27.0,t,{buzz:got&&t<26.2?1:0});phoneOf(pp,1,false,t,{color:TE});
+  msgCard(540,800,SEV,L('İyi geceler','Good night'),sm(25.55,25.85,t)*(1-sm(28.5,28.9,t)));
+  // 20 cm: aradaki mesafe
+  const d=sm(27.5,27.9,t)*(1-sm(28.7,28.95,t));
+  if(d>0){ctx.save();ctx.globalAlpha=d;ctx.strokeStyle=CO;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(sp.head[0],sp.head[1]-130);ctx.lineTo(pp.head[0],pp.head[1]-130);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(sp.head[0],sp.head[1]-145);ctx.lineTo(sp.head[0],sp.head[1]-115);ctx.moveTo(pp.head[0],pp.head[1]-145);ctx.lineTo(pp.head[0],pp.head[1]-115);ctx.stroke();ctx.restore();}
+  fade(off*0.45,'5,10,20');
+}
+// Boş banyo yakın (29.0 – 32.3)
+function sSink(t){
+  room();tiles();
+  ctx.save();ctx.translate(540,1000);ctx.scale(1.25,1.25);ctx.translate(-540,-1000);
+  mirror(0.8);mirrorLamp(0.8);
+  // aynada sadece iki fırçanın yansıması
+  ctx.save();rr(MIR.x,MIR.y,MIR.w,MIR.h,22);ctx.clip();ctx.globalAlpha=0.3;cup(540,1010,2);ctx.restore();
+  mirrorFrame(t>31.6?1-sm(31.7,32.3,t)*0.6:0);
+  counter(t>30.5&&t<31.7?1-sm(31.0,31.7,t)*0.7:0);cup(700,1160,2);
+  ctx.restore();
+  tag(L('LAVABO','SINK'),540,1420,AM,sm(30.5,30.8,t));
+  tag(L('AYNA','MIRROR'),540,520,AM,sm(31.6,31.9,t));
+}
+// Uzakta iki kişi (32.3 – 35.9)
+function sApart(t){
   room();
-  windowNight(600,560,380,440,{moon:true});
-  frame(120,640);
-  floorLamp(190,1);
-  sofa(270,370);
-  plant(75);
-  // SEN kanepede telefonla; 3. saniyede telefon titrer
-  const p=figure({x:440,y:1300,color:C.coral,...POSE.sitPhone,eyes:t>3?'wide':'open'});
-  phone(p.hand[0]+6,p.hand[1]-16,{lit:t>3,buzz:t>3&&t<4?1:0,t});
-  tag('SEN',p.head[0],p.head[1]-90,C.coral);
-  // yürüyen ikinci karakter (krem), 1-5 sn arası soldan sağa
-  const u=clamp((t-1)/4), pw=(t-1)*8.5;
-  if(t>1&&t<5.2) figure({x:lerp(-80,760,u),y:STAND_Y-walkBob(pw),color:C.cream,s:0.9,...walk(pw)});
-  caption(L([[['Örnek ','#fff'],['altyazı.','#ffb547']]],[[['Sample ','#fff'],['caption.','#ffb547']]]),0.2,3,t);
-  caption([[['Telefon ','#fff'],['titriyor.','#ff6b5b']]],3,6,t);
-  fade(sm(6,6.5,t)*0.84,'5,10,20');
-  endCard(t,6.3);
+  const sc=Math.sin(t*9)*3;
+  const sp=person({x:230,y:STAND_Y,color:CO,...POSE.stand,facing:-1,ua:28,fa:140+sc,look:4,nodY:3},'SEN',CO);mouth(sp,-1,1,-0.2);phoneOf(sp,-1,false,t,{color:TE});
+  const pp=person({x:850,y:STAND_Y,color:CR,...POSE.stand,facing:1,ua:28,fa:140-sc,look:4,nodY:3},SEV,CR);mouth(pp,1,1,-0.2);phoneOf(pp,1,false,t,{color:TE});
+  const ha=sm(32.6,33.2,t), pu=t>34.4?0.5+0.5*Math.sin((t-34.4)*7):0;
+  heartLine(540,900,110*(1+0.05*pu),CO,ha*0.9);bigText('?',540,870,110,CO,ha*sm(34.4,34.7,t));
+  ctx.save();ctx.globalAlpha=0.5*ha;ctx.setLineDash([10,14]);ctx.strokeStyle=CR;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(320,1150);ctx.lineTo(760,1150);ctx.stroke();ctx.restore();
+}
+// Sebep kartları (35.9 – 40.2)
+function sCards(t){
+  room();
+  reasonCard(200,800,'cake',L('DOĞUM GÜNÜ','BIRTHDAY'),sm(36.1,36.45,t),sm(38.65,38.85,t));
+  reasonCard(540,800,'gift',L('BAYRAM','HOLIDAY'),sm(37.0,37.35,t),sm(38.85,39.05,t));
+  reasonCard(880,800,'flower',L('ÖZÜR','SORRY'),sm(37.8,38.15,t),sm(39.05,39.25,t));
+  const shrug=sm(38.6,39.0,t);
+  const sp=person({x:430,y:standY(0.85),s:0.85,color:CO,...blend(POSE.stand,POSE.shrug,shrug),facing:1},'SEN',CO);mouth(sp,1,0.85,-0.3*shrug);
+  const pp=person({x:650,y:standY(0.85),s:0.85,color:CR,...blend(POSE.stand,POSE.shrug,shrug),facing:-1},SEV,CR);mouth(pp,-1,0.85,-0.3*shrug);
+}
+// Banyo 2 (40.2 – son): fırçayı bırak, arkadan sarıl
+function actors2(t){
+  const sw=Math.sin(t*16), sw2=Math.sin(t*15+1.3);
+  // SEN
+  let so, sf=-1, sb=null;
+  if(t<42.5){so={x:400,y:STAND_Y,...POSE.stand,ua:28,fa:140,ua2:36+5*sw,fa2:165,look:4,nodY:3};sb='hand';}
+  else if(t<43.3){const k=sm(42.5,43.2,t);so={x:400,y:STAND_Y,...POSE.stand,ua:lerp(28,10,k),fa:lerp(140,16,k),ua2:lerp(36,60,k),fa2:lerp(165,100,k),look:lerp(4,0,k)};sb='move';}
+  else if(t<44.2){const u=sm(43.3,44.2,t),p=(t-43.3)*9;sf=1;so={...walker(lerp(400,604,u),p,1),ua:lerp(10,60,u),fa:lerp(16,80,u),ua2:lerp(20,60,u),fa2:lerp(30,80,u)};}
+  else{sf=1;const k=sm(44.2,44.5,t);so={x:lerp(604,596,sm(49.15,49.5,t)),y:STAND_Y,...POSE.stand,lean:lerp(3,8,k),ua:lerp(60,84,k),fa:lerp(80,98,k),ua2:lerp(60,80,k),fa2:lerp(80,94,k),nodY:4,look:2};}
+  const sp=person({...so,color:CO,facing:sf},'SEN',CO,-70);
+  const smileS=t>48.4;
+  if(smileS){happyEyes(sp,sf,1,CO);mouth(sp,sf,1,1);}else mouth(sp,sf,1,t>44.2?0.5:-0.1);
+  if(sb==='hand')brush(sp.handB[0],sp.handB[1],-1,CO,0.6);
+  if(sb==='move'){const k=sm(42.6,43.2,t);brush(lerp(sp.handB[0],300,k),lerp(sp.handB[1],1080,k),-1,CO,0);}
+  if(t<42.9)phoneOf(sp,-1,false,t);
+  // SEVGİLİ
+  const turned=t>49.15;
+  const hugged=t>44.3, surprised=t>45.3&&t<48.3, smileP=t>48.3;
+  const pf=turned?-1:1;
+  let po;
+  if(!turned){po={x:690,y:STAND_Y,...POSE.stand,ua:28,fa:140,ua2:hugged?10:36+5*sw2,fa2:hugged?20:165,look:surprised?-2:4,nodY:hugged?0:3,eyes:surprised?'wide':'open',lean:surprised?-2:3};
+    if(smileP){const k=sm(48.5,49.0,t);po.ua=lerp(28,12,k);po.fa=lerp(140,20,k);}}
+  else{const k=sm(49.15,49.5,t);po={x:lerp(690,716,k),y:STAND_Y,...POSE.stand,lean:lerp(3,8,k),ua:lerp(12,84,k),fa:lerp(20,100,k),ua2:lerp(12,80,k),fa2:lerp(20,96,k),nodY:4};}
+  // çizim sırası: sarılan kollar önde kalsın
+  const pp=person({...po,color:CR,facing:pf},SEV,CR,70);
+  if(smileP){happyEyes(pp,pf,1,CR);mouth(pp,pf,1,1);}else mouth(pp,pf,1,surprised?0.3:-0.1);
+  if(!hugged)brush(pp.handB[0],pp.handB[1],1,TE,0.6);
+  if(!smileP||t<48.9)phoneOf(pp,1,false,t);
+  // SEN'in ön kolu SEVGİLİ'nin önünden geçer
+  if(t>44.0){ctx.save();ctx.globalAlpha=REF?0.3:sm(44.0,44.3,t);ctx.strokeStyle=shade(CO,-0.18);ctx.lineWidth=19;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(sp.sh[0]+14,sp.sh[1]+18);ctx.lineTo(sp.hand[0],sp.hand[1]);ctx.stroke();ctx.restore();}
+  if(turned){ctx.save();ctx.globalAlpha=REF?0.3:sm(49.2,49.5,t);ctx.strokeStyle=shade(CR,-0.18);ctx.lineWidth=19;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(pp.sh[0]-14,pp.sh[1]+22);ctx.lineTo(pp.hand[0]-10,pp.hand[1]+6);ctx.stroke();ctx.restore();}
+  // balonlar
+  say(810,pp.head[1]-200,L('Ne oldu?','What\'s wrong?'),sm(45.75,46.0,t)*(1-sm(47.6,47.9,t)));
+  say(480,sp.head[1]-200,L('Hiç.','Nothing.'),sm(46.95,47.2,t)*(1-sm(48.6,48.9,t)),CO);
+  // kalpler (sahnede)
+  if(!REF&&t>49.3){for(let i=0;i<5;i++){const u=((t-49.3)*0.55+i*0.2)%1;heart(600+((i*53)%120)-30+Math.sin(t*2+i)*14,1000-u*260,12+(i%3)*5,i%2?CO:AM,sm(49.3,49.7,t)*(1-sm(0.7,1,u))*0.9);}}
+}
+function sBath2(t){
+  bathRoom(1);
+  reflect(actors2,t);
+  // aynada iki kalp
+  const h1=sm(48.5,48.9,t),h2=sm(49.4,49.8,t),b=1+0.08*Math.sin(t*5);
+  heart(480,760,30*b,CO,h1);heart(600,740,30*b,AM,h2);
+  mirrorFrame(h2*0.5);
+  counter();cup(300,1160,t>43.2?1:0);
+  if(t>48.9){phone(780,1150,{rot:1.57,color:TE});}
+  actors2(t);
+  clockPanel(540,480,'07:12',t<41.3?1-sm(40.4,41.3,t):0,sm(40.2,40.5,t));
+  tag(L('ERTESİ SABAH','NEXT MORNING'),540,580,AM,sm(40.3,40.6,t)*(1-sm(42.0,42.4,t)));
+}
+
+// ================= ALTYAZILAR =================
+function caps(t){
+  if(LANG==='en'){
+  caption([[["When's the last time you",'#fff']],[['hugged someone ','#fff'],['for no reason?',CO]]],0.3,2.95,t,60);
+  caption([[["Don't think. ",'#fff'],['Just answer.',AM]]],2.9,4.7,t);
+  caption([[['Morning. ','#fff'],['7:12.',AM]]],4.8,7.6,t,70);
+  caption([[["You're both in the bathroom,",'#fff']],[['side by side.',TE]]],7.55,9.8,t,58);
+  caption([[["You're ",'#fff'],['brushing your teeth.',AM]],[['So are they.','#fff']]],9.9,12.1,t,60);
+  caption([[['Both of you, eyes','#fff']],[['on your ','#fff'],['phones.',TE]]],12.05,13.85,t);
+  caption([[['Then the ','#fff'],['rush.',CO]]],13.9,15.85,t,70);
+  caption([[['Shoes, keys, ','#fff'],['door...',AM]]],15.8,18.6,t,70);
+  caption([[['You leave without','#fff']],[['even saying ','#fff'],['bye.',CO]]],18.55,20.5,t);
+  caption([[['Evening. ','#fff'],['Same couch.',AM]]],20.8,22.9,t,70);
+  caption([[['Two ','#fff'],['different',TE]],[['screens.','#fff']]],22.85,25.1,t,70);
+  caption([[['Even ','#fff'],['"good night"',TE]],[['comes through a screen.','#fff']]],25.3,27.3,t);
+  caption([[['From the ','#fff'],['same bed.',CO]]],27.25,28.95,t,70);
+  caption([[['Same house.','#fff']],[['Same ','#fff'],['sink.',AM],[' Same ','#fff'],['mirror.',AM]]],29.1,32.2,t);
+  caption([[["So when's the last time",'#fff']],[['you hugged them ','#fff'],['for no reason?',CO]]],32.4,35.85,t,56);
+  caption([[['Birthdays, holidays,','#fff']],[['apologies...','#fff']]],36.0,38.5,t);
+  caption([[["There's always ",'#fff'],['a reason.',CO]]],38.45,40.1,t);
+  caption([[['Next morning,',AM],[' same bathroom.','#fff']]],40.3,42.4,t,58);
+  caption([[['You put the brush down','#fff']],[['and ','#fff'],['hug them from behind.',CO]]],42.35,45.0,t,56);
+  caption([[["They're surprised: ",'#fff']],[['"What\'s wrong?"',TE]]],45.0,46.4,t);
+  caption([[['You say: ','#fff'],['"Nothing."',CO]]],46.4,48.1,t,66);
+  caption([[['They smile...','#fff']],[['and ','#fff'],['hug you back.',AM]]],48.05,50.3,t);
+  return;}
+  caption([[['En son ne zaman','#fff']],[['sebepsiz ',AM],['sarıldın?',CO]]],0.3,2.95,t,74);
+  caption([[['Hadi, ','#fff'],['düşünmeden',AM],[' söyle.','#fff']]],2.9,4.7,t);
+  caption([[['Sabah. Saat ','#fff'],['07:12.',AM]]],4.8,7.6,t,70);
+  caption([[['İkiniz de banyodasınız,','#fff']],[['yan yana.',TE]]],7.55,9.8,t);
+  caption([[['Sen dişini ','#fff'],['fırçalıyorsun,',AM]],[['o da.','#fff']]],9.9,12.1,t,60);
+  caption([[['İkinizin de gözü','#fff']],[['telefonda.',TE]]],12.05,13.85,t);
+  caption([[['Sonra ','#fff'],['koşturma',CO],[' başlıyor.','#fff']]],13.9,15.85,t);
+  caption([[['Ayakkabı, anahtar, ','#fff'],['kapı...',AM]]],15.8,18.6,t,56);
+  caption([[['"Görüşürüz" bile','#fff']],[['demeden ','#fff'],['çıktın.',CO]]],18.55,20.5,t);
+  caption([[['Akşam aynı','#fff']],[['kanepedesiniz.',AM]]],20.8,22.9,t,70);
+  caption([[['Ama ','#fff'],['iki ayrı',TE],[' ekrana','#fff']],[['bakıyorsunuz.','#fff']]],22.85,25.1,t);
+  caption([[['"İyi geceler"',TE],[' bile','#fff']],[['ekrandan geliyor.','#fff']]],25.3,27.3,t);
+  caption([[['Hem de ','#fff'],['aynı yataktan.',CO]]],27.25,28.95,t);
+  caption([[['Aynı evdesiniz.','#fff']],[['Aynı ','#fff'],['lavabo,',AM],[' aynı ','#fff'],['ayna.',AM]]],29.1,32.2,t);
+  caption([[['Ama en son ne zaman...','#fff']],[['bir ','#fff'],['sebep yokken',CO],[' sarıldın?','#fff']]],32.4,35.85,t,58);
+  caption([[['Doğum günü, bayram,','#fff']],[['özür...','#fff']]],36.0,38.5,t);
+  caption([[['Hep bir ','#fff'],['sebep lazım.',CO]]],38.45,40.1,t,66);
+  caption([[['Ertesi sabah,',AM],[' aynı banyo.','#fff']]],40.3,42.4,t,60);
+  caption([[['Fırçayı bıraktın,','#fff']],[['arkasından ','#fff'],['sarıldın.',CO]]],42.35,45.0,t);
+  caption([[['Önce şaşırdı: ','#fff'],['"Ne oldu?"',TE]]],45.0,46.4,t,60);
+  caption([[['Sen dedin ki: ','#fff'],['"Hiç."',CO]]],46.4,48.1,t,66);
+  caption([[['O da gülümsedi...','#fff']],[['sarıldı.',AM]]],48.05,50.3,t);
+}
+
+function scene(t){
+  if(t<13.85)sBath1(t);
+  else if(t<20.6){const sh=t>19.95&&t<20.35?Math.sin(t*80)*8*(1-(t-19.95)/0.4):0;ctx.save();ctx.translate(sh,0);sHall(t);ctx.restore();}
+  else if(t<25.2)sSofa(t);
+  else if(t<29.0)sBed(t);
+  else if(t<32.3)sSink(t);
+  else if(t<35.9)sApart(t);
+  else if(t<40.2)sCards(t);
+  else sBath2(t);
+  for(const c of [13.85,20.6,25.2,29.0,32.3,35.9,40.2]) fade(0.9*(1-clamp(Math.abs(t-c)/0.22)),'5,10,20');
+  if(t<50.4)caps(t);
+  // final
+  fade(0.86*sm(50.3,50.9,t),'5,10,20');
+  caption(L([[['Bugün eve girince...','#fff']]],[[['Tonight, when you get home...','#fff']]]),50.8,DURATION,t,L(70,60),700);
+  caption(L([[['hiçbir sebep olmadan','#fff']],[['sarıl.',CO]]],[[['hug them','#fff']],[['for no reason.',CO]]]),L(52.0,52.0),DURATION,t,76,860);
+  caption(L([[['Sebep sorarsa,','#fff']],[['"hiç" de.',AM]]],[[['If they ask why,','#fff']],[['say "nothing."',AM]]]),L(53.7,53.7),DURATION,t,70,1110);
+  if(t>50.9){heart(540,575,26*(1+0.08*Math.sin(t*4)),CO,sm(50.9,51.4,t));}
+  endCard(t,56.3);
 }
 K.run(DURATION, scene);
 </script></body></html>

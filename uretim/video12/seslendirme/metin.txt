@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   0.85  Her sabah aynı vagon, aynı yüzler. Hiç birinin adını biliyor musun?
+l02 5.0   0.8   Her sabah... saat yedi... kırk. Aynı vagon, aynı köşe.
+l03 9.9   0.85  Kitap okuyan bir amca. Kulaklıklı bir genç. Bir de ayakta uyuyan bir işçi.
+l04 15.5  0.8   Pazartesi... salı... çarşamba... Hep aynı tren, hep aynı sıra.
+l05 20.8  0.85  Herkes telefonunda. Kimse kimseyi görmüyor. Sen de öylesin.
+l06 25.3  0.8   Üç yıldır... aynı amcayla yan yana duruyorsun. Adını bilmiyorsun.
+l07 30.4  0.8   Bir sabah vagona bindin. Köşe boş. Amca yok.
+l08 34.6  0.85  Telefona baktın, ama aklın o köşede. Bir şey eksik.
+l09 38.7  0.85  Ertesi sabah kapı açıldı. Amca geldi... kolu alçıda.
+l10 42.9  0.85  Telefonu indirdin. Günaydın amca, iyi misiniz?
+l11 46.6  0.85  Amca gülümsedi. İyiyim evladım, sağ ol. Ben Hasan.
+l12 51.3  0.8   Yarın sabah... yanındakine bir günaydın de. Belki bir adı vardır.

@@ -1,0 +1,633 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 4.4,
+  "hiz": 0.85,
+  "metin": "En son ne zaman, sebepsiz sarıldın? Hadi, düşünmeden söyle.",
+  "kelimeler": [
+   {
+    "k": "En",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "son",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "ne",
+    "bas": 0.4,
+    "son": 0.6
+   },
+   {
+    "k": "zaman",
+    "bas": 0.6,
+    "son": 1.1
+   },
+   {
+    "k": "sebepsiz",
+    "bas": 1.2,
+    "son": 1.7
+   },
+   {
+    "k": "sarıldın?",
+    "bas": 1.7,
+    "son": 2.3
+   },
+   {
+    "k": "Hadi,",
+    "bas": 2.9,
+    "son": 3.2
+   },
+   {
+    "k": "düşünmeden",
+    "bas": 3.4,
+    "son": 3.9
+   },
+   {
+    "k": "söyle.",
+    "bas": 3.9,
+    "son": 4.2
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 4.8,
+  "sure": 4.96,
+  "hiz": 0.8,
+  "metin": "Sabah. Saat, yedi on iki. İkiniz de banyodasınız, yan yana.",
+  "kelimeler": [
+   {
+    "k": "Sabah",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "saat",
+    "bas": 0.8,
+    "son": 1.3
+   },
+   {
+    "k": "yedi on iki",
+    "bas": 1.4,
+    "son": 2.3
+   },
+   {
+    "k": "İkiniz",
+    "bas": 3.0,
+    "son": 3.2
+   },
+   {
+    "k": "de",
+    "bas": 3.2,
+    "son": 3.3
+   },
+   {
+    "k": "banyodasınız",
+    "bas": 3.3,
+    "son": 4.2
+   },
+   {
+    "k": "yan",
+    "bas": 4.3,
+    "son": 4.5
+   },
+   {
+    "k": "yana.",
+    "bas": 4.5,
+    "son": 4.8
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 9.9,
+  "sure": 3.92,
+  "hiz": 0.85,
+  "metin": "Sen dişini fırçalıyorsun, o da. İkinizin de gözü telefonda.",
+  "kelimeler": [
+   {
+    "k": "Sen",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "dişini",
+    "bas": 0.3,
+    "son": 0.6
+   },
+   {
+    "k": "fırçalıyorsun,",
+    "bas": 0.6,
+    "son": 1.5
+   },
+   {
+    "k": "o",
+    "bas": 1.6,
+    "son": 1.6
+   },
+   {
+    "k": "da.",
+    "bas": 1.6,
+    "son": 1.9
+   },
+   {
+    "k": "İkinizin",
+    "bas": 2.4,
+    "son": 2.8
+   },
+   {
+    "k": "de",
+    "bas": 2.8,
+    "son": 2.9
+   },
+   {
+    "k": "gözü",
+    "bas": 2.9,
+    "son": 3.2
+   },
+   {
+    "k": "telefonda.",
+    "bas": 3.2,
+    "son": 3.7
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 13.9,
+  "sure": 6.56,
+  "hiz": 0.85,
+  "metin": "Sonra koşturma başlıyor. Ayakkabı, anahtar, kapı... Görüşürüz bile demeden çıktın.",
+  "kelimeler": [
+   {
+    "k": "Sonra",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "koşturma",
+    "bas": 0.4,
+    "son": 1.0
+   },
+   {
+    "k": "başlıyor.",
+    "bas": 1.0,
+    "son": 1.6
+   },
+   {
+    "k": "Ayakkabı,",
+    "bas": 2.1,
+    "son": 2.7
+   },
+   {
+    "k": "anahtar,",
+    "bas": 2.9,
+    "son": 3.6
+   },
+   {
+    "k": "kapı.",
+    "bas": 3.9,
+    "son": 4.2
+   },
+   {
+    "k": "Görüşürüz",
+    "bas": 5.0,
+    "son": 5.4
+   },
+   {
+    "k": "bile",
+    "bas": 5.4,
+    "son": 5.6
+   },
+   {
+    "k": "demeden",
+    "bas": 5.6,
+    "son": 6.0
+   },
+   {
+    "k": "çıktın.",
+    "bas": 6.0,
+    "son": 6.4
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 20.8,
+  "sure": 4.24,
+  "hiz": 0.85,
+  "metin": "Akşam aynı kanepedesiniz. Ama iki ayrı ekrana bakıyorsunuz.",
+  "kelimeler": [
+   {
+    "k": "Akşam",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "aynı",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "kanepedesiniz.",
+    "bas": 0.8,
+    "son": 1.7
+   },
+   {
+    "k": "Ama",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "iki",
+    "bas": 2.5,
+    "son": 2.7
+   },
+   {
+    "k": "ayrı",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "ekrana",
+    "bas": 3.0,
+    "son": 3.3
+   },
+   {
+    "k": "bakıyorsunuz.",
+    "bas": 3.3,
+    "son": 4.2
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 25.3,
+  "sure": 3.44,
+  "hiz": 0.85,
+  "metin": "İyi geceler bile ekrandan geliyor. Hem de aynı yataktan.",
+  "kelimeler": [
+   {
+    "k": "İyi",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "geceler",
+    "bas": 0.2,
+    "son": 0.7
+   },
+   {
+    "k": "bile",
+    "bas": 0.7,
+    "son": 0.8
+   },
+   {
+    "k": "ekrandan",
+    "bas": 0.8,
+    "son": 1.3
+   },
+   {
+    "k": "geliyor.",
+    "bas": 1.3,
+    "son": 1.8
+   },
+   {
+    "k": "Hem",
+    "bas": 2.2,
+    "son": 2.4
+   },
+   {
+    "k": "de",
+    "bas": 2.4,
+    "son": 2.5
+   },
+   {
+    "k": "aynı",
+    "bas": 2.5,
+    "son": 2.8
+   },
+   {
+    "k": "yataktan.",
+    "bas": 2.8,
+    "son": 3.4
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 29.1,
+  "sure": 3.04,
+  "hiz": 0.85,
+  "metin": "Aynı evdesiniz. Aynı lavabo, aynı ayna.",
+  "kelimeler": [
+   {
+    "k": "Aynı",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "evdesiniz.",
+    "bas": 0.4,
+    "son": 1.2
+   },
+   {
+    "k": "Aynı",
+    "bas": 1.2,
+    "son": 1.5
+   },
+   {
+    "k": "lavabo,",
+    "bas": 1.5,
+    "son": 2.1
+   },
+   {
+    "k": "aynı",
+    "bas": 2.3,
+    "son": 2.6
+   },
+   {
+    "k": "ayna.",
+    "bas": 2.6,
+    "son": 3.0
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 32.4,
+  "sure": 3.36,
+  "hiz": 0.8,
+  "metin": "Ama en son ne zaman... bir sebep yokken sarıldın?",
+  "kelimeler": [
+   {
+    "k": "Ama",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "en",
+    "bas": 0.3,
+    "son": 0.5
+   },
+   {
+    "k": "son",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "ne",
+    "bas": 0.8,
+    "son": 0.9
+   },
+   {
+    "k": "zaman",
+    "bas": 0.9,
+    "son": 1.2
+   },
+   {
+    "k": "bir",
+    "bas": 2.0,
+    "son": 2.1
+   },
+   {
+    "k": "sebep",
+    "bas": 2.1,
+    "son": 2.4
+   },
+   {
+    "k": "yokken",
+    "bas": 2.4,
+    "son": 2.8
+   },
+   {
+    "k": "sarıldın?",
+    "bas": 2.8,
+    "son": 3.3
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 36.0,
+  "sure": 3.76,
+  "hiz": 0.85,
+  "metin": "Doğum günü, bayram, özür... Hep bir sebep lazım.",
+  "kelimeler": [
+   {
+    "k": "Doğum",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "günü,",
+    "bas": 0.4,
+    "son": 0.8
+   },
+   {
+    "k": "bayram,",
+    "bas": 1.0,
+    "son": 1.6
+   },
+   {
+    "k": "özür,",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "hep",
+    "bas": 2.6,
+    "son": 2.8
+   },
+   {
+    "k": "bir",
+    "bas": 2.8,
+    "son": 2.9
+   },
+   {
+    "k": "sebep",
+    "bas": 2.9,
+    "son": 3.3
+   },
+   {
+    "k": "lazım.",
+    "bas": 3.3,
+    "son": 3.7
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 40.3,
+  "sure": 4.56,
+  "hiz": 0.85,
+  "metin": "Ertesi sabah, aynı banyo. Fırçayı bıraktın, arkasından sarıldın.",
+  "kelimeler": [
+   {
+    "k": "Ertesi",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "sabah",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "aynı",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "banyo.",
+    "bas": 1.4,
+    "son": 1.7
+   },
+   {
+    "k": "Fırçayı",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "bıraktın,",
+    "bas": 2.6,
+    "son": 3.2
+   },
+   {
+    "k": "arkasından",
+    "bas": 3.4,
+    "son": 4.0
+   },
+   {
+    "k": "sarıldın.",
+    "bas": 4.0,
+    "son": 4.4
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 45.0,
+  "sure": 5.12,
+  "hiz": 0.85,
+  "metin": "Önce şaşırdı: Ne oldu? Sen dedin ki: Hiç. O da gülümsedi... sarıldı.",
+  "kelimeler": [
+   {
+    "k": "Önce",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "şaşırdı.",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "Ne",
+    "bas": 0.8,
+    "son": 1.0
+   },
+   {
+    "k": "oldu?",
+    "bas": 1.0,
+    "son": 1.3
+   },
+   {
+    "k": "Sen",
+    "bas": 1.5,
+    "son": 1.8
+   },
+   {
+    "k": "dedin",
+    "bas": 1.8,
+    "son": 2.0
+   },
+   {
+    "k": "ki",
+    "bas": 2.0,
+    "son": 2.1
+   },
+   {
+    "k": "hiç.",
+    "bas": 2.1,
+    "son": 2.6
+   },
+   {
+    "k": "O",
+    "bas": 3.2,
+    "son": 3.2
+   },
+   {
+    "k": "da",
+    "bas": 3.2,
+    "son": 3.3
+   },
+   {
+    "k": "gülümsedi.",
+    "bas": 3.3,
+    "son": 3.9
+   },
+   {
+    "k": "Sarıldı.",
+    "bas": 4.4,
+    "son": 4.8
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 50.6,
+  "sure": 5.6,
+  "hiz": 0.8,
+  "metin": "Bugün eve girince... hiçbir sebep olmadan sarıl. Sebep sorarsa... hiç, de.",
+  "kelimeler": [
+   {
+    "k": "Bugün",
+    "bas": 0.3,
+    "son": 0.5
+   },
+   {
+    "k": "eve",
+    "bas": 0.5,
+    "son": 0.6
+   },
+   {
+    "k": "girince",
+    "bas": 0.6,
+    "son": 1.1
+   },
+   {
+    "k": "hiçbir",
+    "bas": 1.5,
+    "son": 1.8
+   },
+   {
+    "k": "sebep",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "olmadan",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "sarıl.",
+    "bas": 2.5,
+    "son": 2.9
+   },
+   {
+    "k": "Sebep",
+    "bas": 3.2,
+    "son": 3.6
+   },
+   {
+    "k": "sorarsa",
+    "bas": 3.6,
+    "son": 4.2
+   },
+   {
+    "k": "hiç",
+    "bas": 4.5,
+    "son": 4.8
+   },
+   {
+    "k": "de.",
+    "bas": 4.8,
+    "son": 4.9
+   }
+  ]
+ }
+}

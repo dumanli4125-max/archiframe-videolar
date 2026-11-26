@@ -1,0 +1,860 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "tempo": 1.06,
+  "sure": 3.58,
+  "metin": "Your paycheck lands, and three days later it's gone. Why?",
+  "kelimeler": [
+   {
+    "k": "Your",
+    "bas": 0.09,
+    "son": 0.28,
+    "mutlak": 0.39
+   },
+   {
+    "k": "paycheck",
+    "bas": 0.28,
+    "son": 0.75,
+    "mutlak": 0.58
+   },
+   {
+    "k": "lands",
+    "bas": 0.75,
+    "son": 1.23,
+    "mutlak": 1.05
+   },
+   {
+    "k": "and",
+    "bas": 1.32,
+    "son": 1.51,
+    "mutlak": 1.62
+   },
+   {
+    "k": "three",
+    "bas": 1.51,
+    "son": 1.7,
+    "mutlak": 1.81
+   },
+   {
+    "k": "days",
+    "bas": 1.7,
+    "son": 1.98,
+    "mutlak": 2.0
+   },
+   {
+    "k": "later",
+    "bas": 1.98,
+    "son": 2.26,
+    "mutlak": 2.28
+   },
+   {
+    "k": "it's",
+    "bas": 2.26,
+    "son": 2.45,
+    "mutlak": 2.56
+   },
+   {
+    "k": "gone.",
+    "bas": 2.45,
+    "son": 2.83,
+    "mutlak": 2.75
+   },
+   {
+    "k": "Why?",
+    "bas": 3.3,
+    "son": 3.58,
+    "mutlak": 3.6
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 4.3,
+  "tempo": 1.08,
+  "sure": 3.89,
+  "metin": "Payday, the fifteenth. Your phone buzzes: paycheck deposited.",
+  "kelimeler": [
+   {
+    "k": "Payday,",
+    "bas": 0.19,
+    "son": 0.74,
+    "mutlak": 4.49
+   },
+   {
+    "k": "the",
+    "bas": 0.83,
+    "son": 1.02,
+    "mutlak": 5.13
+   },
+   {
+    "k": "fifteenth.",
+    "bas": 1.02,
+    "son": 1.39,
+    "mutlak": 5.32
+   },
+   {
+    "k": "Your",
+    "bas": 1.94,
+    "son": 2.04,
+    "mutlak": 6.24
+   },
+   {
+    "k": "phone",
+    "bas": 2.04,
+    "son": 2.31,
+    "mutlak": 6.34
+   },
+   {
+    "k": "buzzes,",
+    "bas": 2.31,
+    "son": 2.87,
+    "mutlak": 6.61
+   },
+   {
+    "k": "paycheck",
+    "bas": 2.96,
+    "son": 3.33,
+    "mutlak": 7.26
+   },
+   {
+    "k": "deposited.",
+    "bas": 3.33,
+    "son": 3.89,
+    "mutlak": 7.63
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 8.2,
+  "tempo": 1.07,
+  "sure": 4.49,
+  "metin": "Your balance: three thousand dollars. You breathe out. We're good this month.",
+  "kelimeler": [
+   {
+    "k": "Your",
+    "bas": 0.09,
+    "son": 0.19,
+    "mutlak": 8.29
+   },
+   {
+    "k": "balance,",
+    "bas": 0.19,
+    "son": 0.84,
+    "mutlak": 8.39
+   },
+   {
+    "k": "three thousand dollars.",
+    "bas": 1.03,
+    "son": 2.34,
+    "mutlak": 9.23
+   },
+   {
+    "k": "You",
+    "bas": 2.62,
+    "son": 2.8,
+    "mutlak": 10.82
+   },
+   {
+    "k": "breathe",
+    "bas": 2.8,
+    "son": 3.08,
+    "mutlak": 11.0
+   },
+   {
+    "k": "out.",
+    "bas": 3.08,
+    "son": 3.27,
+    "mutlak": 11.28
+   },
+   {
+    "k": "We're",
+    "bas": 3.64,
+    "son": 3.74,
+    "mutlak": 11.84
+   },
+   {
+    "k": "good",
+    "bas": 3.74,
+    "son": 3.93,
+    "mutlak": 11.94
+   },
+   {
+    "k": "this",
+    "bas": 3.93,
+    "son": 4.11,
+    "mutlak": 12.13
+   },
+   {
+    "k": "month.",
+    "bas": 4.11,
+    "son": 4.49,
+    "mutlak": 12.31
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 12.7,
+  "tempo": 1.0,
+  "sure": 3.6,
+  "metin": "Before you even put the phone down, there's a knock. The landlord.",
+  "kelimeler": [
+   {
+    "k": "Before",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 12.8
+   },
+   {
+    "k": "you",
+    "bas": 0.4,
+    "son": 0.6,
+    "mutlak": 13.1
+   },
+   {
+    "k": "even",
+    "bas": 0.6,
+    "son": 0.8,
+    "mutlak": 13.3
+   },
+   {
+    "k": "put",
+    "bas": 0.8,
+    "son": 0.9,
+    "mutlak": 13.5
+   },
+   {
+    "k": "the",
+    "bas": 0.9,
+    "son": 1.0,
+    "mutlak": 13.6
+   },
+   {
+    "k": "phone",
+    "bas": 1.0,
+    "son": 1.3,
+    "mutlak": 13.7
+   },
+   {
+    "k": "down,",
+    "bas": 1.3,
+    "son": 1.8,
+    "mutlak": 14.0
+   },
+   {
+    "k": "there's",
+    "bas": 1.9,
+    "son": 2.0,
+    "mutlak": 14.6
+   },
+   {
+    "k": "a",
+    "bas": 2.0,
+    "son": 2.1,
+    "mutlak": 14.7
+   },
+   {
+    "k": "knock.",
+    "bas": 2.1,
+    "son": 2.5,
+    "mutlak": 14.8
+   },
+   {
+    "k": "The",
+    "bas": 3.0,
+    "son": 3.1,
+    "mutlak": 15.7
+   },
+   {
+    "k": "landlord.",
+    "bas": 3.1,
+    "son": 3.6,
+    "mutlak": 15.8
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 16.9,
+  "tempo": 1.04,
+  "sure": 3.85,
+  "metin": "Rent... fourteen hundred. Half your paycheck, already gone.",
+  "kelimeler": [
+   {
+    "k": "Rent,",
+    "bas": 0.19,
+    "son": 0.77,
+    "mutlak": 17.09
+   },
+   {
+    "k": "fourteen hundred,",
+    "bas": 0.87,
+    "son": 1.83,
+    "mutlak": 17.77
+   },
+   {
+    "k": "half",
+    "bas": 2.02,
+    "son": 2.31,
+    "mutlak": 18.92
+   },
+   {
+    "k": "your",
+    "bas": 2.31,
+    "son": 2.4,
+    "mutlak": 19.21
+   },
+   {
+    "k": "paycheck,",
+    "bas": 2.4,
+    "son": 2.98,
+    "mutlak": 19.3
+   },
+   {
+    "k": "already",
+    "bas": 3.08,
+    "son": 3.46,
+    "mutlak": 19.98
+   },
+   {
+    "k": "gone.",
+    "bas": 3.46,
+    "son": 3.85,
+    "mutlak": 20.36
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 20.8,
+  "tempo": 1.0,
+  "sure": 3.8,
+  "metin": "Then the bills roll in. Electric... water... gas.",
+  "kelimeler": [
+   {
+    "k": "Then",
+    "bas": 0.2,
+    "son": 0.4,
+    "mutlak": 21.0
+   },
+   {
+    "k": "the",
+    "bas": 0.4,
+    "son": 0.5,
+    "mutlak": 21.2
+   },
+   {
+    "k": "bills",
+    "bas": 0.5,
+    "son": 0.8,
+    "mutlak": 21.3
+   },
+   {
+    "k": "roll",
+    "bas": 0.8,
+    "son": 1.0,
+    "mutlak": 21.6
+   },
+   {
+    "k": "in.",
+    "bas": 1.0,
+    "son": 1.1,
+    "mutlak": 21.8
+   },
+   {
+    "k": "Electric,",
+    "bas": 1.6,
+    "son": 2.3,
+    "mutlak": 22.4
+   },
+   {
+    "k": "water,",
+    "bas": 2.6,
+    "son": 3.0,
+    "mutlak": 23.4
+   },
+   {
+    "k": "gas.",
+    "bas": 3.4,
+    "son": 3.8,
+    "mutlak": 24.2
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 26.1,
+  "tempo": 1.0,
+  "sure": 4.4,
+  "metin": "Then groceries. Then the credit card. Then the payments.",
+  "kelimeler": [
+   {
+    "k": "Then",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 26.2
+   },
+   {
+    "k": "groceries.",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 26.5
+   },
+   {
+    "k": "Then",
+    "bas": 1.7,
+    "son": 1.9,
+    "mutlak": 27.8
+   },
+   {
+    "k": "the",
+    "bas": 1.9,
+    "son": 2.0,
+    "mutlak": 28.0
+   },
+   {
+    "k": "credit",
+    "bas": 2.0,
+    "son": 2.3,
+    "mutlak": 28.1
+   },
+   {
+    "k": "card.",
+    "bas": 2.3,
+    "son": 2.8,
+    "mutlak": 28.4
+   },
+   {
+    "k": "Then",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 29.3
+   },
+   {
+    "k": "the",
+    "bas": 3.6,
+    "son": 3.7,
+    "mutlak": 29.7
+   },
+   {
+    "k": "payments.",
+    "bas": 3.7,
+    "son": 4.4,
+    "mutlak": 29.8
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 31.0,
+  "tempo": 1.0,
+  "sure": 4.4,
+  "metin": "Day three... you check your account. Everyone took their cut. It's all gone.",
+  "kelimeler": [
+   {
+    "k": "Day",
+    "bas": 0.2,
+    "son": 0.3,
+    "mutlak": 31.2
+   },
+   {
+    "k": "three,",
+    "bas": 0.3,
+    "son": 0.8,
+    "mutlak": 31.3
+   },
+   {
+    "k": "you",
+    "bas": 1.2,
+    "son": 1.3,
+    "mutlak": 32.2
+   },
+   {
+    "k": "check",
+    "bas": 1.3,
+    "son": 1.5,
+    "mutlak": 32.3
+   },
+   {
+    "k": "your",
+    "bas": 1.5,
+    "son": 1.6,
+    "mutlak": 32.5
+   },
+   {
+    "k": "account.",
+    "bas": 1.6,
+    "son": 2.1,
+    "mutlak": 32.6
+   },
+   {
+    "k": "Everyone",
+    "bas": 2.5,
+    "son": 2.9,
+    "mutlak": 33.5
+   },
+   {
+    "k": "took",
+    "bas": 2.9,
+    "son": 3.0,
+    "mutlak": 33.9
+   },
+   {
+    "k": "their",
+    "bas": 3.0,
+    "son": 3.2,
+    "mutlak": 34.0
+   },
+   {
+    "k": "cut.",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 34.2
+   },
+   {
+    "k": "It's",
+    "bas": 3.7,
+    "son": 3.9,
+    "mutlak": 34.7
+   },
+   {
+    "k": "all",
+    "bas": 3.9,
+    "son": 4.0,
+    "mutlak": 34.9
+   },
+   {
+    "k": "gone.",
+    "bas": 4.0,
+    "son": 4.4,
+    "mutlak": 35.0
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 36.4,
+  "tempo": 1.0,
+  "sure": 4.2,
+  "metin": "What's left for you... pocket change. You dump your wallet on the table.",
+  "kelimeler": [
+   {
+    "k": "What's",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 36.5
+   },
+   {
+    "k": "left",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 36.8
+   },
+   {
+    "k": "for",
+    "bas": 0.7,
+    "son": 0.9,
+    "mutlak": 37.1
+   },
+   {
+    "k": "you?",
+    "bas": 0.9,
+    "son": 1.2,
+    "mutlak": 37.3
+   },
+   {
+    "k": "Pocket",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 37.8
+   },
+   {
+    "k": "change.",
+    "bas": 1.8,
+    "son": 2.3,
+    "mutlak": 38.2
+   },
+   {
+    "k": "You",
+    "bas": 2.8,
+    "son": 3.0,
+    "mutlak": 39.2
+   },
+   {
+    "k": "dump",
+    "bas": 3.0,
+    "son": 3.2,
+    "mutlak": 39.4
+   },
+   {
+    "k": "your",
+    "bas": 3.2,
+    "son": 3.3,
+    "mutlak": 39.6
+   },
+   {
+    "k": "wallet",
+    "bas": 3.3,
+    "son": 3.7,
+    "mutlak": 39.7
+   },
+   {
+    "k": "on",
+    "bas": 3.7,
+    "son": 3.8,
+    "mutlak": 40.1
+   },
+   {
+    "k": "the",
+    "bas": 3.8,
+    "son": 3.9,
+    "mutlak": 40.2
+   },
+   {
+    "k": "table.",
+    "bas": 3.9,
+    "son": 4.2,
+    "mutlak": 40.3
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 41.0,
+  "tempo": 1.04,
+  "sure": 4.42,
+  "metin": "That night, your sibling calls: \"School trip... I need fifty bucks.\"",
+  "kelimeler": [
+   {
+    "k": "That",
+    "bas": 0.1,
+    "son": 0.38,
+    "mutlak": 41.1
+   },
+   {
+    "k": "night,",
+    "bas": 0.38,
+    "son": 0.77,
+    "mutlak": 41.38
+   },
+   {
+    "k": "your",
+    "bas": 0.77,
+    "son": 0.96,
+    "mutlak": 41.77
+   },
+   {
+    "k": "sibling",
+    "bas": 0.96,
+    "son": 1.35,
+    "mutlak": 41.96
+   },
+   {
+    "k": "calls.",
+    "bas": 1.35,
+    "son": 1.73,
+    "mutlak": 42.35
+   },
+   {
+    "k": "School",
+    "bas": 2.21,
+    "son": 2.5,
+    "mutlak": 43.21
+   },
+   {
+    "k": "trip.",
+    "bas": 2.5,
+    "son": 2.88,
+    "mutlak": 43.5
+   },
+   {
+    "k": "I",
+    "bas": 3.37,
+    "son": 3.46,
+    "mutlak": 44.37
+   },
+   {
+    "k": "need",
+    "bas": 3.46,
+    "son": 3.65,
+    "mutlak": 44.46
+   },
+   {
+    "k": "fifty",
+    "bas": 3.65,
+    "son": 3.94,
+    "mutlak": 44.65
+   },
+   {
+    "k": "bucks.",
+    "bas": 3.94,
+    "son": 4.42,
+    "mutlak": 44.94
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 45.5,
+  "tempo": 1.0,
+  "sure": 3.4,
+  "metin": "\"Not this month,\" you say. You said that last month too.",
+  "kelimeler": [
+   {
+    "k": "Not",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 45.6
+   },
+   {
+    "k": "this",
+    "bas": 0.4,
+    "son": 0.6,
+    "mutlak": 45.9
+   },
+   {
+    "k": "month,",
+    "bas": 0.6,
+    "son": 1.0,
+    "mutlak": 46.1
+   },
+   {
+    "k": "you",
+    "bas": 1.1,
+    "son": 1.2,
+    "mutlak": 46.6
+   },
+   {
+    "k": "say.",
+    "bas": 1.2,
+    "son": 1.5,
+    "mutlak": 46.7
+   },
+   {
+    "k": "You",
+    "bas": 2.0,
+    "son": 2.1,
+    "mutlak": 47.5
+   },
+   {
+    "k": "said",
+    "bas": 2.1,
+    "son": 2.3,
+    "mutlak": 47.6
+   },
+   {
+    "k": "that",
+    "bas": 2.3,
+    "son": 2.5,
+    "mutlak": 47.8
+   },
+   {
+    "k": "last",
+    "bas": 2.5,
+    "son": 2.8,
+    "mutlak": 48.0
+   },
+   {
+    "k": "month,",
+    "bas": 2.8,
+    "son": 3.0,
+    "mutlak": 48.3
+   },
+   {
+    "k": "too.",
+    "bas": 3.0,
+    "son": 3.4,
+    "mutlak": 48.5
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 49.6,
+  "tempo": 1.0,
+  "sure": 5.0,
+  "metin": "Next payday... set aside a little for yourself first. Even if it's just twenty bucks.",
+  "kelimeler": [
+   {
+    "k": "Next",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 49.7
+   },
+   {
+    "k": "payday,",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 50.0
+   },
+   {
+    "k": "set",
+    "bas": 1.2,
+    "son": 1.4,
+    "mutlak": 50.8
+   },
+   {
+    "k": "aside",
+    "bas": 1.4,
+    "son": 1.7,
+    "mutlak": 51.0
+   },
+   {
+    "k": "a",
+    "bas": 1.7,
+    "son": 1.8,
+    "mutlak": 51.3
+   },
+   {
+    "k": "little",
+    "bas": 1.8,
+    "son": 2.0,
+    "mutlak": 51.4
+   },
+   {
+    "k": "for",
+    "bas": 2.0,
+    "son": 2.1,
+    "mutlak": 51.6
+   },
+   {
+    "k": "yourself",
+    "bas": 2.1,
+    "son": 2.5,
+    "mutlak": 51.7
+   },
+   {
+    "k": "first.",
+    "bas": 2.5,
+    "son": 2.9,
+    "mutlak": 52.1
+   },
+   {
+    "k": "Even",
+    "bas": 3.5,
+    "son": 3.7,
+    "mutlak": 53.1
+   },
+   {
+    "k": "if",
+    "bas": 3.7,
+    "son": 3.8,
+    "mutlak": 53.3
+   },
+   {
+    "k": "it's",
+    "bas": 3.8,
+    "son": 3.9,
+    "mutlak": 53.4
+   },
+   {
+    "k": "just",
+    "bas": 3.9,
+    "son": 4.2,
+    "mutlak": 53.5
+   },
+   {
+    "k": "twenty",
+    "bas": 4.2,
+    "son": 4.6,
+    "mutlak": 53.8
+   },
+   {
+    "k": "bucks.",
+    "bas": 4.6,
+    "son": 5.0,
+    "mutlak": 54.2
+   }
+  ]
+ }
+}

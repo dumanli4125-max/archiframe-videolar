@@ -1,0 +1,354 @@
+{
+ "l01": {
+  "sure": 4.32,
+  "metin": "Her sabah aynı vagon, aynı yüzler. Hiç birinin adını biliyor musun?",
+  "kelimeler": [
+   {
+    "k": "vagon",
+    "bas": 0.9,
+    "son": 1.4
+   },
+   {
+    "k": "yüzler",
+    "bas": 1.9,
+    "son": 2.4
+   },
+   {
+    "k": "Hiçbirinin",
+    "bas": 2.8,
+    "son": 3.3
+   },
+   {
+    "k": "musun",
+    "bas": 3.9,
+    "son": 4.2
+   }
+  ]
+ },
+ "l02": {
+  "sure": 4.48,
+  "metin": "Her sabah... saat yedi... kırk. Aynı vagon, aynı köşe.",
+  "kelimeler": [
+   {
+    "k": "saat",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "yedi kırk",
+    "bas": 1.3,
+    "son": 2.6
+   },
+   {
+    "k": "vagon",
+    "bas": 3.1,
+    "son": 3.6
+   },
+   {
+    "k": "köşe",
+    "bas": 4.0,
+    "son": 4.4
+   }
+  ]
+ },
+ "l03": {
+  "sure": 5.2,
+  "metin": "Kitap okuyan bir amca. Kulaklıklı bir genç. Bir de ayakta uyuyan bir işçi.",
+  "kelimeler": [
+   {
+    "k": "amca",
+    "bas": 0.8,
+    "son": 1.2
+   },
+   {
+    "k": "Kulaklıklı",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "genç",
+    "bas": 2.4,
+    "son": 2.8
+   },
+   {
+    "k": "uyuyan",
+    "bas": 4.2,
+    "son": 4.6
+   },
+   {
+    "k": "işçi",
+    "bas": 4.7,
+    "son": 5.1
+   }
+  ]
+ },
+ "l04": {
+  "sure": 4.88,
+  "metin": "Pazartesi... salı... çarşamba... Hep aynı tren, hep aynı sıra.",
+  "kelimeler": [
+   {
+    "k": "Pazartesi",
+    "bas": 0.1,
+    "son": 0.9
+   },
+   {
+    "k": "Salı",
+    "bas": 1.1,
+    "son": 1.5
+   },
+   {
+    "k": "Çarşamba",
+    "bas": 1.8,
+    "son": 2.5
+   },
+   {
+    "k": "tren",
+    "bas": 3.4,
+    "son": 3.8
+   },
+   {
+    "k": "sıra",
+    "bas": 4.4,
+    "son": 4.7
+   }
+  ]
+ },
+ "l05": {
+  "sure": 4.08,
+  "metin": "Herkes telefonunda. Kimse kimseyi görmüyor. Sen de öylesin.",
+  "kelimeler": [
+   {
+    "k": "telefonunda",
+    "bas": 0.5,
+    "son": 1.2
+   },
+   {
+    "k": "Kimse",
+    "bas": 1.6,
+    "son": 1.9
+   },
+   {
+    "k": "görmüyor",
+    "bas": 2.4,
+    "son": 2.9
+   },
+   {
+    "k": "Sen",
+    "bas": 3.2,
+    "son": 3.5
+   },
+   {
+    "k": "öylesin",
+    "bas": 3.6,
+    "son": 4.0
+   }
+  ]
+ },
+ "l06": {
+  "sure": 4.32,
+  "metin": "Üç yıldır... aynı amcayla yan yana duruyorsun. Adını bilmiyorsun.",
+  "kelimeler": [
+   {
+    "k": "Üç",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "yıldır",
+    "bas": 0.4,
+    "son": 0.8
+   },
+   {
+    "k": "amcayla",
+    "bas": 1.5,
+    "son": 1.9
+   },
+   {
+    "k": "Adını",
+    "bas": 3.2,
+    "son": 3.6
+   },
+   {
+    "k": "bilmiyorsun",
+    "bas": 3.6,
+    "son": 4.2
+   }
+  ]
+ },
+ "l07": {
+  "sure": 3.76,
+  "metin": "Bir sabah vagona bindin. Köşe boş. Amca yok.",
+  "kelimeler": [
+   {
+    "k": "bindin",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "Köşe",
+    "bas": 1.9,
+    "son": 2.2
+   },
+   {
+    "k": "boş",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "Amca",
+    "bas": 3.0,
+    "son": 3.3
+   },
+   {
+    "k": "yok",
+    "bas": 3.3,
+    "son": 3.6
+   }
+  ]
+ },
+ "l08": {
+  "sure": 3.44,
+  "metin": "Telefona baktın, ama aklın o köşede. Bir şey eksik.",
+  "kelimeler": [
+   {
+    "k": "Telefona",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "aklın",
+    "bas": 1.3,
+    "son": 1.7
+   },
+   {
+    "k": "köşede",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "eksik",
+    "bas": 2.8,
+    "son": 3.2
+   }
+  ]
+ },
+ "l09": {
+  "sure": 3.68,
+  "metin": "Ertesi sabah kapı açıldı. Amca geldi... kolu alçıda.",
+  "kelimeler": [
+   {
+    "k": "kapı",
+    "bas": 0.8,
+    "son": 1.1
+   },
+   {
+    "k": "açıldı",
+    "bas": 1.1,
+    "son": 1.5
+   },
+   {
+    "k": "Amca",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "geldi",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "alçıda",
+    "bas": 3.1,
+    "son": 3.5
+   }
+  ]
+ },
+ "l10": {
+  "sure": 3.2,
+  "metin": "Telefonu indirdin. Günaydın amca, iyi misiniz?",
+  "kelimeler": [
+   {
+    "k": "Telefonu",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "indirdin",
+    "bas": 0.5,
+    "son": 0.9
+   },
+   {
+    "k": "Günaydın",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "misiniz",
+    "bas": 2.6,
+    "son": 3.1
+   }
+  ]
+ },
+ "l11": {
+  "sure": 4.0,
+  "metin": "Amca gülümsedi. İyiyim evladım, sağ ol. Ben Hasan.",
+  "kelimeler": [
+   {
+    "k": "gülümsedi",
+    "bas": 0.5,
+    "son": 1.1
+   },
+   {
+    "k": "İyiyim",
+    "bas": 1.5,
+    "son": 1.9
+   },
+   {
+    "k": "sağ ol",
+    "bas": 2.6,
+    "son": 3.1
+   },
+   {
+    "k": "Ben",
+    "bas": 3.3,
+    "son": 3.5
+   },
+   {
+    "k": "Hasan",
+    "bas": 3.5,
+    "son": 3.8
+   }
+  ]
+ },
+ "l12": {
+  "sure": 4.24,
+  "metin": "Yarın sabah... yanındakine bir günaydın de. Belki bir adı vardır.",
+  "kelimeler": [
+   {
+    "k": "Yarın",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "yanındakine",
+    "bas": 1.2,
+    "son": 1.7
+   },
+   {
+    "k": "günaydın",
+    "bas": 1.9,
+    "son": 2.3
+   },
+   {
+    "k": "Belki",
+    "bas": 3.0,
+    "son": 3.3
+   },
+   {
+    "k": "vardır",
+    "bas": 3.6,
+    "son": 4.0
+   }
+  ]
+ }
+}

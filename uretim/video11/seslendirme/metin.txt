@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   0.85  En son ne zaman, sebepsiz sarıldın? Hadi, düşünmeden söyle.
+l02 4.8   0.8  Sabah. Saat, yedi on iki. İkiniz de banyodasınız, yan yana.
+l03 9.9   0.85  Sen dişini fırçalıyorsun, o da. İkinizin de gözü telefonda.
+l04 13.9  0.85  Sonra koşturma başlıyor. Ayakkabı, anahtar, kapı... Görüşürüz bile demeden çıktın.
+l05 20.8  0.85  Akşam aynı kanepedesiniz. Ama iki ayrı ekrana bakıyorsunuz.
+l06 25.3  0.85  İyi geceler bile ekrandan geliyor. Hem de aynı yataktan.
+l07 29.1  0.85  Aynı evdesiniz. Aynı lavabo, aynı ayna.
+l08 32.4  0.8  Ama en son ne zaman... bir sebep yokken sarıldın?
+l09 36.0  0.85  Doğum günü, bayram, özür... Hep bir sebep lazım.
+l10 40.3  0.85  Ertesi sabah, aynı banyo. Fırçayı bıraktın, arkasından sarıldın.
+l11 45.0  0.85  Önce şaşırdı: Ne oldu? Sen dedin ki: Hiç. O da gülümsedi... sarıldı.
+l12 50.6  0.8  Bugün eve girince... hiçbir sebep olmadan sarıl. Sebep sorarsa... hiç, de.
