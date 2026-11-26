@@ -122,11 +122,11 @@ function sHome(t){
   const v=balance(t);let pulse=0;for(const k of TAKERS){pulse=Math.max(pulse,sm(k.take,k.take+0.1,t)*(1-sm(k.take+0.5,k.take+0.8,t)));}
   if(t>9.3&&t<10.2)pulse=Math.max(pulse,Math.sin((t-9.3)*Math.PI/0.9));
   panel(PX,PY,v,{alpha:sm(8.0,8.3,t),pulse});
-  for(const k of TAKERS){
+  TAKERS.forEach((k,ki)=>{
     // jetonlar paneldan pay alanın eline
     const fx=k.fx+(k.s>0.9?75:52)*1,fy=standY(k.s)-(118+20)*k.s;
     flow(PX,PY+80,fx,fy,k.take,0.6,t,k.amt>4000?12:6);
-    minus(PX+(k.lab==='SU'?-200:180),PY+170,k.amt,k.take,t);}
+    minus(PX+(ki%2?-190:180),PY+170+(ki%2)*10,k.amt,k.take,t);});
   if(t>14.0&&t<14.8)bigText(L('TAK TAK','KNOCK KNOCK'),110,980,40,AM,sm(14.0,14.1,t)*(1-sm(14.6,14.8,t)));
   tag(L('FATURA','BILLS'),420,1000,CR,sm(21.3,21.7,t)*(1-sm(25.0,25.4,t)));
   tag('EV',540,1470,TE,sm(4.3,4.8,t));
