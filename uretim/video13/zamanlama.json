@@ -1,0 +1,398 @@
+{
+ "l01": {
+  "bas": 0.3,
+  "sure": 4.32,
+  "son": 4.62,
+  "hiz": 0.85,
+  "metin": "Çocuğuna en son ne aldın? Peki... en son ne zaman onunla oynadın?",
+  "kelimeler": [
+   {
+    "k": "aldın",
+    "bas": 1.0,
+    "son": 1.4,
+    "mutlak": 1.3
+   },
+   {
+    "k": "Peki",
+    "bas": 2.1,
+    "son": 2.4,
+    "mutlak": 2.4
+   },
+   {
+    "k": "oynadın",
+    "bas": 3.9,
+    "son": 4.2,
+    "mutlak": 4.2
+   }
+  ]
+ },
+ "l02": {
+  "bas": 5.0,
+  "sure": 4.88,
+  "son": 9.88,
+  "hiz": 0.8,
+  "metin": "Akşam oldu... saat, dokuz. Kapıdan girdin, elinde bir paket.",
+  "kelimeler": [
+   {
+    "k": "saat",
+    "bas": 1.1,
+    "son": 1.6,
+    "mutlak": 6.1
+   },
+   {
+    "k": "dokuz",
+    "bas": 1.7,
+    "son": 2.1,
+    "mutlak": 6.7
+   },
+   {
+    "k": "Kapıdan",
+    "bas": 2.8,
+    "son": 3.2,
+    "mutlak": 7.8
+   },
+   {
+    "k": "paket",
+    "bas": 4.3,
+    "son": 4.7,
+    "mutlak": 9.3
+   }
+  ]
+ },
+ "l03": {
+  "bas": 10.2,
+  "sure": 5.44,
+  "son": 15.64,
+  "hiz": 0.85,
+  "metin": "Ufaklık koşa koşa geldi, kaptı paketi. Bir araba! Sevindi, sarıldı.",
+  "kelimeler": [
+   {
+    "k": "koşa",
+    "bas": 0.6,
+    "son": 1.0,
+    "mutlak": 10.8
+   },
+   {
+    "k": "Kaptı",
+    "bas": 1.7,
+    "son": 2.0,
+    "mutlak": 11.9
+   },
+   {
+    "k": "araba",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 13.4
+   },
+   {
+    "k": "Sevindi",
+    "bas": 3.8,
+    "son": 4.4,
+    "mutlak": 14.0
+   },
+   {
+    "k": "sarıldı",
+    "bas": 4.6,
+    "son": 5.2,
+    "mutlak": 14.8
+   }
+  ]
+ },
+ "l04": {
+  "bas": 15.9,
+  "sure": 4.16,
+  "son": 20.06,
+  "hiz": 0.85,
+  "metin": "Sen daha montunu çıkarmadan... telefon elinde, laptop kucağında.",
+  "kelimeler": [
+   {
+    "k": "çıkarmadan",
+    "bas": 0.9,
+    "son": 1.6,
+    "mutlak": 16.8
+   },
+   {
+    "k": "telefon",
+    "bas": 2.0,
+    "son": 2.4,
+    "mutlak": 17.9
+   },
+   {
+    "k": "laptop",
+    "bas": 3.1,
+    "son": 3.5,
+    "mutlak": 19.0
+   }
+  ]
+ },
+ "l05": {
+  "bas": 20.4,
+  "sure": 5.28,
+  "son": 25.68,
+  "hiz": 0.85,
+  "metin": "Ufaklık arabayı getirdi: Benimle oynar mısın? Sen ekrandan kafanı kaldırmadın: Şimdi değil.",
+  "kelimeler": [
+   {
+    "k": "Benimle",
+    "bas": 1.4,
+    "son": 1.7,
+    "mutlak": 21.8
+   },
+   {
+    "k": "mısın",
+    "bas": 2.1,
+    "son": 2.4,
+    "mutlak": 22.5
+   },
+   {
+    "k": "Sen",
+    "bas": 3.0,
+    "son": 3.2,
+    "mutlak": 23.4
+   },
+   {
+    "k": "Şimdi",
+    "bas": 4.5,
+    "son": 4.8,
+    "mutlak": 24.9
+   },
+   {
+    "k": "değil",
+    "bas": 4.8,
+    "son": 5.2,
+    "mutlak": 25.2
+   }
+  ]
+ },
+ "l06": {
+  "bas": 26.1,
+  "sure": 3.92,
+  "son": 30.02,
+  "hiz": 0.85,
+  "metin": "Ertesi akşam bir ayıcık. Sonra bir robot. Sonra tablet.",
+  "kelimeler": [
+   {
+    "k": "ayıcık",
+    "bas": 1.0,
+    "son": 1.6,
+    "mutlak": 27.1
+   },
+   {
+    "k": "robot",
+    "bas": 2.2,
+    "son": 2.8,
+    "mutlak": 28.3
+   },
+   {
+    "k": "tablet",
+    "bas": 3.2,
+    "son": 3.7,
+    "mutlak": 29.3
+   }
+  ]
+ },
+ "l07": {
+  "bas": 30.3,
+  "sure": 3.6,
+  "son": 33.9,
+  "hiz": 0.85,
+  "metin": "Vaktin yok ama paran var. Oyuncak aldın, kafan rahat.",
+  "kelimeler": [
+   {
+    "k": "paran",
+    "bas": 0.9,
+    "son": 1.3,
+    "mutlak": 31.2
+   },
+   {
+    "k": "Oyuncak",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 32.1
+   },
+   {
+    "k": "rahat",
+    "bas": 3.1,
+    "son": 3.5,
+    "mutlak": 33.4
+   }
+  ]
+ },
+ "l08": {
+  "bas": 34.2,
+  "sure": 4.8,
+  "son": 39.0,
+  "hiz": 0.85,
+  "metin": "Odası oyuncakçıya döndü. Her yenisiyle biraz oynadı... sonra dönüp sana baktı.",
+  "kelimeler": [
+   {
+    "k": "oyuncakçıya",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 34.6
+   },
+   {
+    "k": "oynadı",
+    "bas": 2.9,
+    "son": 3.4,
+    "mutlak": 37.1
+   },
+   {
+    "k": "Sonra",
+    "bas": 3.6,
+    "son": 3.9,
+    "mutlak": 37.8
+   },
+   {
+    "k": "baktı",
+    "bas": 4.3,
+    "son": 4.7,
+    "mutlak": 38.5
+   }
+  ]
+ },
+ "l09": {
+  "bas": 39.5,
+  "sure": 2.96,
+  "son": 42.46,
+  "hiz": 0.8,
+  "metin": "Ama o, oyuncağı değil... seni istiyordu.",
+  "kelimeler": [
+   {
+    "k": "oyuncağı",
+    "bas": 0.8,
+    "son": 1.3,
+    "mutlak": 40.3
+   },
+   {
+    "k": "değil",
+    "bas": 1.3,
+    "son": 1.8,
+    "mutlak": 40.8
+   },
+   {
+    "k": "seni",
+    "bas": 2.0,
+    "son": 2.2,
+    "mutlak": 41.5
+   }
+  ]
+ },
+ "l10": {
+  "bas": 43.1,
+  "sure": 4.8,
+  "son": 47.9,
+  "hiz": 0.85,
+  "metin": "Bir akşam eve eli boş geldin. Yere oturdun, eski topu ona yuvarladın.",
+  "kelimeler": [
+   {
+    "k": "boş",
+    "bas": 0.9,
+    "son": 1.2,
+    "mutlak": 44.0
+   },
+   {
+    "k": "Yere",
+    "bas": 2.2,
+    "son": 2.4,
+    "mutlak": 45.3
+   },
+   {
+    "k": "oturdun",
+    "bas": 2.4,
+    "son": 3.1,
+    "mutlak": 45.5
+   },
+   {
+    "k": "topu",
+    "bas": 3.7,
+    "son": 3.9,
+    "mutlak": 46.8
+   },
+   {
+    "k": "yuvarladın",
+    "bas": 4.1,
+    "son": 4.6,
+    "mutlak": 47.2
+   }
+  ]
+ },
+ "l11": {
+  "bas": 48.2,
+  "sure": 4.8,
+  "son": 53.0,
+  "hiz": 0.85,
+  "metin": "Ufaklık kahkahayı bastı, topu geri yolladı. O akşam saate hiç bakmadın.",
+  "kelimeler": [
+   {
+    "k": "kahkahayı",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 48.6
+   },
+   {
+    "k": "yolladı",
+    "bas": 2.3,
+    "son": 2.6,
+    "mutlak": 50.5
+   },
+   {
+    "k": "saate",
+    "bas": 3.8,
+    "son": 4.1,
+    "mutlak": 52.0
+   },
+   {
+    "k": "bakmadın",
+    "bas": 4.2,
+    "son": 4.7,
+    "mutlak": 52.4
+   }
+  ]
+ },
+ "l12": {
+  "bas": 53.4,
+  "sure": 5.12,
+  "son": 58.52,
+  "hiz": 0.8,
+  "metin": "Bu akşam hediye alma. Yere otur... Sadece on dakika, onunla oyna.",
+  "kelimeler": [
+   {
+    "k": "hediye",
+    "bas": 0.5,
+    "son": 0.9,
+    "mutlak": 53.9
+   },
+   {
+    "k": "Yere",
+    "bas": 1.9,
+    "son": 2.1,
+    "mutlak": 55.3
+   },
+   {
+    "k": "Sadece",
+    "bas": 3.0,
+    "son": 3.4,
+    "mutlak": 56.4
+   },
+   {
+    "k": "on",
+    "bas": 3.4,
+    "son": 3.5,
+    "mutlak": 56.8
+   },
+   {
+    "k": "dakika",
+    "bas": 3.5,
+    "son": 4.3,
+    "mutlak": 56.9
+   },
+   {
+    "k": "oyna",
+    "bas": 4.7,
+    "son": 5.0,
+    "mutlak": 58.1
+   }
+  ]
+ }
+}

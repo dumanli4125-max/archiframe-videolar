@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   0.85  Çocuğuna en son ne aldın? Peki... en son ne zaman onunla oynadın?
+l02 5.0   0.8  Akşam oldu... saat, dokuz. Kapıdan girdin, elinde bir paket.
+l03 10.2  0.85  Ufaklık koşa koşa geldi, kaptı paketi. Bir araba! Sevindi, sarıldı.
+l04 15.9  0.85  Sen daha montunu çıkarmadan... telefon elinde, laptop kucağında.
+l05 20.4  0.85  Ufaklık arabayı getirdi: Benimle oynar mısın? Sen ekrandan kafanı kaldırmadın: Şimdi değil.
+l06 26.1  0.85  Ertesi akşam bir ayıcık. Sonra bir robot. Sonra tablet.
+l07 30.3  0.85  Vaktin yok ama paran var. Oyuncak aldın, kafan rahat.
+l08 34.2  0.85  Odası oyuncakçıya döndü. Her yenisiyle biraz oynadı... sonra dönüp sana baktı.
+l09 39.5  0.8  Ama o, oyuncağı değil... seni istiyordu.
+l10 43.1  0.85  Bir akşam eve eli boş geldin. Yere oturdun, eski topu ona yuvarladın.
+l11 48.2  0.85  Ufaklık kahkahayı bastı, topu geri yolladı. O akşam saate hiç bakmadın.
+l12 53.4  0.8  Bu akşam hediye alma. Yere otur... Sadece on dakika, onunla oyna.
