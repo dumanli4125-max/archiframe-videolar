@@ -3,27 +3,169 @@
 <canvas id="c" width="1080" height="1920"></canvas>
 <script src="../kit/engine.js"></script>
 <script>
-// ŞABLON — kopyala: cp -r uretim/sablon uretim/videoNN
-// Zaman çizelgesi: anlatım satırlarının başlangıçları audio.py'deki VO ile AYNI olmalı.
-const DURATION = 8;
-function scene(t){
+// 02 — 15 saniyelik dikkat testi. Değişen: kanepedeki kehribar yastık (13.5→26.5 sn arası yavaşça kaybolur).
+// Anlatım başlangıçları (audio.py ile aynı): l01 0.3, l02 3.9, l03 7.3, l04 27.8, l05 33.0, l06 37.8, l07 41.9, l08 46.0
+const DURATION = 52.4;
+const T0 = 12.5, T1 = 27.5;               // test penceresi (15 sn)
+const CX = 330, CY = 1222;                 // yastık merkezi
+const SOFA_X = 250, SOFA_W = 440, SEN_X = 540;
+
+// ---- sanal zaman: test, başa sarma ve hızlı oynatma aynı oda fonksiyonunu kullanır
+function vtime(t){
+  if(t<33.1) return t;
+  if(t<34.5) return lerp(33.1, T0, sm(33.1,34.5,t));          // ◀◀ başa sar
+  if(t<35.4) return T0;
+  if(t<37.2) return lerp(T0, T1, (t-35.4)/1.8);               // ▶▶ hızlı oynat
+  return T1 + (t-37.2);
+}
+const cushionA = vt => 1 - clamp((vt-13.5)/13);
+
+function cushion(a, ghost=0){
+  ctx.save();ctx.translate(CX,CY);ctx.rotate(-0.14);
+  if(a>0){ctx.globalAlpha=a;rr(-56,-44,112,88,26);ctx.fillStyle='#c98a4b';ctx.fill();
+    ctx.lineWidth=4;ctx.strokeStyle='#8f5c2e';ctx.stroke();
+    ctx.strokeStyle='rgba(143,92,46,.7)';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-30,-8);ctx.quadraticCurveTo(0,4,30,-8);ctx.stroke();
+    ctx.fillStyle='#8f5c2e';ctx.beginPath();ctx.arc(0,2,5,0,7);ctx.fill();}
+  if(ghost>0){ctx.globalAlpha=ghost;ctx.setLineDash([12,10]);ctx.lineWidth=3;ctx.strokeStyle=C.amber;rr(-56,-44,112,88,26);ctx.stroke();ctx.setLineDash([]);}
+  ctx.restore();
+}
+
+// SEN'in pozu sanal zamana bağlı (geri sarınca hareket de geri akar)
+function senAt(vt){
+  if(vt<7.0){ const u=clamp((vt-3.8)/3.2), pw=(vt-3.8)*8.2;
+    return {x:lerp(-110,SEN_X,u), y:STAND_Y-walkBob(pw), pose:{...walk(pw)}, phone:false}; }
+  if(vt<7.8){ const k=sm(7.0,7.8,vt);
+    return {x:SEN_X, y:lerp(STAND_Y,1300,k), pose:blend(POSE.stand,POSE.sit,k), phone:false}; }
+  if(vt<8.6){ const k=sm(7.8,8.6,vt);
+    return {x:SEN_X, y:1300, pose:blend(POSE.sit,POSE.sitPhone,k), phone:k>0.5}; }
+  // telefona bakıyor: arada kaydırma, iki kez başını kaldırıp pencereye bakıyor
+  const up = sm(16.3,16.8,vt)*(1-sm(18.0,18.5,vt)) + sm(22.4,22.9,vt)*(1-sm(23.6,24.1,vt))*0.7 + sm(29.5,30.0,vt)*(1-sm(31.2,31.7,vt));
+  const flick = Math.max(0,Math.sin(vt*4.6))**8*8;
+  const p=blend(POSE.sitPhone,{lean:-10,fa:120,ua:24},up*0.6);
+  p.fa+=flick; p.nodY=-6*up; p.look=-5*up; p.nod=up*4;
+  p.th+=Math.sin(vt*1.7)*4*(1-up); // ayak sallıyor
+  return {x:SEN_X, y:1300, pose:p, phone:true, up};
+}
+
+function roomScene(t, vt, {ghost=0, ring=0}={}){
   room();
   windowNight(600,560,380,440,{moon:true});
   frame(120,640);
-  floorLamp(190,1);
-  sofa(270,370);
-  plant(75);
-  // SEN kanepede telefonla; 3. saniyede telefon titrer
-  const p=figure({x:440,y:1300,color:C.coral,...POSE.sitPhone,eyes:t>3?'wide':'open'});
-  phone(p.hand[0]+6,p.hand[1]-16,{lit:t>3,buzz:t>3&&t<4?1:0,t});
-  tag('SEN',p.head[0],p.head[1]-90,C.coral);
-  // yürüyen ikinci karakter (krem), 1-5 sn arası soldan sağa
-  const u=clamp((t-1)/4), pw=(t-1)*8.5;
-  if(t>1&&t<5.2) figure({x:lerp(-80,760,u),y:STAND_Y-walkBob(pw),color:C.cream,s:0.9,...walk(pw)});
-  caption([[['Örnek ','#fff'],['altyazı.','#ffb547']]],0.2,3,t);
-  caption([[['Telefon ','#fff'],['titriyor.','#ff6b5b']]],3,6,t);
-  fade(sm(6,6.5,t)*0.84,'5,10,20');
-  endCard(t,6.3);
+  floorLamp(160,1);
+  plant(990);
+  sofa(SOFA_X,SOFA_W);
+  cushion(cushionA(vt), ghost);
+  tag('EV',150,520,C.teal,0.8);
+  const s=senAt(vt);
+  const f=figure({x:s.x,y:s.y,color:C.coral,...s.pose});
+  if(s.phone) phone(f.hand[0]+6,f.hand[1]-16,{lit:false,t,rot:-0.35});
+  tag('SEN',f.head[0],f.head[1]-92,C.coral);
+  if(ring>0){ // kehribar halka
+    ctx.save();ctx.lineWidth=9;ctx.strokeStyle=C.amber;glow(C.amber,30+10*Math.sin(t*6));
+    ctx.beginPath();ctx.arc(CX,CY,100,-Math.PI/2,-Math.PI/2+Math.PI*2*ring);ctx.stroke();ctx.restore();
+  }
+  return f;
+}
+
+// ---- ekran efektleri
+function tapeFX(t, dir, a){ // dir: -1 geri, +1 ileri
+  if(a<=0)return;
+  ctx.save();ctx.globalAlpha=0.18*a;ctx.fillStyle='#000';
+  for(let y=0;y<H;y+=6)ctx.fillRect(0,y,W,2);
+  ctx.globalAlpha=0.25*a;ctx.fillStyle='#fff';const by=((t*900*-dir)%H+H)%H;ctx.fillRect(0,by,W,10);ctx.fillRect(0,(by+700)%H,W,4);
+  ctx.restore();
+  // ◀◀ / ▶▶ simgesi + yazı
+  ctx.save();ctx.globalAlpha=a;ctx.fillStyle='#fff';glow('rgba(0,0,0,.7)',16);
+  const x0=W/2-150,y0=700;
+  for(let i=0;i<2;i++){const x=x0+i*52;ctx.beginPath();
+    if(dir<0){ctx.moveTo(x+50,y0-30);ctx.lineTo(x+50,y0+30);ctx.lineTo(x,y0);}else{ctx.moveTo(x,y0-30);ctx.lineTo(x,y0+30);ctx.lineTo(x+50,y0);}
+    ctx.closePath();ctx.fill();}
+  ctx.font='800 56px Inter';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(dir<0?'BAŞA SAR':'8x',x0+130,y0+3);
+  ctx.restore();
+}
+function commentBox(a){ if(a<=0)return; const dy=(1-a)*20;
+  card(W/2,860+dy,780,130,{alpha:a,stroke:C.teal});
+  ctx.save();ctx.globalAlpha=a;ctx.fillStyle=C.coral;ctx.beginPath();ctx.arc(W/2-310,860+dy,36,0,7);ctx.fill();
+  ctx.fillStyle='rgba(233,238,247,.55)';ctx.font='500 38px Inter';ctx.textAlign='left';ctx.textBaseline='middle';
+  const blinkC=(window.__t*2%1)<0.5?'|':'';ctx.fillText('Yorum ekle...'+blinkC,W/2-250,862+dy);
+  ctx.fillStyle=C.teal;ctx.font='800 34px Inter';ctx.textAlign='right';ctx.fillText('Paylaş',W/2+350,862+dy);ctx.restore();
+}
+function thought(t,a){ if(a<=0)return; // SEN'in kafasındaki "beklenen" oda: yastık yerinde
+  ctx.save();ctx.globalAlpha=a;ctx.fillStyle=C.cream;glow('rgba(0,0,0,.5)',24);
+  [[560,1000,14],[598,950,22]].forEach(([x,y,r])=>{ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();});
+  ctx.beginPath();ctx.ellipse(700,800,230,140,0,0,7);ctx.fill();noGlow();
+  // mini kanepe + yastık
+  ctx.fillStyle='#24406b';rr(560,770,280,46,18);ctx.fill();rr(545,810,310,66,18);ctx.fill();
+  ctx.save();ctx.translate(615,792);ctx.rotate(-0.14);rr(-40,-32,80,64,18);ctx.fillStyle='#c98a4b';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#8f5c2e';ctx.stroke();ctx.restore();
+  ctx.font='800 26px Inter';ctx.letterSpacing='4px';ctx.fillStyle=C.ink;ctx.textAlign='center';ctx.fillText('BEKLENEN',700,712);
+  ctx.restore();
+}
+
+function scene(t){
+  const vt=vtime(t);
+  // ---------- 0–3.9 kanca: büyük geri sayım halkası
+  if(t<4.3){
+    room(); fade(0.72,'5,10,20');
+    const a=1-sm(3.7,4.2,t), pulse=1+0.04*Math.sin(t*5);
+    ctx.save();ctx.translate(W/2,900);ctx.scale(2.2*pulse,2.2*pulse);countdown(0,0,85,15,15,a);ctx.restore();
+    bigText('SANİYE',W/2,1180,52,C.amber,a*sm(0.4,0.9,t),800);
+    caption([[['Değişen şeyi','#fff']],[['bulabilecek misin?','#ffb547']]],0.2,3.8,t,80,230);
+    fade(sm(3.6,4.3,t)*(1-sm(4.0,4.3,t))*0.5,'5,10,20');
+    if(t<3.9) return;
+  }
+  // ---------- oda (giriş + test + cevap)
+  const ringK = sm(34.8,35.4,t);
+  const ghost = sm(37.2,37.8,t)*(1-sm(45.6,46.2,t));
+  if(t>=3.9 && t<46.8){
+    ctx.save(); ctx.globalAlpha=sm(3.9,4.5,t); roomScene(t,vt,{ring:ringK*(1-sm(45.6,46.2,t)),ghost}); ctx.restore();
+  }
+  // giriş altyazıları
+  caption([[['Herkes','#fff']],[['"ben ','#fff'],['dikkatliyim','#5fd3c6'],['" der.','#fff']]],3.9,6.1,t,70);
+  caption([[['Bakalım ','#fff'],['öyle mi?','#ffb547']]],6.1,7.25,t,74);
+  caption([[['Bu odada bir şey','#fff']],[['yavaş yavaş ','#ffb547'],['değişecek.','#fff']]],7.3,9.9,t,68);
+  caption([[['Gözünü ','#fff'],['ayırma.','#ff6b5b']]],9.9,11.3,t,74);
+  caption([[['Başlıyoruz!','#ffb547']]],11.3,12.6,t,80);
+
+  // ---------- geri sayım (test + geri sarma + hızlı oynatma)
+  const cdA = Math.max(sm(11.4,11.9,t)*(1-sm(28.3,28.8,t)), sm(33.1,33.4,t)*(1-sm(37.3,37.8,t)));
+  if(cdA>0){ const rem = 15-clamp(vt-T0,0,15);
+    const pop = (t>T0&&t<T1)? 1+0.06*Math.max(0,1-((t-T0)%1)*4) : 1;
+    ctx.save();ctx.translate(W/2,450);ctx.scale(pop,pop);countdown(0,0,85,rem,15,cdA);ctx.restore(); }
+  if(t>T0-0.2 && t<T1+0.3) tag('DİKKAT TESTİ',W/2,250,C.amber,sm(T0-0.2,T0+0.3,t)*(1-sm(T1,T1+0.3,t)));
+
+  // ---------- süre doldu
+  const endA=sm(27.5,27.9,t)*(1-sm(32.9,33.2,t));
+  fade(endA*0.5,'5,10,20');
+  if(t>27.5&&t<27.7) fade(0.35*(1-(t-27.5)/0.2),'255,181,71');
+  bigText('?',W/2,640,220,C.amber,sm(29.0,29.4,t)*(1-sm(32.9,33.2,t))*(0.85+0.15*Math.sin(t*5)),900);
+  commentBox(sm(30.1,30.5,t)*(1-sm(32.9,33.2,t)));
+  caption([[['Süre ','#fff'],['doldu.','#ff6b5b']]],27.8,29.0,t,78);
+  caption([[['Buldun mu?','#ffb547']]],29.0,30.1,t,80);
+  caption([[['Cevabını','#fff']],[['yoruma yaz.','#5fd3c6']]],30.1,33.0,t,74);
+
+  // ---------- başa sar / hızlı oynat
+  tapeFX(t,-1,sm(33.1,33.3,t)*(1-sm(34.4,34.6,t)));
+  tapeFX(t, 1,sm(35.4,35.6,t)*(1-sm(37.0,37.2,t)));
+  caption([[['Başa ','#fff'],['saralım.','#ffb547']]],33.0,34.2,t,78);
+  caption([[['Kanepedeki','#fff']],[['yastığa ','#ffb547'],['bak...','#fff']]],34.2,35.9,t,74);
+  caption([[['Yavaş yavaş','#fff']],[['kayboldu.','#ffb547']]],35.9,37.8,t,74);
+  if(t>37.2&&t<46.2){ // ding anı: halka parlar + etiket
+    const fl=Math.max(0,1-(t-37.2)/0.5); if(fl>0){ctx.save();ctx.globalAlpha=fl*0.6;ctx.strokeStyle=C.amber;ctx.lineWidth=6;ctx.beginPath();ctx.arc(CX,CY,100+60*(1-fl),0,7);ctx.stroke();ctx.restore();}
+    tag('YASTIK',CX,1085,C.amber,sm(37.2,37.6,t)*(1-sm(45.6,46.2,t)));
+  }
+
+  // ---------- açıklama
+  caption([[['Fark etmediysen','#fff']],[['sorun yok.','#5fd3c6']]],37.8,40.0,t,74);
+  caption([[['Çoğu insan','#fff']],[['göremiyor.','#ff6b5b']]],40.0,41.85,t,74);
+  caption([[['Çünkü beyin,','#fff']],[['değişeni değil...','#fff']]],41.9,44.4,t,74);
+  caption([[['beklediğini','#ffb547']],[['görür.','#fff']]],44.4,46.0,t,80);
+  thought(t, sm(43.0,43.5,t)*(1-sm(45.8,46.3,t)));
+
+  // ---------- final
+  fade(sm(46.0,46.8,t)*0.86,'5,10,20');
+  caption([[['Arkadaşını ','#fff'],['etiketle.','#ffb547']]],46.1,DURATION+1,t,74,760);
+  caption([[['O ','#fff'],['bulabilecek mi?','#ff6b5b']]],47.9,DURATION+1,t,74,880);
+  endCard(t,49.6);
 }
 K.run(DURATION, scene);
 </script></body></html>
