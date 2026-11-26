@@ -1,0 +1,673 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 5.36,
+  "hiz": 0.85,
+  "metin": "Aynı fabrika, aynı kumaş. Sence fark ne? Sadece... bir logo.",
+  "kelimeler": [
+   {
+    "k": "Aynı",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "fabrika,",
+    "bas": 0.4,
+    "son": 0.9
+   },
+   {
+    "k": "aynı",
+    "bas": 1.2,
+    "son": 1.4
+   },
+   {
+    "k": "kumaş.",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "Sence",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "fark",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "ne?",
+    "bas": 3.0,
+    "son": 3.1
+   },
+   {
+    "k": "Sadece",
+    "bas": 3.8,
+    "son": 4.3
+   },
+   {
+    "k": "bir",
+    "bas": 4.7,
+    "son": 4.9
+   },
+   {
+    "k": "logo.",
+    "bas": 4.9,
+    "son": 5.3
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 5.9,
+  "sure": 4.08,
+  "hiz": 0.85,
+  "metin": "Fabrikada bant dönüyor. Tişörtler bir bir akıyor, hepsi aynı.",
+  "kelimeler": [
+   {
+    "k": "Fabrikada",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "bant",
+    "bas": 0.6,
+    "son": 0.9
+   },
+   {
+    "k": "dönüyor.",
+    "bas": 0.9,
+    "son": 1.5
+   },
+   {
+    "k": "Tişörtler",
+    "bas": 1.7,
+    "son": 2.3
+   },
+   {
+    "k": "bir",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "bir",
+    "bas": 2.5,
+    "son": 2.7
+   },
+   {
+    "k": "akıyor.",
+    "bas": 2.7,
+    "son": 3.3
+   },
+   {
+    "k": "Hepsi",
+    "bas": 3.4,
+    "son": 3.8
+   },
+   {
+    "k": "aynı.",
+    "bas": 3.8,
+    "son": 4.0
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 10.2,
+  "sure": 3.6,
+  "hiz": 0.85,
+  "metin": "Aynı makineden çıktılar, aynı işçinin elinden geçtiler.",
+  "kelimeler": [
+   {
+    "k": "Aynı",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "makineden",
+    "bas": 0.4,
+    "son": 0.9
+   },
+   {
+    "k": "çıktılar.",
+    "bas": 0.9,
+    "son": 1.4
+   },
+   {
+    "k": "Aynı",
+    "bas": 1.8,
+    "son": 2.1
+   },
+   {
+    "k": "işçinin",
+    "bas": 2.1,
+    "son": 2.5
+   },
+   {
+    "k": "elinden",
+    "bas": 2.5,
+    "son": 2.9
+   },
+   {
+    "k": "geçtiler.",
+    "bas": 2.9,
+    "son": 3.4
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 14.1,
+  "sure": 4.56,
+  "hiz": 0.85,
+  "metin": "Bandın sonunda ikiye ayırdılar. Bir tanesine küçücük bir yıldız bastılar.",
+  "kelimeler": [
+   {
+    "k": "Bandın",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "sonunda",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "ikiye",
+    "bas": 0.8,
+    "son": 1.1
+   },
+   {
+    "k": "ayırdılar.",
+    "bas": 1.1,
+    "son": 1.8
+   },
+   {
+    "k": "Bir",
+    "bas": 2.2,
+    "son": 2.3
+   },
+   {
+    "k": "tanesine",
+    "bas": 2.3,
+    "son": 2.8
+   },
+   {
+    "k": "küçücük",
+    "bas": 2.8,
+    "son": 3.2
+   },
+   {
+    "k": "bir",
+    "bas": 3.2,
+    "son": 3.4
+   },
+   {
+    "k": "yıldız",
+    "bas": 3.4,
+    "son": 3.8
+   },
+   {
+    "k": "bastılar.",
+    "bas": 3.8,
+    "son": 4.4
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 18.9,
+  "sure": 5.68,
+  "hiz": 0.8,
+  "metin": "Vitrine çıktılar. Düz olan... yüz elli lira. Yıldızlı olan... bin beş yüz lira.",
+  "kelimeler": [
+   {
+    "k": "Vitrine",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "çıktılar.",
+    "bas": 0.6,
+    "son": 1.3
+   },
+   {
+    "k": "Düz",
+    "bas": 1.4,
+    "son": 1.6
+   },
+   {
+    "k": "olan",
+    "bas": 1.6,
+    "son": 2.1
+   },
+   {
+    "k": "yüz elli",
+    "bas": 2.4,
+    "son": 2.8
+   },
+   {
+    "k": "lira,",
+    "bas": 2.8,
+    "son": 3.2
+   },
+   {
+    "k": "yıldızlı",
+    "bas": 3.3,
+    "son": 3.8
+   },
+   {
+    "k": "olan",
+    "bas": 3.8,
+    "son": 4.1
+   },
+   {
+    "k": "bin beş yüz",
+    "bas": 4.7,
+    "son": 5.4
+   },
+   {
+    "k": "lira.",
+    "bas": 5.4,
+    "son": 5.6
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 24.9,
+  "sure": 4.24,
+  "hiz": 0.85,
+  "metin": "Fiyatı on katına çıktı. Sen yıldızlıyı aldın tabii. Hem de taksitle.",
+  "kelimeler": [
+   {
+    "k": "Fiyatı",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "on",
+    "bas": 0.5,
+    "son": 0.7
+   },
+   {
+    "k": "katına",
+    "bas": 0.7,
+    "son": 1.0
+   },
+   {
+    "k": "çıktı.",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "Sen",
+    "bas": 1.7,
+    "son": 2.0
+   },
+   {
+    "k": "yıldızlıyı",
+    "bas": 2.0,
+    "son": 2.4
+   },
+   {
+    "k": "aldın",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "tabii.",
+    "bas": 2.7,
+    "son": 3.1
+   },
+   {
+    "k": "Hem",
+    "bas": 3.2,
+    "son": 3.4
+   },
+   {
+    "k": "de",
+    "bas": 3.4,
+    "son": 3.5
+   },
+   {
+    "k": "taksitle.",
+    "bas": 3.5,
+    "son": 4.2
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 29.4,
+  "sure": 4.24,
+  "hiz": 0.85,
+  "metin": "Sokakta göğsünü gere gere yürüdün. Biri dönüp baktı: Vay, marka!",
+  "kelimeler": [
+   {
+    "k": "Sokakta",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "göğsünü",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "gere",
+    "bas": 1.0,
+    "son": 1.2
+   },
+   {
+    "k": "gere",
+    "bas": 1.2,
+    "son": 1.4
+   },
+   {
+    "k": "yürüdün.",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "Biri",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "dönüp",
+    "bas": 2.5,
+    "son": 2.7
+   },
+   {
+    "k": "baktı.",
+    "bas": 2.7,
+    "son": 3.0
+   },
+   {
+    "k": "Vay,",
+    "bas": 3.0,
+    "son": 3.4
+   },
+   {
+    "k": "marka!",
+    "bas": 3.6,
+    "son": 4.1
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 33.9,
+  "sure": 5.2,
+  "hiz": 0.85,
+  "metin": "Eve geldin, dolabı açtın. Ne varsa logolu. Yanında da kart ekstresi.",
+  "kelimeler": [
+   {
+    "k": "Eve",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "geldin,",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "dolabı",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "açtın.",
+    "bas": 1.3,
+    "son": 1.7
+   },
+   {
+    "k": "Ne",
+    "bas": 2.3,
+    "son": 2.4
+   },
+   {
+    "k": "varsa",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "logolu.",
+    "bas": 2.7,
+    "son": 3.1
+   },
+   {
+    "k": "Yanında",
+    "bas": 3.9,
+    "son": 4.2
+   },
+   {
+    "k": "da",
+    "bas": 4.2,
+    "son": 4.3
+   },
+   {
+    "k": "kart",
+    "bas": 4.3,
+    "son": 4.5
+   },
+   {
+    "k": "ekstresi.",
+    "bas": 4.5,
+    "son": 5.1
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 39.4,
+  "sure": 4.56,
+  "hiz": 0.85,
+  "metin": "O tişörtü bandın başında bir işçi dikti. Eline geçen... küçücük bir pay.",
+  "kelimeler": [
+   {
+    "k": "O",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "tişörtü",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "bandın",
+    "bas": 0.6,
+    "son": 1.0
+   },
+   {
+    "k": "başında",
+    "bas": 1.0,
+    "son": 1.3
+   },
+   {
+    "k": "bir",
+    "bas": 1.3,
+    "son": 1.5
+   },
+   {
+    "k": "işçi",
+    "bas": 1.5,
+    "son": 1.7
+   },
+   {
+    "k": "dikti.",
+    "bas": 1.7,
+    "son": 2.0
+   },
+   {
+    "k": "Eline",
+    "bas": 2.6,
+    "son": 2.9
+   },
+   {
+    "k": "geçen",
+    "bas": 2.9,
+    "son": 3.4
+   },
+   {
+    "k": "küçücük",
+    "bas": 3.7,
+    "son": 4.1
+   },
+   {
+    "k": "bir",
+    "bas": 4.1,
+    "son": 4.2
+   },
+   {
+    "k": "pay.",
+    "bas": 4.2,
+    "son": 4.5
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 44.3,
+  "sure": 4.08,
+  "hiz": 0.85,
+  "metin": "Gerisi? Kumaşa değil, dikişe değil... o yıldıza gitti.",
+  "kelimeler": [
+   {
+    "k": "Gerisi?",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "Kumaşa",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "değil,",
+    "bas": 1.6,
+    "son": 1.9
+   },
+   {
+    "k": "dikişe",
+    "bas": 2.1,
+    "son": 2.5
+   },
+   {
+    "k": "değil,",
+    "bas": 2.5,
+    "son": 2.9
+   },
+   {
+    "k": "o",
+    "bas": 3.1,
+    "son": 3.2
+   },
+   {
+    "k": "yıldıza",
+    "bas": 3.2,
+    "son": 3.6
+   },
+   {
+    "k": "gitti.",
+    "bas": 3.6,
+    "son": 3.9
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 48.7,
+  "sure": 2.88,
+  "hiz": 0.8,
+  "metin": "Yani sen kumaşa değil... logoya para verdin.",
+  "kelimeler": [
+   {
+    "k": "Yani",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "sen",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "kumaşa",
+    "bas": 0.7,
+    "son": 1.0
+   },
+   {
+    "k": "değil...",
+    "bas": 1.0,
+    "son": 1.4
+   },
+   {
+    "k": "logoya",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "para",
+    "bas": 2.2,
+    "son": 2.4
+   },
+   {
+    "k": "verdin.",
+    "bas": 2.4,
+    "son": 2.8
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 52.0,
+  "sure": 5.28,
+  "hiz": 0.8,
+  "metin": "Bir dahaki alışverişinde... önce etiketi çevir. Logoya değil, kumaşa bak.",
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.3
+   },
+   {
+    "k": "sonraki",
+    "bas": 0.3,
+    "son": 0.7
+   },
+   {
+    "k": "alışverişinde...",
+    "bas": 0.7,
+    "son": 1.5
+   },
+   {
+    "k": "önce",
+    "bas": 1.9,
+    "son": 2.2
+   },
+   {
+    "k": "etiketi",
+    "bas": 2.2,
+    "son": 2.6
+   },
+   {
+    "k": "çevir.",
+    "bas": 2.6,
+    "son": 3.0
+   },
+   {
+    "k": "Logoya",
+    "bas": 3.5,
+    "son": 3.9
+   },
+   {
+    "k": "değil,",
+    "bas": 3.9,
+    "son": 4.2
+   },
+   {
+    "k": "kumaşa",
+    "bas": 4.5,
+    "son": 4.9
+   },
+   {
+    "k": "bak.",
+    "bas": 4.9,
+    "son": 5.1
+   }
+  ]
+ }
+}

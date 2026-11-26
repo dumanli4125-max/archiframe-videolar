@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır = dosya, videodaki başlangıç saniyesi, hız.
+# l12 transcribe "Bir sonraki alışverişinde" olarak döktü; altyazı buna göre.
+l01 0.3   0.85  Aynı fabrika, aynı kumaş. Sence fark ne? Sadece... bir logo.
+l02 5.9   0.85  Fabrikada bant dönüyor. Tişörtler bir bir akıyor, hepsi aynı.
+l03 10.2  0.85  Aynı makineden çıktılar, aynı işçinin elinden geçtiler.
+l04 14.1  0.85  Bandın sonunda ikiye ayırdılar. Bir tanesine küçücük bir yıldız bastılar.
+l05 18.9  0.8  Vitrine çıktılar. Düz olan... yüz elli lira. Yıldızlı olan... bin beş yüz lira.
+l06 24.9  0.85  Fiyatı on katına çıktı. Sen yıldızlıyı aldın tabii. Hem de taksitle.
+l07 29.4  0.85  Sokakta göğsünü gere gere yürüdün. Biri dönüp baktı: Vay, marka!
+l08 33.9  0.85  Eve geldin, dolabı açtın. Ne varsa logolu. Yanında da kart ekstresi.
+l09 39.4  0.85  O tişörtü bandın başında bir işçi dikti. Eline geçen... küçücük bir pay.
+l10 44.3  0.85  Gerisi? Kumaşa değil, dikişe değil... o yıldıza gitti.
+l11 48.7  0.8  Yani sen kumaşa değil... logoya para verdin.
+l12 52.0  0.8  Bir dahaki alışverişinde... önce etiketi çevir. Logoya değil, kumaşa bak.
