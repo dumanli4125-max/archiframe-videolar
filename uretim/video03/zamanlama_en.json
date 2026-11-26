@@ -1,0 +1,440 @@
+{
+ "l01": {
+  "sure": 4.32,
+  "tempo": 1.0,
+  "baslangic": 0.3,
+  "metin": "How many payments was your phone? Don't think. Just say it.",
+  "kelimeler": [
+   {
+    "k": "payments",
+    "bas": 0.6,
+    "son": 1.0,
+    "abs": 0.9
+   },
+   {
+    "k": "phone",
+    "bas": 1.2,
+    "son": 1.7,
+    "abs": 1.5
+   },
+   {
+    "k": "Don't think",
+    "bas": 2.5,
+    "son": 3.4,
+    "abs": 2.8
+   },
+   {
+    "k": "Just say it",
+    "bas": 3.6,
+    "son": 4.2,
+    "abs": 3.9
+   }
+  ]
+ },
+ "l02": {
+  "sure": 4.64,
+  "tempo": 1.0,
+  "baslangic": 4.5,
+  "metin": "New model in the window. Big sign: twelve months... zero interest!",
+  "kelimeler": [
+   {
+    "k": "New model",
+    "bas": 0.2,
+    "son": 0.7,
+    "abs": 4.7
+   },
+   {
+    "k": "window",
+    "bas": 0.9,
+    "son": 1.4,
+    "abs": 5.4
+   },
+   {
+    "k": "big sign",
+    "bas": 1.7,
+    "son": 2.4,
+    "abs": 6.2
+   },
+   {
+    "k": "12 months",
+    "bas": 2.6,
+    "son": 3.4,
+    "abs": 7.1
+   },
+   {
+    "k": "zero interest",
+    "bas": 3.6,
+    "son": 4.6,
+    "abs": 8.1
+   }
+  ]
+ },
+ "l03": {
+  "sure": 5.52,
+  "tempo": 1.0,
+  "baslangic": 9.3,
+  "metin": "Zero interest? Sweet. A coffee a month, what's the harm? You buy it, walk out.",
+  "kelimeler": [
+   {
+    "k": "Zero interest",
+    "bas": 0.1,
+    "son": 1.1,
+    "abs": 9.4
+   },
+   {
+    "k": "Sweet",
+    "bas": 1.3,
+    "son": 1.9,
+    "abs": 10.6
+   },
+   {
+    "k": "coffee a month",
+    "bas": 2.1,
+    "son": 3.1,
+    "abs": 11.4
+   },
+   {
+    "k": "harm",
+    "bas": 3.5,
+    "son": 4.0,
+    "abs": 12.8
+   },
+   {
+    "k": "buy it",
+    "bas": 4.2,
+    "son": 4.8,
+    "abs": 13.5
+   },
+   {
+    "k": "walk out",
+    "bas": 4.8,
+    "son": 5.4,
+    "abs": 14.1
+   }
+  ]
+ },
+ "l04": {
+  "sure": 4.96,
+  "tempo": 1.0,
+  "baslangic": 15.36,
+  "metin": "Month one... payment one. Shiny new phone, you're showing it off to everyone.",
+  "kelimeler": [
+   {
+    "k": "Month one",
+    "bas": 0.1,
+    "son": 0.7,
+    "abs": 15.46
+   },
+   {
+    "k": "payment one",
+    "bas": 1.2,
+    "son": 1.7,
+    "abs": 16.56
+   },
+   {
+    "k": "Shiny new phone",
+    "bas": 2.3,
+    "son": 3.3,
+    "abs": 17.66
+   },
+   {
+    "k": "showing it off",
+    "bas": 3.6,
+    "son": 4.3,
+    "abs": 18.96
+   },
+   {
+    "k": "everyone",
+    "bas": 4.4,
+    "son": 4.8,
+    "abs": 19.76
+   }
+  ]
+ },
+ "l05": {
+  "sure": 6.16,
+  "tempo": 1.0,
+  "baslangic": 20.38,
+  "metin": "Month six. It's laggy, the battery's dead by dinner. Then you drop it... cracked screen.",
+  "kelimeler": [
+   {
+    "k": "Month six",
+    "bas": 0.1,
+    "son": 1.0,
+    "abs": 20.48
+   },
+   {
+    "k": "laggy",
+    "bas": 1.4,
+    "son": 1.9,
+    "abs": 21.78
+   },
+   {
+    "k": "battery's dead",
+    "bas": 2.2,
+    "son": 3.0,
+    "abs": 22.58
+   },
+   {
+    "k": "dinner",
+    "bas": 3.1,
+    "son": 3.5,
+    "abs": 23.48
+   },
+   {
+    "k": "drop it",
+    "bas": 4.4,
+    "son": 5.0,
+    "abs": 24.78
+   },
+   {
+    "k": "cracked screen",
+    "bas": 5.2,
+    "son": 6.1,
+    "abs": 25.58
+   }
+  ]
+ },
+ "l06": {
+  "sure": 5.92,
+  "tempo": 1.04,
+  "baslangic": 26.63,
+  "metin": "Then, another promo. New model's out. Old one's not paid off... eh, whatever.",
+  "kelimeler": [
+   {
+    "k": "Then",
+    "bas": 0.1,
+    "son": 0.67,
+    "abs": 26.73
+   },
+   {
+    "k": "another promo",
+    "bas": 0.77,
+    "son": 1.44,
+    "abs": 27.4
+   },
+   {
+    "k": "New model's out",
+    "bas": 2.02,
+    "son": 2.88,
+    "abs": 28.65
+   },
+   {
+    "k": "old one's not paid off",
+    "bas": 3.17,
+    "son": 4.33,
+    "abs": 29.8
+   },
+   {
+    "k": "Eh",
+    "bas": 4.71,
+    "son": 4.81,
+    "abs": 31.34
+   },
+   {
+    "k": "whatever",
+    "bas": 5.38,
+    "son": 5.77,
+    "abs": 32.01
+   }
+  ]
+ },
+ "l07": {
+  "sure": 5.12,
+  "tempo": 1.0,
+  "baslangic": 32.6,
+  "metin": "Now you're paying off two. Then earbuds, then a watch... All on payments.",
+  "kelimeler": [
+   {
+    "k": "paying off two",
+    "bas": 0.6,
+    "son": 1.4,
+    "abs": 33.2
+   },
+   {
+    "k": "earbuds",
+    "bas": 2.0,
+    "son": 2.7,
+    "abs": 34.6
+   },
+   {
+    "k": "watch",
+    "bas": 3.0,
+    "son": 3.6,
+    "abs": 35.6
+   },
+   {
+    "k": "all on payments",
+    "bas": 3.9,
+    "son": 5.0,
+    "abs": 36.5
+   }
+  ]
+ },
+ "l08": {
+  "sure": 5.71,
+  "tempo": 1.05,
+  "baslangic": 38.0,
+  "metin": "End of the month, grocery checkout. Your kid holds up a chocolate bar. Card... declined.",
+  "kelimeler": [
+   {
+    "k": "End of the month",
+    "bas": 0.19,
+    "son": 0.86,
+    "abs": 38.19
+   },
+   {
+    "k": "grocery checkout",
+    "bas": 1.05,
+    "son": 1.9,
+    "abs": 39.05
+   },
+   {
+    "k": "Your kid holds up",
+    "bas": 2.29,
+    "son": 3.05,
+    "abs": 40.29
+   },
+   {
+    "k": "chocolate bar",
+    "bas": 3.05,
+    "son": 3.81,
+    "abs": 41.05
+   },
+   {
+    "k": "Card",
+    "bas": 4.29,
+    "son": 4.76,
+    "abs": 42.29
+   },
+   {
+    "k": "declined",
+    "bas": 5.05,
+    "son": 5.43,
+    "abs": 43.05
+   }
+  ]
+ },
+ "l09": {
+  "sure": 3.92,
+  "tempo": 1.0,
+  "baslangic": 43.68,
+  "metin": "The latest phone in your pocket... but no chocolate for your kid.",
+  "kelimeler": [
+   {
+    "k": "latest phone",
+    "bas": 0.3,
+    "son": 0.9,
+    "abs": 43.98
+   },
+   {
+    "k": "pocket",
+    "bas": 1.2,
+    "son": 1.8,
+    "abs": 44.88
+   },
+   {
+    "k": "no chocolate",
+    "bas": 2.5,
+    "son": 3.1,
+    "abs": 46.18
+   },
+   {
+    "k": "your kid",
+    "bas": 3.2,
+    "son": 3.8,
+    "abs": 46.88
+   }
+  ]
+ },
+ "l10": {
+  "sure": 3.2,
+  "tempo": 1.0,
+  "baslangic": 47.78,
+  "metin": "So who won here? Who else... the bank.",
+  "kelimeler": [
+   {
+    "k": "who won here",
+    "bas": 0.5,
+    "son": 1.4,
+    "abs": 48.28
+   },
+   {
+    "k": "Who else",
+    "bas": 1.6,
+    "son": 2.3,
+    "abs": 49.38
+   },
+   {
+    "k": "the bank",
+    "bas": 2.5,
+    "son": 3.1,
+    "abs": 50.28
+   }
+  ]
+ },
+ "l11": {
+  "sure": 4.56,
+  "tempo": 1.0,
+  "baslangic": 51.48,
+  "metin": "The phone gets old in two years. The payments... last three.",
+  "kelimeler": [
+   {
+    "k": "phone gets old",
+    "bas": 0.4,
+    "son": 1.3,
+    "abs": 51.88
+   },
+   {
+    "k": "two years",
+    "bas": 1.4,
+    "son": 2.3,
+    "abs": 52.88
+   },
+   {
+    "k": "payments",
+    "bas": 2.8,
+    "son": 3.5,
+    "abs": 54.28
+   },
+   {
+    "k": "last three",
+    "bas": 3.6,
+    "son": 4.4,
+    "abs": 55.08
+   }
+  ]
+ },
+ "l12": {
+  "sure": 3.68,
+  "tempo": 1.0,
+  "baslangic": 56.08,
+  "metin": "Before you buy the next one... check what you still owe on this one.",
+  "kelimeler": [
+   {
+    "k": "Before you buy",
+    "bas": 0.2,
+    "son": 0.8,
+    "abs": 56.28
+   },
+   {
+    "k": "next one",
+    "bas": 0.9,
+    "son": 1.5,
+    "abs": 56.98
+   },
+   {
+    "k": "check what you still owe",
+    "bas": 1.7,
+    "son": 2.9,
+    "abs": 57.78
+   },
+   {
+    "k": "this one",
+    "bas": 3.1,
+    "son": 3.6,
+    "abs": 59.18
+   }
+  ]
+ }
+}

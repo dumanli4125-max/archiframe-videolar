@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır, videodaki başlangıç sn, hız, metin. Tümü transcribe ile doğrulandı.
+# l03, l08, l10 ikinci sürüm (süre için uzatıldı; l08 ilk sürümde "baktın" -> "baktım" duyuluyordu, ikincide doğru).
+l01 0.3   0.85  Maaşın yatıyor, üç günde bitiyor. Neden?
+l02 4.3   0.8   Ayın on beşi. Telefon titredi: maaşınız yattı.
+l03 8.2   0.8   Hesapta... otuz bin lira. Bir oh dedin, bu ay rahatız.
+l04 12.7  0.85  Daha telefonu kapatmadan kapı çaldı. Ev sahibi.
+l05 16.9  0.8   Kira... on dört bin. Maaşın yarısı gitti bile.
+l06 20.8  0.85  Arkasından faturalar geldi. Elektrik, su, doğalgaz.
+l07 26.1  0.85  Sonra market. Sonra kredi kartı. Sonra taksit.
+l08 31.0  0.8   Üçüncü gün... hesaba baktın. Herkes payını almış, giden gitmiş.
+l09 36.4  0.8   Sana kalan... bozukluk. Cüzdanı masaya döktün.
+l10 41.0  0.8   O akşam kardeşin aradı: "Okul gezisi var... beş yüz lira lazım."
+l11 45.5  0.8   "Bu ay da olmadı" dedin. Geçen ay da öyle demiştin.
+l12 49.6  0.8   Bu ay maaş yatınca... önce kendine küçük bir pay ayır. Yüz lira bile olsa.

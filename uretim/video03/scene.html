@@ -6,6 +6,7 @@
 // 03 — TAKSİT. Satır başlangıçları (audio.py VO ile aynı):
 // l01 0.3 | l02 4.5 | l03 9.3 | l04 15.36 | l05 20.38 | l06 26.63 | l07 32.6 | l08 38.0 | l09 43.68 | l10 47.78 | l11 51.48 | l12 56.08
 const DURATION = 62.5;
+const T=(tr,en)=>L(tr,en);
 const A='#ffb547',CO='#ff6b5b',TE='#5fd3c6',WH='#fff';
 
 // ---------- yardımcılar ----------
@@ -31,7 +32,7 @@ function cal(x,y,month,a=1,flip=0){if(a<=0)return;ctx.save();ctx.globalAlpha=a;c
   rr(-80,-66,160,132,14);ctx.fillStyle=C.cream;glow('rgba(0,0,0,.5)',16);ctx.fill();noGlow();
   ctx.save();rr(-80,-66,160,132,14);ctx.clip();ctx.fillStyle=CO;ctx.fillRect(-80,-66,160,40);ctx.restore();
   ctx.fillStyle=C.ink;[-40,40].forEach(dx=>{ctx.beginPath();ctx.arc(dx,-66,7,0,7);ctx.fill();});
-  ctx.font='700 18px Inter';ctx.letterSpacing='3px';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=C.ink;ctx.fillText('AY',2,-45);
+  ctx.font='700 18px Inter';ctx.letterSpacing='3px';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=C.ink;ctx.fillText(L('AY','MONTH'),2,-45);
   ctx.letterSpacing='0px';ctx.font='800 28px Inter';ctx.fillText(month,0,18);ctx.restore();}
 // küçük telefon (elde); crack çatlak
 function hphone(x,y,{lit=true,col=TE,crack=0,rot=-0.3}={}){ctx.save();ctx.translate(x,y);ctx.rotate(rot);rr(-18,-32,36,64,8);ctx.fillStyle='#0a1222';ctx.fill();
@@ -62,9 +63,12 @@ function store(t,{newModel=false,pulse=0}={}){
   ctx.save();const bs=1+0.06*pulse;ctx.translate(540,700);ctx.scale(bs,bs);
   rr(-360,-62,720,124,20);ctx.fillStyle=newModel?'#2a1410':'#1a1408';glow(A,20+40*pulse);ctx.fill();noGlow();ctx.lineWidth=4;ctx.strokeStyle=A;ctx.stroke();
   ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='800 26px Inter';ctx.letterSpacing='8px';ctx.fillStyle=A;
-  ctx.fillText(newModel?'YENİ MODEL · KAMPANYA':'KAMPANYA',4,-30);ctx.letterSpacing='0px';
+  ctx.fillText(newModel?L('YENİ MODEL · KAMPANYA','NEW MODEL · PROMO'):L('KAMPANYA','PROMO'),4,-30);ctx.letterSpacing='0px';
+  if(LANG==='en'){ctx.font='800 48px Inter';const p1='12 MONTHS · ',p2='0% INTEREST!';const w1=ctx.measureText(p1).width,w2=ctx.measureText(p2).width,x0=-(w1+w2)/2;
+    ctx.textAlign='left';ctx.fillStyle=WH;glow(A,12+30*pulse);ctx.fillText(p1,x0,18);ctx.fillStyle=A;ctx.fillText(p2,x0+w1,18);ctx.restore();}
+  else{
   ctx.font='800 54px Inter';ctx.fillStyle=WH;glow(A,12+30*pulse);ctx.fillText('12 TAKSİT · ',-90,18);
-  ctx.fillStyle=A;ctx.fillText('FAİZSİZ!',190,18);ctx.restore();
+  ctx.fillStyle=A;ctx.fillText('FAİZSİZ!',190,18);ctx.restore();}
 }
 function counterDesk(t,{pos='',posCol=TE}={}){
   // tezgâh (satıcının bacaklarını örter)
@@ -85,7 +89,7 @@ function sceneA(t){
   const give=sm(12.0,12.6,t)*(1-sm(13.4,13.8,t));
   const sf=seller(t,{give});
   counterDesk(t,{pos:t>14.0&&t<15.3?'ok':''});
-  if(t>14.0&&t<15.3) bigText('ONAY',770,1130,30,TE,sm(14.0,14.2,t));
+  if(t>14.0&&t<15.3) bigText(L('ONAY','APPROVED'),770,1130,30,TE,sm(14.0,14.2,t));
   tag('SATICI',sf.head[0],sf.head[1]-80,C.cream,sm(1,1.6,t)*(1-sm(14.6,15,t)));
   // SEN
   let m,o={};
@@ -104,15 +108,15 @@ function sceneA(t){
   if(t>12.4&&t<13.2){const u=sm(12.6,13.2,t);const x=lerp(sf.hand[0],f.hand[0],u),y=lerp(sf.hand[1],f.hand[1],u)-10;ctx.fillStyle=C.cream;rr(x-26,y-18,52,36,6);ctx.fill();ctx.fillStyle=A;ctx.fillRect(x-26,y-3,52,6);}
   if(hasPhone) hphone(f.hand[0],f.hand[1]-12,{col:TE});
   tag('SEN',f.head[0],f.head[1]-90,CO);
-  tag('MAĞAZA',540,1470,A,sm(0.4,1,t));
+  tag(L('MAĞAZA','STORE'),540,1470,A,sm(0.4,1,t));
   // altyazılar
-  caption([[['Senin telefonun ',WH],['kaç',A]],[['taksitti?',WH]]],0.2,2.6,t,80,210);
-  caption([[['Hadi, ',WH],['düşünmeden söyle.',A]]],2.6,4.35,t,66);
-  caption([[['Vitrinde yeni model.',WH]]],4.5,6.0,t);
-  caption([[['12 taksit... ',WH],['FAİZSİZ!',A]]],6.0,9.2,t,74);
-  caption([[['Faizsiz dediler,',WH]],[['sevindin.',TE]]],9.3,11.6,t);
-  caption([[['Ayda bir kahve parası,',WH]],[['ne olacak?',WH]]],11.6,13.9,t);
-  caption([[['Aldın, ',WH],['çıktın.',TE]]],13.9,15.3,t,70);
+  caption(L([[['Senin telefonun ',WH],['kaç',A]],[['taksitti?',WH]]],[[['How many ',WH],['payments',A]],[['was your phone?',WH]]]),0.2,2.6,t,80,210);
+  caption(L([[['Hadi, ',WH],['düşünmeden söyle.',A]]],[[["Don't think. ",WH],['Just say it.',A]]]),2.6,4.35,t,66);
+  caption(L([[['Vitrinde yeni model.',WH]]],[[['New model in the window.',WH]]]),4.5,6.0,t);
+  caption(L([[['12 taksit... ',WH],['FAİZSİZ!',A]]],[[['12 months... ',WH],['0% INTEREST!',A]]]),6.0,9.2,t,74);
+  caption(L([[['Faizsiz dediler,',WH]],[['sevindin.',TE]]],[[['Zero interest?',WH]],[['Sweet.',TE]]]),9.3,11.6,t);
+  caption(L([[['Ayda bir kahve parası,',WH]],[['ne olacak?',WH]]],[[['A coffee a month,',WH]],[["what's the harm?",WH]]]),11.6,T(13.9,13.35),t);
+  caption(L([[['Aldın, ',WH],['çıktın.',TE]]],[[['You buy it, ',WH],['walk out.',TE]]]),T(13.9,13.35),15.3,t,70);
 }
 
 // ---------- SAHNE B: SOKAK (15.36 – 26.63) ----------
@@ -145,14 +149,14 @@ function bigPhone(x,y,t,{spin=0,bat=0,crack=0,alpha=1}){if(alpha<=0)return;ctx.s
     const L=[[[20,-40],[-60,-140],[-100,-190]],[[20,-40],[90,-110],[110,-170]],[[20,-40],[-40,40],[-90,120],[-110,180]],[[20,-40],[80,30],[100,120]],[[-40,40],[20,90],[40,190]],[[-60,-140],[-110,-100]]];
     L.forEach(pl=>{ctx.beginPath();pl.forEach((p,i)=>{const k=Math.min(1,crack*1.6);const q=i?[lerp(pl[0][0],p[0],k),lerp(pl[0][1],p[1],k)]:p;i?ctx.lineTo(...q):ctx.moveTo(...q);});ctx.stroke();});ctx.restore();}
   ctx.restore();}
-const MONTHS=['OCAK','ŞUBAT','MART','NİSAN','MAYIS','HAZİRAN','TEMMUZ','AĞUSTOS'];
+const MONTHS=L(['OCAK','ŞUBAT','MART','NİSAN','MAYIS','HAZİRAN','TEMMUZ','AĞUSTOS'],['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG']);
 function sceneB(t){
   street(t);
   // ay sayacı: 1 (16.42) ... 2..6 (19.9 – 20.9)
   let n=t<20.0?1:Math.min(6,2+Math.floor((t-20.0)/0.2));
   const ca=sm(16.3,16.7,t);
   cal(150,450,MONTHS[n-1],ca);
-  tk(650,450,'TELEFON',n,12,ca,0);
+  tk(650,450,L('TELEFON','PHONE'),n,12,ca,0);
   // arkadaşlar (l04)
   const fr=[[780,1180],[930,1260]];
   fr.forEach(([xe,],i)=>{const t0=17.0+i*0.3;if(t<t0)return;
@@ -179,14 +183,14 @@ function sceneB(t){
   const bpA=sm(21.5,21.8,t);
   bigPhone(610,800,t,{spin:sm(21.9,22.2,t),bat:sm(22.8,23.0,t),crack,alpha:bpA});
   tag('SEN',f.head[0],f.head[1]-90,CO);
-  if(t>25.85) tag('ÇATLADI',800,1060,CO,sm(25.9,26.1,t));
-  tag('SOKAK',540,1470,TE,sm(15.6,16.1,t));
+  if(t>25.85) tag(L('ÇATLADI','CRACKED'),800,1060,CO,sm(25.9,26.1,t));
+  tag(L('SOKAK','STREET'),540,1470,TE,sm(15.6,16.1,t));
   // altyazılar
-  caption([[['İlk ay... ',WH],['1. taksit.',A]]],15.4,17.8,t,70);
-  caption([[['Telefon fiyakalı,',WH]],[['herkese ',WH],['gösteriyorsun.',TE]]],17.8,20.3,t);
-  caption([[['Altıncı ay.',A]]],20.4,21.6,t,74);
-  caption([[['Telefon kasıyor,',WH]],[['şarj akşamı ',WH],['görmüyor.',CO]]],21.6,24.2,t);
-  caption([[['Bir de düşürdün...',WH]],[['ekran çatladı.',CO]]],24.2,26.5,t);
+  caption(L([[['İlk ay... ',WH],['1. taksit.',A]]],[[['Month one... ',WH],['payment one.',A]]]),15.4,T(17.8,17.6),t,70);
+  caption(L([[['Telefon fiyakalı,',WH]],[['herkese ',WH],['gösteriyorsun.',TE]]],[[['Shiny new phone,',WH]],[["you're ",WH],['showing it off.',TE]]]),T(17.8,17.6),20.3,t);
+  caption(L([[['Altıncı ay.',A]]],[[['Month six.',A]]]),20.4,21.6,t,74);
+  caption(L([[['Telefon kasıyor,',WH]],[['şarj akşamı ',WH],['görmüyor.',CO]]],[[["It's laggy,",WH]],[["battery's ",WH],['dead by dinner.',CO]]]),21.6,24.2,t);
+  caption(L([[['Bir de düşürdün...',WH]],[['ekran çatladı.',CO]]],[[['Then you drop it...',WH]],[['cracked screen.',CO]]]),24.2,26.5,t);
 }
 
 // ---------- SAHNE C: MAĞAZA, YENİ MODEL (26.63 – 32.6) ----------
@@ -196,10 +200,10 @@ function sceneC(t){
   const give=sm(31.4,31.8,t)*(1-sm(32.2,32.5,t));
   const sf=seller(t,{give});
   counterDesk(t,{pos:t>32.0?'ok':''});
-  cal(150,450,'TEMMUZ',1);
+  cal(150,450,L('TEMMUZ','JUL'),1);
   const hl=t>30.2&&t<31.6?(Math.sin(t*14)>0?1:0):0;
-  tk(650,450,'TELEFON',7,12,1,hl);
-  tk(650,530,'YENİ TELEFON',1,12,sm(31.85,32.15,t),0);
+  tk(650,450,L('TELEFON','PHONE'),7,12,1,hl);
+  tk(650,530,L('YENİ TELEFON','NEW PHONE'),1,12,sm(31.85,32.15,t),0);
   // SEN
   let m,o={};
   if(t<28.6){m=mover(t,26.7,28.5,-80,340);o.pose={...POSE.stand,ua:28,fa:120};}
@@ -214,10 +218,10 @@ function sceneC(t){
   if(t>31.4&&t<31.85){const u=sm(31.5,31.85,t);const x=lerp(sf.hand[0],f.hand[0],u),y=lerp(sf.hand[1],f.hand[1],u)-10;ctx.fillStyle=C.cream;rr(x-26,y-18,52,36,6);ctx.fill();ctx.fillStyle=A;ctx.fillRect(x-26,y-3,52,6);}
   tag('SEN',f.head[0],f.head[1]-90,CO);
   tag('SATICI',sf.head[0],sf.head[1]-80,C.cream,0.9);
-  tag('MAĞAZA',540,1470,A,1);
-  caption([[['Derken vitrinde',WH]],[['yine kampanya.',A]]],26.65,28.7,t);
-  caption([[['Yeni model çıkmış.',WH]]],28.7,30.1,t,70);
-  caption([[['Eskisinin taksiti bitmemiş',WH]],[['ama... ',WH],['olsun.',CO]]],30.1,32.45,t);
+  tag(L('MAĞAZA','STORE'),540,1470,A,1);
+  caption(L([[['Derken vitrinde',WH]],[['yine kampanya.',A]]],[[['Then...',WH]],[['another promo.',A]]]),26.65,T(28.7,28.55),t);
+  caption(L([[['Yeni model çıkmış.',WH]]],[[["New model's out.",WH]]]),T(28.7,28.55),T(30.1,29.75),t,70);
+  caption(L([[['Eskisinin taksiti bitmemiş',WH]],[['ama... ',WH],['olsun.',CO]]],[[["Old one's not paid off...",WH]],[['eh, ',WH],['whatever.',CO]]]),T(30.1,29.75),32.45,t);
 }
 
 // ---------- SAHNE D: EV, SAYAÇLAR ÜST ÜSTE (32.6 – 38.0) ----------
@@ -226,12 +230,12 @@ function sceneD(t){
   windowNight(600,600,380,400,{moon:true});
   frame(120,660);
   plant(980);
-  cal(150,450,'AĞUSTOS',1);
+  cal(150,450,L('AĞUSTOS','AUG'),1);
   const hl=t>37.05?1:0;
-  tk(650,450,'TELEFON',8,12,1,hl);
-  tk(650,530,'YENİ TELEFON',2,12,1,hl);
-  tk(650,610,'KULAKLIK',1,6,sm(34.86,35.15,t),hl);
-  tk(650,690,'SAAT',1,9,sm(36.0,36.3,t),hl);
+  tk(650,450,L('TELEFON','PHONE'),8,12,1,hl);
+  tk(650,530,L('YENİ TELEFON','NEW PHONE'),2,12,1,hl);
+  tk(650,610,L('KULAKLIK','EARBUDS'),1,6,sm(34.86,35.15,t),hl);
+  tk(650,690,L('SAAT','WATCH'),1,9,sm(T(36.0,35.65),T(36.3,35.95),t),hl);
   // SEN: odada yürüyüp duruyor, yük biniyor
   let m,o={};
   if(t<34.6){m=mover(t,32.7,34.5,200,520);}
@@ -245,13 +249,13 @@ function sceneD(t){
   if(ka>0){ctx.save();ctx.globalAlpha=ka;ctx.strokeStyle=A;ctx.lineWidth=9;glow(A,16);ctx.beginPath();ctx.arc(f.head[0],f.head[1],50,Math.PI*1.05,Math.PI*1.95);ctx.stroke();
     ctx.fillStyle=A;rr(f.head[0]-56,f.head[1]-14,18,34,8);ctx.fill();rr(f.head[0]+38,f.head[1]-14,18,34,8);ctx.fill();ctx.restore();}
   // saat (arka el bileği)
-  const sa=sm(36.0,36.2,t);
+  const sa=sm(T(36.0,35.65),T(36.2,35.85),t);
   if(sa>0){ctx.save();ctx.globalAlpha=sa;ctx.fillStyle=A;glow(A,16);rr(f.handB[0]-14,f.handB[1]-30,28,22,6);ctx.fill();ctx.restore();}
   tag('SEN',f.head[0],f.head[1]-100,CO);
   tag('EV',540,1470,TE,1);
-  caption([[['Şimdi ',WH],['iki taksit',A]],[['birden ödüyorsun.',WH]]],32.62,34.5,t);
-  caption([[['Sonra ',WH],['kulaklık,',A]],[['sonra ',WH],['saat...',A]]],34.5,36.6,t);
-  caption([[['Hepsi ',WH],['taksitli.',CO]]],36.6,37.9,t,76);
+  caption(L([[['Şimdi ',WH],['iki taksit',A]],[['birden ödüyorsun.',WH]]],[[["Now you're paying",WH]],[['off two at once.',A]]]),32.62,T(34.5,34.25),t);
+  caption(L([[['Sonra ',WH],['kulaklık,',A]],[['sonra ',WH],['saat...',A]]],[[['Then ',WH],['earbuds,',A]],[['then ',WH],['a watch...',A]]]),T(34.5,34.25),T(36.6,36.45),t);
+  caption(L([[['Hepsi ',WH],['taksitli.',CO]]],[[['All on ',WH],['payments.',CO]]]),T(36.6,36.45),37.9,t,76);
 }
 
 // ---------- SAHNE E: MARKET (38.0 – 47.78) ----------
@@ -274,10 +278,10 @@ function sceneE(t){
   ctx.fillStyle='#1d3254';rr(700,1226,340,174,10);ctx.fill();ctx.fillStyle='#24406b';ctx.fillRect(690,1218,360,16);
   // bant + ürünler
   ctx.fillStyle='#0f1d33';ctx.fillRect(700,1206,180,12);
-  const den=t>42.62;
+  const DEN=T(42.62,43.0);const den=t>DEN;
   ctx.save();ctx.translate(740,1180);rr(-34,-34,68,60,8);ctx.fillStyle='#0a1222';ctx.fill();
   rr(-26,-27,52,24,4);ctx.fillStyle=den?CO:hexA(TE,0.4);if(den)glow(CO,30*(0.6+0.4*Math.sin(t*12)));ctx.fill();noGlow();ctx.restore();
-  tag('KASA',900,960,C.cream,0.85*(1-sm(42.4,42.6,t)*(1-sm(44.2,44.5,t))));
+  tag(L('KASA','REGISTER'),900,960,C.cream,0.85*(1-sm(42.4,42.6,t)*(1-sm(44.2,44.5,t))));
   // ÇOCUK (SEN'in solunda, rafların önünde)
   const sad=sm(45.9,46.5,t);
   const raise=sm(40.2,40.6,t)*(1-sm(44.0,44.3,t));
@@ -301,21 +305,21 @@ function sceneE(t){
   const pg=sm(44.4,44.8,t)*(1-sm(46.0,46.6,t));
   if(pg>0){const hy=STAND_Y-10;ctx.save();ctx.globalAlpha=pg;const g=ctx.createRadialGradient(m.x,hy,4,m.x,hy,110);g.addColorStop(0,hexA(A,0.55));g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(m.x-110,hy-110,220,220);
     ctx.fillStyle=A;glow(A,24);rr(m.x-12,hy-20,24,40,5);ctx.fill();ctx.restore();
-    tag('SON MODEL',m.x+40,hy+90,A,pg);}
+    tag(L('SON MODEL','LATEST MODEL'),m.x+40,hy+90,A,pg);}
   // çikolata: önce çocukta, sonra SEN'de, sonra rafta (x 420, 3. raf)
   if(t<44.15){if(raise>0.05)choco(kid.hand[0],kid.hand[1]-8,-0.3);}
   else if(t<45.55) choco(f.hand[0],f.hand[1]-6,0.2);
   else if(t<45.8) choco(lerp(f.hand[0],415,sm(45.55,45.8,t)),lerp(f.hand[1]-6,1086,sm(45.55,45.8,t)));
   else choco(415,1086);
-  if(den&&t<44.2){bubble(840,985,'KART REDDEDİLDİ',sm(42.62,42.85,t)*(1-sm(43.9,44.2,t)),CO);}
+  if(den&&t<44.2){bubble(840,985,L('KART REDDEDİLDİ','CARD DECLINED'),sm(DEN,DEN+0.23,t)*(1-sm(43.9,44.2,t)),CO);}
   tag('SEN',f.head[0],f.head[1]-90,CO);
   tag('ÇOCUĞUN',kid.head[0],kid.head[1]-64,C.cream,sm(40.0,40.5,t));
-  tag('MARKET',540,1470,A,sm(38.2,38.7,t));
-  caption([[['Ay sonu, ',A],['market kasası.',WH]]],38.02,40.0,t);
-  caption([[['Ufaklık bir ',WH],['çikolata',A]],[['uzatıyor.',WH]]],40.0,41.85,t);
-  caption([[['Kart...',WH]],[['reddedildi.',CO]]],41.85,43.6,t,74);
-  caption([[['Cebinde son model',WH]],[['telefon var...',A]]],43.7,45.9,t);
-  caption([[['ama çocuğa',WH]],[['çikolata yok.',CO]]],45.9,47.65,t,72);
+  tag(L('MARKET','GROCERY'),540,1470,A,sm(38.2,38.7,t));
+  caption(L([[['Ay sonu, ',A],['market kasası.',WH]]],[[['End of the month,',A]],[['grocery checkout.',WH]]]),38.02,T(40.0,40.2),t);
+  caption(L([[['Ufaklık bir ',WH],['çikolata',A]],[['uzatıyor.',WH]]],[[['Your kid holds up',WH]],[['a chocolate bar.',A]]]),T(40.0,40.2),T(41.85,42.2),t);
+  caption(L([[['Kart...',WH]],[['reddedildi.',CO]]],[[['Card...',WH]],[['declined.',CO]]]),T(41.85,42.2),43.6,t,74);
+  caption(L([[['Cebinde son model',WH]],[['telefon var...',A]]],[[['Latest phone',WH]],[['in your pocket...',A]]]),43.7,45.9,t);
+  caption(L([[['ama çocuğa',WH]],[['çikolata yok.',CO]]],[[['but no chocolate',WH]],[['for your kid.',CO]]]),45.9,47.65,t,72);
 }
 
 // ---------- SAHNE F: BANKA (47.78 – 51.48) ----------
@@ -324,12 +328,12 @@ function bankBld(x,y,glowK){ctx.save();const col=A;ctx.strokeStyle=col;ctx.fillS
   ctx.fillRect(x-270,y-250,540,30);ctx.strokeRect(x-270,y-250,540,30);
   for(let i=0;i<5;i++){const cx=x-200+i*100;ctx.fillRect(cx-18,y-216,36,190);ctx.strokeRect(cx-18,y-216,36,190);}
   ctx.fillRect(x-290,y-24,580,24);ctx.strokeRect(x-290,y-24,580,24);noGlow();
-  ctx.font='800 40px Inter';ctx.letterSpacing='10px';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=col;ctx.fillText('BANKA',x+5,y-300);ctx.restore();}
+  ctx.font='800 40px Inter';ctx.letterSpacing='10px';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=col;ctx.fillText(L('BANKA','BANK'),x+5,y-300);ctx.restore();}
 function sceneF(t){
   room();
-  const bg=sm(50.6,50.9,t);
+  const bg=sm(T(50.6,50.35),T(50.9,50.65),t);
   bankBld(540,1390,bg);
-  const rows=[['TELEFON',8,12],['YENİ TELEFON',2,12],['KULAKLIK',1,6],['SAAT',1,9]];
+  const rows=[[L('TELEFON','PHONE'),8,12],[L('YENİ TELEFON','NEW PHONE'),2,12],[L('KULAKLIK','EARBUDS'),1,6],[L('SAAT','WATCH'),1,9]];
   rows.forEach((r,i)=>tk(540,450+i*80,r[0],r[1],r[2],1,0));
   // akan paralar
   for(let i=0;i<14;i++){const ph=((t-47.9)*0.9+i/14)%1;if(t<48.0)continue;const row=i%4;
@@ -339,29 +343,29 @@ function sceneF(t){
   const f=figure({x:150,y:STAND_Y,color:C.coral,...POSE.sad,facing:1,eyes:'tired'});
   hphone(f.hand[0],f.hand[1]-6,{col:A,rot:0.1});
   tag('SEN',f.head[0],f.head[1]-90,CO);
-  caption([[['Bu işten kim kazandı peki?',WH]]],47.8,49.6,t,62);
-  caption([[['Kim olacak... ',WH],['banka.',A]]],49.6,51.35,t,70);
+  caption(L([[['Bu işten kim kazandı peki?',WH]]],[[['So who won here?',WH]]]),47.8,T(49.6,49.35),t,62);
+  caption(L([[['Kim olacak... ',WH],['banka.',A]]],[[['Who else... ',WH],['the bank.',A]]]),T(49.6,49.35),51.35,t,70);
 }
 
 // ---------- FİNAL (51.48 – 62.5) ----------
 function finale(t){
   fade(0.86*sm(51.2,51.8,t)+0.1*sm(55.8,56.4,t),'5,10,20');
-  caption([[['Telefon',WH]],[['iki yılda ',TE],['eskiyor.',WH]]],51.5,56.0,t,70,620);
-  caption([[['Taksiti...',WH]],[['üç yıl ',CO],['sürüyor.',WH]]],53.75,56.0,t,70,860);
+  caption(L([[['Telefon',WH]],[['iki yılda ',TE],['eskiyor.',WH]]],[[['The phone gets old',WH]],[['in two years.',TE]]]),51.5,56.0,t,70,620);
+  caption(L([[['Taksiti...',WH]],[['üç yıl ',CO],['sürüyor.',WH]]],[[['The payments...',WH]],[['last three.',CO]]]),T(53.75,54.15),56.0,t,70,860);
   // çubuklar
   const ba=sm(51.6,52.0,t)*(1-sm(55.7,56.0,t));
   if(ba>0){ctx.save();ctx.globalAlpha=ba;const x0=170,full=740;
-    const b1=sm(52.1,53.0,t)*2/3,b2=sm(54.7,55.5,t);
+    const b1=sm(T(52.1,52.6),T(53.0,53.5),t)*2/3,b2=sm(T(54.7,55.0),T(55.5,55.8),t);
     ctx.font='700 26px Inter';ctx.letterSpacing='4px';ctx.textAlign='left';ctx.textBaseline='middle';
-    ctx.fillStyle=C.cream;ctx.fillText('TELEFON',x0,1110);ctx.fillText('TAKSİT',x0,1260);
+    ctx.fillStyle=C.cream;ctx.fillText(L('TELEFON','PHONE'),x0,1110);ctx.fillText(L('TAKSİT','PAYMENTS'),x0,1260);
     for(const [y,k,col] of [[1160,b1,TE],[1310,b2,CO]]){rr(x0,y-22,full,44,12);ctx.fillStyle=hexA(C.line,0.6);ctx.fill();
       if(k>0){rr(x0,y-22,full*k,44,12);ctx.fillStyle=col;glow(col,20);ctx.fill();noGlow();}}
     ctx.letterSpacing='0px';ctx.font='800 40px Inter';ctx.textAlign='right';
-    ctx.fillStyle=TE;ctx.globalAlpha=ba*sm(52.2,52.5,t);ctx.fillText('2 YIL',x0+full,1105);
-    ctx.fillStyle=CO;ctx.globalAlpha=ba*sm(54.8,55.1,t);ctx.fillText('3 YIL',x0+full,1255);
+    ctx.fillStyle=TE;ctx.globalAlpha=ba*sm(T(52.2,52.85),T(52.5,53.15),t);ctx.fillText(L('2 YIL','2 YRS'),x0+full,1105);
+    ctx.fillStyle=CO;ctx.globalAlpha=ba*sm(T(54.8,55.5),T(55.1,55.8),t);ctx.fillText(L('3 YIL','3 YRS'),x0+full,1255);
     ctx.restore();}
-  caption([[['Bir sonrakini',WH]],[['almadan önce,',WH]]],56.1,62.5,t,74,700);
-  caption([[['eskisinin',A]],[['taksitine bak.',A]]],57.8,62.5,t,80,960);
+  caption(L([[['Bir sonrakini',WH]],[['almadan önce,',WH]]],[[['Before you buy',WH]],[['the next one...',WH]]]),56.1,62.5,t,74,700);
+  caption(L([[['eskisinin',A]],[['taksitine bak.',A]]],[[['check what you still',A]],[['owe on this one.',A]]]),57.8,62.5,t,80,960);
   endCard(t,59.6);
 }
 

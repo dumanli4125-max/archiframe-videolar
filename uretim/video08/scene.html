@@ -120,7 +120,7 @@ function tatilWorld(t,o={}){
   const cols=['#5a6f9a','#9a5f6a','#6f8a5a','#c2b59b'];[[300,1384,44,16],[350,1380,40,18],[322,1362,36,14]].forEach(([cx,cy,rx,ry],i)=>{ctx.fillStyle=cols[i];ctx.beginPath();ctx.ellipse(cx,cy,rx,ry,(i-1)*0.2,0,7);ctx.fill();});
   desk(820,240);envelope(900,1250,-0.08);envelope(950,1242,0.1);envelope(995,1252,-0.04);
   hlBox(850,1200,200,80,o.env||0);
-  if(o.envTags>0){tag('KİRA',940,1150,CO,o.envTags);tag(L('KREDİ KARTI','CREDIT CARD'),920,1088,CO,o.envTags);}
+  if(o.envTags>0){tag('KİRA',900,1150,CO,o.envTags);tag(L('KREDİ KARTI','CREDIT CARD'),880,1088,CO,o.envTags);}
   // poz veren kişi
   const tired=o.tired||0;
   let p={x:540,y:STAND_Y,...POSE.stand,ua:150,fa:178+24*Math.sin(t*12)*(1-tired),ua2:40,fa2:110,lean:3,facing:1};

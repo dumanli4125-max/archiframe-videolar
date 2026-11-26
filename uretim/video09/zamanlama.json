@@ -1,0 +1,578 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 3.44,
+  "hiz": 0.85,
+  "metin": "Maaşın yatıyor, üç günde bitiyor. Neden?",
+  "kelimeler": [
+   {
+    "k": "Maaşın",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "yatıyor,",
+    "bas": 0.5,
+    "son": 1.1
+   },
+   {
+    "k": "üç",
+    "bas": 1.4,
+    "son": 1.6
+   },
+   {
+    "k": "günde",
+    "bas": 1.6,
+    "son": 1.8
+   },
+   {
+    "k": "bitiyor.",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "Neden?",
+    "bas": 3.0,
+    "son": 3.3
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 4.3,
+  "sure": 3.44,
+  "hiz": 0.8,
+  "metin": "Ayın on beşi. Telefon titredi: maaşınız yattı.",
+  "kelimeler": [
+   {
+    "k": "Ayın",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "on beşi.",
+    "bas": 0.5,
+    "son": 1.0
+   },
+   {
+    "k": "Telefon",
+    "bas": 1.5,
+    "son": 1.9
+   },
+   {
+    "k": "titredi,",
+    "bas": 1.9,
+    "son": 2.4
+   },
+   {
+    "k": "maaşınız",
+    "bas": 2.4,
+    "son": 2.9
+   },
+   {
+    "k": "yattı.",
+    "bas": 2.9,
+    "son": 3.4
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 8.2,
+  "sure": 3.92,
+  "hiz": 0.8,
+  "metin": "Hesapta... otuz bin lira. Bir oh dedin, bu ay rahatız.",
+  "kelimeler": [
+   {
+    "k": "Hesapta",
+    "bas": 0.3,
+    "son": 0.8
+   },
+   {
+    "k": "otuz bin",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "lira.",
+    "bas": 1.6,
+    "son": 1.8
+   },
+   {
+    "k": "Bir",
+    "bas": 2.3,
+    "son": 2.4
+   },
+   {
+    "k": "oh",
+    "bas": 2.4,
+    "son": 2.5
+   },
+   {
+    "k": "dedin.",
+    "bas": 2.5,
+    "son": 2.9
+   },
+   {
+    "k": "Bu",
+    "bas": 3.0,
+    "son": 3.1
+   },
+   {
+    "k": "ay",
+    "bas": 3.1,
+    "son": 3.2
+   },
+   {
+    "k": "rahatız.",
+    "bas": 3.2,
+    "son": 3.6
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 12.7,
+  "sure": 3.36,
+  "hiz": 0.85,
+  "metin": "Daha telefonu kapatmadan kapı çaldı. Ev sahibi.",
+  "kelimeler": [
+   {
+    "k": "Daha",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "telefonu",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "kapatmadan",
+    "bas": 0.7,
+    "son": 1.3
+   },
+   {
+    "k": "kapı",
+    "bas": 1.3,
+    "son": 1.5
+   },
+   {
+    "k": "çaldı.",
+    "bas": 1.5,
+    "son": 2.0
+   },
+   {
+    "k": "Ev",
+    "bas": 2.6,
+    "son": 2.7
+   },
+   {
+    "k": "sahibi.",
+    "bas": 2.7,
+    "son": 3.3
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 16.9,
+  "sure": 3.28,
+  "hiz": 0.8,
+  "metin": "Kira... on dört bin. Maaşın yarısı gitti bile.",
+  "kelimeler": [
+   {
+    "k": "Kira",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "on dört bin.",
+    "bas": 1.0,
+    "son": 1.5
+   },
+   {
+    "k": "Maaşın",
+    "bas": 2.0,
+    "son": 2.4
+   },
+   {
+    "k": "yarısı",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "gitti",
+    "bas": 2.7,
+    "son": 2.9
+   },
+   {
+    "k": "bile.",
+    "bas": 2.9,
+    "son": 3.1
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 20.8,
+  "sure": 4.72,
+  "hiz": 0.85,
+  "metin": "Arkasından faturalar geldi. Elektrik, su, doğalgaz.",
+  "kelimeler": [
+   {
+    "k": "Arkasından",
+    "bas": 0.1,
+    "son": 0.7
+   },
+   {
+    "k": "faturalar",
+    "bas": 0.7,
+    "son": 1.2
+   },
+   {
+    "k": "geldi.",
+    "bas": 1.2,
+    "son": 1.6
+   },
+   {
+    "k": "Elektrik,",
+    "bas": 2.3,
+    "son": 2.9
+   },
+   {
+    "k": "su,",
+    "bas": 3.2,
+    "son": 3.7
+   },
+   {
+    "k": "doğalgaz.",
+    "bas": 3.9,
+    "son": 4.6
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 26.1,
+  "sure": 3.84,
+  "hiz": 0.85,
+  "metin": "Sonra market. Sonra kredi kartı. Sonra taksit.",
+  "kelimeler": [
+   {
+    "k": "Sonra",
+    "bas": 0.2,
+    "son": 0.5
+   },
+   {
+    "k": "market,",
+    "bas": 0.5,
+    "son": 1.3
+   },
+   {
+    "k": "sonra",
+    "bas": 1.4,
+    "son": 1.7
+   },
+   {
+    "k": "kredi",
+    "bas": 1.7,
+    "son": 2.1
+   },
+   {
+    "k": "kartı,",
+    "bas": 2.1,
+    "son": 2.6
+   },
+   {
+    "k": "sonra",
+    "bas": 2.9,
+    "son": 3.2
+   },
+   {
+    "k": "taksit.",
+    "bas": 3.2,
+    "son": 3.7
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 31.0,
+  "sure": 4.88,
+  "hiz": 0.8,
+  "metin": "Üçüncü gün... hesaba baktın. Herkes payını almış, giden gitmiş.",
+  "kelimeler": [
+   {
+    "k": "Üçüncü",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "gün",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "hesaba",
+    "bas": 1.1,
+    "son": 1.5
+   },
+   {
+    "k": "baktın.",
+    "bas": 1.5,
+    "son": 1.9
+   },
+   {
+    "k": "Herkes",
+    "bas": 2.6,
+    "son": 2.9
+   },
+   {
+    "k": "payını",
+    "bas": 2.9,
+    "son": 3.3
+   },
+   {
+    "k": "almış,",
+    "bas": 3.3,
+    "son": 3.8
+   },
+   {
+    "k": "giden",
+    "bas": 3.9,
+    "son": 4.3
+   },
+   {
+    "k": "gitmiş.",
+    "bas": 4.3,
+    "son": 4.7
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 36.4,
+  "sure": 3.76,
+  "hiz": 0.8,
+  "metin": "Sana kalan... bozukluk. Cüzdanı masaya döktün.",
+  "kelimeler": [
+   {
+    "k": "Sana",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "kalan",
+    "bas": 0.4,
+    "son": 0.8
+   },
+   {
+    "k": "bozukluk.",
+    "bas": 1.4,
+    "son": 1.9
+   },
+   {
+    "k": "Cüzdanı",
+    "bas": 2.5,
+    "son": 2.9
+   },
+   {
+    "k": "masaya",
+    "bas": 2.9,
+    "son": 3.3
+   },
+   {
+    "k": "döktün.",
+    "bas": 3.3,
+    "son": 3.7
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 41.0,
+  "sure": 3.92,
+  "hiz": 0.8,
+  "metin": "O akşam kardeşin aradı: \"Okul gezisi var... beş yüz lira lazım.\"",
+  "kelimeler": [
+   {
+    "k": "O",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "akşam",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "kardeşin",
+    "bas": 0.6,
+    "son": 1.1
+   },
+   {
+    "k": "aradı.",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "Okul",
+    "bas": 1.5,
+    "son": 1.8
+   },
+   {
+    "k": "gezisi",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "var.",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "beş yüz",
+    "bas": 2.7,
+    "son": 3.2
+   },
+   {
+    "k": "lira",
+    "bas": 3.2,
+    "son": 3.4
+   },
+   {
+    "k": "lazım.",
+    "bas": 3.4,
+    "son": 3.8
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 45.5,
+  "sure": 3.12,
+  "hiz": 0.8,
+  "metin": "\"Bu ay da olmadı\" dedin. Geçen ay da öyle demiştin.",
+  "kelimeler": [
+   {
+    "k": "Bu",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "ay",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "da",
+    "bas": 0.4,
+    "son": 0.5
+   },
+   {
+    "k": "olmadı",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "dedin.",
+    "bas": 0.8,
+    "son": 1.2
+   },
+   {
+    "k": "Geçen",
+    "bas": 1.8,
+    "son": 2.1
+   },
+   {
+    "k": "ay",
+    "bas": 2.1,
+    "son": 2.2
+   },
+   {
+    "k": "da",
+    "bas": 2.2,
+    "son": 2.3
+   },
+   {
+    "k": "öyle",
+    "bas": 2.3,
+    "son": 2.5
+   },
+   {
+    "k": "demiştin.",
+    "bas": 2.5,
+    "son": 3.0
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 49.6,
+  "sure": 4.8,
+  "hiz": 0.8,
+  "metin": "Bu ay maaş yatınca... önce kendine küçük bir pay ayır. Yüz lira bile olsa.",
+  "kelimeler": [
+   {
+    "k": "Bu",
+    "bas": 0.1,
+    "son": 0.2
+   },
+   {
+    "k": "ay",
+    "bas": 0.2,
+    "son": 0.4
+   },
+   {
+    "k": "maaş",
+    "bas": 0.4,
+    "son": 0.7
+   },
+   {
+    "k": "yatınca",
+    "bas": 0.7,
+    "son": 1.3
+   },
+   {
+    "k": "önce",
+    "bas": 1.8,
+    "son": 2.0
+   },
+   {
+    "k": "kendine",
+    "bas": 2.0,
+    "son": 2.4
+   },
+   {
+    "k": "küçük",
+    "bas": 2.4,
+    "son": 2.7
+   },
+   {
+    "k": "bir",
+    "bas": 2.7,
+    "son": 2.8
+   },
+   {
+    "k": "pay",
+    "bas": 2.8,
+    "son": 3.1
+   },
+   {
+    "k": "ayır,",
+    "bas": 3.1,
+    "son": 3.4
+   },
+   {
+    "k": "yüz",
+    "bas": 3.7,
+    "son": 4.0
+   },
+   {
+    "k": "lira",
+    "bas": 4.0,
+    "son": 4.2
+   },
+   {
+    "k": "bile",
+    "bas": 4.2,
+    "son": 4.3
+   },
+   {
+    "k": "olsa.",
+    "bas": 4.3,
+    "son": 4.6
+   }
+  ]
+ }
+}
