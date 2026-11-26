@@ -1,0 +1,854 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 5.0,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Bal yiyorsun, normal. Böcek yiyen iğrenç mi? Hadi, düşünmeden söyle.",
+  "transkript": "Bal yiyorsun, normal. Böcek yiyen iğrenç mi? Hadi düşünmeden söyle.",
+  "bitis": 5.2,
+  "kelimeler": [
+   {
+    "k": "Bal",
+    "bas": 0.1,
+    "son": 0.2,
+    "mutlak": 0.4
+   },
+   {
+    "k": "yiyorsun,",
+    "bas": 0.2,
+    "son": 0.9,
+    "mutlak": 0.49
+   },
+   {
+    "k": "normal.",
+    "bas": 1.1,
+    "son": 1.5,
+    "mutlak": 1.36
+   },
+   {
+    "k": "Böcek",
+    "bas": 2.4,
+    "son": 2.6,
+    "mutlak": 2.61
+   },
+   {
+    "k": "yiyen",
+    "bas": 2.6,
+    "son": 2.9,
+    "mutlak": 2.8
+   },
+   {
+    "k": "iğrenç",
+    "bas": 2.9,
+    "son": 3.4,
+    "mutlak": 3.09
+   },
+   {
+    "k": "mi?",
+    "bas": 3.4,
+    "son": 3.6,
+    "mutlak": 3.57
+   },
+   {
+    "k": "Hadi",
+    "bas": 3.8,
+    "son": 4.2,
+    "mutlak": 3.95
+   },
+   {
+    "k": "düşünmeden",
+    "bas": 4.2,
+    "son": 4.7,
+    "mutlak": 4.34
+   },
+   {
+    "k": "söyle.",
+    "bas": 4.7,
+    "son": 5.1,
+    "mutlak": 4.82
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 5.5,
+  "sure": 5.0,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Sabah, kahvaltı masası. Ekmeği bala banıyorsun. Bala bayılıyorsun. Normal.",
+  "transkript": "Sabah kahvaltı masası. Ekmeği bala banıyorsun, bala bayılıyorsun. Normal.",
+  "bitis": 10.4,
+  "kelimeler": [
+   {
+    "k": "Sabah",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 5.6
+   },
+   {
+    "k": "kahvaltı",
+    "bas": 0.8,
+    "son": 1.2,
+    "mutlak": 6.27
+   },
+   {
+    "k": "masası.",
+    "bas": 1.2,
+    "son": 1.7,
+    "mutlak": 6.65
+   },
+   {
+    "k": "Ekmeği",
+    "bas": 2.2,
+    "son": 2.6,
+    "mutlak": 7.62
+   },
+   {
+    "k": "bala",
+    "bas": 2.6,
+    "son": 2.8,
+    "mutlak": 8.0
+   },
+   {
+    "k": "banıyorsun,",
+    "bas": 2.8,
+    "son": 3.4,
+    "mutlak": 8.19
+   },
+   {
+    "k": "bala",
+    "bas": 3.6,
+    "son": 3.8,
+    "mutlak": 8.96
+   },
+   {
+    "k": "bayılıyorsun.",
+    "bas": 3.8,
+    "son": 4.6,
+    "mutlak": 9.15
+   },
+   {
+    "k": "Normal.",
+    "bas": 4.7,
+    "son": 5.1,
+    "mutlak": 10.02
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 10.7,
+  "sure": 2.54,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Peki bu bal nereden geliyor, biliyor musun?",
+  "transkript": "Peki bu bal nereden geliyor? Biliyor musun?",
+  "bitis": 13.2,
+  "kelimeler": [
+   {
+    "k": "Peki",
+    "bas": 0.1,
+    "son": 0.2,
+    "mutlak": 10.8
+   },
+   {
+    "k": "bu",
+    "bas": 0.2,
+    "son": 0.4,
+    "mutlak": 10.89
+   },
+   {
+    "k": "bal",
+    "bas": 0.4,
+    "son": 0.6,
+    "mutlak": 11.08
+   },
+   {
+    "k": "nereden",
+    "bas": 0.6,
+    "son": 1.1,
+    "mutlak": 11.28
+   },
+   {
+    "k": "geliyor?",
+    "bas": 1.1,
+    "son": 1.7,
+    "mutlak": 11.76
+   },
+   {
+    "k": "Biliyor",
+    "bas": 1.9,
+    "son": 2.3,
+    "mutlak": 12.53
+   },
+   {
+    "k": "musun?",
+    "bas": 2.3,
+    "son": 2.6,
+    "mutlak": 12.91
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 13.4,
+  "sure": 5.69,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Arı çiçekten nektar topluyor. Kovana dönünce ağzından geri veriyor. Bal öyle oluyor.",
+  "transkript": "Arı çiçekten nektar topluyor. Kovana dönünce ağzından geri veriyor. Bal öyle oluyor.",
+  "bitis": 18.88,
+  "kelimeler": [
+   {
+    "k": "Arı",
+    "bas": 0.1,
+    "son": 0.2,
+    "mutlak": 13.5
+   },
+   {
+    "k": "çiçekten",
+    "bas": 0.2,
+    "son": 0.8,
+    "mutlak": 13.59
+   },
+   {
+    "k": "nektar",
+    "bas": 0.8,
+    "son": 1.2,
+    "mutlak": 14.17
+   },
+   {
+    "k": "topluyor.",
+    "bas": 1.2,
+    "son": 1.8,
+    "mutlak": 14.55
+   },
+   {
+    "k": "Kovana",
+    "bas": 2.2,
+    "son": 2.6,
+    "mutlak": 15.52
+   },
+   {
+    "k": "dönünce",
+    "bas": 2.6,
+    "son": 3.0,
+    "mutlak": 15.9
+   },
+   {
+    "k": "ağzından",
+    "bas": 3.0,
+    "son": 3.6,
+    "mutlak": 16.28
+   },
+   {
+    "k": "geri",
+    "bas": 3.6,
+    "son": 3.8,
+    "mutlak": 16.86
+   },
+   {
+    "k": "veriyor.",
+    "bas": 3.8,
+    "son": 4.2,
+    "mutlak": 17.05
+   },
+   {
+    "k": "Bal",
+    "bas": 4.7,
+    "son": 5.0,
+    "mutlak": 17.92
+   },
+   {
+    "k": "öyle",
+    "bas": 5.0,
+    "son": 5.3,
+    "mutlak": 18.21
+   },
+   {
+    "k": "oluyor.",
+    "bas": 5.3,
+    "son": 5.7,
+    "mutlak": 18.5
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 19.1,
+  "sure": 3.92,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Yani ekmeğe sürdüğün şey, arının ağzından çıktı. Yine de normal.",
+  "transkript": "Yani ekmeğe sürdüğün şey arının ağzından çıktı. Yine de normal.",
+  "bitis": 22.95,
+  "kelimeler": [
+   {
+    "k": "Yani",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 19.2
+   },
+   {
+    "k": "ekmeğe",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 19.48
+   },
+   {
+    "k": "sürdüğün",
+    "bas": 0.7,
+    "son": 1.1,
+    "mutlak": 19.77
+   },
+   {
+    "k": "şey",
+    "bas": 1.1,
+    "son": 1.6,
+    "mutlak": 20.16
+   },
+   {
+    "k": "arının",
+    "bas": 1.7,
+    "son": 2.1,
+    "mutlak": 20.73
+   },
+   {
+    "k": "ağzından",
+    "bas": 2.1,
+    "son": 2.5,
+    "mutlak": 21.12
+   },
+   {
+    "k": "çıktı.",
+    "bas": 2.5,
+    "son": 2.9,
+    "mutlak": 21.5
+   },
+   {
+    "k": "Yine",
+    "bas": 3.2,
+    "son": 3.4,
+    "mutlak": 22.18
+   },
+   {
+    "k": "de",
+    "bas": 3.4,
+    "son": 3.5,
+    "mutlak": 22.37
+   },
+   {
+    "k": "normal.",
+    "bas": 3.5,
+    "son": 4.0,
+    "mutlak": 22.47
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 23.2,
+  "sure": 5.62,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Şimdi başka bir ülke. Tezgâhta çekirge kızartması. Bizimkiler hemen bağırıyor: İğrenç!",
+  "transkript": "Şimdi başka bir ülke. Tezgahta çekirge kızartması. Bizimkiler hemen bağırıyor, iğrenç.",
+  "bitis": 28.68,
+  "kelimeler": [
+   {
+    "k": "Şimdi",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 23.3
+   },
+   {
+    "k": "başka",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 23.58
+   },
+   {
+    "k": "bir",
+    "bas": 0.7,
+    "son": 0.8,
+    "mutlak": 23.87
+   },
+   {
+    "k": "ülke.",
+    "bas": 0.8,
+    "son": 1.2,
+    "mutlak": 23.97
+   },
+   {
+    "k": "Tezgahta",
+    "bas": 1.8,
+    "son": 2.3,
+    "mutlak": 24.93
+   },
+   {
+    "k": "çekirge",
+    "bas": 2.3,
+    "son": 2.8,
+    "mutlak": 25.41
+   },
+   {
+    "k": "kızartması.",
+    "bas": 2.8,
+    "son": 3.4,
+    "mutlak": 25.89
+   },
+   {
+    "k": "Bizimkiler",
+    "bas": 4.1,
+    "son": 4.5,
+    "mutlak": 27.14
+   },
+   {
+    "k": "hemen",
+    "bas": 4.5,
+    "son": 4.8,
+    "mutlak": 27.53
+   },
+   {
+    "k": "bağırıyor,",
+    "bas": 4.8,
+    "son": 5.3,
+    "mutlak": 27.82
+   },
+   {
+    "k": "iğrenç.",
+    "bas": 5.3,
+    "son": 5.7,
+    "mutlak": 28.3
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 28.9,
+  "sure": 4.54,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Ama oradaki çocuk onu cips gibi, kıtır kıtır yiyor. Ona göre normal.",
+  "transkript": "Ama oradaki çocuk onu cips gibi kıtır kıtır yiyor. Ona göre normal.",
+  "bitis": 33.32,
+  "kelimeler": [
+   {
+    "k": "Ama",
+    "bas": 0.1,
+    "son": 0.3,
+    "mutlak": 29.0
+   },
+   {
+    "k": "oradaki",
+    "bas": 0.3,
+    "son": 0.7,
+    "mutlak": 29.19
+   },
+   {
+    "k": "çocuk",
+    "bas": 0.7,
+    "son": 1.1,
+    "mutlak": 29.57
+   },
+   {
+    "k": "onu",
+    "bas": 1.1,
+    "son": 1.3,
+    "mutlak": 29.96
+   },
+   {
+    "k": "cips",
+    "bas": 1.3,
+    "son": 1.7,
+    "mutlak": 30.15
+   },
+   {
+    "k": "gibi",
+    "bas": 1.7,
+    "son": 2.2,
+    "mutlak": 30.53
+   },
+   {
+    "k": "kıtır",
+    "bas": 2.4,
+    "son": 2.6,
+    "mutlak": 31.21
+   },
+   {
+    "k": "kıtır",
+    "bas": 2.6,
+    "son": 3.0,
+    "mutlak": 31.4
+   },
+   {
+    "k": "yiyor.",
+    "bas": 3.0,
+    "son": 3.4,
+    "mutlak": 31.78
+   },
+   {
+    "k": "Ona",
+    "bas": 3.8,
+    "son": 4.0,
+    "mutlak": 32.55
+   },
+   {
+    "k": "göre",
+    "bas": 4.0,
+    "son": 4.2,
+    "mutlak": 32.75
+   },
+   {
+    "k": "normal.",
+    "bas": 4.2,
+    "son": 4.6,
+    "mutlak": 32.94
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 33.6,
+  "sure": 6.15,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Fransa'da salyangoz. Peynirin içinde küf. Biri yüzünü ekşitiyor, öbürü afiyetle yiyor.",
+  "transkript": "Fransa'da Salyangoz. Peynirin içinde küf. Biri yüzünü ekşitiyor, öbürü afiyetle yiyor.",
+  "bitis": 39.56,
+  "kelimeler": [
+   {
+    "k": "Fransa'da",
+    "bas": 0.1,
+    "son": 0.6,
+    "mutlak": 33.7
+   },
+   {
+    "k": "Salyangoz.",
+    "bas": 0.6,
+    "son": 1.4,
+    "mutlak": 34.18
+   },
+   {
+    "k": "Peynirin",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 35.33
+   },
+   {
+    "k": "içinde",
+    "bas": 2.2,
+    "son": 2.5,
+    "mutlak": 35.72
+   },
+   {
+    "k": "küf.",
+    "bas": 2.5,
+    "son": 2.9,
+    "mutlak": 36.0
+   },
+   {
+    "k": "Biri",
+    "bas": 3.6,
+    "son": 3.7,
+    "mutlak": 37.06
+   },
+   {
+    "k": "yüzünü",
+    "bas": 3.7,
+    "son": 4.1,
+    "mutlak": 37.16
+   },
+   {
+    "k": "ekşitiyor,",
+    "bas": 4.1,
+    "son": 4.7,
+    "mutlak": 37.54
+   },
+   {
+    "k": "öbürü",
+    "bas": 5.0,
+    "son": 5.3,
+    "mutlak": 38.41
+   },
+   {
+    "k": "afiyetle",
+    "bas": 5.3,
+    "son": 5.8,
+    "mutlak": 38.7
+   },
+   {
+    "k": "yiyor.",
+    "bas": 5.8,
+    "son": 6.2,
+    "mutlak": 39.18
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 39.8,
+  "sure": 3.38,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Bize kokoreç lezzet. Turiste sorsan... iğrenç.",
+  "transkript": "Bize kokoreç lezzet, turiste sorsan iğrenç.",
+  "bitis": 43.07,
+  "kelimeler": [
+   {
+    "k": "Bize",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 39.9
+   },
+   {
+    "k": "kokoreç",
+    "bas": 0.4,
+    "son": 0.8,
+    "mutlak": 40.18
+   },
+   {
+    "k": "lezzet,",
+    "bas": 0.8,
+    "son": 1.4,
+    "mutlak": 40.57
+   },
+   {
+    "k": "turiste",
+    "bas": 1.7,
+    "son": 2.1,
+    "mutlak": 41.43
+   },
+   {
+    "k": "sorsan",
+    "bas": 2.1,
+    "son": 2.6,
+    "mutlak": 41.82
+   },
+   {
+    "k": "iğrenç.",
+    "bas": 2.9,
+    "son": 3.4,
+    "mutlak": 42.59
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 43.3,
+  "sure": 5.0,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Geçen akşam kokoreç yerken, yan masadaki turist yüzünü buruşturdu. Güldün.",
+  "transkript": "geçen akşam kokoreç yerken yan masadaki turist yüzünü buruşturdu. Güldün.",
+  "bitis": 48.3,
+  "kelimeler": [
+   {
+    "k": "geçen",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 43.4
+   },
+   {
+    "k": "akşam",
+    "bas": 0.4,
+    "son": 0.8,
+    "mutlak": 43.68
+   },
+   {
+    "k": "kokoreç",
+    "bas": 0.8,
+    "son": 1.3,
+    "mutlak": 44.07
+   },
+   {
+    "k": "yerken",
+    "bas": 1.3,
+    "son": 1.8,
+    "mutlak": 44.55
+   },
+   {
+    "k": "yan",
+    "bas": 2.3,
+    "son": 2.5,
+    "mutlak": 45.51
+   },
+   {
+    "k": "masadaki",
+    "bas": 2.5,
+    "son": 3.0,
+    "mutlak": 45.7
+   },
+   {
+    "k": "turist",
+    "bas": 3.0,
+    "son": 3.3,
+    "mutlak": 46.18
+   },
+   {
+    "k": "yüzünü",
+    "bas": 3.3,
+    "son": 3.6,
+    "mutlak": 46.47
+   },
+   {
+    "k": "buruşturdu.",
+    "bas": 3.6,
+    "son": 4.2,
+    "mutlak": 46.76
+   },
+   {
+    "k": "Güldün.",
+    "bas": 4.7,
+    "son": 5.2,
+    "mutlak": 47.82
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 48.5,
+  "sure": 5.54,
+  "hiz": 0.85,
+  "tempo": 1.04,
+  "metin": "Sonra durdun. Sen de çekirgeye aynı yüzü yapmıştın. Normal dediğin, büyüdüğün sofra.",
+  "transkript": "Sonra durdun. Sen de çekirgeye aynı yüzü yapmıştın. Normal dediğin büyüdüğün sofra.",
+  "bitis": 53.88,
+  "kelimeler": [
+   {
+    "k": "Sonra",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 48.6
+   },
+   {
+    "k": "durdun.",
+    "bas": 0.4,
+    "son": 0.8,
+    "mutlak": 48.88
+   },
+   {
+    "k": "Sen",
+    "bas": 1.4,
+    "son": 1.6,
+    "mutlak": 49.85
+   },
+   {
+    "k": "de",
+    "bas": 1.6,
+    "son": 1.7,
+    "mutlak": 50.04
+   },
+   {
+    "k": "çekirgeye",
+    "bas": 1.7,
+    "son": 2.2,
+    "mutlak": 50.13
+   },
+   {
+    "k": "aynı",
+    "bas": 2.2,
+    "son": 2.4,
+    "mutlak": 50.62
+   },
+   {
+    "k": "yüzü",
+    "bas": 2.4,
+    "son": 2.6,
+    "mutlak": 50.81
+   },
+   {
+    "k": "yapmıştın.",
+    "bas": 2.6,
+    "son": 3.1,
+    "mutlak": 51.0
+   },
+   {
+    "k": "Normal",
+    "bas": 3.7,
+    "son": 4.1,
+    "mutlak": 52.06
+   },
+   {
+    "k": "dediğin",
+    "bas": 4.1,
+    "son": 4.5,
+    "mutlak": 52.44
+   },
+   {
+    "k": "büyüdüğün",
+    "bas": 4.7,
+    "son": 5.2,
+    "mutlak": 53.02
+   },
+   {
+    "k": "sofra.",
+    "bas": 5.2,
+    "son": 5.6,
+    "mutlak": 53.5
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 54.1,
+  "sure": 4.0,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "metin": "Bir dahaki sefere iğrenç demeden önce... bir sor: Kime göre?",
+  "transkript": "Bir dahaki sefere iğrenç demeden önce bir sor. Kime göre?",
+  "bitis": 57.9,
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.3,
+    "mutlak": 54.2
+   },
+   {
+    "k": "dahaki",
+    "bas": 0.3,
+    "son": 0.6,
+    "mutlak": 54.4
+   },
+   {
+    "k": "sefere",
+    "bas": 0.6,
+    "son": 1.1,
+    "mutlak": 54.7
+   },
+   {
+    "k": "iğrenç",
+    "bas": 1.1,
+    "son": 1.5,
+    "mutlak": 55.2
+   },
+   {
+    "k": "demeden",
+    "bas": 1.5,
+    "son": 1.9,
+    "mutlak": 55.6
+   },
+   {
+    "k": "önce",
+    "bas": 1.9,
+    "son": 2.3,
+    "mutlak": 56.0
+   },
+   {
+    "k": "bir",
+    "bas": 2.6,
+    "son": 2.8,
+    "mutlak": 56.7
+   },
+   {
+    "k": "sor.",
+    "bas": 2.8,
+    "son": 3.2,
+    "mutlak": 56.9
+   },
+   {
+    "k": "Kime",
+    "bas": 3.3,
+    "son": 3.5,
+    "mutlak": 57.4
+   },
+   {
+    "k": "göre?",
+    "bas": 3.5,
+    "son": 3.8,
+    "mutlak": 57.6
+   }
+  ]
+ }
+}

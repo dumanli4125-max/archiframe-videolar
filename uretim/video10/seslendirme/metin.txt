@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır, videodaki başlangıç sn, hız, tempo, metin. Tümü transcribe ile doğrulandı.
+# l02 ilk denemede "kahvaltı" -> "kahvaltısı" duyuldu; "Sabah, kahvaltı masası." yapılıp yeniden üretildi.
+l01 0.3   0.85  1.04  Bal yiyorsun, normal. Böcek yiyen iğrenç mi? Hadi, düşünmeden söyle.
+l02 5.5   0.85  1.04  Sabah, kahvaltı masası. Ekmeği bala banıyorsun. Bala bayılıyorsun. Normal.
+l03 10.7  0.85  1.04  Peki bu bal nereden geliyor, biliyor musun?
+l04 13.4  0.85  1.04  Arı çiçekten nektar topluyor. Kovana dönünce ağzından geri veriyor. Bal öyle oluyor.
+l05 19.1  0.85  1.04  Yani ekmeğe sürdüğün şey, arının ağzından çıktı. Yine de normal.
+l06 23.2  0.85  1.04  Şimdi başka bir ülke. Tezgâhta çekirge kızartması. Bizimkiler hemen bağırıyor: İğrenç!
+l07 28.9  0.85  1.04  Ama oradaki çocuk onu cips gibi, kıtır kıtır yiyor. Ona göre normal.
+l08 33.6  0.85  1.04  Fransa'da salyangoz. Peynirin içinde küf. Biri yüzünü ekşitiyor, öbürü afiyetle yiyor.
+l09 39.8  0.85  1.04  Bize kokoreç lezzet. Turiste sorsan... iğrenç.
+l10 43.3  0.85  1.04  Geçen akşam kokoreç yerken, yan masadaki turist yüzünü buruşturdu. Güldün.
+l11 48.5  0.85  1.04  Sonra durdun. Sen de çekirgeye aynı yüzü yapmıştın. Normal dediğin, büyüdüğün sofra.
+l12 54.1  0.8  1.0  Bir dahaki sefere iğrenç demeden önce... bir sor: Kime göre?
