@@ -9,6 +9,7 @@ OUT=$(python3 -c "import json;print(json.load(open('$DIR/meta.json'))['$KEY'])")
 TMP=$(mktemp -d); mkdir -p "$OUTD"
 ( cd "$DIR" && PYTHONPATH="$ROOT/uretim/kit" python3 "$AUD" "$TMP/a.wav" )
 node "$ROOT/uretim/render.js" "$DIR/scene.html$Q" "$TMP/v.mp4" 30
-ffmpeg -y -loglevel error -i "$TMP/v.mp4" -i "$TMP/a.wav" -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k -shortest "$OUTD/$OUT"
+bash "$ROOT/uretim/kit/loudnorm.sh" "$TMP/a.wav" "$TMP/a.m4a"
+ffmpeg -y -loglevel error -i "$TMP/v.mp4" -i "$TMP/a.m4a" -c copy -shortest "$OUTD/$OUT"
 rm -rf "$TMP"
 echo "OK $OUTD/$OUT $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUTD/$OUT") sn"
