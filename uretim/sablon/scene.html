@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="../kit/engine.js"></script>
+<script>
+// ŞABLON — kopyala: cp -r uretim/sablon uretim/videoNN
+// Zaman çizelgesi: anlatım satırlarının başlangıçları audio.py'deki VO ile AYNI olmalı.
+const DURATION = 8;
+function scene(t){
+  room();
+  windowNight(600,560,380,440,{moon:true});
+  frame(120,640);
+  floorLamp(190,1);
+  sofa(270,370);
+  plant(75);
+  // SEN kanepede telefonla; 3. saniyede telefon titrer
+  const p=figure({x:440,y:1300,color:C.coral,...POSE.sitPhone,eyes:t>3?'wide':'open'});
+  phone(p.hand[0]+6,p.hand[1]-16,{lit:t>3,buzz:t>3&&t<4?1:0,t});
+  tag('SEN',p.head[0],p.head[1]-90,C.coral);
+  // yürüyen ikinci karakter (krem), 1-5 sn arası soldan sağa
+  const u=clamp((t-1)/4), pw=(t-1)*8.5;
+  if(t>1&&t<5.2) figure({x:lerp(-80,760,u),y:STAND_Y-walkBob(pw),color:C.cream,s:0.9,...walk(pw)});
+  caption([[['Örnek ','#fff'],['altyazı.','#ffb547']]],0.2,3,t);
+  caption([[['Telefon ','#fff'],['titriyor.','#ff6b5b']]],3,6,t);
+  fade(sm(6,6.5,t)*0.84,'5,10,20');
+  endCard(t,6.3);
+}
+K.run(DURATION, scene);
+</script></body></html>
