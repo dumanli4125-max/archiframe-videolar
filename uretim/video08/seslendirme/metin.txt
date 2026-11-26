@@ -1,0 +1,14 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır, videodaki başlangıç sn, hız, metin. Tümü transcribe ile doğrulandı.
+# l02 ilk denemede "sandalyede" -> "sandalye", l03 "zarf" -> "zar", l06 "hayatın" -> "hayatım" duyuldu; metin değiştirilip yeniden üretildi.
+l01 0.3   0.85  Paylaştığın fotoğrafın arkasında ne var? Hiç baktın mı?
+l02 3.9   0.85  Akşam eve geldin. Lavabo bulaşık dolu. Sandalyenin üstünde çamaşır yığını.
+l03 8.8   0.8   Masada üç tane zarf var. Elektrik, kira, kredi kartı.
+l04 13.9  0.85  Telefonu kaldırdın. Odanın tek temiz köşesini buldun.
+l05 17.6  0.85  Bir fincan kahve, bir kitap... Çektin, paylaştın.
+l06 21.8  0.85  Kalpler yağdı. Yorumlar geldi: Ne huzurlu! Senin hayatın ne güzel.
+l07 26.6  0.85  Sonra akışı kaydırdın. Biri tatilde, biri yeni araba almış, biri evleniyor.
+l08 32.3  0.85  Döndün, kendi odana baktın. Bulaşık, çamaşır, faturalar... Omuzların düştü.
+l09 38.9  0.8   Ama dur. O tatil fotoğrafının kadrajını biraz aç.
+l10 42.9  0.8   Arkada aynı zarflar, aynı bulaşık. Aynı yorgun surat.
+l11 47.4  0.85  Kimse bulaşık yığınını paylaşmıyor ki. Sen kendi dağınıklığını, onların vitriniyle kıyaslıyorsun.
+l12 54.3  0.8   Bugün kıyaslamadan önce... kadrajın dışına bak.

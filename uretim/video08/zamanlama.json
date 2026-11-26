@@ -1,0 +1,722 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 3.28,
+  "hiz": 0.85,
+  "metin": "Paylaştığın fotoğrafın arkasında ne var? Hiç baktın mı?",
+  "kelimeler": [
+   {
+    "k": "Paylaştığın",
+    "bas": 0.1,
+    "son": 0.7,
+    "mutlak": 0.4
+   },
+   {
+    "k": "fotoğrafın",
+    "bas": 0.7,
+    "son": 1.2,
+    "mutlak": 1.0
+   },
+   {
+    "k": "arkasında",
+    "bas": 1.2,
+    "son": 1.7,
+    "mutlak": 1.5
+   },
+   {
+    "k": "ne",
+    "bas": 1.7,
+    "son": 1.8,
+    "mutlak": 2.0
+   },
+   {
+    "k": "var?",
+    "bas": 1.8,
+    "son": 2.1,
+    "mutlak": 2.1
+   },
+   {
+    "k": "Hiç",
+    "bas": 2.5,
+    "son": 2.6,
+    "mutlak": 2.8
+   },
+   {
+    "k": "baktın",
+    "bas": 2.6,
+    "son": 3.1,
+    "mutlak": 2.9
+   },
+   {
+    "k": "mı?",
+    "bas": 3.1,
+    "son": 3.2,
+    "mutlak": 3.4
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 3.9,
+  "sure": 4.56,
+  "hiz": 0.85,
+  "metin": "Akşam eve geldin. Lavabo bulaşık dolu. Sandalyenin üstünde çamaşır yığını.",
+  "kelimeler": [
+   {
+    "k": "Akşam",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 4.0
+   },
+   {
+    "k": "eve",
+    "bas": 0.5,
+    "son": 0.6,
+    "mutlak": 4.4
+   },
+   {
+    "k": "geldin.",
+    "bas": 0.6,
+    "son": 1.1,
+    "mutlak": 4.5
+   },
+   {
+    "k": "Lavabo",
+    "bas": 1.2,
+    "son": 1.6,
+    "mutlak": 5.1
+   },
+   {
+    "k": "bulaşık",
+    "bas": 1.6,
+    "son": 2.0,
+    "mutlak": 5.5
+   },
+   {
+    "k": "dolu.",
+    "bas": 2.0,
+    "son": 2.3,
+    "mutlak": 5.9
+   },
+   {
+    "k": "Sandalyenin",
+    "bas": 2.8,
+    "son": 3.4,
+    "mutlak": 6.7
+   },
+   {
+    "k": "üstünde",
+    "bas": 3.4,
+    "son": 3.7,
+    "mutlak": 7.3
+   },
+   {
+    "k": "çamaşır",
+    "bas": 3.7,
+    "son": 4.2,
+    "mutlak": 7.6
+   },
+   {
+    "k": "yığını.",
+    "bas": 4.2,
+    "son": 4.4,
+    "mutlak": 8.1
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 8.8,
+  "sure": 4.8,
+  "hiz": 0.8,
+  "metin": "Masada üç tane zarf var. Elektrik, kira, kredi kartı.",
+  "kelimeler": [
+   {
+    "k": "Masada",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 8.9
+   },
+   {
+    "k": "üç",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 9.2
+   },
+   {
+    "k": "tane",
+    "bas": 0.7,
+    "son": 1.0,
+    "mutlak": 9.5
+   },
+   {
+    "k": "zarf",
+    "bas": 1.0,
+    "son": 1.4,
+    "mutlak": 9.8
+   },
+   {
+    "k": "var.",
+    "bas": 1.4,
+    "son": 1.6,
+    "mutlak": 10.2
+   },
+   {
+    "k": "Elektrik,",
+    "bas": 2.2,
+    "son": 2.9,
+    "mutlak": 11.0
+   },
+   {
+    "k": "kira,",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 12.0
+   },
+   {
+    "k": "kredi",
+    "bas": 3.9,
+    "son": 4.2,
+    "mutlak": 12.7
+   },
+   {
+    "k": "kartı.",
+    "bas": 4.2,
+    "son": 4.6,
+    "mutlak": 13.0
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 13.9,
+  "sure": 3.36,
+  "hiz": 0.85,
+  "metin": "Telefonu kaldırdın. Odanın tek temiz köşesini buldun.",
+  "kelimeler": [
+   {
+    "k": "Telefonu",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 14.0
+   },
+   {
+    "k": "kaldırdın.",
+    "bas": 0.5,
+    "son": 1.0,
+    "mutlak": 14.4
+   },
+   {
+    "k": "Odanın",
+    "bas": 1.6,
+    "son": 1.9,
+    "mutlak": 15.5
+   },
+   {
+    "k": "tek",
+    "bas": 1.9,
+    "son": 2.2,
+    "mutlak": 15.8
+   },
+   {
+    "k": "temiz",
+    "bas": 2.2,
+    "son": 2.5,
+    "mutlak": 16.1
+   },
+   {
+    "k": "köşesini",
+    "bas": 2.5,
+    "son": 2.9,
+    "mutlak": 16.4
+   },
+   {
+    "k": "buldun.",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 16.8
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 17.6,
+  "sure": 3.84,
+  "hiz": 0.85,
+  "metin": "Bir fincan kahve, bir kitap... Çektin, paylaştın.",
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.3,
+    "mutlak": 17.7
+   },
+   {
+    "k": "fincan",
+    "bas": 0.3,
+    "son": 0.7,
+    "mutlak": 17.9
+   },
+   {
+    "k": "kahve,",
+    "bas": 0.7,
+    "son": 1.2,
+    "mutlak": 18.3
+   },
+   {
+    "k": "bir",
+    "bas": 1.3,
+    "son": 1.5,
+    "mutlak": 18.9
+   },
+   {
+    "k": "kitap.",
+    "bas": 1.5,
+    "son": 2.3,
+    "mutlak": 19.1
+   },
+   {
+    "k": "Çektin,",
+    "bas": 2.4,
+    "son": 3.0,
+    "mutlak": 20.0
+   },
+   {
+    "k": "paylaştın.",
+    "bas": 3.1,
+    "son": 3.7,
+    "mutlak": 20.7
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 21.8,
+  "sure": 4.4,
+  "hiz": 0.85,
+  "metin": "Kalpler yağdı. Yorumlar geldi: Ne huzurlu! Senin hayatın ne güzel.",
+  "kelimeler": [
+   {
+    "k": "Kalpler",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 21.9
+   },
+   {
+    "k": "yağdı.",
+    "bas": 0.5,
+    "son": 1.0,
+    "mutlak": 22.3
+   },
+   {
+    "k": "Yorumlar",
+    "bas": 1.3,
+    "son": 1.8,
+    "mutlak": 23.1
+   },
+   {
+    "k": "geldi.",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 23.6
+   },
+   {
+    "k": "Ne",
+    "bas": 2.2,
+    "son": 2.3,
+    "mutlak": 24.0
+   },
+   {
+    "k": "huzurlu.",
+    "bas": 2.3,
+    "son": 2.9,
+    "mutlak": 24.1
+   },
+   {
+    "k": "Senin",
+    "bas": 3.1,
+    "son": 3.4,
+    "mutlak": 24.9
+   },
+   {
+    "k": "hayatın",
+    "bas": 3.4,
+    "son": 3.8,
+    "mutlak": 25.2
+   },
+   {
+    "k": "ne",
+    "bas": 3.8,
+    "son": 4.0,
+    "mutlak": 25.6
+   },
+   {
+    "k": "güzel.",
+    "bas": 4.0,
+    "son": 4.3,
+    "mutlak": 25.8
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 26.6,
+  "sure": 5.36,
+  "hiz": 0.85,
+  "metin": "Sonra akışı kaydırdın. Biri tatilde, biri yeni araba almış, biri evleniyor.",
+  "kelimeler": [
+   {
+    "k": "Sonra",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 26.7
+   },
+   {
+    "k": "akışı",
+    "bas": 0.5,
+    "son": 0.8,
+    "mutlak": 27.1
+   },
+   {
+    "k": "kaydırdın.",
+    "bas": 0.8,
+    "son": 1.3,
+    "mutlak": 27.4
+   },
+   {
+    "k": "Biri",
+    "bas": 1.7,
+    "son": 2.0,
+    "mutlak": 28.3
+   },
+   {
+    "k": "tatilde,",
+    "bas": 2.0,
+    "son": 2.6,
+    "mutlak": 28.6
+   },
+   {
+    "k": "biri",
+    "bas": 3.0,
+    "son": 3.2,
+    "mutlak": 29.6
+   },
+   {
+    "k": "yeni",
+    "bas": 3.2,
+    "son": 3.4,
+    "mutlak": 29.8
+   },
+   {
+    "k": "araba",
+    "bas": 3.4,
+    "son": 3.7,
+    "mutlak": 30.0
+   },
+   {
+    "k": "almış,",
+    "bas": 3.7,
+    "son": 4.2,
+    "mutlak": 30.3
+   },
+   {
+    "k": "biri",
+    "bas": 4.4,
+    "son": 4.6,
+    "mutlak": 31.0
+   },
+   {
+    "k": "evleniyor.",
+    "bas": 4.6,
+    "son": 5.2,
+    "mutlak": 31.2
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 32.3,
+  "sure": 6.0,
+  "hiz": 0.85,
+  "metin": "Döndün, kendi odana baktın. Bulaşık, çamaşır, faturalar... Omuzların düştü.",
+  "kelimeler": [
+   {
+    "k": "Döndün,",
+    "bas": 0.1,
+    "son": 0.8,
+    "mutlak": 32.4
+   },
+   {
+    "k": "kendi",
+    "bas": 0.9,
+    "son": 1.1,
+    "mutlak": 33.2
+   },
+   {
+    "k": "odana",
+    "bas": 1.1,
+    "son": 1.4,
+    "mutlak": 33.4
+   },
+   {
+    "k": "baktın.",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 33.7
+   },
+   {
+    "k": "Bulaşık,",
+    "bas": 2.2,
+    "son": 2.8,
+    "mutlak": 34.5
+   },
+   {
+    "k": "çamaşır,",
+    "bas": 3.0,
+    "son": 3.6,
+    "mutlak": 35.3
+   },
+   {
+    "k": "faturalar.",
+    "bas": 3.8,
+    "son": 4.4,
+    "mutlak": 36.1
+   },
+   {
+    "k": "Omuzların",
+    "bas": 5.0,
+    "son": 5.5,
+    "mutlak": 37.3
+   },
+   {
+    "k": "düştü.",
+    "bas": 5.5,
+    "son": 5.9,
+    "mutlak": 37.8
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 38.9,
+  "sure": 3.68,
+  "hiz": 0.8,
+  "metin": "Ama dur. O tatil fotoğrafının kadrajını biraz aç.",
+  "kelimeler": [
+   {
+    "k": "Ama",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 39.0
+   },
+   {
+    "k": "dur.",
+    "bas": 0.4,
+    "son": 0.5,
+    "mutlak": 39.3
+   },
+   {
+    "k": "O",
+    "bas": 1.3,
+    "son": 1.4,
+    "mutlak": 40.2
+   },
+   {
+    "k": "tatil",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 40.3
+   },
+   {
+    "k": "fotoğrafının",
+    "bas": 1.8,
+    "son": 2.4,
+    "mutlak": 40.7
+   },
+   {
+    "k": "kadrajını",
+    "bas": 2.4,
+    "son": 2.9,
+    "mutlak": 41.3
+   },
+   {
+    "k": "biraz",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 41.8
+   },
+   {
+    "k": "aç.",
+    "bas": 3.2,
+    "son": 3.5,
+    "mutlak": 42.1
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 42.9,
+  "sure": 4.16,
+  "hiz": 0.8,
+  "metin": "Arkada aynı zarflar, aynı bulaşık. Aynı yorgun surat.",
+  "kelimeler": [
+   {
+    "k": "Arkada",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 43.0
+   },
+   {
+    "k": "aynı",
+    "bas": 0.5,
+    "son": 0.8,
+    "mutlak": 43.4
+   },
+   {
+    "k": "zarflar,",
+    "bas": 0.8,
+    "son": 1.5,
+    "mutlak": 43.7
+   },
+   {
+    "k": "aynı",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 44.7
+   },
+   {
+    "k": "bulaşık,",
+    "bas": 2.2,
+    "son": 2.7,
+    "mutlak": 45.1
+   },
+   {
+    "k": "aynı",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 45.8
+   },
+   {
+    "k": "yorgun",
+    "bas": 3.2,
+    "son": 3.6,
+    "mutlak": 46.1
+   },
+   {
+    "k": "surat.",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 46.5
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 47.4,
+  "sure": 6.32,
+  "hiz": 0.85,
+  "metin": "Kimse bulaşık yığınını paylaşmıyor ki. Sen kendi dağınıklığını, onların vitriniyle kıyaslıyorsun.",
+  "kelimeler": [
+   {
+    "k": "Kimse",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 47.5
+   },
+   {
+    "k": "bulaşık",
+    "bas": 0.4,
+    "son": 0.8,
+    "mutlak": 47.8
+   },
+   {
+    "k": "yığınını",
+    "bas": 0.8,
+    "son": 1.1,
+    "mutlak": 48.2
+   },
+   {
+    "k": "paylaşmıyor",
+    "bas": 1.1,
+    "son": 1.8,
+    "mutlak": 48.5
+   },
+   {
+    "k": "ki.",
+    "bas": 1.8,
+    "son": 1.9,
+    "mutlak": 49.2
+   },
+   {
+    "k": "Sen",
+    "bas": 2.6,
+    "son": 2.9,
+    "mutlak": 50.0
+   },
+   {
+    "k": "kendi",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 50.3
+   },
+   {
+    "k": "dağınıklığını",
+    "bas": 3.2,
+    "son": 4.0,
+    "mutlak": 50.6
+   },
+   {
+    "k": "onların",
+    "bas": 4.3,
+    "son": 4.8,
+    "mutlak": 51.7
+   },
+   {
+    "k": "vitriniyle",
+    "bas": 4.8,
+    "son": 5.3,
+    "mutlak": 52.2
+   },
+   {
+    "k": "kıyaslıyorsun.",
+    "bas": 5.3,
+    "son": 6.1,
+    "mutlak": 52.7
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 54.3,
+  "sure": 3.2,
+  "hiz": 0.8,
+  "metin": "Bugün kıyaslamadan önce... kadrajın dışına bak.",
+  "kelimeler": [
+   {
+    "k": "Bugün",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 54.4
+   },
+   {
+    "k": "kıyaslamadan",
+    "bas": 0.4,
+    "son": 1.0,
+    "mutlak": 54.7
+   },
+   {
+    "k": "önce",
+    "bas": 1.0,
+    "son": 1.4,
+    "mutlak": 55.3
+   },
+   {
+    "k": "kadrajın",
+    "bas": 1.9,
+    "son": 2.4,
+    "mutlak": 56.2
+   },
+   {
+    "k": "dışına",
+    "bas": 2.4,
+    "son": 2.8,
+    "mutlak": 56.7
+   },
+   {
+    "k": "bak.",
+    "bas": 2.8,
+    "son": 3.0,
+    "mutlak": 57.1
+   }
+  ]
+ }
+}
