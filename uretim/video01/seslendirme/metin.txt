@@ -1,8 +1,8 @@
 # Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden), hız 0.85 (l02, l10: 0.8). Satır = dosya, başlangıç saniyesi
 l01 0.3   Mesain kaçta bitiyor? Hadi, düşünmeden söyle.
 l02 4.0   Kâğıtta yazan belli. Akşam... saat altı. Bilgisayarı kapattın, montunu kaptın...
-l03 10.3  Kapıdan çıktın mı, akşam artık senin. Öyle mi sanıyorsun?
-l04 14.8  Saat dokuz buçuk. Yemek yenmiş, çay demlenmiş. Kanepeye bir uzandın... Oh be.
+l03 10.3  Kapıdan çıktın mı, iş işte kalır. Hadi canım... Sen buna inandın mı?
+l04 15.35 Saat dokuz buçuk. Yemek yenmiş, çay demlenmiş. Kanepeye bir uzandın... Oh be.  (%7 hızlandırıldı)
 l05 21.4  Derken telefon titriyor. Bakıyorsun, patron. Müsait misin? Ufak bir şey.
 l06 27.4  Ufak bir şeymiş... Bir cevap yazıyorsun. Arkasından bir mesaj daha. Sonra bir tane daha.
 l07 34.0  İçeriden çocuğun sesi geliyor: Masal okur musun? Sen de diyorsun ki: Bir dakika.

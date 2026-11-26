@@ -4,14 +4,15 @@ rng=np.random.default_rng(1); HERE=os.path.dirname(os.path.abspath(__file__))
 def env(t0,dur,a=0.005,r=None):
     r=r or dur; x=t-t0; e=np.zeros(N); m=(x>=0)&(x<dur*3)
     xm=x[m]; e[m]=np.where(xm<a,xm/a,np.exp(-(xm-a)/r*4)); return e
-def load(path):
-    raw=subprocess.run(['ffmpeg','-loglevel','error','-i',path,'-f','s16le','-ac','1','-ar',str(SR),'-'],capture_output=True).stdout
+def load(path,tempo=1.0):
+    raw=subprocess.run(['ffmpeg','-loglevel','error','-i',path,'-af',f'atempo={tempo}','-f','s16le','-ac','1','-ar',str(SR),'-'],capture_output=True).stdout
     return np.frombuffer(raw,np.int16).astype(float)/32768
 # --- anlatım
-VO=[(0.3,'l01'),(4.0,'l02'),(10.3,'l03'),(14.8,'l04'),(21.4,'l05'),(27.4,'l06'),(34.0,'l07'),(39.0,'l08'),(44.3,'l09'),(50.6,'l10'),(56.6,'l11')]
+VO=[(0.3,'l01'),(4.0,'l02'),(10.3,'l03'),(15.35,'l04'),(21.4,'l05'),(27.4,'l06'),(34.0,'l07'),(39.0,'l08'),(44.3,'l09'),(50.6,'l10'),(56.6,'l11')]
 vo=np.zeros(N); act=np.zeros(N)
 for st,n in VO:
-    a=load(f'{HERE}/seslendirme/{n}.wav'); a/=np.sqrt(np.mean(a**2))+1e-9; a*=0.12
+    a=load(f'{HERE}/seslendirme/{n}.wav',1.07 if n=='l04' else 1.0)
+    a=a.copy(); a/=np.sqrt(np.mean(a**2))+1e-9; a*=0.12
     i=int(st*SR); vo[i:i+len(a)]+=a[:N-i]; act[i:i+len(a)]=1
 # ducking zarfı (yumuşatılmış)
 k=int(0.25*SR); duck=np.convolve(act,np.ones(k)/k,'same'); duck=1-0.55*duck
