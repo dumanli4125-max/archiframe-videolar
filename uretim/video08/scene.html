@@ -7,6 +7,7 @@
 const DURATION = 60.5;
 const AM=C.amber, CO=C.coral, TE=C.teal, CR=C.cream;
 const RED='#c0392b';
+const T=(tr,en)=>L(tr,en); // olay zamanı: TR / EN (İngilizce kelimeye göre kaydırma)
 
 // ---------- yardımcılar ----------
 function mouth(fig,f,s,k){const h=fig.head,x=h[0]+18*f*s,y=h[1]+15*s;ctx.save();ctx.strokeStyle=C.ink;ctx.lineWidth=5*s;ctx.lineCap='round';
@@ -68,7 +69,7 @@ function deskMess(x=800,hl=0,labels=null){desk(x,262);
   ctx.fillStyle='#3a4660';rr(x+20,1198,62,32,8);ctx.fill();ctx.fillRect(x+10,1196,82,8);
   envelope(x+130,1250,-0.08);envelope(x+180,1242,0.1);envelope(x+222,1252,-0.04);
   hlBox(x+70,1200,200,80,hl);
-  if(labels){const L3=[[L('ELEKTRİK','POWER'),x+100,1150],['KİRA',x+100,1088],[L('KREDİ KARTI','CREDIT CARD'),x+100,1026]];
+  if(labels){const L3=[[L('ELEKTRİK','ELECTRIC'),x+100,1150],['KİRA',x+100,1088],[L('KREDİ KARTI','CREDIT CARD'),x+100,1026]];
     L3.forEach(([s,lx,ly],i)=>{const a=labels[i];if(a>0){tag(s,lx,ly-(1-a)*14,CO,a);}});}
 }
 function sideTable(x=535,t=0){ // temiz köşe
@@ -156,10 +157,10 @@ const CROP=R(300,700,480,480);
 const CLEAN=R(440,1065,190,190);
 const DISH=R(10,990,290,290);
 const FEED=[
-  {name:'sen',col:CO,likes:248,src:CLEAN,fn:t=>roomWorld(t,{})},
-  {name:'deniz.tatilde',col:TE,likes:2418,src:CROP,fn:t=>tatilWorld(t,{})},
-  {name:'mert_garaj',col:AM,likes:3102,src:CROP,fn:t=>arabaWorld(t)},
-  {name:'selin&can',col:CR,likes:5870,src:CROP,fn:t=>dugunWorld(t)},
+  {name:L('sen','you'),col:CO,likes:248,src:CLEAN,fn:t=>roomWorld(t,{})},
+  {name:L('deniz.tatilde','dana.on.vacay'),col:TE,likes:2418,src:CROP,fn:t=>tatilWorld(t,{})},
+  {name:L('mert_garaj','mike_garage'),col:AM,likes:3102,src:CROP,fn:t=>arabaWorld(t)},
+  {name:L('selin&can','sara&chris'),col:CR,likes:5870,src:CROP,fn:t=>dugunWorld(t)},
 ];
 const fmtN=n=>LANG==='en'?n.toLocaleString('en-US'):String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
 // akış kartı: merkez (cx,cy), 640x770; fotoğraf 600x600
@@ -188,14 +189,14 @@ function sHook(t){
   ctx.restore();
   for(let i=0;i<7;i++){const t0=0.5+i*0.28,u=(t-t0)/1.4;if(u>0&&u<1)heart(780+((i*53)%120),1300-u*420,16+(i%3)*5,CO,(1-u));}
   // "Hiç baktın mı?": fotoğraf kadrajı dışı belirgin şekilde kararır + köşe işaretleri
-  const k=sm(2.7,3.3,t);
+  const k=sm(T(2.7,2.85),T(3.3,3.45),t);
   darkOutside(240,655,600,600,0.75*k);
   brackets(225,640,630,630,'#fff',k);
 }
 // B) Oda 3.9–13.7
 function sRoom(t){
-  roomWorld(t,{dish:sm(5.4,5.7,t)*(1-sm(7.4,7.7,t)),laundry:sm(7.5,7.8,t)*(1-sm(9.6,9.9,t)),env:sm(9.7,10.0,t)*(1-sm(13.2,13.6,t)),
-    labels:[sm(10.9,11.2,t),sm(11.9,12.2,t),sm(12.6,12.9,t)].map(v=>v*(1-sm(13.2,13.6,t)))});
+  roomWorld(t,{dish:sm(T(5.4,5.6),T(5.7,5.9),t)*(1-sm(7.4,7.7,t)),laundry:sm(7.5,7.8,t)*(1-sm(9.6,9.9,t)),env:sm(9.7,10.0,t)*(1-sm(13.2,13.6,t)),
+    labels:[sm(T(10.9,10.8),T(11.2,11.1),t),sm(T(11.9,11.6),T(12.2,11.9),t),sm(T(12.6,12.2),T(12.9,12.5),t)].map(v=>v*(1-sm(13.2,13.6,t)))});
   fade(0.22,'5,10,20');
   tag('EV',540,520,AM,0.9*sm(3.9,4.3,t));
   // kapı ışığı (sağ)
@@ -208,6 +209,7 @@ function sRoom(t){
 }
 // C) Fotoğraf 13.9–21.7
 const FOC=[535,1160];
+const SNAP=T(20.0,19.75); // deklanşör/flaş (EN: "Snap")
 function sPhoto(t){
   const k=sm(15.1,15.9,t),z=lerp(1,2,k),fx=lerp(540,FOC[0],k),fy=lerp(960,FOC[1],k);
   ctx.save();ctx.translate(540,960);ctx.scale(z,z);ctx.translate(-fx,-fy);
@@ -226,7 +228,7 @@ function sPhoto(t){
   // telefon arayüzü
   if(b>0){ctx.save();ctx.globalAlpha=b;
     ctx.fillStyle=CO;glow(CO,14);ctx.beginPath();ctx.arc(420,1260,9,0,7);ctx.fill();noGlow();txt(L('FOTOĞRAF','PHOTO'),440,1262,26,'rgba(239,228,207,.85)','left',700);
-    const press=t>20.0&&t<20.3?0.85:1;ctx.strokeStyle='#fff';ctx.lineWidth=7;ctx.beginPath();ctx.arc(540,1560,56,0,7);ctx.stroke();ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(540,1560,44*press,0,7);ctx.fill();
+    const press=t>SNAP&&t<SNAP+0.3?0.85:1;ctx.strokeStyle='#fff';ctx.lineWidth=7;ctx.beginPath();ctx.arc(540,1560,56,0,7);ctx.stroke();ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(540,1560,44*press,0,7);ctx.fill();
     ctx.restore();}
   // odak halkaları: fincan, kitap
   const fo=(t0,t1,x,y)=>{const a=sm(t0,t0+0.2,t)*(1-sm(t1-0.2,t1,t));if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.strokeStyle=AM;ctx.lineWidth=4;glow(AM,14);
@@ -234,14 +236,15 @@ function sPhoto(t){
   fo(17.85,18.9,540+(497-535)*2,960+(1160-1160)*2-10);
   fo(19.05,19.95,540+(576-535)*2,960+(1166-1160)*2);
   // flaş
-  fade(0.9*(1-sm(20.0,20.45,t))*(t>=20.0?1:0),'255,255,255');
+  fade(0.9*(1-sm(SNAP,SNAP+0.45,t))*(t>=SNAP?1:0),'255,255,255');
   // paylaşıldı
-  const sh=sm(20.65,20.95,t);
+  const sh=sm(T(20.65,20.5),T(20.95,20.8),t);
   if(sh>0){tag(L('PAYLAŞILDI','SHARED'),540,1680,TE,sh);}
 }
 // D+E) Gönderi + akış 21.7–32.3
 const PITCH=900;
-function feedScroll(t){return keyed(t,[[26.9,0],[27.9,PITCH],[29.4,PITCH],[29.95,2*PITCH],[30.6,2*PITCH],[31.15,3*PITCH]]);}
+function feedScroll(t){return keyed(t,L([[26.9,0],[27.9,PITCH],[29.4,PITCH],[29.95,2*PITCH],[30.6,2*PITCH],[31.15,3*PITCH]],
+  [[27.0,0],[28.2,PITCH],[29.75,PITCH],[30.3,2*PITCH],[30.85,2*PITCH],[31.4,3*PITCH]]));}
 function sFeed(t){
   room();fade(0.35,'5,10,20');
   const sc=feedScroll(t);
@@ -259,21 +262,21 @@ function sFeed(t){
     heart(920,y+dy,14,CO,0.9);ctx.restore();};
   // üst bant: altyazı okunaklı kalsın
   const tg=ctx.createLinearGradient(0,0,0,520);tg.addColorStop(0,'rgba(5,10,20,.97)');tg.addColorStop(0.75,'rgba(5,10,20,.9)');tg.addColorStop(1,'rgba(5,10,20,0)');ctx.fillStyle=tg;ctx.fillRect(0,0,W,520);
-  com(24.0,'ayse.k',L('Ne huzurlu!','So peaceful!'),1440,TE);
-  com(24.8,'mert_garaj',L('Senin hayatın ne güzel.','Your life looks so nice.'),1550,AM);
+  com(T(24.0,24.1),L('ayse.k','amy.k'),L('Ne huzurlu!','So peaceful!'),1440,TE);
+  com(T(24.8,25.3),L('mert_garaj','mike_garage'),L('Senin hayatın ne güzel.','Your life looks perfect.'),1550,AM);
 }
 // F) Kıyas 32.3–38.7
 function sCompare(t){
-  roomWorld(t,{noWindow:true,dish:sm(34.4,34.7,t)*(1-sm(35.1,35.4,t)),laundry:sm(35.2,35.5,t)*(1-sm(35.9,36.2,t)),env:sm(36.0,36.3,t)*(1-sm(37.2,37.6,t))});
+  roomWorld(t,{noWindow:true,dish:sm(T(34.4,34.85),T(34.7,35.15),t)*(1-sm(T(35.1,35.6),T(35.4,35.9),t)),laundry:sm(T(35.2,35.8),T(35.5,36.1),t)*(1-sm(T(35.9,36.5),T(36.2,36.8),t)),env:sm(T(36.0,36.7),T(36.3,37.0),t)*(1-sm(T(37.2,38.0),T(37.6,38.4),t))});
   fade(0.3,'5,10,20');
   // üstte vitrin kartları
   [1,2,3].forEach((i,j)=>{const x=105+j*300,y=560,a=sm(32.5+j*0.15,32.9+j*0.15,t);if(a<=0)return;const bob=Math.sin(t*1.6+j)*6;
     ctx.save();ctx.globalAlpha=a;rr(x-6,y-6+bob,282,282,14);ctx.fillStyle='rgba(16,30,54,.95)';glow(hexA(AM,0.5),30);ctx.fill();noGlow();ctx.strokeStyle=hexA(AM,0.8);ctx.lineWidth=3;ctx.stroke();
     inRect(()=>FEED[i].fn(t),FEED[i].src,R(x,y+bob,270,270));ctx.restore();});
-  tag(L('VİTRİN','SHOWCASE'),540,880,AM,0.9*sm(32.9,33.3,t));
-  const f=t<32.55?1:(t<35.2?-1:1);
-  const sad=sm(37.2,37.9,t);
-  let p={x:320,y:STAND_Y,...POSE.stand,ua:14,fa:30,facing:f,lean:4,look:t>36.5&&t<37.3?-5:1};
+  tag(L('VİTRİN','HIGHLIGHTS'),540,880,AM,0.9*sm(32.9,33.3,t));
+  const f=t<32.55?1:(t<T(35.2,35.8)?-1:1);
+  const sad=sm(T(37.2,38.05),T(37.9,38.6),t);
+  let p={x:320,y:STAND_Y,...POSE.stand,ua:14,fa:30,facing:f,lean:4,look:t>T(36.5,37.2)&&t<T(37.3,38.0)?-5:1};
   if(sad>0){p=blend(p,POSE.sad,sad);p.x=320;p.y=STAND_Y;p.facing=f;p.nodY=lerp(0,12,sad);}
   const sp=sen({...p,eyes:sad>0.5?'tired':'open'});mouth(sp,f,1,lerp(-0.2,-0.8,sad));
   phone(sp.hand[0]+6,sp.hand[1]-6,{lit:false,rot:0.4,t});
@@ -281,17 +284,18 @@ function sCompare(t){
 // G) Dönüm 38.9–47.3: tatil kadrajı açılır
 function sTwist(t){
   room();fade(0.35,'5,10,20');
-  const k=sm(41.2,42.7,t);
-  const chrome=1-sm(40.9,41.3,t);
+  const k=sm(T(41.2,41.9),T(42.7,43.3),t);
+  const chrome=1-sm(T(40.9,41.6),T(41.3,42.0),t);
   const it=FEED[1];
-  const o={tired:sm(46.0,46.6,t),dish:sm(45.0,45.3,t)*(1-sm(46.0,46.3,t)),env:sm(43.6,43.9,t)*(1-sm(45.0,45.3,t)),envTags:sm(43.7,44.0,t),label:sm(46.1,46.4,t)};
+  const o={tired:sm(T(46.0,46.6),T(46.6,47.1),t),dish:sm(T(45.0,45.5),T(45.3,45.8),t)*(1-sm(T(46.0,46.4),T(46.3,46.7),t)),env:sm(T(43.6,44.25),T(43.9,44.55),t)*(1-sm(T(45.0,45.4),T(45.3,45.7),t)),
+    envTags:sm(T(43.7,44.3),T(44.0,44.6),t),label:sm(T(46.1,46.65),T(46.4,46.95),t)};
   if(chrome>0) card(540,960,640,770,{stroke:it.col,alpha:chrome});
   if(chrome>0){ctx.save();ctx.globalAlpha=chrome;ctx.fillStyle=it.col;ctx.beginPath();ctx.arc(270,617,22,0,7);ctx.fill();txt(it.name,306,617,30,'#e9eef7');
     heart(268,1307,20,CO);txt(fmtN(it.likes)+L(' beğeni',' likes'),302,1307,30,'#e9eef7');ctx.restore();}
   const src=lerpR(CROP,R(0,430,1080,1080),k), dst=lerpR(R(240,655,600,600),R(0,430,1080,1080),k);
   inRect(()=>tatilWorld(t,o),src,dst);
   // kadraj işaretleri genişler
-  brackets(dst.x+14,dst.y+14,dst.w-28,dst.h-28,'#fff',sm(40.2,40.6,t)*(1-sm(42.8,43.4,t)));
+  brackets(dst.x+14,dst.y+14,dst.w-28,dst.h-28,'#fff',sm(40.2,40.6,t)*(1-sm(T(42.8,43.3),T(43.4,43.8),t)));
   // duraklat işareti
   const pa=sm(38.95,39.15,t)*(1-sm(39.9,40.3,t));
   if(pa>0){ctx.save();ctx.globalAlpha=pa;ctx.fillStyle='rgba(5,10,20,.55)';ctx.beginPath();ctx.arc(540,955,90,0,7);ctx.fill();ctx.fillStyle=AM;glow(AM,24);rr(505,905,24,100,6);ctx.fill();rr(551,905,24,100,6);ctx.fill();ctx.restore();}
@@ -302,9 +306,9 @@ function sTruth(t){
   room();fade(0.35,'5,10,20');
   if(t<50.0){
     const drop=sm(48.9,49.6,t);
-    const item={name:'sen',col:CO,likes:0,src:DISH,fn:()=>roomWorld(t,{})};
+    const item={name:L('sen','you'),col:CO,likes:0,src:DISH,fn:()=>roomWorld(t,{})};
     ctx.save();ctx.translate(0,drop*260);ctx.globalAlpha=1-drop;
-    card(540,960,640,770,{stroke:CO});ctx.fillStyle=CO;ctx.beginPath();ctx.arc(270,617,22,0,7);ctx.fill();txt('sen',306,617,30,'#e9eef7');
+    card(540,960,640,770,{stroke:CO});ctx.fillStyle=CO;ctx.beginPath();ctx.arc(270,617,22,0,7);ctx.fill();txt(L('sen','you'),306,617,30,'#e9eef7');
     tag(L('TASLAK','DRAFT'),760,617,CR,0.8);
     inRect(item.fn,item.src,R(240,655,600,600));
     // paylaş düğmesi (gri) + silme
@@ -326,8 +330,8 @@ function sTruth(t){
     brackets(R1.x+16,R1.y+16,R1.w-32,R1.h-32,'#fff',0.85,36,5);
     ctx.restore();
     tag(L('SENİN ODAN','YOUR ROOM'),280,570,CO,sm(50.5,50.8,t));
-    tag(L('ONLARIN VİTRİNİ','THEIR SHOWCASE'),800,570,AM,sm(52.1,52.4,t));
-    const vs=sm(52.7,52.95,t),pu=t>52.7?1+0.08*Math.sin((t-52.7)*10):1;
+    tag(L('ONLARIN VİTRİNİ','THEIR HIGHLIGHTS'),800,570,AM,sm(T(52.1,51.75),T(52.4,52.05),t));
+    const V0=T(52.7,52.35),vs=sm(V0,V0+0.25,t),pu=t>V0?1+0.08*Math.sin((t-V0)*10):1;
     if(vs>0){ctx.save();ctx.globalAlpha=vs;ctx.translate(540,980);ctx.scale(pu*(1.6-0.6*vs),pu*(1.6-0.6*vs));ctx.fillStyle='#0a1426';ctx.beginPath();ctx.arc(0,0,62,0,7);ctx.fill();
       ctx.lineWidth=5;ctx.strokeStyle=AM;glow(AM,24);ctx.stroke();noGlow();txt('VS',0,3,50,AM,'center',800);ctx.restore();}
   }
@@ -335,33 +339,34 @@ function sTruth(t){
 
 // ================= ALTYAZILAR =================
 function caps(t){
-  caption(L([[['Paylaştığın fotoğrafın','#fff']],[['arkasında ','#fff'],['ne var?',AM]]],[[['What\'s behind the photo','#fff']],[['you just ','#fff'],['posted?',AM]]]),0.2,2.75,t);
-  caption(L([[['Hiç baktın mı?',CO]]],[[['Ever looked?',CO]]]),2.7,3.85,t,74);
-  caption(L([[['Akşam eve geldin.','#fff']]],[[['You get home at night.','#fff']]]),3.9,5.05,t);
-  caption(L([[['Lavabo ','#fff'],['bulaşık',CO],[' dolu.','#fff']]],[[['Sink full of ','#fff'],['dishes.',CO]]]),5.0,6.65,t);
-  caption(L([[['Sandalyenin üstünde','#fff']],[['çamaşır yığını.',CO]]],[[['A pile of laundry','#fff']],[['on the chair.',CO]]]),6.6,8.6,t);
-  caption(L([[['Masada üç tane ','#fff'],['zarf',AM],[' var.','#fff']]],[[['Three ','#fff'],['envelopes',AM],[' on the table.','#fff']]]),8.8,10.95,t);
-  caption(L([[['Elektrik, kira,',CO]],[['kredi kartı.',CO]]],[[['Power, rent,',CO]],[['credit card.',CO]]]),10.9,13.7,t);
-  caption(L([[['Telefonu kaldırdın.','#fff']]],[[['You lift your phone.','#fff']]]),13.9,15.45,t);
-  caption(L([[['Odanın tek','#fff']],[['temiz köşesini',TE],[' buldun.','#fff']]],[[['You find the one','#fff']],[['clean corner.',TE]]]),15.4,17.45,t);
-  caption(L([[['Bir fincan kahve,','#fff']],[['bir kitap...','#fff']]],[[['A cup of coffee,','#fff']],[['a book...','#fff']]]),17.6,19.95,t);
-  caption(L([[['Çektin, paylaştın.',AM]]],[[['Snap. Posted.',AM]]]),19.9,21.6,t,74);
-  caption(L([[['Kalpler ','#fff'],['yağdı.',CO]]],[[['Hearts ','#fff'],['pour in.',CO]]]),21.8,23.05,t,74);
-  caption(L([[['Yorumlar geldi:','#fff']],[['"Ne huzurlu!"',TE]]],[[['The comments:','#fff']],[['"So peaceful!"',TE]]]),23.0,24.85,t);
-  caption(L([[['"Senin hayatın','#fff']],[['ne güzel."',TE]]],[[['"Your life looks','#fff']],[['so nice."',TE]]]),24.8,26.4,t);
-  caption(L([[['Sonra akışı kaydırdın.','#fff']]],[[['Then you scroll.','#fff']]]),26.6,28.45,t);
-  caption(L([[['Biri ','#fff'],['tatilde,',TE]],[['biri ','#fff'],['yeni araba',AM],[' almış,','#fff']]],[[['One\'s ','#fff'],['on vacation,',TE]],[['one got a ','#fff'],['new car,',AM]]]),28.4,30.95,t);
-  caption(L([[['biri ','#fff'],['evleniyor.',CR]]],[[['one\'s ','#fff'],['getting married.',CR]]]),30.9,32.1,t);
-  caption(L([[['Döndün, kendi','#fff']],[['odana baktın.','#fff']]],[[['You turn and look','#fff']],[['at your room.','#fff']]]),32.3,34.35,t);
-  caption(L([[['Bulaşık, çamaşır,',CO]],[['faturalar...',CO]]],[[['Dishes, laundry,',CO]],[['bills...',CO]]]),34.3,37.15,t);
-  caption(L([[['Omuzların ','#fff'],['düştü.',CO]]],[[['Your shoulders ','#fff'],['drop.',CO]]]),37.1,38.6,t);
-  caption(L([[['Ama dur.',AM]]],[[['But wait.',AM]]]),38.9,40.15,t,84);
-  caption(L([[['O tatil fotoğrafının','#fff']],[['kadrajını',AM],[' biraz aç.','#fff']]],[[['Zoom out on that','#fff']],[['vacation ','#fff'],['photo.',AM]]]),40.1,42.8,t);
-  caption(L([[['Arkada aynı ','#fff'],['zarflar,',CO]],[['aynı ','#fff'],['bulaşık.',CO]]],[[['Same ','#fff'],['envelopes,',CO]],[['same ','#fff'],['dishes.',CO]]]),42.9,45.95,t);
-  caption(L([[['Aynı ','#fff'],['yorgun surat.',CO]]],[[['Same ','#fff'],['tired face.',CO]]]),45.9,47.25,t,70);
-  caption(L([[['Kimse bulaşık yığınını','#fff']],[['paylaşmıyor ki.',AM]]],[[['Nobody posts','#fff']],[['their dirty dishes.',AM]]]),47.4,49.85,t);
-  caption(L([[['Sen kendi ','#fff'],['dağınıklığını,',CO]],[['onların ','#fff'],['vitriniyle...',AM]]],[[['You compare your ','#fff'],['mess',CO]],[['to their ','#fff'],['showcase.',AM]]]),49.9,52.65,t);
-  caption(L([[['...kıyaslıyorsun.','#fff']]],[[['Every single day.','#fff']]]),52.6,54.15,t,70);
+  const w='#fff';
+  caption(L([[['Paylaştığın fotoğrafın',w]],[['arkasında ',w],['ne var?',AM]]],[[['What\'s behind the photo',w]],[['you just ',w],['posted?',AM]]]),0.2,2.75,t);
+  caption(L([[['Hiç baktın mı?',CO]]],[[['Ever looked?',CO]]]),T(2.7,2.8),3.85,t,74);
+  caption(L([[['Akşam eve geldin.',w]]],[[['You get home at night.',w]]]),3.9,T(5.05,5.15),t);
+  caption(L([[['Lavabo ',w],['bulaşık',CO],[' dolu.',w]]],[[['The sink\'s full of ',w],['dishes.',CO]]]),T(5.0,5.1),T(6.65,7.05),t);
+  caption(L([[['Sandalyenin üstünde',w]],[['çamaşır yığını.',CO]]],[[['There\'s a pile of',w]],[['laundry',CO],[' on the chair.',w]]]),T(6.6,7.0),8.6,t);
+  caption(L([[['Masada üç tane ',w],['zarf',AM],[' var.',w]]],[[['Three ',w],['envelopes',AM]],[['on the table.',w]]]),8.8,T(10.95,10.75),t);
+  caption(L([[['Elektrik, kira,',CO]],[['kredi kartı.',CO]]],[[['Electric, rent,',CO]],[['credit card.',CO]]]),T(10.9,10.7),13.7,t);
+  caption(L([[['Telefonu kaldırdın.',w]]],[[['You pick up your phone.',w]]]),13.9,15.45,t);
+  caption(L([[['Odanın tek',w]],[['temiz köşesini',TE],[' buldun.',w]]],[[['And find the one ',w],['clean',TE]],[['corner',TE],[' in the room.',w]]]),15.4,T(17.45,17.5),t);
+  caption(L([[['Bir fincan kahve,',w]],[['bir kitap...',w]]],[[['A cup of coffee,',w]],[['a book...',w]]]),17.6,T(19.95,19.7),t);
+  caption(L([[['Çektin, paylaştın.',AM]]],[[['Snap. Posted.',AM]]]),T(19.9,19.65),21.6,t,74);
+  caption(L([[['Kalpler ',w],['yağdı.',CO]]],[[['Hearts ',w],['pour in.',CO]]]),21.8,T(23.05,23.15),t,74);
+  caption(L([[['Yorumlar geldi:',w]],[['"Ne huzurlu!"',TE]]],[[['Then the comments:',w]],[['"So peaceful!"',TE]]]),T(23.0,23.1),T(24.85,25.3),t);
+  caption(L([[['"Senin hayatın',w]],[['ne güzel."',TE]]],[[['"Your life looks',w]],[['perfect."',TE]]]),T(24.8,25.25),T(26.4,26.5),t);
+  caption(L([[['Sonra akışı kaydırdın.',w]]],[[['Then you scroll',w]],[['your feed.',w]]]),26.6,T(28.45,28.45),t);
+  caption(L([[['Biri ',w],['tatilde,',TE]],[['biri ',w],['yeni araba',AM],[' almış,',w]]],[[['One\'s ',w],['on vacation,',TE]],[['one got a ',w],['new car,',AM]]]),28.4,T(30.95,31.15),t);
+  caption(L([[['biri ',w],['evleniyor.',CR]]],[[['one\'s ',w],['getting married.',CR]]]),T(30.9,31.1),T(32.1,32.25),t);
+  caption(L([[['Döndün, kendi',w]],[['odana baktın.',w]]],[[['You turn around and',w]],[['look at your room.',w]]]),32.3,T(34.35,34.75),t);
+  caption(L([[['Bulaşık, çamaşır,',CO]],[['faturalar...',CO]]],[[['Dishes, laundry,',CO]],[['bills...',CO]]]),T(34.3,34.7),T(37.15,37.75),t);
+  caption(L([[['Omuzların ',w],['düştü.',CO]]],[[['Your shoulders ',w],['drop.',CO]]]),T(37.1,37.7),T(38.6,38.7),t);
+  caption(L([[['Ama dur.',AM]]],[[['But wait.',AM]]]),38.9,T(40.15,40.05),t,84);
+  caption(L([[['O tatil fotoğrafının',w]],[['kadrajını',AM],[' biraz aç.',w]]],[[['Take that',w]],[['vacation photo...',w]],[['and ',w],['zoom out',AM],[' a little.',w]]]),T(40.1,40.0),T(42.8,42.85),t);
+  caption(L([[['Arkada aynı ',w],['zarflar,',CO]],[['aynı ',w],['bulaşık.',CO]]],[[['Right behind it?',w]],[['Same ',w],['envelopes,',CO]]]),42.9,T(45.95,45.25),t);
+  caption(L([[['Aynı ',w],['yorgun surat.',CO]]],[[['same ',w],['dishes.',CO]],[['Same ',w],['tired face.',CO]]]),T(45.9,45.2),47.25,t,70);
+  caption(L([[['Kimse bulaşık yığınını',w]],[['paylaşmıyor ki.',AM]]],[[['Nobody posts',w]],[['their pile of dishes.',AM]]]),47.4,49.85,t);
+  caption(L([[['Sen kendi ',w],['dağınıklığını,',CO]],[['onların ',w],['vitriniyle...',AM]]],[[['You\'re comparing',w]],[['your ',w],['mess...',CO]]]),49.9,T(52.65,51.6),t);
+  caption(L([[['...kıyaslıyorsun.',w]]],[[['...to their',w]],[['highlight reel.',AM]]]),T(52.6,51.55),54.15,t,70);
 }
 
 function scene(t){
@@ -376,8 +381,8 @@ function scene(t){
   if(t<54.3) caps(t);
   // final
   fade(0.88*sm(54.1,54.6,t),'5,10,20');
-  caption(L([[['Bugün kıyaslamadan','#fff']],[['önce...','#fff']]],[[['Today, before','#fff']],[['you compare...','#fff']]]),54.3,60.5,t,74,760);
-  caption(L([[['kadrajın dışına bak.',AM]]],[[['look outside the frame.',AM]]]),56.1,60.5,t,78,1030);
+  caption(L([[['Bugün kıyaslamadan','#fff']],[['önce...','#fff']]],[[['Before you compare','#fff']],[['today...','#fff']]]),54.3,60.5,t,74,760);
+  caption(L([[['kadrajın dışına bak.',AM]]],[[['look outside',AM]],[['the frame.',AM]]]),T(56.1,56.0),60.5,t,78,L(1030,1000));
   const e=sm(56.2,57.2,t);
   brackets(lerp(150,70,e),lerp(960,640,e),lerp(780,940,e),lerp(140,560,e),TE,sm(56.1,56.4,t)*(1-sm(59.6,60.3,t))*0.9,50,6);
   endCard(t,57.6);

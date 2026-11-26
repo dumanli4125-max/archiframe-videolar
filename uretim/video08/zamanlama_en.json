@@ -1,0 +1,524 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "sure": 3.2,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "What's behind the photo you just posted? Ever looked?",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "posted?",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 1.7
+   },
+   {
+    "k": "Ever",
+    "bas": 2.6,
+    "son": 2.8,
+    "mutlak": 2.9
+   },
+   {
+    "k": "looked?",
+    "bas": 2.8,
+    "son": 3.2,
+    "mutlak": 3.1
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 3.9,
+  "sure": 5.2,
+  "hiz": 1.0,
+  "tempo": 1.05,
+  "metin": "You get home at night. The sink's full of dishes. There's a pile of laundry on the chair.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "night.",
+    "bas": 0.7,
+    "son": 1.2,
+    "mutlak": 4.57
+   },
+   {
+    "k": "sink's",
+    "bas": 1.5,
+    "son": 2.0,
+    "mutlak": 5.33
+   },
+   {
+    "k": "dishes.",
+    "bas": 2.4,
+    "son": 2.9,
+    "mutlak": 6.19
+   },
+   {
+    "k": "pile",
+    "bas": 3.5,
+    "son": 3.9,
+    "mutlak": 7.23
+   },
+   {
+    "k": "laundry",
+    "bas": 4.0,
+    "son": 4.5,
+    "mutlak": 7.71
+   },
+   {
+    "k": "chair.",
+    "bas": 4.7,
+    "son": 5.1,
+    "mutlak": 8.38
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 8.8,
+  "sure": 4.16,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "Three envelopes on the table. Electric... rent... credit card.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "envelopes",
+    "bas": 0.5,
+    "son": 1.0,
+    "mutlak": 9.3
+   },
+   {
+    "k": "electric,",
+    "bas": 2.0,
+    "son": 2.7,
+    "mutlak": 10.8
+   },
+   {
+    "k": "rent,",
+    "bas": 2.8,
+    "son": 3.3,
+    "mutlak": 11.6
+   },
+   {
+    "k": "credit",
+    "bas": 3.4,
+    "son": 3.7,
+    "mutlak": 12.2
+   },
+   {
+    "k": "card.",
+    "bas": 3.7,
+    "son": 4.0,
+    "mutlak": 12.5
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 13.9,
+  "sure": 4.0,
+  "hiz": 1.0,
+  "tempo": 1.08,
+  "metin": "You pick up your phone. And find the one clean corner in the room.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "phone",
+    "bas": 0.6,
+    "son": 1.0,
+    "mutlak": 14.46
+   },
+   {
+    "k": "find",
+    "bas": 2.0,
+    "son": 2.3,
+    "mutlak": 15.75
+   },
+   {
+    "k": "one",
+    "bas": 2.4,
+    "son": 2.8,
+    "mutlak": 16.12
+   },
+   {
+    "k": "clean",
+    "bas": 2.8,
+    "son": 3.1,
+    "mutlak": 16.49
+   },
+   {
+    "k": "corner",
+    "bas": 3.1,
+    "son": 3.5,
+    "mutlak": 16.77
+   },
+   {
+    "k": "room.",
+    "bas": 3.7,
+    "son": 4.1,
+    "mutlak": 17.33
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 17.6,
+  "sure": 3.52,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "A cup of coffee, a book... Snap. Posted.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "coffee,",
+    "bas": 0.5,
+    "son": 1.2,
+    "mutlak": 18.1
+   },
+   {
+    "k": "book,",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 19.0
+   },
+   {
+    "k": "snap,",
+    "bas": 2.1,
+    "son": 2.6,
+    "mutlak": 19.7
+   },
+   {
+    "k": "posted.",
+    "bas": 2.9,
+    "son": 3.4,
+    "mutlak": 20.5
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 21.8,
+  "sure": 5.28,
+  "hiz": 1.0,
+  "tempo": 1.08,
+  "metin": "Hearts pour in. Then the comments: So peaceful! Your life looks perfect.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "Hearts",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 21.89
+   },
+   {
+    "k": "comments,",
+    "bas": 1.8,
+    "son": 2.3,
+    "mutlak": 23.47
+   },
+   {
+    "k": "so",
+    "bas": 2.5,
+    "son": 2.8,
+    "mutlak": 24.11
+   },
+   {
+    "k": "peaceful.",
+    "bas": 2.8,
+    "son": 3.6,
+    "mutlak": 24.39
+   },
+   {
+    "k": "Your",
+    "bas": 3.8,
+    "son": 4.0,
+    "mutlak": 25.32
+   },
+   {
+    "k": "perfect.",
+    "bas": 4.5,
+    "son": 5.2,
+    "mutlak": 25.97
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 26.6,
+  "sure": 5.6,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "Then you scroll your feed. One's on vacation, one got a new car, one's getting married.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "scroll",
+    "bas": 0.5,
+    "son": 0.9,
+    "mutlak": 27.1
+   },
+   {
+    "k": "vacation,",
+    "bas": 2.4,
+    "son": 3.1,
+    "mutlak": 29.0
+   },
+   {
+    "k": "new",
+    "bas": 3.7,
+    "son": 3.9,
+    "mutlak": 30.3
+   },
+   {
+    "k": "car,",
+    "bas": 3.9,
+    "son": 4.4,
+    "mutlak": 30.5
+   },
+   {
+    "k": "getting",
+    "bas": 4.8,
+    "son": 5.1,
+    "mutlak": 31.4
+   },
+   {
+    "k": "married.",
+    "bas": 5.1,
+    "son": 5.6,
+    "mutlak": 31.7
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 32.3,
+  "sure": 6.72,
+  "hiz": 1.0,
+  "tempo": 1.02,
+  "metin": "You turn around and look at your room. Dishes, laundry, bills... Your shoulders drop.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "turn",
+    "bas": 0.3,
+    "son": 0.5,
+    "mutlak": 32.59
+   },
+   {
+    "k": "room.",
+    "bas": 1.6,
+    "son": 2.0,
+    "mutlak": 33.87
+   },
+   {
+    "k": "Dishes,",
+    "bas": 2.6,
+    "son": 3.4,
+    "mutlak": 34.85
+   },
+   {
+    "k": "laundry,",
+    "bas": 3.6,
+    "son": 4.4,
+    "mutlak": 35.83
+   },
+   {
+    "k": "bills.",
+    "bas": 4.5,
+    "son": 5.1,
+    "mutlak": 36.71
+   },
+   {
+    "k": "shoulders",
+    "bas": 5.7,
+    "son": 6.2,
+    "mutlak": 37.89
+   },
+   {
+    "k": "drop.",
+    "bas": 6.2,
+    "son": 6.6,
+    "mutlak": 38.38
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 38.9,
+  "sure": 4.0,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "But wait. Take that vacation photo... and zoom out a little.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "But",
+    "bas": 0.2,
+    "son": 0.3,
+    "mutlak": 39.1
+   },
+   {
+    "k": "wait.",
+    "bas": 0.3,
+    "son": 0.6,
+    "mutlak": 39.2
+   },
+   {
+    "k": "vacation",
+    "bas": 1.6,
+    "son": 2.1,
+    "mutlak": 40.5
+   },
+   {
+    "k": "photo",
+    "bas": 2.1,
+    "son": 2.4,
+    "mutlak": 41.0
+   },
+   {
+    "k": "zoom",
+    "bas": 3.1,
+    "son": 3.4,
+    "mutlak": 42.0
+   },
+   {
+    "k": "out",
+    "bas": 3.4,
+    "son": 3.5,
+    "mutlak": 42.3
+   },
+   {
+    "k": "little.",
+    "bas": 3.6,
+    "son": 3.9,
+    "mutlak": 42.5
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 42.9,
+  "sure": 4.88,
+  "hiz": 1.0,
+  "tempo": 1.07,
+  "metin": "Right behind it? Same envelopes. Same dishes. Same tired face.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "behind",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 43.27
+   },
+   {
+    "k": "envelopes,",
+    "bas": 1.5,
+    "son": 2.2,
+    "mutlak": 44.3
+   },
+   {
+    "k": "dishes,",
+    "bas": 2.8,
+    "son": 3.4,
+    "mutlak": 45.52
+   },
+   {
+    "k": "tired",
+    "bas": 4.0,
+    "son": 4.4,
+    "mutlak": 46.64
+   },
+   {
+    "k": "face.",
+    "bas": 4.4,
+    "son": 4.7,
+    "mutlak": 47.01
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 47.4,
+  "sure": 5.36,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "Nobody posts their pile of dishes. You're comparing your mess... to their highlight reel.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "posts",
+    "bas": 0.5,
+    "son": 0.9,
+    "mutlak": 47.9
+   },
+   {
+    "k": "dishes.",
+    "bas": 1.5,
+    "son": 2.0,
+    "mutlak": 48.9
+   },
+   {
+    "k": "comparing",
+    "bas": 2.7,
+    "son": 3.2,
+    "mutlak": 50.1
+   },
+   {
+    "k": "mess",
+    "bas": 3.4,
+    "son": 4.1,
+    "mutlak": 50.8
+   },
+   {
+    "k": "highlight",
+    "bas": 4.4,
+    "son": 4.9,
+    "mutlak": 51.8
+   },
+   {
+    "k": "reel.",
+    "bas": 4.9,
+    "son": 5.2,
+    "mutlak": 52.3
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 54.3,
+  "sure": 3.04,
+  "hiz": 1.0,
+  "tempo": 1,
+  "metin": "Before you compare today... look outside the frame.",
+  "not": "bas/son: dosyaya göre (tempo öncesi); mutlak: videoda (tempo sonrası)",
+  "kelimeler": [
+   {
+    "k": "Before",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 54.4
+   },
+   {
+    "k": "compare",
+    "bas": 0.6,
+    "son": 0.9,
+    "mutlak": 54.9
+   },
+   {
+    "k": "today,",
+    "bas": 0.9,
+    "son": 1.4,
+    "mutlak": 55.2
+   },
+   {
+    "k": "look",
+    "bas": 1.7,
+    "son": 2.0,
+    "mutlak": 56.0
+   },
+   {
+    "k": "outside",
+    "bas": 2.0,
+    "son": 2.4,
+    "mutlak": 56.3
+   },
+   {
+    "k": "frame.",
+    "bas": 2.5,
+    "son": 3.0,
+    "mutlak": 56.8
+   }
+  ]
+ }
+}
