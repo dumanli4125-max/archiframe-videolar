@@ -236,7 +236,7 @@ function scene(t){
     ctx.beginPath();ctx.moveTo(SUNX-30,SUNY);ctx.lineTo(SUNX+30,SUNY);ctx.lineTo(sen.head[0]+90,sen.head[1]+40);ctx.lineTo(sen.head[0]-90,sen.head[1]+40);ctx.closePath();ctx.fill();ctx.restore();}
 
   // etiketler
-  tag('SEN',sen.head[0],sen.head[1]-(t>SENUMB&&t<SENCLOSE+0.4?250:90),C.coral);
+  tag('SEN',sen.head[0],sen.head[1]-(t>SENUMB&&t<SENCLOSE+0.4?250:175),C.coral);
   const kingTagA=sm(6.6,7.0,t)*(1-sm(KGONE,KGONE+0.3,t));
   tag(L('SULTAN','THE KING'),SKX,535,C.amber,kingTagA);
   if(sh) tag(L('SULTAN','THE KING'),SKX,KTOP-16-400-38,C.amber,sm(SCREEN-0.6,SCREEN-0.2,t)*(1-sm(FIN,FIN+0.5,t)));

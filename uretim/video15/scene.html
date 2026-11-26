@@ -154,7 +154,7 @@ function youngCrouch(x,dr,{f=-1,o2=null,k=0,tagA=0,s=null}={}){s=s??(0.9-0.1*dr)
 // ---------------- SAHNE 0: KANCA (0 – 4.3) ----------------
 function sHook(t){
   beach(t);fire(t);bucket(t);
-  youngCrouch(440,0.3,{f:1,o2:{ua:30,fa:40,ua2:20,fa2:30,lean:8},k:1});
+  youngCrouch(425,0.3,{f:1,o2:{ua:30,fa:40,ua2:20,fa2:30,lean:8},k:1});
   // balıkçı ayakta: bir elinde balık, bir elinde olta
   const lift=sm(0.3,1.2,t);
   const o=blend({...POSE.stand},{...POSE.stand,ua:120,fa:150,ua2:-125,fa2:-150},lift);
@@ -376,8 +376,8 @@ function sTurn(t){
     if(t>44.85&&t<46.35){ctx.strokeStyle=hexA(CRM,0.5);ctx.lineWidth=3;for(let i=0;i<2;i++){const u=((t-44.85)*1.4+i*0.5)%1;ctx.beginPath();ctx.ellipse(WP[0]-10,WP[1]+14,14+u*50,4+u*10,0,0,7);ctx.globalAlpha=1-u;ctx.stroke();ctx.globalAlpha=1;}}
     [[41.5],[42.9],[44.1]].forEach(([l])=>{ripple(WP[0],WP[1],t,l);splash(WP[0],WP[1],t,l);});
     splash(WP[0],WP[1],t,46.35);
-    if(t>41.9&&t<42.8)tag(L('BOŞ','NOTHING'),end[0]-70,end[1]-60,CO,sm(41.95,42.15,t)*(1-sm(42.5,42.8,t)));
-    if(t>43.25&&t<44.0)tag(L('BOŞ','NOTHING'),end[0]-70,end[1]-60,CO,sm(43.3,43.5,t)*(1-sm(43.75,44.0,t)));
+    if(t>41.9&&t<42.8)tag(L('BOŞ','NOTHING'),900,1580,CO,sm(41.95,42.15,t)*(1-sm(42.5,42.8,t)));
+    if(t>43.25&&t<44.0)tag(L('BOŞ','NOTHING'),900,1580,CO,sm(43.3,43.5,t)*(1-sm(43.75,44.0,t)));
   }
   if(t>=47.25&&YP){fish(YP.hand[0]+4,YP.hand[1]-16,1.05,-0.6);
     rod(YP.handB[0],YP.handB[1]+4,-0.7,260,0);}
@@ -405,7 +405,7 @@ function sNext(t){
   no.lean-=catchK*12;
   if(t>55.1)no={...no,ua:140,fa:165,ua2:40,fa2:70};
   const N=figure({x:CR2,y:1344,color:CRM,s,...no,facing:1,eyes:happy>0.5?'tired':(t<50.6?'tired':'open'),look:6*(1-happy)});
-  tag(L('BAŞKA BİRİ','SOMEONE NEW'),N.head[0]-30,N.head[1]-88*s-8,CRM,sm(49.9,50.2,t)*(1-sm(52.2,52.5,t)));
+  tag(L('BAŞKA BİRİ','SOMEONE NEW'),CR2-10,1480,CRM,sm(49.9,50.2,t)*(1-sm(52.2,52.5,t)));
   const tip=rod(t>55.1?N.handB[0]:N.hand[0]+4,t>55.1?N.handB[1]+4:N.hand[1]+6,t>55.1?-0.7:-0.95,t>55.1?260:290,catchK);
   if(t<54.65){line(tip,[WP[0],WP[1]+Math.sin(t*2.4)*5+catchK*16],catchK);}
   else if(t<55.1){const u=sm(54.65,55.05,t);const e=castArc(tip,1-u);line(tip,e,1,{bob:false});fish(e[0],e[1]+20,0.85,1.3);}
