@@ -63,6 +63,7 @@ videolar/             çıktı MP4'ler (NN-kisa-ad.mp4)
      (ses: Cartesia "Emre"; sayı/saat içeren ya da vurgulu satırlarda `speed` 0.8)
    - Sonuç büyük olduğu için dosyaya kaydedilir. Hata metnindeki dosyayı JSON olarak oku: `d[0].text` içinde
      `saved to <...>.wav` yolu (ses), `d[1].text` JSON'unda `url` (15 dk geçerli). WAV'ı `seslendirme/lXX.wav` olarak kopyala.
+   - **Paralel çalışan ajanlar aynı tool-results klasörünü paylaşır:** WAV yolunu yalnızca KENDİ çağrının döndürdüğü sonuç dosyasından al; klasörü glob/ls ile tarayıp dosya seçme.
    - `mcp__Speko__audio_transcribe` (`audio_url`=url, `language`="tr", `word_timestamps`=true) ile **mutlaka** doğrula:
      kelimeler doğru mu, sayılar doğru okunuyor mu. Önemli kelimelerin ms zamanlarını `zamanlama.json`'a yaz.
    - Telaffuz bozuksa metni değiştirip yeniden üret (noktalama/üç nokta ile duraklama ver).
