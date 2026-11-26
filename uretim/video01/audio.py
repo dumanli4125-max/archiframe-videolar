@@ -8,7 +8,7 @@ def load(path):
     raw=subprocess.run(['ffmpeg','-loglevel','error','-i',path,'-f','s16le','-ac','1','-ar',str(SR),'-'],capture_output=True).stdout
     return np.frombuffer(raw,np.int16).astype(float)/32768
 # --- anlatım
-VO=[(0.3,'l01'),(4.0,'l02'),(9.3,'l03'),(14.8,'l04'),(21.4,'l05'),(27.4,'l06'),(34.0,'l07'),(39.0,'l08'),(44.3,'l09'),(50.6,'l10'),(56.6,'l11')]
+VO=[(0.3,'l01'),(4.0,'l02'),(10.3,'l03'),(14.8,'l04'),(21.4,'l05'),(27.4,'l06'),(34.0,'l07'),(39.0,'l08'),(44.3,'l09'),(50.6,'l10'),(56.6,'l11')]
 vo=np.zeros(N); act=np.zeros(N)
 for st,n in VO:
     a=load(f'{HERE}/seslendirme/{n}.wav'); a/=np.sqrt(np.mean(a**2))+1e-9; a*=0.12
@@ -29,7 +29,7 @@ for t0,f in [(34.2,440),(35.4,392),(36.6,349.2),(39.2,329.6),(40.6,293.7),(42.4,
 for kk in np.arange(0.3,7.6,0.11):
     kk+=rng.uniform(-0.03,0.03); sfx+=0.04*rng.standard_normal(N)*env(kk,0.02,0.001,0.015)
 for kk in np.arange(8.6,12.1,60/150): sfx+=0.22*np.sin(2*np.pi*70*(t-kk))*env(kk,0.06,0.002,0.05)
-sfx+=0.15*np.sin(2*np.pi*1200*t)*env(6.0,0.05,0.001,0.04)
+sfx+=0.15*np.sin(2*np.pi*1200*t)*env(6.9,0.05,0.001,0.04)
 m=(t>21.4)&(t<22.3)&((((t-21.4)*6)%1)<0.6); sfx+=0.09*np.sign(np.sin(2*np.pi*150*t))*m
 for kk in [24.0,30.2,31.4,32.6]:
     sfx+=0.14*(np.sin(2*np.pi*1318*t)+0.5*np.sin(2*np.pi*1975*t))*env(kk,0.25,0.003,0.2)
