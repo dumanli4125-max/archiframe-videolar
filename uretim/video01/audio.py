@@ -8,7 +8,7 @@ def load(path):
     raw=subprocess.run(['ffmpeg','-loglevel','error','-i',path,'-f','s16le','-ac','1','-ar',str(SR),'-'],capture_output=True).stdout
     return np.frombuffer(raw,np.int16).astype(float)/32768
 # --- anlatım
-VO=[(0.3,'l01'),(4.0,'l02'),(9.3,'l03'),(14.8,'l04'),(21.4,'l05'),(27.4,'l06'),(34.0,'l07'),(39.0,'l08'),(44.3,'l09'),(50.6,'l10'),(56.3,'l11')]
+VO=[(0.3,'l01'),(4.0,'l02'),(9.3,'l03'),(14.8,'l04'),(21.4,'l05'),(27.4,'l06'),(34.0,'l07'),(39.0,'l08'),(44.3,'l09'),(50.6,'l10'),(56.6,'l11')]
 vo=np.zeros(N); act=np.zeros(N)
 for st,n in VO:
     a=load(f'{HERE}/seslendirme/{n}.wav'); a/=np.sqrt(np.mean(a**2))+1e-9; a*=0.12
@@ -23,7 +23,7 @@ music=pad*padgain
 # hüzünlü piyano benzeri notalar (çocuk sahnesi ve final)
 def note(t0,f,g=0.08,dur=2.5):
     e=env(t0,dur,0.01,dur); return g*e*(np.sin(2*np.pi*f*t)+0.3*np.sin(2*np.pi*2*f*t)+0.1*np.sin(2*np.pi*3*f*t))
-for t0,f in [(34.2,440),(35.4,392),(36.6,349.2),(39.2,329.6),(40.6,293.7),(42.4,261.6),(50.6,220),(52.9,196),(56.3,261.6),(58.0,329.6),(59.3,392)]:
+for t0,f in [(34.2,440),(35.4,392),(36.6,349.2),(39.2,329.6),(40.6,293.7),(42.4,261.6),(50.6,220),(53.0,196),(56.6,261.6),(58.3,329.6),(59.3,392)]:
     music+=note(t0,f)
 # --- efektler
 for kk in np.arange(0.3,7.6,0.11):
@@ -36,7 +36,7 @@ for kk in [24.0,30.2,31.4,32.6]:
     sfx+=0.10*np.sin(2*np.pi*1760*t)*env(kk+0.09,0.25,0.003,0.2)
 for kk in list(np.arange(33.7,35.5,0.32))+list(np.arange(40.0,41.6,0.32)): sfx+=0.08*np.sin(2*np.pi*95*(t-kk))*env(kk,0.05,0.002,0.04)
 sfx+=0.2*rng.standard_normal(N)*env(41.85,0.01,0.0005,0.008)  # ışık düğmesi
-for kk,f in [(50.6,45),(52.9,40)]:
+for kk,f in [(50.6,45),(53.0,40)]:
     sfx+=0.35*np.sin(2*np.pi*f*t*(1+0.3*np.exp(-np.clip(t-kk,0,None)*8)))*env(kk,1.5,0.005,1.2)
 out=vo+(music+sfx)*duck
 out*=np.clip((D-t)/2,0,1)
