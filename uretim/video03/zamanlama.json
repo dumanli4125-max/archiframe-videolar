@@ -1,0 +1,770 @@
+{
+ "l01": {
+  "sure": 3.92,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "baslangic": 0.3,
+  "metin": "Senin telefonun kaç taksitti? Hadi, düşünmeden söyle.",
+  "kelimeler": [
+   {
+    "k": "Senin",
+    "bas": 0.1,
+    "son": 0.4,
+    "abs": 0.4
+   },
+   {
+    "k": "telefonun",
+    "bas": 0.4,
+    "son": 0.9,
+    "abs": 0.7
+   },
+   {
+    "k": "kaç",
+    "bas": 0.9,
+    "son": 1.1,
+    "abs": 1.2
+   },
+   {
+    "k": "taksitti",
+    "bas": 1.1,
+    "son": 1.8,
+    "abs": 1.4
+   },
+   {
+    "k": "Hadi",
+    "bas": 2.4,
+    "son": 2.8,
+    "abs": 2.7
+   },
+   {
+    "k": "düşünmeden",
+    "bas": 2.9,
+    "son": 3.4,
+    "abs": 3.2
+   },
+   {
+    "k": "söyle",
+    "bas": 3.4,
+    "son": 3.8,
+    "abs": 3.7
+   }
+  ]
+ },
+ "l02": {
+  "sure": 4.48,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "baslangic": 4.5,
+  "metin": "Vitrinde yeni model. Kocaman yazıyor: On iki taksit... faizsiz!",
+  "kelimeler": [
+   {
+    "k": "Vitrinde",
+    "bas": 0.2,
+    "son": 0.6,
+    "abs": 4.7
+   },
+   {
+    "k": "yeni",
+    "bas": 0.6,
+    "son": 0.8,
+    "abs": 5.1
+   },
+   {
+    "k": "model",
+    "bas": 0.8,
+    "son": 1.2,
+    "abs": 5.3
+   },
+   {
+    "k": "kocaman",
+    "bas": 1.5,
+    "son": 2.0,
+    "abs": 6.0
+   },
+   {
+    "k": "yazıyor",
+    "bas": 2.0,
+    "son": 2.4,
+    "abs": 6.5
+   },
+   {
+    "k": "on iki",
+    "bas": 2.5,
+    "son": 2.8,
+    "abs": 7.0
+   },
+   {
+    "k": "taksit",
+    "bas": 2.8,
+    "son": 3.4,
+    "abs": 7.3
+   },
+   {
+    "k": "faizsiz",
+    "bas": 3.6,
+    "son": 4.4,
+    "abs": 8.1
+   }
+  ]
+ },
+ "l03": {
+  "sure": 6.16,
+  "hiz": 0.85,
+  "tempo": 1.06,
+  "baslangic": 9.3,
+  "metin": "Faizsiz dediler, sevindin. Ayda bir kahve parası, ne olacak? Aldın, çıktın.",
+  "kelimeler": [
+   {
+    "k": "Faizsiz",
+    "bas": 0.19,
+    "son": 0.66,
+    "abs": 9.49
+   },
+   {
+    "k": "dediler",
+    "bas": 0.66,
+    "son": 1.23,
+    "abs": 9.96
+   },
+   {
+    "k": "sevindin",
+    "bas": 1.32,
+    "son": 1.79,
+    "abs": 10.62
+   },
+   {
+    "k": "Ayda",
+    "bas": 2.36,
+    "son": 2.55,
+    "abs": 11.66
+   },
+   {
+    "k": "bir",
+    "bas": 2.55,
+    "son": 2.64,
+    "abs": 11.85
+   },
+   {
+    "k": "kahve",
+    "bas": 2.64,
+    "son": 3.02,
+    "abs": 11.94
+   },
+   {
+    "k": "parası",
+    "bas": 3.02,
+    "son": 3.49,
+    "abs": 12.32
+   },
+   {
+    "k": "ne",
+    "bas": 3.68,
+    "son": 3.77,
+    "abs": 12.98
+   },
+   {
+    "k": "olacak",
+    "bas": 3.77,
+    "son": 4.25,
+    "abs": 13.07
+   },
+   {
+    "k": "Aldın",
+    "bas": 4.72,
+    "son": 5.09,
+    "abs": 14.02
+   },
+   {
+    "k": "çıktın",
+    "bas": 5.28,
+    "son": 5.66,
+    "abs": 14.58
+   }
+  ]
+ },
+ "l04": {
+  "sure": 5.04,
+  "hiz": 0.8,
+  "tempo": 1.04,
+  "baslangic": 15.36,
+  "metin": "İlk ay... birinci taksit. Telefon fiyakalı, herkese gösteriyorsun.",
+  "kelimeler": [
+   {
+    "k": "İlk",
+    "bas": 0.1,
+    "son": 0.38,
+    "abs": 15.46
+   },
+   {
+    "k": "ay",
+    "bas": 0.38,
+    "son": 0.48,
+    "abs": 15.74
+   },
+   {
+    "k": "birinci",
+    "bas": 1.06,
+    "son": 1.35,
+    "abs": 16.42
+   },
+   {
+    "k": "taksit",
+    "bas": 1.35,
+    "son": 1.83,
+    "abs": 16.71
+   },
+   {
+    "k": "Telefon",
+    "bas": 2.5,
+    "son": 2.88,
+    "abs": 17.86
+   },
+   {
+    "k": "fiyakalı",
+    "bas": 2.88,
+    "son": 3.37,
+    "abs": 18.24
+   },
+   {
+    "k": "herkese",
+    "bas": 3.56,
+    "son": 3.94,
+    "abs": 18.92
+   },
+   {
+    "k": "gösteriyorsun",
+    "bas": 3.94,
+    "son": 4.62,
+    "abs": 19.3
+   }
+  ]
+ },
+ "l05": {
+  "sure": 6.4,
+  "hiz": 0.8,
+  "tempo": 1.06,
+  "baslangic": 20.38,
+  "metin": "Altıncı ay. Telefon kasıyor, şarj akşamı görmüyor. Bir de düşürdün... ekran çatladı.",
+  "kelimeler": [
+   {
+    "k": "Altıncı",
+    "bas": 0.09,
+    "son": 0.47,
+    "abs": 20.47
+   },
+   {
+    "k": "ay",
+    "bas": 0.47,
+    "son": 0.57,
+    "abs": 20.85
+   },
+   {
+    "k": "Telefon",
+    "bas": 1.32,
+    "son": 1.7,
+    "abs": 21.7
+   },
+   {
+    "k": "kasıyor",
+    "bas": 1.7,
+    "son": 2.26,
+    "abs": 22.08
+   },
+   {
+    "k": "şarj",
+    "bas": 2.45,
+    "son": 2.74,
+    "abs": 22.83
+   },
+   {
+    "k": "akşamı",
+    "bas": 2.74,
+    "son": 3.02,
+    "abs": 23.12
+   },
+   {
+    "k": "görmüyor",
+    "bas": 3.02,
+    "son": 3.68,
+    "abs": 23.4
+   },
+   {
+    "k": "Bir",
+    "bas": 3.87,
+    "son": 4.06,
+    "abs": 24.25
+   },
+   {
+    "k": "de",
+    "bas": 4.06,
+    "son": 4.06,
+    "abs": 24.44
+   },
+   {
+    "k": "düşürdün",
+    "bas": 4.06,
+    "son": 4.53,
+    "abs": 24.44
+   },
+   {
+    "k": "ekran",
+    "bas": 5.09,
+    "son": 5.47,
+    "abs": 25.47
+   },
+   {
+    "k": "çatladı",
+    "bas": 5.47,
+    "son": 5.85,
+    "abs": 25.85
+   }
+  ]
+ },
+ "l06": {
+  "sure": 6.08,
+  "hiz": 0.85,
+  "tempo": 1.06,
+  "baslangic": 26.63,
+  "metin": "Derken vitrinde yine kampanya. Yeni model çıkmış. Eskisinin taksiti bitmemiş ama... olsun.",
+  "kelimeler": [
+   {
+    "k": "Derken",
+    "bas": 0.09,
+    "son": 0.47,
+    "abs": 26.72
+   },
+   {
+    "k": "vitrinde",
+    "bas": 0.47,
+    "son": 0.85,
+    "abs": 27.1
+   },
+   {
+    "k": "yine",
+    "bas": 0.85,
+    "son": 1.13,
+    "abs": 27.48
+   },
+   {
+    "k": "kampanya",
+    "bas": 1.13,
+    "son": 1.7,
+    "abs": 27.76
+   },
+   {
+    "k": "Yeni",
+    "bas": 2.17,
+    "son": 2.36,
+    "abs": 28.8
+   },
+   {
+    "k": "model",
+    "bas": 2.36,
+    "son": 2.64,
+    "abs": 28.99
+   },
+   {
+    "k": "çıkmış",
+    "bas": 2.64,
+    "son": 3.11,
+    "abs": 29.27
+   },
+   {
+    "k": "Eskisinin",
+    "bas": 3.58,
+    "son": 3.96,
+    "abs": 30.21
+   },
+   {
+    "k": "taksiti",
+    "bas": 3.96,
+    "son": 4.34,
+    "abs": 30.59
+   },
+   {
+    "k": "bitmemiş",
+    "bas": 4.34,
+    "son": 4.81,
+    "abs": 30.97
+   },
+   {
+    "k": "ama",
+    "bas": 4.81,
+    "son": 5.09,
+    "abs": 31.44
+   },
+   {
+    "k": "olsun",
+    "bas": 5.19,
+    "son": 5.57,
+    "abs": 31.82
+   }
+  ]
+ },
+ "l07": {
+  "sure": 5.44,
+  "hiz": 0.85,
+  "tempo": 1.06,
+  "baslangic": 32.6,
+  "metin": "Şimdi iki taksit birden ödüyorsun. Sonra kulaklık, sonra saat... Hepsi taksitli.",
+  "kelimeler": [
+   {
+    "k": "Şimdi",
+    "bas": 0.09,
+    "son": 0.38,
+    "abs": 32.69
+   },
+   {
+    "k": "iki",
+    "bas": 0.38,
+    "son": 0.47,
+    "abs": 32.98
+   },
+   {
+    "k": "taksit",
+    "bas": 0.47,
+    "son": 0.85,
+    "abs": 33.07
+   },
+   {
+    "k": "birden",
+    "bas": 0.85,
+    "son": 1.13,
+    "abs": 33.45
+   },
+   {
+    "k": "ödüyorsun",
+    "bas": 1.13,
+    "son": 1.89,
+    "abs": 33.73
+   },
+   {
+    "k": "Sonra",
+    "bas": 1.98,
+    "son": 2.26,
+    "abs": 34.58
+   },
+   {
+    "k": "kulaklık",
+    "bas": 2.26,
+    "son": 2.92,
+    "abs": 34.86
+   },
+   {
+    "k": "sonra",
+    "bas": 3.02,
+    "son": 3.4,
+    "abs": 35.62
+   },
+   {
+    "k": "saat",
+    "bas": 3.4,
+    "son": 3.77,
+    "abs": 36.0
+   },
+   {
+    "k": "Hepsi",
+    "bas": 4.15,
+    "son": 4.53,
+    "abs": 36.75
+   },
+   {
+    "k": "taksitli",
+    "bas": 4.53,
+    "son": 5.0,
+    "abs": 37.13
+   }
+  ]
+ },
+ "l08": {
+  "sure": 5.76,
+  "hiz": 0.85,
+  "tempo": 1.06,
+  "baslangic": 38.0,
+  "metin": "Ay sonu, market kasası. Ufaklık bir çikolata uzatıyor. Kart... reddedildi.",
+  "kelimeler": [
+   {
+    "k": "Ay sonu",
+    "bas": 0.09,
+    "son": 0.75,
+    "abs": 38.09
+   },
+   {
+    "k": "market",
+    "bas": 0.75,
+    "son": 1.23,
+    "abs": 38.75
+   },
+   {
+    "k": "kasası",
+    "bas": 1.23,
+    "son": 1.6,
+    "abs": 39.23
+   },
+   {
+    "k": "Ufaklık",
+    "bas": 2.17,
+    "son": 2.55,
+    "abs": 40.17
+   },
+   {
+    "k": "bir",
+    "bas": 2.55,
+    "son": 2.64,
+    "abs": 40.55
+   },
+   {
+    "k": "çikolata",
+    "bas": 2.64,
+    "son": 3.02,
+    "abs": 40.64
+   },
+   {
+    "k": "uzatıyor",
+    "bas": 3.02,
+    "son": 3.68,
+    "abs": 41.02
+   },
+   {
+    "k": "Kart",
+    "bas": 3.96,
+    "son": 4.53,
+    "abs": 41.96
+   },
+   {
+    "k": "reddedildi",
+    "bas": 4.62,
+    "son": 5.28,
+    "abs": 42.62
+   }
+  ]
+ },
+ "l09": {
+  "sure": 3.84,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "baslangic": 43.68,
+  "metin": "Cebinde son model telefon var... ama çocuğa çikolata yok.",
+  "kelimeler": [
+   {
+    "k": "Cebinde",
+    "bas": 0.1,
+    "son": 0.5,
+    "abs": 43.78
+   },
+   {
+    "k": "son",
+    "bas": 0.5,
+    "son": 0.8,
+    "abs": 44.18
+   },
+   {
+    "k": "model",
+    "bas": 0.8,
+    "son": 1.1,
+    "abs": 44.48
+   },
+   {
+    "k": "telefon",
+    "bas": 1.1,
+    "son": 1.5,
+    "abs": 44.78
+   },
+   {
+    "k": "var",
+    "bas": 1.5,
+    "son": 1.8,
+    "abs": 45.18
+   },
+   {
+    "k": "ama",
+    "bas": 2.3,
+    "son": 2.5,
+    "abs": 45.98
+   },
+   {
+    "k": "çocuğa",
+    "bas": 2.5,
+    "son": 3.0,
+    "abs": 46.18
+   },
+   {
+    "k": "çikolata",
+    "bas": 3.0,
+    "son": 3.4,
+    "abs": 46.68
+   },
+   {
+    "k": "yok",
+    "bas": 3.4,
+    "son": 3.7,
+    "abs": 47.08
+   }
+  ]
+ },
+ "l10": {
+  "sure": 3.36,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "baslangic": 47.78,
+  "metin": "Bu işten kim kazandı peki? Kim olacak, banka.",
+  "kelimeler": [
+   {
+    "k": "Bu",
+    "bas": 0.1,
+    "son": 0.2,
+    "abs": 47.88
+   },
+   {
+    "k": "işten",
+    "bas": 0.2,
+    "son": 0.5,
+    "abs": 47.98
+   },
+   {
+    "k": "kim",
+    "bas": 0.5,
+    "son": 0.8,
+    "abs": 48.28
+   },
+   {
+    "k": "kazandı",
+    "bas": 0.8,
+    "son": 1.2,
+    "abs": 48.58
+   },
+   {
+    "k": "peki",
+    "bas": 1.2,
+    "son": 1.5,
+    "abs": 48.98
+   },
+   {
+    "k": "Kim",
+    "bas": 2.0,
+    "son": 2.2,
+    "abs": 49.78
+   },
+   {
+    "k": "olacak",
+    "bas": 2.2,
+    "son": 2.6,
+    "abs": 49.98
+   },
+   {
+    "k": "banka",
+    "bas": 2.9,
+    "son": 3.3,
+    "abs": 50.68
+   }
+  ]
+ },
+ "l11": {
+  "sure": 4.4,
+  "hiz": 0.8,
+  "tempo": 1.0,
+  "baslangic": 51.48,
+  "metin": "Telefon iki yılda eskiyor. Taksiti... üç yıl sürüyor.",
+  "kelimeler": [
+   {
+    "k": "Telefon",
+    "bas": 0.1,
+    "son": 0.7,
+    "abs": 51.58
+   },
+   {
+    "k": "iki",
+    "bas": 0.7,
+    "son": 0.8,
+    "abs": 52.18
+   },
+   {
+    "k": "yılda",
+    "bas": 0.8,
+    "son": 1.1,
+    "abs": 52.28
+   },
+   {
+    "k": "eskiyor",
+    "bas": 1.1,
+    "son": 1.7,
+    "abs": 52.58
+   },
+   {
+    "k": "Taksiti",
+    "bas": 2.3,
+    "son": 2.8,
+    "abs": 53.78
+   },
+   {
+    "k": "üç",
+    "bas": 3.3,
+    "son": 3.6,
+    "abs": 54.78
+   },
+   {
+    "k": "yıl",
+    "bas": 3.6,
+    "son": 3.7,
+    "abs": 55.08
+   },
+   {
+    "k": "sürüyor",
+    "bas": 3.7,
+    "son": 4.2,
+    "abs": 55.18
+   }
+  ]
+ },
+ "l12": {
+  "sure": 3.2,
+  "hiz": 0.85,
+  "tempo": 1.0,
+  "baslangic": 56.08,
+  "metin": "Bir sonrakini almadan önce, eskisinin taksitine bak.",
+  "kelimeler": [
+   {
+    "k": "Bir",
+    "bas": 0.1,
+    "son": 0.2,
+    "abs": 56.18
+   },
+   {
+    "k": "sonrakini",
+    "bas": 0.2,
+    "son": 0.7,
+    "abs": 56.28
+   },
+   {
+    "k": "almadan",
+    "bas": 0.7,
+    "son": 1.1,
+    "abs": 56.78
+   },
+   {
+    "k": "önce",
+    "bas": 1.1,
+    "son": 1.5,
+    "abs": 57.18
+   },
+   {
+    "k": "eskisinin",
+    "bas": 1.8,
+    "son": 2.3,
+    "abs": 57.88
+   },
+   {
+    "k": "taksitine",
+    "bas": 2.3,
+    "son": 2.8,
+    "abs": 58.38
+   },
+   {
+    "k": "bak",
+    "bas": 2.8,
+    "son": 3.0,
+    "abs": 58.88
+   }
+  ]
+ }
+}

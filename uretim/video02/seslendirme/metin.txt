@@ -1,0 +1,10 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   On beş saniye... Değişen şeyi bulabilecek misin?            (0.8)
+l02 3.9   Herkes, ben dikkatliyim der. Bakalım öyle mi?               (0.85)
+l03 7.3   Bu odada bir şey, yavaş yavaş değişecek. Gözünü ayırma. Başlıyoruz.  (0.85)
+          [12.5–27.5 test: 15 sn geri sayım, anlatım yok]
+l04 27.8  Süre doldu. Buldun mu? Cevabını yoruma yaz.                 (0.85)
+l05 33.0  Başa saralım. Kanepedeki yastığa bak... Yavaş yavaş kayboldu.  (0.8)
+l06 37.8  Fark etmediysen, sorun yok. Çoğu insan göremiyor.           (0.85)
+l07 41.9  Çünkü beyin, değişeni değil... beklediğini görür.           (0.8)
+l08 46.0  Arkadaşını etiketle. Bakalım o bulabilecek mi?              (0.85)

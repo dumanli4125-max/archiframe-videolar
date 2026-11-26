@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko). Satır, videodaki başlangıç sn, hız, miks tempo, metin.
+l01 0.30  hız 0.85 tempo 1.0  Senin telefonun kaç taksitti? Hadi, düşünmeden söyle.
+l02 4.50  hız 0.8 tempo 1.0  Vitrinde yeni model. Kocaman yazıyor: On iki taksit... faizsiz!
+l03 9.30  hız 0.85 tempo 1.06  Faizsiz dediler, sevindin. Ayda bir kahve parası, ne olacak? Aldın, çıktın.
+l04 15.36  hız 0.8 tempo 1.04  İlk ay... birinci taksit. Telefon fiyakalı, herkese gösteriyorsun.
+l05 20.38  hız 0.8 tempo 1.06  Altıncı ay. Telefon kasıyor, şarj akşamı görmüyor. Bir de düşürdün... ekran çatladı.
+l06 26.63  hız 0.85 tempo 1.06  Derken vitrinde yine kampanya. Yeni model çıkmış. Eskisinin taksiti bitmemiş ama... olsun.
+l07 32.60  hız 0.85 tempo 1.06  Şimdi iki taksit birden ödüyorsun. Sonra kulaklık, sonra saat... Hepsi taksitli.
+l08 38.00  hız 0.85 tempo 1.06  Ay sonu, market kasası. Ufaklık bir çikolata uzatıyor. Kart... reddedildi.
+l09 43.68  hız 0.85 tempo 1.0  Cebinde son model telefon var... ama çocuğa çikolata yok.
+l10 47.78  hız 0.85 tempo 1.0  Bu işten kim kazandı peki? Kim olacak, banka.
+l11 51.48  hız 0.8 tempo 1.0  Telefon iki yılda eskiyor. Taksiti... üç yıl sürüyor.
+l12 56.08  hız 0.85 tempo 1.0  Bir sonrakini almadan önce, eskisinin taksitine bak.
