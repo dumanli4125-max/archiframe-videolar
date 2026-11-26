@@ -1,0 +1,13 @@
+# Ses: Cartesia "Emre" (sonic-3.5, Speko üzerinden). Satır = dosya, videodaki başlangıç saniyesi, hız.
+l01 0.3   0.85  Herkes bir yere bakıyorsa... sen de bakıyor musun? Neden?
+l02 4.8   0.85  Meydan tıklım tıklım. Kürsüde taçlı biri var. Herkes ona bakıyor.
+l03 9.85  0.85  Sultan bir şey söyledi. Herkes alkışladı. Sen de... alkışladın.
+l04 14.3  0.85  Ne dediğini duydun mu? Duymadın. Ama herkes alkışlıyordu.
+l05 18.75 0.8   Sonra sultan bağırdı... Yağmur yağıyor!
+l06 21.95 0.8   Güneş tepede. Herkes şemsiye açtı. Sen de açtın.
+l07 26.1  0.85  Sıcaktan ter döküyorsun. Ama kimse kapatmıyor. Sen de kapatmıyorsun.
+l08 31.3  0.8   Sonra bir an... yukarı baktın. Gökyüzü masmavi. Tek bir bulut yok.
+l09 36.5  0.85  Şemsiyeni kapattın. Yanındaki çocuk da kapattı. Sonra bir kişi daha... bir kişi daha.
+l10 42.75 0.8   Peki sultan? Bugün kürsüde değil. Bugün sultan... ekranında.
+l11 48.0  0.85  Herkes aynı videoyu izliyor. Herkes aynı lafı tekrarlıyor.
+l12 52.5  0.8   Bir dahaki sefere herkes bir şeye alkış tutarken... bir saniye dur. Kendi gözünle bak.

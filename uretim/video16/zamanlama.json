@@ -1,0 +1,426 @@
+{
+ "l01": {
+  "sure": 4.16,
+  "baslangic": 0.3,
+  "metin": "Herkes bir yere bakıyorsa... sen de bakıyor musun? Neden?",
+  "kelimeler": [
+   {
+    "k": "Herkes",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "bakıyorsa",
+    "bas": 0.8,
+    "son": 1.6
+   },
+   {
+    "k": "sen",
+    "bas": 2.2,
+    "son": 2.4
+   },
+   {
+    "k": "musun",
+    "bas": 2.9,
+    "son": 3.1
+   },
+   {
+    "k": "Neden",
+    "bas": 3.6,
+    "son": 4.0
+   }
+  ]
+ },
+ "l02": {
+  "sure": 4.72,
+  "baslangic": 4.8,
+  "metin": "Meydan tıklım tıklım. Kürsüde taçlı biri var. Herkes ona bakıyor.",
+  "kelimeler": [
+   {
+    "k": "Meydan",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "tıklım",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "Kürsüde",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "taçlı",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "Herkes",
+    "bas": 3.5,
+    "son": 3.8
+   },
+   {
+    "k": "bakıyor",
+    "bas": 4.0,
+    "son": 4.5
+   }
+  ]
+ },
+ "l03": {
+  "sure": 4.08,
+  "baslangic": 9.85,
+  "metin": "Sultan bir şey söyledi. Herkes alkışladı. Sen de... alkışladın.",
+  "kelimeler": [
+   {
+    "k": "Sultan",
+    "bas": 0.1,
+    "son": 0.5
+   },
+   {
+    "k": "söyledi",
+    "bas": 0.8,
+    "son": 1.3
+   },
+   {
+    "k": "Herkes",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "alkışladı",
+    "bas": 1.8,
+    "son": 2.4
+   },
+   {
+    "k": "Sen",
+    "bas": 2.6,
+    "son": 2.9
+   },
+   {
+    "k": "alkışladın",
+    "bas": 3.3,
+    "son": 3.9
+   }
+  ]
+ },
+ "l04": {
+  "sure": 4.08,
+  "baslangic": 14.3,
+  "metin": "Ne dediğini duydun mu? Duymadın. Ama herkes alkışlıyordu.",
+  "kelimeler": [
+   {
+    "k": "dediğini",
+    "bas": 0.2,
+    "son": 0.6
+   },
+   {
+    "k": "duydun",
+    "bas": 0.6,
+    "son": 1.0
+   },
+   {
+    "k": "Duymadın",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "herkes",
+    "bas": 2.8,
+    "son": 3.2
+   },
+   {
+    "k": "alkışlıyordu",
+    "bas": 3.2,
+    "son": 4.0
+   }
+  ]
+ },
+ "l05": {
+  "sure": 2.8,
+  "baslangic": 18.75,
+  "metin": "Sonra sultan bağırdı... Yağmur yağıyor!",
+  "kelimeler": [
+   {
+    "k": "Sultan",
+    "bas": 0.5,
+    "son": 0.9
+   },
+   {
+    "k": "bağırdı",
+    "bas": 0.9,
+    "son": 1.4
+   },
+   {
+    "k": "Yağmur",
+    "bas": 1.7,
+    "son": 2.2
+   },
+   {
+    "k": "yağıyor",
+    "bas": 2.2,
+    "son": 2.6
+   }
+  ]
+ },
+ "l06": {
+  "sure": 3.76,
+  "baslangic": 21.95,
+  "metin": "Güneş tepede. Herkes şemsiye açtı. Sen de açtın.",
+  "kelimeler": [
+   {
+    "k": "Güneş",
+    "bas": 0.1,
+    "son": 0.4
+   },
+   {
+    "k": "tepede",
+    "bas": 0.4,
+    "son": 0.8
+   },
+   {
+    "k": "Herkes",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "şemsiye",
+    "bas": 1.8,
+    "son": 2.3
+   },
+   {
+    "k": "açtı",
+    "bas": 2.3,
+    "son": 2.7
+   },
+   {
+    "k": "Sen",
+    "bas": 3.0,
+    "son": 3.2
+   },
+   {
+    "k": "açtın",
+    "bas": 3.3,
+    "son": 3.7
+   }
+  ]
+ },
+ "l07": {
+  "sure": 4.8,
+  "baslangic": 26.1,
+  "metin": "Sıcaktan ter döküyorsun. Ama kimse kapatmıyor. Sen de kapatmıyorsun.",
+  "kelimeler": [
+   {
+    "k": "Sıcaktan",
+    "bas": 0.1,
+    "son": 0.7
+   },
+   {
+    "k": "döküyorsun",
+    "bas": 0.8,
+    "son": 1.5
+   },
+   {
+    "k": "kimse",
+    "bas": 2.0,
+    "son": 2.4
+   },
+   {
+    "k": "kapatmıyor",
+    "bas": 2.4,
+    "son": 3.1
+   },
+   {
+    "k": "Sen",
+    "bas": 3.5,
+    "son": 3.7
+   },
+   {
+    "k": "kapatmıyorsun",
+    "bas": 3.8,
+    "son": 4.6
+   }
+  ]
+ },
+ "l08": {
+  "sure": 4.8,
+  "baslangic": 31.3,
+  "metin": "Sonra bir an... yukarı baktın. Gökyüzü masmavi. Tek bir bulut yok.",
+  "kelimeler": [
+   {
+    "k": "an",
+    "bas": 0.5,
+    "son": 0.8
+   },
+   {
+    "k": "yukarı",
+    "bas": 1.1,
+    "son": 1.4
+   },
+   {
+    "k": "baktın",
+    "bas": 1.4,
+    "son": 1.8
+   },
+   {
+    "k": "Gökyüzü",
+    "bas": 2.2,
+    "son": 2.7
+   },
+   {
+    "k": "masmavi",
+    "bas": 2.7,
+    "son": 3.4
+   },
+   {
+    "k": "bulut",
+    "bas": 4.0,
+    "son": 4.3
+   },
+   {
+    "k": "yok",
+    "bas": 4.3,
+    "son": 4.6
+   }
+  ]
+ },
+ "l09": {
+  "sure": 5.84,
+  "baslangic": 36.5,
+  "metin": "Şemsiyeni kapattın. Yanındaki çocuk da kapattı. Sonra bir kişi daha... bir kişi daha.",
+  "kelimeler": [
+   {
+    "k": "Şemsiyeni",
+    "bas": 0.1,
+    "son": 0.6
+   },
+   {
+    "k": "kapattın",
+    "bas": 0.6,
+    "son": 1.2
+   },
+   {
+    "k": "çocuk",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "kapattı",
+    "bas": 2.6,
+    "son": 3.1
+   },
+   {
+    "k": "kişi daha",
+    "bas": 4.0,
+    "son": 4.6
+   },
+   {
+    "k": "kişi daha",
+    "bas": 5.1,
+    "son": 5.6
+   }
+  ]
+ },
+ "l10": {
+  "sure": 4.88,
+  "baslangic": 42.75,
+  "metin": "Peki sultan? Bugün kürsüde değil. Bugün sultan... ekranında.",
+  "kelimeler": [
+   {
+    "k": "Sultan",
+    "bas": 0.2,
+    "son": 0.7
+   },
+   {
+    "k": "kürsüde",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "değil",
+    "bas": 2.2,
+    "son": 2.5
+   },
+   {
+    "k": "Sultan",
+    "bas": 3.4,
+    "son": 3.9
+   },
+   {
+    "k": "ekranında",
+    "bas": 4.1,
+    "son": 4.6
+   }
+  ]
+ },
+ "l11": {
+  "sure": 4.0,
+  "baslangic": 48.0,
+  "metin": "Herkes aynı videoyu izliyor. Herkes aynı lafı tekrarlıyor.",
+  "kelimeler": [
+   {
+    "k": "videoyu",
+    "bas": 0.9,
+    "son": 1.3
+   },
+   {
+    "k": "izliyor",
+    "bas": 1.3,
+    "son": 1.8
+   },
+   {
+    "k": "lafı",
+    "bas": 2.8,
+    "son": 3.0
+   },
+   {
+    "k": "tekrarlıyor",
+    "bas": 3.0,
+    "son": 3.7
+   }
+  ]
+ },
+ "l12": {
+  "sure": 5.84,
+  "baslangic": 52.5,
+  "metin": "Bir dahaki sefere herkes bir şeye alkış tutarken... bir saniye dur. Kendi gözünle bak.",
+  "kelimeler": [
+   {
+    "k": "sefere",
+    "bas": 0.7,
+    "son": 1.0
+   },
+   {
+    "k": "alkış",
+    "bas": 1.8,
+    "son": 2.2
+   },
+   {
+    "k": "tutarken",
+    "bas": 2.2,
+    "son": 2.9
+   },
+   {
+    "k": "saniye",
+    "bas": 3.5,
+    "son": 4.0
+   },
+   {
+    "k": "dur",
+    "bas": 4.0,
+    "son": 4.2
+   },
+   {
+    "k": "Kendi",
+    "bas": 4.8,
+    "son": 5.0
+   },
+   {
+    "k": "bak",
+    "bas": 5.4,
+    "son": 5.6
+   }
+  ]
+ }
+}

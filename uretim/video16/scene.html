@@ -1,0 +1,297 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="../kit/engine.js"></script>
+<script>
+// 16 — Kalabalık neden hep aynı yere bakar? Satır başlangıçları audio.py VO ile AYNI.
+const DURATION = 61.3;
+// olay zamanları (zamanlama.json kelime zamanları + satır başlangıcı)
+const SPEAK=9.95, CLAP=11.4, SENCLAP=13.15, CLAPEND=18.4;
+const SHOUT=19.25, RAIN=20.45;
+const SUN=22.05, UMB=23.9, SENUMB=25.25;
+const SWEAT=26.2;
+const LOOKUP=32.4, BLUE=33.5, NOCLOUD=34.9;
+const SENCLOSE=36.9, KIDCLOSE=39.1, ACLOSE=40.7, BCLOSE=41.7;
+const KGONE=44.35, PHONEUP=45.85, SCREEN=46.85;
+const WATCH=48.0, SAME=50.0, FIN=52.3;
+
+const SKX=170, KTOP=1080;               // kürsü merkezi, üst
+const SUNX=880, SUNY=540;
+const KINGS=1.1, KINGY=KTOP-142*KINGS;  // sultan kalça
+
+// ---------- kalabalık ----------
+// role: '' sıradan, 'A' ve 'B' sonradan kapatan, 'kid' çocuk, 'sen'
+const UC=['#3b5578','#4a4f6e','#2f5d68','#55476a'];
+const CROWD=[];
+[420,520,620,720,820,920,1020].forEach((x,i)=>CROWD.push({x,s:0.78,fl:1310,row:0,i}));
+[470,590,710,830,950,1060].forEach((x,i)=>CROWD.push({x,s:0.92,fl:1400,row:1,i:i+7,role:x===830?'B':''}));
+[[430,1.1,'A'],[610,1.1,'sen'],[752,0.72,'kid'],[885,1.1,''],[1030,1.1,'']].forEach(([x,s,role],i)=>CROWD.push({x,s,fl:1500,row:2,i:i+13,role}));
+CROWD.forEach(p=>{p.y=p.fl-142*p.s;p.ph=(p.i*1.37)%6.28;
+  p.open=p.role==='sen'?SENUMB:UMB+((p.i*0.173)%0.7);
+  p.close=p.role==='sen'?SENCLOSE:p.role==='kid'?KIDCLOSE:p.role==='A'?ACLOSE:p.role==='B'?BCLOSE:null;
+  p.col=UC[p.i%4];});
+
+// ---------- arka plan ----------
+function sky(t){
+  const b=sm(BLUE-0.4,BLUE+1.2,t);
+  const g=ctx.createLinearGradient(0,0,0,FLOOR);
+  g.addColorStop(0,b>0?mix('#0f1d33','#1f4f86',b):'#0f1d33');
+  g.addColorStop(0.75,b>0?mix('#1a3150','#3d78b0',b):'#1a3150');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,FLOOR);
+}
+function mix(a,b,k){const A=parseInt(a.slice(1),16),B=parseInt(b.slice(1),16);
+  const c=[16,8,0].map(s=>Math.round(lerp((A>>s)&255,(B>>s)&255,k)));return `rgb(${c[0]},${c[1]},${c[2]})`;}
+function sun(t){
+  const p=Math.max(0,1-Math.abs(t-SUN-0.3)*1.2)+sm(LOOKUP-0.2,LOOKUP+0.8,t)*0.8+(t>SWEAT&&t<31?0.35:0);
+  const r=70+8*Math.sin(t*2)+p*10;
+  const g=ctx.createRadialGradient(SUNX,SUNY,r*0.6,SUNX,SUNY,r*3.6);
+  g.addColorStop(0,hexA(C.amber,0.45+0.25*p));g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(SUNX-r*4,SUNY-r*4,r*8,r*8);
+  ctx.save();ctx.translate(SUNX,SUNY);ctx.rotate(t*0.15);ctx.strokeStyle=hexA(C.amber,0.55+0.3*p);ctx.lineWidth=7;ctx.lineCap='round';
+  for(let i=0;i<12;i++){ctx.rotate(Math.PI/6);ctx.beginPath();ctx.moveTo(r+18,0);ctx.lineTo(r+42+p*16+6*Math.sin(t*3+i),0);ctx.stroke();}
+  ctx.restore();
+  ctx.save();glow(C.amber,40+30*p);ctx.fillStyle=C.amber;ctx.beginPath();ctx.arc(SUNX,SUNY,r,0,7);ctx.fill();ctx.restore();
+}
+function city(){
+  ctx.fillStyle='#10203a';
+  const B=[[300,1010,120],[420,960,90],[510,1040,110],[620,930,100],[720,1000,130],[850,950,90],[940,1020,140]];
+  for(const [x,y,w] of B){ctx.fillRect(x,y,w,FLOOR-y);}
+  ctx.fillStyle=hexA(C.amber,0.10);
+  for(const [x,y,w] of B) for(let yy=y+30;yy<1220;yy+=60) for(let xx=x+18;xx<x+w-20;xx+=36) ctx.fillRect(xx,yy,14,22);
+  // meydan zemini
+  ctx.fillStyle=C.floor;ctx.fillRect(0,1230,W,H-1230);
+  ctx.strokeStyle=hexA(C.line,0.35);ctx.lineWidth=1.5;
+  for(let k=0;k<8;k++){const y=1230+Math.pow(k/8,1.6)*(H-1230);ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+  for(let i=-8;i<=8;i++){ctx.beginPath();ctx.moveTo(W/2+i*80,1230);ctx.lineTo(W/2+i*240,H);ctx.stroke();}
+}
+function scales(t){ // terazi: kürsünün arkasında direk
+  const x=SKX, top=600, sw=Math.sin(t*0.9)*0.05;
+  ctx.save();ctx.strokeStyle='#5d7aa6';ctx.lineWidth=8;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(x,KTOP);ctx.lineTo(x,top);ctx.stroke();
+  ctx.translate(x,top);ctx.rotate(sw);ctx.beginPath();ctx.moveTo(-120,0);ctx.lineTo(120,0);ctx.stroke();
+  for(const dx of [-120,120]){ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(dx,0);ctx.lineTo(dx-34,90);ctx.moveTo(dx,0);ctx.lineTo(dx+34,90);ctx.stroke();
+    ctx.fillStyle='#5d7aa6';ctx.beginPath();ctx.ellipse(dx,92,40,10,0,0,7);ctx.fill();}
+  ctx.restore();
+  ctx.fillStyle=C.amber;ctx.beginPath();ctx.arc(x,top-8,9,0,7);ctx.fill();
+}
+function podium(){
+  ctx.fillStyle='#1d3254';rr(30,KTOP,280,1510-KTOP,10);ctx.fill();
+  ctx.fillStyle='#24406b';rr(14,KTOP-14,312,30,8);ctx.fill();
+  ctx.strokeStyle=hexA(C.amber,0.6);ctx.lineWidth=4;rr(60,KTOP+60,220,180,10);ctx.stroke();
+  // basamaklar
+  ctx.fillStyle='#172b49';ctx.fillRect(310,1380,60,120);ctx.fillRect(310,1440,110,60);
+}
+
+// ---------- aksesuarlar ----------
+function crown(x,y,s=1,a=1){if(a<=0)return;ctx.save();ctx.globalAlpha=a;ctx.translate(x,y);ctx.scale(s,s);glow(C.amber,24);ctx.fillStyle=C.amber;
+  ctx.beginPath();ctx.moveTo(-36,10);ctx.lineTo(-40,-26);ctx.lineTo(-18,-6);ctx.lineTo(0,-36);ctx.lineTo(18,-6);ctx.lineTo(40,-26);ctx.lineTo(36,10);ctx.closePath();ctx.fill();
+  noGlow();ctx.fillStyle=C.coral;for(const dx of [-20,0,20]){ctx.beginPath();ctx.arc(dx,2,4.5,0,7);ctx.fill();}ctx.restore();}
+function umbrella(hand,s,k,ang,col,a=1){
+  if(a<=0)return;
+  ctx.save();ctx.globalAlpha=a;ctx.translate(hand[0],hand[1]+6*s);ctx.rotate(ang);
+  const len=140*s;
+  ctx.strokeStyle='#8aa0c0';ctx.lineWidth=5*s;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(0,18*s);ctx.lineTo(0,-len-14*s);ctx.stroke();
+  ctx.beginPath();ctx.arc(-9*s,18*s,9*s,0,Math.PI);ctx.stroke(); // sap
+  ctx.translate(0,-len);
+  const R=lerp(9*s,102*s,k), h=lerp(70*s,58*s,k);
+  ctx.fillStyle=col;
+  if(k<0.98){ // kapanırken: kumaş direğe sarılır
+    ctx.beginPath();ctx.moveTo(0,-h+4*s);ctx.quadraticCurveTo(R*1.1,-h*0.2,R*0.9,lerp(70*s,0,k));ctx.lineTo(-R*0.9,lerp(70*s,0,k));ctx.quadraticCurveTo(-R*1.1,-h*0.2,0,-h+4*s);ctx.fill();
+  } else {
+    ctx.beginPath();ctx.ellipse(0,0,R,h,0,Math.PI,0);
+    const n=5;for(let i=n;i>0;i--){const x0=-R+(i)*(2*R/n),x1=-R+(i-1)*(2*R/n);ctx.quadraticCurveTo((x0+x1)/2,14*s,x1,0);}
+    ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=2*s;
+    for(let i=1;i<5;i++){const x=-R+i*(2*R/5);ctx.beginPath();ctx.moveTo(0,-h);ctx.quadraticCurveTo(x*0.6,-h*0.5,x,6*s);ctx.stroke();}
+  }
+  ctx.restore();
+}
+function handPhone(h,s,k){ if(k<=0)return;
+  const x=h[0],y=h[1]-14*s;ctx.save();ctx.globalAlpha=k;ctx.translate(x,y);ctx.scale(s,s);rr(-17,-30,34,60,7);ctx.fillStyle='#0a1222';ctx.fill();
+  glow(C.teal,26);rr(-13,-25,26,50,4);ctx.fillStyle=hexA(C.teal,0.8);ctx.fill();noGlow();crown(0,-2,0.28,1);ctx.restore();
+  const g=ctx.createRadialGradient(x,y,4,x,y,110*s);g.addColorStop(0,hexA(C.teal,0.18*k));g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(x-120*s,y-120*s,240*s,240*s);}
+function sweat(hd,s,t,seed){ // ter damlaları
+  for(let i=0;i<2;i++){const z=((t*0.9+seed*0.31+i*0.5)%1);const x=hd[0]+(i?28:-30)*s,y=hd[1]-10*s+z*60*s;
+    ctx.save();ctx.globalAlpha=0.85*(1-z);ctx.fillStyle='#bfe9ff';ctx.beginPath();ctx.moveTo(x,y-10*s);ctx.quadraticCurveTo(x+7*s,y+2*s,x,y+6*s);ctx.quadraticCurveTo(x-7*s,y+2*s,x,y-10*s);ctx.fill();ctx.restore();}
+}
+function clapBurst(h,s,t,a){ if(a<=0)return; const k=(t*6)%1; ctx.save();ctx.globalAlpha=a*(1-k);ctx.strokeStyle=C.amber;ctx.lineWidth=3;ctx.lineCap='round';
+  for(const an of [-0.9,-0.3,0.3]){const c=Math.cos(an-Math.PI/2),d=Math.sin(an-Math.PI/2);ctx.beginPath();ctx.moveTo(h[0]+c*(18+k*14)*s,h[1]+d*(18+k*14)*s);ctx.lineTo(h[0]+c*(30+k*20)*s,h[1]+d*(30+k*20)*s);ctx.stroke();}ctx.restore();}
+
+// ---------- pozlar ----------
+const ST={lean:3,th:0,sh:0,th2:0,sh2:0,ua:8,fa:14,ua2:8,fa2:14};
+const UMBP={...ST,ua:22,fa:150};
+const PHP={...ST,ua:30,fa:142,look:3};
+function clapPose(t,ph){const c=Math.max(0,Math.sin(t*15+ph));return {...ST,ua:58,fa:100+30*c,ua2:58,fa2:100};}
+
+function person(p,t){
+  const isSen=p.role==='sen', kid=p.role==='kid';
+  const lateCloser=!!p.close;
+  const col=isSen?C.coral:(p.row===0?'#c9bfae':p.row===1?'#ddd2bf':C.cream);
+  const clapOn=t>(isSen?SENCLAP:CLAP+((p.i*0.07)%0.4))&&t<CLAPEND;
+  const openK=sm(p.open,p.open+0.35,t);
+  const closeK=p.close?sm(p.close,p.close+0.5,t):0;
+  const umbK=openK*(1-closeK);
+  const phoneK=lateCloser?0:sm(WATCH-0.3,WATCH+0.3,t);
+  const umbA=lateCloser?1:(1-sm(WATCH-0.5,WATCH,t));
+  let o={...ST};
+  if(clapOn){o=clapPose(t,p.ph);}
+  else if(t>=p.open&&(umbA>0.01)&&!(lateCloser&&t>p.close+0.9)) o=blend(ST,UMBP,openK);
+  if(lateCloser&&t>p.close+0.5) o=blend(UMBP,{...ST,ua:12,fa:30},sm(p.close+0.5,p.close+0.9,t));
+  if(phoneK>0) o=blend(o,PHP,phoneK);
+  // bakış: herkes kürsüye; kapatan yukarı bakar
+  let look=1+Math.sin(t*0.7+p.ph)*1.2, lean=o.lean||3, f=-1;
+  if(lateCloser){const up=isSen?sm(LOOKUP-0.2,LOOKUP+0.4,t):sm(p.close-0.6,p.close,t);look=lerp(look,-9,up);lean=lerp(lean,-6,up);if(up>0.5)f=1;}
+  if(phoneK>0) look=lerp(look,4,phoneK);
+  o.look=look;o.lean=lean;
+  let eyes='open';
+  if(t>SWEAT&&t<31.0&&p.row>0) eyes='tired';
+  if(isSen&&t>LOOKUP&&t<LOOKUP+0.8) eyes='wide';
+  const bob=Math.abs(Math.sin(t*1.3+p.ph))*1.5;
+  const fig=figure({x:p.x,y:p.y-bob,facing:f,color:col,s:p.s,eyes,alpha:p.row===0?0.88:1,glow:p.row===2,...o});
+  // şemsiye
+  if(t>=p.open){
+    let ang=0;
+    if(isSen) ang=-f*0.75*sm(LOOKUP-0.1,LOOKUP+0.5,t)*(1-sm(SENCLOSE-0.3,SENCLOSE,t));
+    if(lateCloser&&t>p.close+0.5) ang=-f*lerp(0,2.6,sm(p.close+0.5,p.close+0.9,t)); // kapalı şemsiye aşağı
+    umbrella(fig.hand,p.s,umbK,ang,isSen?'#4a4f6e':p.col,umbA);
+  }
+  if(phoneK>0) handPhone(fig.hand,p.s,phoneK);
+  if(clapOn) clapBurst(fig.hand,p.s,t+p.ph,p.row===2?0.8:0.4);
+  if(t>SWEAT&&t<31.2&&p.row>0) sweat(fig.head,p.s,t,p.i);
+  if(lateCloser){const up=isSen?sm(LOOKUP,LOOKUP+0.6,t):sm(p.close,p.close+0.5,t);
+    if(up>0){const g=ctx.createRadialGradient(fig.head[0],fig.head[1],10,fig.head[0],fig.head[1],120*p.s);g.addColorStop(0,hexA(C.amber,0.22*up));g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(fig.head[0]-130,fig.head[1]-130,260,260);}}
+  p.fig=fig;
+  return fig;
+}
+
+// ---------- sultan ----------
+function king(t){
+  const gone=sm(KGONE,KGONE+0.7,t);
+  const flick=t>KGONE&&t<KGONE+0.7?(Math.sin(t*60)>0?0.25:1):1;
+  const a=(1-gone)*flick;
+  let o={...ST,lean:-2};
+  if(t>SPEAK&&t<SPEAK+1.4) o={...o,ua:120+15*Math.sin(t*9),fa:150,ua2:20,fa2:40};
+  if(t>CLAP&&t<CLAPEND) o={...o,ua:100,fa:120,ua2:100,fa2:120};           // kalabalığı selamlar
+  if(t>SHOUT-0.2&&t<RAIN+1.6) o={...ST,lean:-6,ua:155+6*Math.sin(t*12),fa:165,ua2:150,fa2:160};
+  const head0=[SKX,KINGY-200*KINGS];
+  if(a>0){
+    // pelerin
+    ctx.save();ctx.globalAlpha=a;ctx.fillStyle='#8a5a17';ctx.beginPath();ctx.moveTo(SKX-30,KINGY-120*KINGS);ctx.lineTo(SKX+30,KINGY-120*KINGS);ctx.lineTo(SKX+55,KINGY+40);ctx.lineTo(SKX-75,KINGY+40);ctx.closePath();ctx.fill();ctx.restore();
+    const eyes=t>SHOUT&&t<RAIN+1.2?'wide':'open';
+    const fig=figure({x:SKX,y:KINGY,facing:1,color:C.cream,s:KINGS,eyes,alpha:a,...o});
+    crown(fig.head[0],fig.head[1]-52,1,a);
+    if(t>SHOUT&&t<RAIN+1.4){ctx.save();ctx.globalAlpha=a*0.8;ctx.strokeStyle=C.amber;ctx.lineWidth=4;ctx.lineCap='round';
+      for(let i=0;i<3;i++){const r_=((t*2.5+i/3)%1);ctx.beginPath();ctx.arc(fig.head[0]+40,fig.head[1]+8,40+r_*70,-0.6,0.6);ctx.globalAlpha=a*(1-r_);ctx.stroke();}ctx.restore();}
+    return fig.head;
+  }
+  return head0;
+}
+function kingScreen(t){ // ekran sultan
+  const k=sm(PHONEUP,PHONEUP+0.8,t); if(k<=0)return;
+  const flash=Math.max(0,1-Math.abs(t-SCREEN-0.2)*2.5);
+  const w=230,h=400,x=SKX,y=KTOP-16-h/2-(1-k)*60;
+  ctx.save();ctx.globalAlpha=k;
+  rr(x-w/2,y-h/2,w,h,30);ctx.fillStyle='#0a1222';glow(C.teal,40+40*flash);ctx.fill();noGlow();
+  ctx.beginPath();rr(x-w/2+14,y-h/2+30,w-28,h-60,16);ctx.clip();
+  const g=ctx.createLinearGradient(0,y-h/2,0,y+h/2);g.addColorStop(0,hexA(C.teal,0.55+0.3*flash));g.addColorStop(1,'#163a4a');ctx.fillStyle=g;ctx.fillRect(x-w/2,y-h/2,w,h);
+  // ekrandaki mini sultan
+  const fig=figure({x:x,y:y+120,facing:1,color:C.cream,s:0.62,ua:120+12*Math.sin(t*8),fa:150,ua2:20,fa2:40,lean:-2,glow:false});
+  // canlı rozeti
+  ctx.fillStyle=C.coral;rr(x-w/2+26,y-h/2+44,96,36,10);ctx.fill();ctx.fillStyle='#fff';ctx.font='800 22px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(L('CANLI','LIVE'),x-w/2+74,y-h/2+63);
+  // kalpler
+  for(let i=0;i<5;i++){const z=((t*0.7+i*0.2)%1);ctx.globalAlpha=k*(1-z);ctx.fillStyle=i%2?C.coral:C.amber;const hx=x+60+Math.sin(z*6+i)*12,hy=y+150-z*240;
+    ctx.beginPath();ctx.arc(hx-6,hy,7,0,7);ctx.arc(hx+6,hy,7,0,7);ctx.fill();ctx.beginPath();ctx.moveTo(hx-13,hy+2);ctx.lineTo(hx+13,hy+2);ctx.lineTo(hx,hy+16);ctx.fill();}
+  ctx.restore();
+  ctx.save();ctx.globalAlpha=k;ctx.strokeStyle='#2c4772';ctx.lineWidth=6;rr(x-w/2,y-h/2,w,h,30);ctx.stroke();ctx.restore();
+  return [x,y+120-200*0.62];
+}
+
+// ---------- sahne ----------
+function scene(t){
+  sky(t); sun(t); city();
+  // sıcak dalgaları
+  if(t>SWEAT-0.5&&t<31.5){const a=sm(SWEAT-0.5,SWEAT+0.5,t)*(1-sm(30.8,31.5,t));ctx.save();ctx.globalAlpha=0.35*a;ctx.strokeStyle=C.amber;ctx.lineWidth=3;
+    for(let i=0;i<6;i++){const x=380+i*120,ph=(t*0.6+i*0.3)%1;ctx.beginPath();for(let y=0;y<160;y+=8){ctx.lineTo(x+Math.sin(y*0.08+t*4+i)*8,1000-ph*160-y);}ctx.stroke();}ctx.restore();}
+  scales(t); podium();
+  const kh=king(t);
+  const sh=kingScreen(t);
+  // taç: sultan kaybolunca havada kalır, ekrana geçer
+  if(t>KGONE&&sh){}
+  if(t>KGONE){const k=sm(PHONEUP+0.2,PHONEUP+1.0,t);const tx=lerp(SKX,SKX,k),ty=lerp(KINGY-200*KINGS-52+Math.sin(t*3)*6,sh?sh[1]-40:KTOP-470,k);
+    crown(tx,ty,lerp(1,0.75,k),1);}
+
+  // bakış çizgileri: herkes aynı yere
+  const la=sm(8.2,8.6,t)*(1-sm(9.7,10.1,t))+sm(1.0,1.4,t)*(1-sm(2.3,2.6,t))*0.6;
+  // kalabalık (arka → ön)
+  for(const p of CROWD) person(p,t);
+  if(la>0){ctx.save();ctx.setLineDash([10,12]);ctx.lineDashOffset=-t*40;ctx.strokeStyle=hexA(C.cream,0.45*la);ctx.lineWidth=3;
+    for(const p of CROWD){if(p.row===0||p.role==='kid')continue;ctx.beginPath();ctx.moveTo(p.fig.head[0]-20*p.s,p.fig.head[1]-4);ctx.lineTo(kh[0]+30,kh[1]);ctx.stroke();}ctx.restore();}
+
+  const sen=CROWD.find(p=>p.role==='sen').fig, kid=CROWD.find(p=>p.role==='kid').fig;
+  const pA=CROWD.find(p=>p.role==='A').fig, pB=CROWD.find(p=>p.role==='B').fig;
+
+  // güneş ışını SEN'e
+  const beam=sm(LOOKUP,LOOKUP+0.6,t)*(1-sm(FIN,FIN+0.8,t));
+  if(beam>0){ctx.save();ctx.globalAlpha=0.18*beam;const g=ctx.createLinearGradient(SUNX,SUNY,sen.head[0],sen.head[1]);g.addColorStop(0,C.amber);g.addColorStop(1,'rgba(255,181,71,0)');ctx.fillStyle=g;
+    ctx.beginPath();ctx.moveTo(SUNX-30,SUNY);ctx.lineTo(SUNX+30,SUNY);ctx.lineTo(sen.head[0]+90,sen.head[1]+40);ctx.lineTo(sen.head[0]-90,sen.head[1]+40);ctx.closePath();ctx.fill();ctx.restore();}
+
+  // etiketler
+  tag('SEN',sen.head[0],sen.head[1]-(t>SENUMB&&t<SENCLOSE+0.4?250:90),C.coral);
+  const kingTagA=sm(6.6,7.0,t)*(1-sm(KGONE,KGONE+0.3,t));
+  tag(L('SULTAN','THE KING'),SKX,535,C.amber,kingTagA);
+  if(sh) tag(L('SULTAN','THE KING'),SKX,KTOP-16-400-38,C.amber,sm(SCREEN-0.6,SCREEN-0.2,t)*(1-sm(FIN,FIN+0.5,t)));
+  tag('HERKES',760,1580,C.cream,sm(8.2,8.6,t)*(1-sm(9.8,10.2,t))+sm(11.2,11.6,t)*(1-sm(12.3,12.7,t))+sm(23.3,23.7,t)*(1-sm(24.8,25.2,t))+sm(48.0,48.4,t)*(1-sm(51.8,52.2,t)));
+  tag('ÇOCUK',kid.head[0],1580,C.cream,sm(38.2,38.6,t)*(1-sm(42.2,42.6,t)));
+  tag(L('GÜNEŞ','SUN'),SUNX,SUNY+150,C.amber,sm(SUN,SUN+0.4,t)*(1-sm(25.6,26.0,t)));
+  tag(L('BULUT YOK','NO CLOUDS'),SUNX,SUNY+150,C.teal,sm(NOCLOUD,NOCLOUD+0.4,t)*(1-sm(36.3,36.7,t)));
+  // balonlar
+  bubble(kh[0]+150,kh[1]-90,'~ ~ ~',sm(SPEAK,SPEAK+0.3,t)*(1-sm(11.3,11.7,t)),'#7a8aa6');
+  bubble(kh[0]+200,kh[1]-90,L('Yağmur yağıyor!',"It's raining!"),sm(RAIN-0.05,RAIN+0.25,t)*(1-sm(22.5,22.9,t)),'#2f5d68');
+  bubble(sen.head[0],sen.head[1]-150,'?',sm(14.4,14.7,t)*(1-sm(16.8,17.1,t))+sm(3.8,4.1,t)*(1-sm(4.6,4.9,t)),C.coral);
+  // "Aynen!" yankıları
+  const AY=[[470,SAME+0.0],[720,SAME+0.5],[950,SAME+1.0]];
+  for(const [x,t0] of AY){const p=CROWD.filter(q=>Math.abs(q.x-x)<12&&!q.close)[0];if(!p)continue;
+    bubble(p.fig.head[0],p.fig.head[1]-80*p.s-30,L('Aynen!','So true!'),sm(t0,t0+0.2,t)*(1-sm(51.9,52.3,t)),C.ink);}
+
+  // altyazılar
+  caption(L([[['Herkes bir yere','#fff']],[['bakıyorsa...','#ffb547']]],[[["If everyone's looking",'#fff']],[['one way...','#ffb547']]]),0.2,2.4,t,74,230);
+  caption(L([[['Sen ','#ff6b5b'],['de bakıyor musun?','#fff']],[['Neden?','#ffb547']]],[[['are ','#fff'],['you ','#ff6b5b'],['looking too?','#fff']],[['Why?','#ffb547']]]),2.4,4.7,t,70,230);
+  caption(L([[['Meydan ','#fff'],['tıklım tıklım.','#ffb547']]],[[['The square is ','#fff'],['packed.','#ffb547']]]),4.8,6.5,t);
+  caption(L([[['Kürsüde ','#fff'],['taçlı ','#ffb547'],['biri var.','#fff']]],[[['Someone with a ','#fff'],['crown','#ffb547']],[['is up on the stand.','#fff']]]),6.5,8.15,t);
+  caption(L([[['Herkes ','#efe4cf'],['ona bakıyor.','#fff']]],[[["Everyone's ",'#efe4cf'],['watching him.','#fff']]]),8.15,9.7,t,70);
+  caption(L([[['Sultan ','#ffb547'],['bir şey söyledi.','#fff']]],[[['The king ','#ffb547'],['said something.','#fff']]]),9.85,11.2,t);
+  caption(L([[['Herkes ','#efe4cf'],['alkışladı.','#ffb547']]],[[['Everyone ','#efe4cf'],['clapped.','#ffb547']]]),11.2,12.4,t,70);
+  caption(L([[['Sen ','#ff6b5b'],['de alkışladın.','#fff']]],[[['So did ','#fff'],['you.','#ff6b5b']]]),12.4,14.1,t,70);
+  caption(L([[['Ne dediğini ','#fff'],['duydun mu?','#ffb547']]],[[['Did you ','#fff'],['hear','#ffb547'],[' what he said?','#fff']]]),14.3,15.95,t);
+  caption(L([[['Duymadın.','#ff6b5b']]],[[['Nope.','#ff6b5b']]]),15.95,16.9,t,80);
+  caption(L([[['Ama herkes','#fff']],[['alkışlıyordu.','#ffb547']]],[[['But everyone','#fff']],[['was clapping.','#ffb547']]]),16.9,18.55,t);
+  caption(L([[['Sonra sultan ','#fff'],['bağırdı:','#ffb547']]],[[['Then the king ','#fff'],['shouted:','#ffb547']]]),18.75,20.35,t);
+  caption(L([[['"Yağmur yağıyor!"','#5fd3c6']]],[[['"It\'s raining!"','#5fd3c6']]]),20.35,21.8,t,80);
+  caption(L([[['Güneş ','#ffb547'],['tepede.','#fff']]],[[['The sun is ','#fff'],['blazing.','#ffb547']]]),21.95,23.2,t,74);
+  caption(L([[['Herkes ','#efe4cf'],['şemsiye açtı.','#fff']]],[[['Everyone opened','#fff']],[['an ','#fff'],['umbrella.','#5fd3c6']]]),23.2,24.85,t);
+  caption(L([[['Sen ','#ff6b5b'],['de açtın.','#fff']]],[[['So did ','#fff'],['you.','#ff6b5b']]]),24.85,25.95,t,74);
+  caption(L([[['Sıcaktan ','#ffb547'],['ter döküyorsun.','#fff']]],[[["You're ",'#fff'],['sweating.','#ffb547']]]),26.1,27.8,t);
+  caption(L([[['Ama ','#fff'],['kimse ','#efe4cf'],['kapatmıyor.','#fff']]],[[['But ','#fff'],['nobody ','#efe4cf'],['closes theirs.','#fff']]]),27.8,29.4,t);
+  caption(L([[['Sen ','#ff6b5b'],['de kapatmıyorsun.','#fff']]],[[['Neither do ','#fff'],['you.','#ff6b5b']]]),29.4,31.1,t);
+  caption(L([[['Sonra bir an...','#fff']],[['yukarı ','#ffb547'],['baktın.','#fff']]],[[['Then, for a second...','#fff']],[['you ','#fff'],['looked up.','#ffb547']]]),31.3,33.3,t);
+  caption(L([[['Gökyüzü ','#fff'],['masmavi.','#5fd3c6']]],[[['Clear ','#fff'],['blue sky.','#5fd3c6']]]),33.3,34.8,t,74);
+  caption(L([[['Tek bir ','#fff'],['bulut yok.','#ffb547']]],[[['Not ','#fff'],['one cloud.','#ffb547']]]),34.8,36.35,t,74);
+  caption(L([[['Şemsiyeni ','#fff'],['kapattın.','#ff6b5b']]],[[['You ','#ff6b5b'],['closed','#fff']],[['your umbrella.','#fff']]]),36.5,38.1,t);
+  caption(L([[['Yanındaki ','#fff'],['çocuk ','#efe4cf'],['da','#fff']],[['kapattı.','#ffb547']]],[[['The ','#fff'],['kid ','#efe4cf'],['next to you','#fff']],[['closed his.','#ffb547']]]),38.1,39.95,t);
+  caption(L([[['Sonra bir kişi daha...','#fff']],[['bir kişi daha.','#ffb547']]],[[['Then one more...','#fff']],[['and one more.','#ffb547']]]),39.95,42.5,t);
+  caption(L([[['Peki ','#fff'],['sultan?','#ffb547']]],[[['And ','#fff'],['the king?','#ffb547']]]),42.75,44.2,t,74);
+  caption(L([[['Bugün ','#fff'],['kürsüde değil.','#ffb547']]],[[['Not on a ','#fff'],['stand ','#ffb547'],['anymore.','#fff']]]),44.2,45.7,t);
+  caption(L([[['Bugün sultan...','#fff']],[['ekranında.','#5fd3c6']]],[[['Today the king...','#fff']],[['is on your screen.','#5fd3c6']]]),45.7,47.85,t,70);
+  caption(L([[['Herkes ','#efe4cf'],['aynı','#fff']],[['videoyu izliyor.','#5fd3c6']]],[[['Everyone watches','#efe4cf']],[['the same video.','#5fd3c6']]]),48.0,49.9,t);
+  caption(L([[['Herkes ','#efe4cf'],['aynı lafı','#fff']],[['tekrarlıyor.','#ffb547']]],[[['Everyone repeats','#efe4cf']],[['the same line.','#ffb547']]]),49.9,52.25,t);
+
+  // final
+  fade(0.86*sm(FIN,FIN+0.9,t),'5,10,20');
+  caption(L([[['Bir dahaki sefere','#fff']]],[[['Next time','#fff']]]),52.55,61.2,t,70,560);
+  caption(L([[['herkes bir şeye','#fff']],[['alkış ','#ffb547'],['tutarken...','#fff']]],[[["everyone's clapping",'#fff']],[['for ','#fff'],['something...','#ffb547']]]),53.6,61.2,t,L(70,64),700);
+  caption(L([[['bir saniye ','#fff'],['dur.','#ffb547']]],[[['wait ','#fff'],['one second.','#ffb547']]]),55.85,61.2,t,86,960);
+  caption(L([[['Kendi gözünle ','#fff'],['bak.','#ff6b5b']]],[[['Look with your ','#fff'],['own eyes.','#ff6b5b']]]),57.3,61.2,t,L(80,72),1140);
+  endCard(t,58.6);
+}
+K.run(DURATION, scene);
+</script></body></html>
