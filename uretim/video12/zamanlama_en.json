@@ -1,0 +1,374 @@
+{
+ "l01": {
+  "baslangic": 0.15,
+  "tempo": 1.08,
+  "sure": 5.11,
+  "metin": "Same train car every morning, same faces. Do you know a single one of their names?",
+  "kelimeler": [
+   {
+    "k": "same faces",
+    "bas": 2.1,
+    "son": 3.0,
+    "video_bas": 2.09
+   },
+   {
+    "k": "Do you know",
+    "bas": 3.6,
+    "son": 4.1,
+    "video_bas": 3.48
+   },
+   {
+    "k": "names",
+    "bas": 5.0,
+    "son": 5.4,
+    "video_bas": 4.78
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 5.3,
+  "tempo": 1.0,
+  "sure": 4.56,
+  "metin": "Every morning... seven... forty. Same car, same corner.",
+  "kelimeler": [
+   {
+    "k": "seven",
+    "bas": 1.0,
+    "son": 1.52,
+    "video_bas": 6.3
+   },
+   {
+    "k": "forty",
+    "bas": 1.71,
+    "son": 2.07,
+    "video_bas": 7.01
+   },
+   {
+    "k": "car",
+    "bas": 2.9,
+    "son": 3.4,
+    "video_bas": 8.2
+   },
+   {
+    "k": "corner",
+    "bas": 4.0,
+    "son": 4.4,
+    "video_bas": 9.3
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 9.9,
+  "tempo": 1.0,
+  "sure": 5.36,
+  "metin": "An old man with a book. A kid in headphones. And a worker, asleep on his feet.",
+  "kelimeler": [
+   {
+    "k": "old man",
+    "bas": 0.2,
+    "son": 0.6,
+    "video_bas": 10.1
+   },
+   {
+    "k": "kid",
+    "bas": 1.8,
+    "son": 2.1,
+    "video_bas": 11.7
+   },
+   {
+    "k": "headphones",
+    "bas": 2.2,
+    "son": 2.9,
+    "video_bas": 12.1
+   },
+   {
+    "k": "worker",
+    "bas": 3.4,
+    "son": 4.1,
+    "video_bas": 13.3
+   },
+   {
+    "k": "asleep",
+    "bas": 4.2,
+    "son": 4.6,
+    "video_bas": 14.1
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 15.5,
+  "tempo": 1.0,
+  "sure": 4.48,
+  "metin": "Monday... Tuesday... Wednesday... Same train, same spot.",
+  "kelimeler": [
+   {
+    "k": "Monday",
+    "bas": 0.1,
+    "son": 0.8,
+    "video_bas": 15.6
+   },
+   {
+    "k": "Tuesday",
+    "bas": 1.1,
+    "son": 1.7,
+    "video_bas": 16.6
+   },
+   {
+    "k": "Wednesday",
+    "bas": 1.9,
+    "son": 2.6,
+    "video_bas": 17.4
+   },
+   {
+    "k": "train",
+    "bas": 3.2,
+    "son": 3.6,
+    "video_bas": 18.7
+   },
+   {
+    "k": "spot",
+    "bas": 4.0,
+    "son": 4.4,
+    "video_bas": 19.5
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 20.8,
+  "tempo": 1.0,
+  "sure": 4.08,
+  "metin": "Everyone's on their phone. Nobody sees anybody. Including you.",
+  "kelimeler": [
+   {
+    "k": "phone",
+    "bas": 0.8,
+    "son": 1.4,
+    "video_bas": 21.6
+   },
+   {
+    "k": "Nobody",
+    "bas": 1.6,
+    "son": 1.9,
+    "video_bas": 22.4
+   },
+   {
+    "k": "Including",
+    "bas": 3.1,
+    "son": 3.5,
+    "video_bas": 23.9
+   },
+   {
+    "k": "you",
+    "bas": 3.5,
+    "son": 4.0,
+    "video_bas": 24.3
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 25.3,
+  "tempo": 1.0,
+  "sure": 4.56,
+  "metin": "Three years... next to the same old man. You don't know his name.",
+  "kelimeler": [
+   {
+    "k": "Three years",
+    "bas": 0.2,
+    "son": 0.9,
+    "video_bas": 25.5
+   },
+   {
+    "k": "old man",
+    "bas": 2.0,
+    "son": 2.6,
+    "video_bas": 27.3
+   },
+   {
+    "k": "don't know",
+    "bas": 3.5,
+    "son": 3.9,
+    "video_bas": 28.8
+   },
+   {
+    "k": "name",
+    "bas": 4.1,
+    "son": 4.4,
+    "video_bas": 29.4
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 30.4,
+  "tempo": 1.0,
+  "sure": 3.76,
+  "metin": "Then one morning, you get on. His corner's empty.",
+  "kelimeler": [
+   {
+    "k": "get on",
+    "bas": 1.3,
+    "son": 1.8,
+    "video_bas": 31.7
+   },
+   {
+    "k": "corner's",
+    "bas": 2.7,
+    "son": 3.2,
+    "video_bas": 33.1
+   },
+   {
+    "k": "empty",
+    "bas": 3.2,
+    "son": 3.6,
+    "video_bas": 33.6
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 34.3,
+  "tempo": 1.06,
+  "sure": 4.15,
+  "metin": "You check your phone, but your mind's still there. Something's missing.",
+  "kelimeler": [
+   {
+    "k": "phone",
+    "bas": 0.7,
+    "son": 1.2,
+    "video_bas": 34.96
+   },
+   {
+    "k": "still there",
+    "bas": 2.1,
+    "son": 2.7,
+    "video_bas": 36.28
+   },
+   {
+    "k": "Something's",
+    "bas": 3.4,
+    "son": 3.8,
+    "video_bas": 37.51
+   },
+   {
+    "k": "missing",
+    "bas": 3.8,
+    "son": 4.3,
+    "video_bas": 37.88
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 38.65,
+  "tempo": 1.08,
+  "sure": 4.15,
+  "metin": "Next morning, the doors open. There he is, arm in a cast.",
+  "kelimeler": [
+   {
+    "k": "doors open",
+    "bas": 1.2,
+    "son": 1.8,
+    "video_bas": 39.76
+   },
+   {
+    "k": "There he is",
+    "bas": 2.3,
+    "son": 3.1,
+    "video_bas": 40.78
+   },
+   {
+    "k": "cast",
+    "bas": 3.7,
+    "son": 4.4,
+    "video_bas": 42.08
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 42.9,
+  "tempo": 1.0,
+  "sure": 2.96,
+  "metin": "You put your phone down. \"Morning! You okay?\"",
+  "kelimeler": [
+   {
+    "k": "phone down",
+    "bas": 0.5,
+    "son": 1.2,
+    "video_bas": 43.4
+   },
+   {
+    "k": "Morning",
+    "bas": 1.4,
+    "son": 2.1,
+    "video_bas": 44.3
+   },
+   {
+    "k": "okay",
+    "bas": 2.4,
+    "son": 2.8,
+    "video_bas": 45.3
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 46.6,
+  "tempo": 1.0,
+  "sure": 4.48,
+  "metin": "He smiles. \"I'm alright, kid. Thanks. I'm Harold.\"",
+  "kelimeler": [
+   {
+    "k": "smiles",
+    "bas": 0.3,
+    "son": 0.9,
+    "video_bas": 46.9
+   },
+   {
+    "k": "alright",
+    "bas": 2.1,
+    "son": 2.6,
+    "video_bas": 48.7
+   },
+   {
+    "k": "Thanks",
+    "bas": 3.2,
+    "son": 3.7,
+    "video_bas": 49.8
+   },
+   {
+    "k": "Harold",
+    "bas": 3.9,
+    "son": 4.3,
+    "video_bas": 50.5
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 51.3,
+  "tempo": 1.0,
+  "sure": 4.48,
+  "metin": "Tomorrow morning... say good morning to the person next to you. Maybe they have a name.",
+  "kelimeler": [
+   {
+    "k": "Tomorrow",
+    "bas": 0.1,
+    "son": 0.5,
+    "video_bas": 51.4
+   },
+   {
+    "k": "good morning",
+    "bas": 1.4,
+    "son": 1.8,
+    "video_bas": 52.7
+   },
+   {
+    "k": "Maybe",
+    "bas": 3.5,
+    "son": 3.7,
+    "video_bas": 54.8
+   },
+   {
+    "k": "name",
+    "bas": 4.0,
+    "son": 4.4,
+    "video_bas": 55.3
+   }
+  ]
+ }
+}

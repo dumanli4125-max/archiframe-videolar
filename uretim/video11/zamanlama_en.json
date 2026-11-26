@@ -1,0 +1,458 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "tempo": 1.0,
+  "sure": 4.56,
+  "metin": "When did you last hug someone for no reason? Don't think. Just say it.",
+  "kelimeler": [
+   {
+    "k": "When",
+    "bas": 0.2,
+    "son": 0.4,
+    "mutlak": 0.5
+   },
+   {
+    "k": "hug",
+    "bas": 1.0,
+    "son": 1.2,
+    "mutlak": 1.3
+   },
+   {
+    "k": "for no reason?",
+    "bas": 1.5,
+    "son": 2.4,
+    "mutlak": 1.8
+   },
+   {
+    "k": "Don't",
+    "bas": 2.8,
+    "son": 3.0,
+    "mutlak": 3.1
+   },
+   {
+    "k": "think.",
+    "bas": 3.0,
+    "son": 3.5,
+    "mutlak": 3.3
+   },
+   {
+    "k": "Just say it.",
+    "bas": 3.8,
+    "son": 4.5,
+    "mutlak": 4.1
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 4.8,
+  "tempo": 1.0,
+  "sure": 4.0,
+  "metin": "Morning. It's seven-twelve. You're both in the bathroom, side by side.",
+  "kelimeler": [
+   {
+    "k": "Morning.",
+    "bas": 0.1,
+    "son": 0.6,
+    "mutlak": 4.9
+   },
+   {
+    "k": "It's",
+    "bas": 0.7,
+    "son": 0.9,
+    "mutlak": 5.5
+   },
+   {
+    "k": "seven-twelve",
+    "bas": 0.9,
+    "son": 1.8,
+    "mutlak": 5.7
+   },
+   {
+    "k": "bathroom,",
+    "bas": 2.4,
+    "son": 3.0,
+    "mutlak": 7.2
+   },
+   {
+    "k": "side by side.",
+    "bas": 3.1,
+    "son": 3.9,
+    "mutlak": 7.9
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 9.9,
+  "tempo": 1.08,
+  "sure": 4.07,
+  "metin": "You're brushing your teeth. So are they. Eyes glued to your phones.",
+  "kelimeler": [
+   {
+    "k": "brushing",
+    "bas": 0.19,
+    "son": 0.56,
+    "mutlak": 10.09
+   },
+   {
+    "k": "teeth.",
+    "bas": 0.65,
+    "son": 1.11,
+    "mutlak": 10.55
+   },
+   {
+    "k": "So are they.",
+    "bas": 1.39,
+    "son": 1.94,
+    "mutlak": 11.29
+   },
+   {
+    "k": "Eyes",
+    "bas": 2.69,
+    "son": 2.96,
+    "mutlak": 12.59
+   },
+   {
+    "k": "phones.",
+    "bas": 3.52,
+    "son": 3.98,
+    "mutlak": 13.42
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 13.9,
+  "tempo": 1.0,
+  "sure": 6.48,
+  "metin": "Then the rush starts. Shoes... keys... door... And you're out without even saying bye.",
+  "kelimeler": [
+   {
+    "k": "rush",
+    "bas": 0.5,
+    "son": 0.7,
+    "mutlak": 14.4
+   },
+   {
+    "k": "Shoes,",
+    "bas": 1.6,
+    "son": 2.3,
+    "mutlak": 15.5
+   },
+   {
+    "k": "keys,",
+    "bas": 2.5,
+    "son": 3.3,
+    "mutlak": 16.4
+   },
+   {
+    "k": "door,",
+    "bas": 3.5,
+    "son": 4.0,
+    "mutlak": 17.4
+   },
+   {
+    "k": "you're out",
+    "bas": 4.7,
+    "son": 5.1,
+    "mutlak": 18.6
+   },
+   {
+    "k": "bye.",
+    "bas": 5.9,
+    "son": 6.3,
+    "mutlak": 19.8
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 20.8,
+  "tempo": 1.0,
+  "sure": 4.24,
+  "metin": "Evening. Same couch. But you're staring at two different screens.",
+  "kelimeler": [
+   {
+    "k": "Evening,",
+    "bas": 0.1,
+    "son": 0.7,
+    "mutlak": 20.9
+   },
+   {
+    "k": "same couch,",
+    "bas": 1.0,
+    "son": 1.7,
+    "mutlak": 21.8
+   },
+   {
+    "k": "two",
+    "bas": 3.0,
+    "son": 3.3,
+    "mutlak": 23.8
+   },
+   {
+    "k": "different",
+    "bas": 3.3,
+    "son": 3.6,
+    "mutlak": 24.1
+   },
+   {
+    "k": "screens.",
+    "bas": 3.6,
+    "son": 4.2,
+    "mutlak": 24.4
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 25.3,
+  "tempo": 1.02,
+  "sure": 3.92,
+  "metin": "Even \"good night\" comes through a screen. From the same bed.",
+  "kelimeler": [
+   {
+    "k": "good night",
+    "bas": 0.49,
+    "son": 1.08,
+    "mutlak": 25.79
+   },
+   {
+    "k": "screen",
+    "bas": 1.57,
+    "son": 2.16,
+    "mutlak": 26.87
+   },
+   {
+    "k": "same",
+    "bas": 3.24,
+    "son": 3.53,
+    "mutlak": 28.54
+   },
+   {
+    "k": "bed.",
+    "bas": 3.53,
+    "son": 3.92,
+    "mutlak": 28.83
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 29.1,
+  "tempo": 1.07,
+  "sure": 3.44,
+  "metin": "Same house. Same sink. Same mirror.",
+  "kelimeler": [
+   {
+    "k": "house,",
+    "bas": 0.56,
+    "son": 0.93,
+    "mutlak": 29.66
+   },
+   {
+    "k": "sink,",
+    "bas": 1.68,
+    "son": 2.24,
+    "mutlak": 30.78
+   },
+   {
+    "k": "mirror.",
+    "bas": 2.9,
+    "son": 3.36,
+    "mutlak": 32.0
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 32.4,
+  "tempo": 1.0,
+  "sure": 3.36,
+  "metin": "So when did you last hug them... for no reason at all?",
+  "kelimeler": [
+   {
+    "k": "So,",
+    "bas": 0.3,
+    "son": 0.5,
+    "mutlak": 32.7
+   },
+   {
+    "k": "hug them",
+    "bas": 1.3,
+    "son": 1.8,
+    "mutlak": 33.7
+   },
+   {
+    "k": "for no reason",
+    "bas": 2.1,
+    "son": 2.8,
+    "mutlak": 34.5
+   },
+   {
+    "k": "at all?",
+    "bas": 2.8,
+    "son": 3.2,
+    "mutlak": 35.2
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 36.0,
+  "tempo": 1.04,
+  "sure": 4.31,
+  "metin": "Birthdays, holidays, apologies... there's gotta be a reason.",
+  "kelimeler": [
+   {
+    "k": "Birthdays,",
+    "bas": 0.1,
+    "son": 0.77,
+    "mutlak": 36.1
+   },
+   {
+    "k": "holidays,",
+    "bas": 0.96,
+    "son": 1.63,
+    "mutlak": 36.96
+   },
+   {
+    "k": "apologies.",
+    "bas": 1.83,
+    "son": 2.6,
+    "mutlak": 37.83
+   },
+   {
+    "k": "There's",
+    "bas": 3.27,
+    "son": 3.46,
+    "mutlak": 39.27
+   },
+   {
+    "k": "reason.",
+    "bas": 3.85,
+    "son": 4.23,
+    "mutlak": 39.85
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 40.3,
+  "tempo": 1.0,
+  "sure": 4.72,
+  "metin": "Next morning, same bathroom. You put the brush down and hug them from behind.",
+  "kelimeler": [
+   {
+    "k": "Next morning,",
+    "bas": 0.1,
+    "son": 0.9,
+    "mutlak": 40.4
+   },
+   {
+    "k": "same bathroom.",
+    "bas": 1.0,
+    "son": 1.8,
+    "mutlak": 41.3
+   },
+   {
+    "k": "brush down",
+    "bas": 2.8,
+    "son": 3.5,
+    "mutlak": 43.1
+   },
+   {
+    "k": "hug them",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 43.9
+   },
+   {
+    "k": "from behind.",
+    "bas": 4.0,
+    "son": 4.6,
+    "mutlak": 44.3
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 45.0,
+  "tempo": 1.08,
+  "sure": 5.7,
+  "metin": "They're surprised. \"What's wrong?\" You say, \"Nothing.\" They smile and hug you back.",
+  "kelimeler": [
+   {
+    "k": "surprised.",
+    "bas": 0.28,
+    "son": 1.02,
+    "mutlak": 45.28
+   },
+   {
+    "k": "What's wrong?",
+    "bas": 1.3,
+    "son": 2.04,
+    "mutlak": 46.3
+   },
+   {
+    "k": "You say",
+    "bas": 2.78,
+    "son": 3.15,
+    "mutlak": 47.78
+   },
+   {
+    "k": "nothing.",
+    "bas": 3.33,
+    "son": 3.89,
+    "mutlak": 48.33
+   },
+   {
+    "k": "smile",
+    "bas": 4.35,
+    "son": 4.81,
+    "mutlak": 49.35
+   },
+   {
+    "k": "hug you back.",
+    "bas": 4.91,
+    "son": 5.65,
+    "mutlak": 49.91
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 50.6,
+  "tempo": 1.0,
+  "sure": 6.32,
+  "metin": "When you get home today... hug them for no reason. If they ask why... say, \"nothing.\"",
+  "kelimeler": [
+   {
+    "k": "When you get home today,",
+    "bas": 0.1,
+    "son": 1.1,
+    "mutlak": 50.7
+   },
+   {
+    "k": "hug them",
+    "bas": 1.7,
+    "son": 2.1,
+    "mutlak": 52.3
+   },
+   {
+    "k": "for no reason.",
+    "bas": 2.1,
+    "son": 2.8,
+    "mutlak": 52.7
+   },
+   {
+    "k": "If they ask why,",
+    "bas": 3.5,
+    "son": 4.6,
+    "mutlak": 54.1
+   },
+   {
+    "k": "say",
+    "bas": 5.0,
+    "son": 5.4,
+    "mutlak": 55.6
+   },
+   {
+    "k": "nothing.",
+    "bas": 5.8,
+    "son": 6.2,
+    "mutlak": 56.4
+   }
+  ]
+ }
+}

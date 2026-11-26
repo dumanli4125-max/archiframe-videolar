@@ -1,0 +1,1004 @@
+{
+ "l01": {
+  "baslangic": 0.3,
+  "tempo": 1.06,
+  "metin": "You eat honey, that's normal. But eating bugs is gross? Quick, don't think.",
+  "bitis": 5.3,
+  "kelimeler": [
+   {
+    "k": "You",
+    "bas": 0.2,
+    "son": 0.4,
+    "mutlak": 0.49
+   },
+   {
+    "k": "eat",
+    "bas": 0.4,
+    "son": 0.6,
+    "mutlak": 0.68
+   },
+   {
+    "k": "honey",
+    "bas": 0.6,
+    "son": 1.0,
+    "mutlak": 0.87
+   },
+   {
+    "k": "That's",
+    "bas": 1.1,
+    "son": 1.4,
+    "mutlak": 1.34
+   },
+   {
+    "k": "normal",
+    "bas": 1.4,
+    "son": 1.8,
+    "mutlak": 1.62
+   },
+   {
+    "k": "But",
+    "bas": 2.4,
+    "son": 2.5,
+    "mutlak": 2.56
+   },
+   {
+    "k": "eating",
+    "bas": 2.5,
+    "son": 2.8,
+    "mutlak": 2.66
+   },
+   {
+    "k": "bugs",
+    "bas": 2.8,
+    "son": 3.1,
+    "mutlak": 2.94
+   },
+   {
+    "k": "is",
+    "bas": 3.1,
+    "son": 3.2,
+    "mutlak": 3.22
+   },
+   {
+    "k": "gross",
+    "bas": 3.2,
+    "son": 3.8,
+    "mutlak": 3.32
+   },
+   {
+    "k": "Quick",
+    "bas": 4.1,
+    "son": 4.6,
+    "mutlak": 4.17
+   },
+   {
+    "k": "don't",
+    "bas": 4.7,
+    "son": 5.0,
+    "mutlak": 4.73
+   },
+   {
+    "k": "think",
+    "bas": 5.0,
+    "son": 5.3,
+    "mutlak": 5.02
+   }
+  ]
+ },
+ "l02": {
+  "baslangic": 5.5,
+  "tempo": 1.04,
+  "metin": "Morning. Breakfast table. You dip your bread in honey. You love it. Normal.",
+  "bitis": 10.6,
+  "kelimeler": [
+   {
+    "k": "Morning",
+    "bas": 0.1,
+    "son": 0.8,
+    "mutlak": 5.6
+   },
+   {
+    "k": "breakfast",
+    "bas": 0.9,
+    "son": 1.3,
+    "mutlak": 6.37
+   },
+   {
+    "k": "table",
+    "bas": 1.3,
+    "son": 1.7,
+    "mutlak": 6.75
+   },
+   {
+    "k": "You",
+    "bas": 2.2,
+    "son": 2.4,
+    "mutlak": 7.62
+   },
+   {
+    "k": "dip",
+    "bas": 2.4,
+    "son": 2.7,
+    "mutlak": 7.81
+   },
+   {
+    "k": "your",
+    "bas": 2.7,
+    "son": 2.8,
+    "mutlak": 8.1
+   },
+   {
+    "k": "bread",
+    "bas": 2.8,
+    "son": 3.1,
+    "mutlak": 8.19
+   },
+   {
+    "k": "in",
+    "bas": 3.1,
+    "son": 3.2,
+    "mutlak": 8.48
+   },
+   {
+    "k": "honey",
+    "bas": 3.2,
+    "son": 3.7,
+    "mutlak": 8.58
+   },
+   {
+    "k": "You",
+    "bas": 3.8,
+    "son": 4.1,
+    "mutlak": 9.15
+   },
+   {
+    "k": "love",
+    "bas": 4.1,
+    "son": 4.4,
+    "mutlak": 9.44
+   },
+   {
+    "k": "it",
+    "bas": 4.4,
+    "son": 4.6,
+    "mutlak": 9.73
+   },
+   {
+    "k": "Normal",
+    "bas": 4.8,
+    "son": 5.3,
+    "mutlak": 10.12
+   }
+  ]
+ },
+ "l03": {
+  "baslangic": 10.7,
+  "tempo": 1.0,
+  "metin": "So where does honey come from? Any idea?",
+  "bitis": 13.3,
+  "kelimeler": [
+   {
+    "k": "So",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 10.8
+   },
+   {
+    "k": "where",
+    "bas": 0.4,
+    "son": 0.5,
+    "mutlak": 11.1
+   },
+   {
+    "k": "does",
+    "bas": 0.5,
+    "son": 0.6,
+    "mutlak": 11.2
+   },
+   {
+    "k": "honey",
+    "bas": 0.6,
+    "son": 0.9,
+    "mutlak": 11.3
+   },
+   {
+    "k": "come",
+    "bas": 0.9,
+    "son": 1.1,
+    "mutlak": 11.6
+   },
+   {
+    "k": "from",
+    "bas": 1.1,
+    "son": 1.4,
+    "mutlak": 11.8
+   },
+   {
+    "k": "Any",
+    "bas": 1.8,
+    "son": 2.1,
+    "mutlak": 12.5
+   },
+   {
+    "k": "idea",
+    "bas": 2.1,
+    "son": 2.6,
+    "mutlak": 12.8
+   }
+  ]
+ },
+ "l04": {
+  "baslangic": 13.4,
+  "tempo": 1.06,
+  "metin": "Bees collect nectar from flowers. Back at the hive, they spit it up. That's honey.",
+  "bitis": 18.87,
+  "kelimeler": [
+   {
+    "k": "Bees",
+    "bas": 0.2,
+    "son": 0.5,
+    "mutlak": 13.59
+   },
+   {
+    "k": "collect",
+    "bas": 0.5,
+    "son": 0.9,
+    "mutlak": 13.87
+   },
+   {
+    "k": "nectar",
+    "bas": 0.9,
+    "son": 1.3,
+    "mutlak": 14.25
+   },
+   {
+    "k": "from",
+    "bas": 1.3,
+    "son": 1.4,
+    "mutlak": 14.63
+   },
+   {
+    "k": "flowers",
+    "bas": 1.4,
+    "son": 2.0,
+    "mutlak": 14.72
+   },
+   {
+    "k": "Back",
+    "bas": 2.8,
+    "son": 3.0,
+    "mutlak": 16.04
+   },
+   {
+    "k": "at",
+    "bas": 3.0,
+    "son": 3.1,
+    "mutlak": 16.23
+   },
+   {
+    "k": "the",
+    "bas": 3.1,
+    "son": 3.2,
+    "mutlak": 16.32
+   },
+   {
+    "k": "hive",
+    "bas": 3.2,
+    "son": 3.7,
+    "mutlak": 16.42
+   },
+   {
+    "k": "they",
+    "bas": 3.8,
+    "son": 3.9,
+    "mutlak": 16.98
+   },
+   {
+    "k": "spit",
+    "bas": 3.9,
+    "son": 4.3,
+    "mutlak": 17.08
+   },
+   {
+    "k": "it",
+    "bas": 4.3,
+    "son": 4.4,
+    "mutlak": 17.46
+   },
+   {
+    "k": "up",
+    "bas": 4.4,
+    "son": 4.5,
+    "mutlak": 17.55
+   },
+   {
+    "k": "That's",
+    "bas": 5.2,
+    "son": 5.5,
+    "mutlak": 18.31
+   },
+   {
+    "k": "honey",
+    "bas": 5.5,
+    "son": 5.8,
+    "mutlak": 18.59
+   }
+  ]
+ },
+ "l05": {
+  "baslangic": 19.1,
+  "tempo": 1.0,
+  "metin": "So the stuff on your toast came out of a bee's mouth. Still normal.",
+  "bitis": 22.9,
+  "kelimeler": [
+   {
+    "k": "So",
+    "bas": 0.1,
+    "son": 0.3,
+    "mutlak": 19.2
+   },
+   {
+    "k": "the",
+    "bas": 0.3,
+    "son": 0.4,
+    "mutlak": 19.4
+   },
+   {
+    "k": "stuff",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 19.5
+   },
+   {
+    "k": "on",
+    "bas": 0.7,
+    "son": 0.8,
+    "mutlak": 19.8
+   },
+   {
+    "k": "your",
+    "bas": 0.8,
+    "son": 0.9,
+    "mutlak": 19.9
+   },
+   {
+    "k": "toast",
+    "bas": 0.9,
+    "son": 1.3,
+    "mutlak": 20.0
+   },
+   {
+    "k": "came",
+    "bas": 1.3,
+    "son": 1.5,
+    "mutlak": 20.4
+   },
+   {
+    "k": "out",
+    "bas": 1.5,
+    "son": 1.6,
+    "mutlak": 20.6
+   },
+   {
+    "k": "of",
+    "bas": 1.6,
+    "son": 1.7,
+    "mutlak": 20.7
+   },
+   {
+    "k": "a",
+    "bas": 1.7,
+    "son": 1.8,
+    "mutlak": 20.8
+   },
+   {
+    "k": "bee's",
+    "bas": 1.8,
+    "son": 2.2,
+    "mutlak": 20.9
+   },
+   {
+    "k": "mouth",
+    "bas": 2.2,
+    "son": 2.6,
+    "mutlak": 21.3
+   },
+   {
+    "k": "Still",
+    "bas": 3.1,
+    "son": 3.3,
+    "mutlak": 22.2
+   },
+   {
+    "k": "normal",
+    "bas": 3.3,
+    "son": 3.8,
+    "mutlak": 22.4
+   }
+  ]
+ },
+ "l06": {
+  "baslangic": 23.2,
+  "tempo": 1.04,
+  "metin": "Now, another country. Street stall: fried grasshoppers. We all yell: Gross!",
+  "bitis": 28.68,
+  "kelimeler": [
+   {
+    "k": "Now",
+    "bas": 0.1,
+    "son": 0.5,
+    "mutlak": 23.3
+   },
+   {
+    "k": "another",
+    "bas": 0.7,
+    "son": 1.0,
+    "mutlak": 23.87
+   },
+   {
+    "k": "country",
+    "bas": 1.0,
+    "son": 1.5,
+    "mutlak": 24.16
+   },
+   {
+    "k": "Street",
+    "bas": 1.9,
+    "son": 2.3,
+    "mutlak": 25.03
+   },
+   {
+    "k": "stall",
+    "bas": 2.3,
+    "son": 2.6,
+    "mutlak": 25.41
+   },
+   {
+    "k": "fried",
+    "bas": 2.9,
+    "son": 3.2,
+    "mutlak": 25.99
+   },
+   {
+    "k": "grasshoppers",
+    "bas": 3.2,
+    "son": 4.0,
+    "mutlak": 26.28
+   },
+   {
+    "k": "We",
+    "bas": 4.2,
+    "son": 4.3,
+    "mutlak": 27.24
+   },
+   {
+    "k": "all",
+    "bas": 4.3,
+    "son": 4.5,
+    "mutlak": 27.33
+   },
+   {
+    "k": "yell",
+    "bas": 4.5,
+    "son": 4.9,
+    "mutlak": 27.53
+   },
+   {
+    "k": "Gross",
+    "bas": 5.2,
+    "son": 5.7,
+    "mutlak": 28.2
+   }
+  ]
+ },
+ "l07": {
+  "baslangic": 28.9,
+  "tempo": 1.08,
+  "metin": "But the local kid eats them like chips. Crunch, crunch. Normal.",
+  "bitis": 33.53,
+  "kelimeler": [
+   {
+    "k": "But",
+    "bas": 0.2,
+    "son": 0.3,
+    "mutlak": 29.09
+   },
+   {
+    "k": "the",
+    "bas": 0.3,
+    "son": 0.4,
+    "mutlak": 29.18
+   },
+   {
+    "k": "local",
+    "bas": 0.4,
+    "son": 0.7,
+    "mutlak": 29.27
+   },
+   {
+    "k": "kid",
+    "bas": 0.7,
+    "son": 1.0,
+    "mutlak": 29.55
+   },
+   {
+    "k": "eats",
+    "bas": 1.0,
+    "son": 1.2,
+    "mutlak": 29.83
+   },
+   {
+    "k": "them",
+    "bas": 1.2,
+    "son": 1.4,
+    "mutlak": 30.01
+   },
+   {
+    "k": "like",
+    "bas": 1.4,
+    "son": 1.5,
+    "mutlak": 30.2
+   },
+   {
+    "k": "chips",
+    "bas": 1.5,
+    "son": 2.0,
+    "mutlak": 30.29
+   },
+   {
+    "k": "Crunch",
+    "bas": 2.6,
+    "son": 3.3,
+    "mutlak": 31.31
+   },
+   {
+    "k": "crunch",
+    "bas": 3.4,
+    "son": 3.9,
+    "mutlak": 32.05
+   },
+   {
+    "k": "Normal",
+    "bas": 4.5,
+    "son": 5.0,
+    "mutlak": 33.07
+   }
+  ]
+ },
+ "l08": {
+  "baslangic": 33.65,
+  "tempo": 1.0,
+  "metin": "Snails in France. Mold in cheese. One makes a face, the other digs in.",
+  "bitis": 39.15,
+  "kelimeler": [
+   {
+    "k": "Snails",
+    "bas": 0.2,
+    "son": 0.7,
+    "mutlak": 33.85
+   },
+   {
+    "k": "in",
+    "bas": 0.7,
+    "son": 0.9,
+    "mutlak": 34.35
+   },
+   {
+    "k": "France",
+    "bas": 0.9,
+    "son": 1.5,
+    "mutlak": 34.55
+   },
+   {
+    "k": "mold",
+    "bas": 1.7,
+    "son": 2.2,
+    "mutlak": 35.35
+   },
+   {
+    "k": "in",
+    "bas": 2.2,
+    "son": 2.4,
+    "mutlak": 35.85
+   },
+   {
+    "k": "cheese",
+    "bas": 2.4,
+    "son": 3.1,
+    "mutlak": 36.05
+   },
+   {
+    "k": "One",
+    "bas": 3.2,
+    "son": 3.5,
+    "mutlak": 36.85
+   },
+   {
+    "k": "makes",
+    "bas": 3.5,
+    "son": 3.7,
+    "mutlak": 37.15
+   },
+   {
+    "k": "a",
+    "bas": 3.7,
+    "son": 3.8,
+    "mutlak": 37.35
+   },
+   {
+    "k": "face",
+    "bas": 3.8,
+    "son": 4.3,
+    "mutlak": 37.45
+   },
+   {
+    "k": "the",
+    "bas": 4.5,
+    "son": 4.7,
+    "mutlak": 38.15
+   },
+   {
+    "k": "other",
+    "bas": 4.7,
+    "son": 5.0,
+    "mutlak": 38.35
+   },
+   {
+    "k": "digs",
+    "bas": 5.0,
+    "son": 5.3,
+    "mutlak": 38.65
+   },
+   {
+    "k": "in",
+    "bas": 5.3,
+    "son": 5.5,
+    "mutlak": 38.95
+   }
+  ]
+ },
+ "l09": {
+  "baslangic": 39.75,
+  "tempo": 1.08,
+  "metin": "Hot dogs? Classic. To a tourist? Gross.",
+  "bitis": 43.45,
+  "kelimeler": [
+   {
+    "k": "Hot",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 39.84
+   },
+   {
+    "k": "dogs",
+    "bas": 0.4,
+    "son": 0.9,
+    "mutlak": 40.12
+   },
+   {
+    "k": "Classic",
+    "bas": 1.4,
+    "son": 2.0,
+    "mutlak": 41.05
+   },
+   {
+    "k": "To",
+    "bas": 2.2,
+    "son": 2.4,
+    "mutlak": 41.79
+   },
+   {
+    "k": "a",
+    "bas": 2.4,
+    "son": 2.4,
+    "mutlak": 41.97
+   },
+   {
+    "k": "tourist",
+    "bas": 2.4,
+    "son": 3.0,
+    "mutlak": 41.97
+   },
+   {
+    "k": "Gross",
+    "bas": 3.4,
+    "son": 4.0,
+    "mutlak": 42.9
+   }
+  ]
+ },
+ "l10": {
+  "baslangic": 43.5,
+  "tempo": 1.06,
+  "metin": "Last night, eating a hot dog... the tourist next to you made a face. You laughed.",
+  "bitis": 48.59,
+  "kelimeler": [
+   {
+    "k": "Last",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 43.59
+   },
+   {
+    "k": "night",
+    "bas": 0.4,
+    "son": 0.8,
+    "mutlak": 43.88
+   },
+   {
+    "k": "eating",
+    "bas": 0.9,
+    "son": 1.1,
+    "mutlak": 44.35
+   },
+   {
+    "k": "a",
+    "bas": 1.1,
+    "son": 1.2,
+    "mutlak": 44.54
+   },
+   {
+    "k": "hot",
+    "bas": 1.2,
+    "son": 1.5,
+    "mutlak": 44.63
+   },
+   {
+    "k": "dog",
+    "bas": 1.5,
+    "son": 1.8,
+    "mutlak": 44.92
+   },
+   {
+    "k": "the",
+    "bas": 2.3,
+    "son": 2.4,
+    "mutlak": 45.67
+   },
+   {
+    "k": "tourist",
+    "bas": 2.4,
+    "son": 2.9,
+    "mutlak": 45.76
+   },
+   {
+    "k": "next",
+    "bas": 2.9,
+    "son": 3.1,
+    "mutlak": 46.24
+   },
+   {
+    "k": "to",
+    "bas": 3.1,
+    "son": 3.2,
+    "mutlak": 46.42
+   },
+   {
+    "k": "you",
+    "bas": 3.2,
+    "son": 3.4,
+    "mutlak": 46.52
+   },
+   {
+    "k": "made",
+    "bas": 3.4,
+    "son": 3.5,
+    "mutlak": 46.71
+   },
+   {
+    "k": "a",
+    "bas": 3.5,
+    "son": 3.6,
+    "mutlak": 46.8
+   },
+   {
+    "k": "face",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 46.9
+   },
+   {
+    "k": "You",
+    "bas": 4.8,
+    "son": 5.0,
+    "mutlak": 48.03
+   },
+   {
+    "k": "laughed",
+    "bas": 5.0,
+    "son": 5.4,
+    "mutlak": 48.22
+   }
+  ]
+ },
+ "l11": {
+  "baslangic": 48.65,
+  "tempo": 1.06,
+  "metin": "Then you froze. You made that same face at the grasshoppers. Normal is just how you grew up.",
+  "bitis": 54.03,
+  "kelimeler": [
+   {
+    "k": "Then",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 48.74
+   },
+   {
+    "k": "you",
+    "bas": 0.4,
+    "son": 0.5,
+    "mutlak": 49.03
+   },
+   {
+    "k": "froze",
+    "bas": 0.5,
+    "son": 1.1,
+    "mutlak": 49.12
+   },
+   {
+    "k": "You",
+    "bas": 1.6,
+    "son": 1.7,
+    "mutlak": 50.16
+   },
+   {
+    "k": "made",
+    "bas": 1.7,
+    "son": 1.9,
+    "mutlak": 50.25
+   },
+   {
+    "k": "that",
+    "bas": 1.9,
+    "son": 2.1,
+    "mutlak": 50.44
+   },
+   {
+    "k": "same",
+    "bas": 2.1,
+    "son": 2.4,
+    "mutlak": 50.63
+   },
+   {
+    "k": "face",
+    "bas": 2.4,
+    "son": 2.7,
+    "mutlak": 50.91
+   },
+   {
+    "k": "at",
+    "bas": 2.7,
+    "son": 2.8,
+    "mutlak": 51.2
+   },
+   {
+    "k": "the",
+    "bas": 2.8,
+    "son": 2.9,
+    "mutlak": 51.29
+   },
+   {
+    "k": "grasshoppers",
+    "bas": 2.9,
+    "son": 3.7,
+    "mutlak": 51.39
+   },
+   {
+    "k": "Normal",
+    "bas": 4.2,
+    "son": 4.6,
+    "mutlak": 52.61
+   },
+   {
+    "k": "is",
+    "bas": 4.6,
+    "son": 4.7,
+    "mutlak": 52.99
+   },
+   {
+    "k": "just",
+    "bas": 4.7,
+    "son": 5.0,
+    "mutlak": 53.08
+   },
+   {
+    "k": "how",
+    "bas": 5.0,
+    "son": 5.1,
+    "mutlak": 53.37
+   },
+   {
+    "k": "you",
+    "bas": 5.1,
+    "son": 5.2,
+    "mutlak": 53.46
+   },
+   {
+    "k": "grew",
+    "bas": 5.2,
+    "son": 5.5,
+    "mutlak": 53.56
+   },
+   {
+    "k": "up",
+    "bas": 5.5,
+    "son": 5.7,
+    "mutlak": 53.84
+   }
+  ]
+ },
+ "l12": {
+  "baslangic": 54.1,
+  "tempo": 1.0,
+  "metin": "Next time you're about to say \"gross\"... ask yourself: says who?",
+  "bitis": 58.1,
+  "kelimeler": [
+   {
+    "k": "Next",
+    "bas": 0.1,
+    "son": 0.4,
+    "mutlak": 54.2
+   },
+   {
+    "k": "time",
+    "bas": 0.4,
+    "son": 0.6,
+    "mutlak": 54.5
+   },
+   {
+    "k": "you're",
+    "bas": 0.6,
+    "son": 0.7,
+    "mutlak": 54.7
+   },
+   {
+    "k": "about",
+    "bas": 0.7,
+    "son": 0.9,
+    "mutlak": 54.8
+   },
+   {
+    "k": "to",
+    "bas": 0.9,
+    "son": 1.0,
+    "mutlak": 55.0
+   },
+   {
+    "k": "say",
+    "bas": 1.0,
+    "son": 1.3,
+    "mutlak": 55.1
+   },
+   {
+    "k": "gross",
+    "bas": 1.3,
+    "son": 2.0,
+    "mutlak": 55.4
+   },
+   {
+    "k": "ask",
+    "bas": 2.4,
+    "son": 2.7,
+    "mutlak": 56.5
+   },
+   {
+    "k": "yourself",
+    "bas": 2.7,
+    "son": 3.3,
+    "mutlak": 56.8
+   },
+   {
+    "k": "says",
+    "bas": 3.4,
+    "son": 3.6,
+    "mutlak": 57.5
+   },
+   {
+    "k": "who",
+    "bas": 3.6,
+    "son": 4.0,
+    "mutlak": 57.7
+   }
+  ]
+ }
+}

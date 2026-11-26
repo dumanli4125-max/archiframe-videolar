@@ -33,6 +33,7 @@ function stamp(text,x,y,col,a,rot=-0.1,size=64){if(a<=0)return;const k=1+0.6*(1-
   ctx.font=`800 ${size}px Inter`;ctx.letterSpacing='4px';const w=ctx.measureText(text).width+56,h=size*1.5;
   rr(-w/2,-h/2,w,h,16);ctx.fillStyle='rgba(8,17,32,.82)';ctx.fill();ctx.lineWidth=6;ctx.strokeStyle=col;glow(col,24);ctx.stroke();noGlow();
   ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=col;ctx.fillText(text,2,4);ctx.restore();}
+const T=(tr,en)=>L(tr,en);
 const NORMAL=()=>L('NORMAL','NORMAL'), GROSS=()=>L('İĞRENÇ','GROSS');
 // iki yüzlü damga: önce İĞRENÇ, flip anında NORMAL'e döner (dikey çevirme)
 function flipStamp(x,y,a,tf,t,rot=-0.1,size=64){if(a<=0)return;const k=Math.abs(Math.cos(Math.PI*sm(tf-0.25,tf+0.25,t)));const nrm=t>tf;
@@ -57,10 +58,15 @@ function breadSlice(x,y,s=1,rot=0,honey=0,bite=0){ctx.save();ctx.translate(x,y);
     ctx.fillStyle=hexA(HONEY,0.9*honey);ctx.beginPath();ctx.ellipse(20,14,4,8,0,0,7);ctx.fill();}
   if(bite>0){ctx.globalCompositeOperation='destination-out';for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(30,-14+i*13,10*bite,0,7);ctx.fill();}}
   ctx.restore();}
-function teaGlass(x,y,t){ctx.save();ctx.fillStyle='#f6efe0';ctx.beginPath();ctx.ellipse(x,y,34,8,0,0,7);ctx.fill();
+function teaGlass(x,y,t){if(LANG==='en')return coffeeMug(x,y,t);ctx.save();ctx.fillStyle='#f6efe0';ctx.beginPath();ctx.ellipse(x,y,34,8,0,0,7);ctx.fill();
   ctx.beginPath();ctx.moveTo(x-16,y-6);ctx.quadraticCurveTo(x-24,y-34,x-14,y-46);ctx.lineTo(x-18,y-64);ctx.lineTo(x+18,y-64);ctx.lineTo(x+14,y-46);ctx.quadraticCurveTo(x+24,y-34,x+16,y-6);ctx.closePath();
   ctx.fillStyle='rgba(190,60,30,.85)';glow('rgba(255,120,60,.6)',16);ctx.fill();noGlow();ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=2;ctx.stroke();
   ctx.strokeStyle=hexA(CR,0.35);ctx.lineWidth=3;for(let i=-1;i<=1;i+=2){ctx.beginPath();for(let k=0;k<=8;k++){const yy=y-72-k*5,xx=x+i*7+Math.sin(k*0.8+t*4+i)*4;k?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);}ctx.stroke();}
+  ctx.restore();}
+function coffeeMug(x,y,t){ctx.save();ctx.fillStyle='#f6efe0';ctx.beginPath();ctx.ellipse(x,y,36,8,0,0,7);ctx.fill();
+  ctx.fillStyle='#e8eef6';rr(x-22,y-58,44,54,8);ctx.fill();ctx.strokeStyle='#e8eef6';ctx.lineWidth=7;ctx.beginPath();ctx.arc(x+24,y-32,12,-1.3,1.3);ctx.stroke();
+  ctx.fillStyle=TE;ctx.fillRect(x-22,y-40,44,8);ctx.fillStyle='#5a3418';ctx.beginPath();ctx.ellipse(x,y-56,19,4,0,0,7);ctx.fill();
+  ctx.strokeStyle=hexA(CR,0.35);ctx.lineWidth=3;for(let i=-1;i<=1;i+=2){ctx.beginPath();for(let k=0;k<=8;k++){const yy=y-66-k*5,xx=x+i*7+Math.sin(k*0.8+t*4+i)*4;k?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);}ctx.stroke();}
   ctx.restore();}
 function cheeseOlive(x,y){ctx.save();ctx.fillStyle='#f6efe0';ctx.beginPath();ctx.ellipse(x,y,50,11,0,0,7);ctx.fill();
   ctx.fillStyle='#f4ecd6';ctx.fillRect(x-38,y-26,40,22);ctx.fillStyle='#2e2a26';for(const [dx,dy] of [[16,-12],[30,-10],[23,-20]]){ctx.beginPath();ctx.ellipse(x+dx,y+dy,8,10,0.3,0,7);ctx.fill();}ctx.restore();}
@@ -90,7 +96,7 @@ function moldCheese(x,y,s=1){ctx.save();ctx.translate(x,y);ctx.scale(s,s);
   ctx.fillStyle='#4f8a86';for(const [dx,dy,r] of [[-50,4,7],[-20,-2,5],[10,8,8],[40,-6,6],[60,8,5],[-62,-4,4],[24,-12,4],[-6,10,4]]){ctx.beginPath();ctx.arc(dx,dy,r,0,7);ctx.fill();}
   ctx.fillStyle='#3b6f6b';for(const [dx,dy] of [[-40,-24],[0,-30],[30,-34]]){ctx.beginPath();ctx.arc(dx,dy,4,0,7);ctx.fill();}ctx.restore();}
 // kokoreç dürüm / yarım ekmek
-function kokorecSandwich(x,y,s=1,rot=0,bite=0){ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(s,s);
+function kokorecSandwich(x,y,s=1,rot=0,bite=0){if(LANG==='en')return hotDog(x,y,s,rot,bite);ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(s,s);
   ctx.fillStyle='#c8873e';rr(-56,-16,112,34,16);ctx.fill();
   ctx.fillStyle='#7a4a26';for(let i=0;i<9;i++){ctx.beginPath();ctx.ellipse(-44+i*11,-16,8,6,0.4*i,0,7);ctx.fill();}
   ctx.fillStyle='#c0392b';for(let i=0;i<7;i++){ctx.fillRect(-40+i*13,-24+(i%2)*4,3,3);}
@@ -98,8 +104,23 @@ function kokorecSandwich(x,y,s=1,rot=0,bite=0){ctx.save();ctx.translate(x,y);ctx
   ctx.fillStyle='#e0a25a';rr(-56,-4,112,22,10);ctx.fill();
   if(bite>0){ctx.globalCompositeOperation='destination-out';for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(56,-14+i*13,11*bite,0,7);ctx.fill();}}
   ctx.restore();}
+function hotDog(x,y,s=1,rot=0,bite=0){ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(s,s);
+  ctx.fillStyle='#d79a4e';rr(-56,-8,112,28,14);ctx.fill();
+  ctx.fillStyle='#b8473a';rr(-66,-20,132,22,11);ctx.fill();ctx.fillStyle='rgba(255,200,180,.35)';rr(-58,-18,116,5,3);ctx.fill();
+  ctx.strokeStyle='#ffd23a';ctx.lineWidth=5;ctx.lineJoin='round';ctx.beginPath();for(let i=0;i<=10;i++){const xx=-50+i*10,yy=-10+(i%2?-5:4);i?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);}ctx.stroke();
+  ctx.fillStyle='#e8ad62';rr(-56,0,112,20,10);ctx.fill();
+  if(bite>0){ctx.globalCompositeOperation='destination-out';for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(62,-16+i*13,12*bite,0,7);ctx.fill();}}
+  ctx.restore();}
+// hot dog ızgarası (silindirli)
+function hotDogGrill(x,y,t,w=300){ctx.save();
+  ctx.fillStyle='#2a1a12';rr(x-w/2-20,y+34,w+40,26,8);ctx.fill();
+  ctx.fillStyle='#5a6478';rr(x-w/2-30,y-44,w+60,88,12);ctx.fill();ctx.strokeStyle='#9aa4b8';ctx.lineWidth=3;ctx.stroke();
+  for(let r=0;r<3;r++){const yy=y-24+r*24;ctx.fillStyle='#8a94a8';ctx.fillRect(x-w/2-20,yy-3,w+40,6);
+    for(let i=0;i<4;i++){const xx=x-w/2+30+i*(w-60)/3;ctx.save();ctx.translate(xx,yy);rr(-44,-10,88,20,10);ctx.fillStyle='#b8473a';glow('rgba(255,140,60,.4)',12);ctx.fill();noGlow();
+      ctx.clip();ctx.strokeStyle='rgba(90,20,10,.55)';ctx.lineWidth=3;const ph=((t*30+r*7+i*5)%16);for(let k=-60;k<60;k+=16){ctx.beginPath();ctx.moveTo(k+ph,-12);ctx.lineTo(k+ph+6,12);ctx.stroke();}ctx.restore();}}
+  ctx.restore();}
 // döner kokoreç şişi (ızgara üstünde)
-function kokorecSpit(x,y,t,w=300){ctx.save();
+function kokorecSpit(x,y,t,w=300){if(LANG==='en')return hotDogGrill(x,y,t,w);ctx.save();
   ctx.fillStyle='#2a1a12';rr(x-w/2-20,y+34,w+40,26,8);ctx.fill();
   for(let i=0;i<8;i++){const fl=0.6+0.4*Math.sin(t*9+i*1.7);ctx.fillStyle=hexA('#ff7a2a',0.55*fl);glow('#ff7a2a',20);ctx.beginPath();ctx.ellipse(x-w/2+20+i*(w-40)/7,y+34,14,10+8*fl,0,Math.PI,0);ctx.fill();}noGlow();
   ctx.strokeStyle='#9aa4b8';ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(x-w/2-40,y);ctx.lineTo(x+w/2+40,y);ctx.stroke();
@@ -239,6 +260,7 @@ function beePos(t){ // [x,y,facing]
   if(t<17.6){const u=sm(16.1,16.6,t);return [lerp(700,764,u),lerp(780,840,u)+Math.sin(t*6)*3,1];}
   const u=sm(17.6,18.8,t);return [lerp(764,1200,u),lerp(840,640,u),1];}
 function sBee(t){
+  t=t-L(0,0.6)*sm(14.6,15.4,t); // EN: kovan olayları 0.6 sn geç
   nightStreet(t,{lights:false});
   // yumuşak bahçe ışığı
   const g=ctx.createRadialGradient(300,900,20,300,900,420);g.addColorStop(0,hexA(AM,0.18));g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,480,800,900);
@@ -330,7 +352,7 @@ function sSnail(t){
 }
 // I) 39.8–43.2: kokoreç tezgâhı, kalabalık "Lezzet!", turist "İğrenç!"
 function kokStand(t,x=560){ctx.fillStyle='#14233f';rr(x-300,620,600,780,12);ctx.fill();
-  ctx.save();ctx.font='800 64px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.letterSpacing='6px';const fl=t%2.7<0.06?0.4:1;ctx.fillStyle=hexA(AM,fl);glow(AM,30*fl);ctx.fillText('KOKOREÇ',x+3,700);ctx.restore();
+  ctx.save();ctx.font='800 64px Inter';ctx.textAlign='center';ctx.textBaseline='middle';ctx.letterSpacing='6px';const fl=t%2.7<0.06?0.4:1;ctx.fillStyle=hexA(AM,fl);glow(AM,30*fl);ctx.fillText(L('KOKOREÇ','HOT DOGS'),x+3,700);ctx.restore();
   ctx.strokeStyle=hexA(AM,0.6);ctx.lineWidth=3;rr(x-250,650,500,100,14);ctx.stroke();
   kokorecSpit(x,900,t,360);
   ctx.fillStyle='#24406b';ctx.fillRect(x-300,1060,600,26);ctx.fillStyle='#1d3254';ctx.fillRect(x-290,1086,580,314);
@@ -345,8 +367,8 @@ function sKokorec(t){
   stamp(NORMAL(),280,860,TE,sm(40.6,40.9,t),-0.1,56);
   // turist sağdan
   const u=clamp((t-41.0)/0.9),ph=(t-41)*9;const x=lerp(1180,900,u);
-  const tp=tourist(x,standY(1)-(u<1?walkBob(ph):0),{facing:-1,pose:u<1?walk(ph):(t>42.55?{...POSE.stand,lean:-8,ua:70,fa:150}:POSE.stand),face:t>42.55?'gross':'neutral',label:sm(41.4,41.7,t)},t);
-  bubble(tp.head[0]-40,tp.head[1]-190,L('İğrenç!','Gross!'),sm(42.55,42.8,t),RED);
+  const tp=tourist(x,standY(1)-(u<1?walkBob(ph):0),{facing:-1,pose:u<1?walk(ph):(t>T(42.55,42.85)?{...POSE.stand,lean:-8,ua:70,fa:150}:POSE.stand),face:t>T(42.55,42.85)?'gross':'neutral',label:sm(41.4,41.7,t)},t);
+  bubble(tp.head[0]-40,tp.head[1]-190,L('İğrenç!','Gross!'),sm(T(42.55,42.85),T(42.8,43.1),t),RED);
 }
 // J) 43.3–48.45: SEN kokoreç yer, yan masadaki turist buruşturur, SEN güler
 function sTwist(t){
@@ -380,6 +402,7 @@ function faceCard(cx,cy,col,label,a,t,kind){if(a<=0)return;ctx.save();ctx.global
     ctx.fillStyle='#d9b26a';ctx.beginPath();ctx.ellipse(f.head[0],f.head[1]-45,90,18,0,0,7);ctx.fill();rr(f.head[0]-48,f.head[1]-96,96,57,21);ctx.fill();}
   ctx.restore();tag(label,cx,cy-210,col,1);ctx.restore();}
 function sMirror(t){
+  t=t-L(0,0.3); // EN: 'froze/same face/Normal' 0.3 sn geç
   if(t<49.75){
     // aynı kafe sahnesi, SEN donar
     nightStreet(t);fade(0.18,'5,10,20');kokStand(t,880);fade(0.25,'5,10,20');
@@ -394,8 +417,8 @@ function sMirror(t){
     fade(sm(49.5,49.75,t)*0.9,'5,10,20');
   } else if(t<51.95){
     room();fade(0.3,'5,10,20');
-    faceCard(290,900,CO,L('SEN, ÇEKİRGEYE','YOU, AT BUGS'),sm(49.8,50.2,t),t,'sen');
-    faceCard(790,900,CR,L('TURİST, KOKOREÇE','TOURIST, AT KOKOREÇ'),sm(50.3,50.7,t),t,'tourist');
+    faceCard(290,900,CO,L('SEN, ÇEKİRGEYE','YOU vs BUGS'),sm(49.8,50.2,t),t,'sen');
+    faceCard(790,900,CR,L('TURİST, KOKOREÇE','TOURIST vs HOT DOG'),sm(50.3,50.7,t),t,'tourist');
     const e=sm(50.6,50.9,t);if(e>0){ctx.save();ctx.globalAlpha=e;ctx.translate(540,900);const k=1+0.1*Math.sin((t-50.6)*10)*(1-sm(51,51.5,t));ctx.scale(k,k);
       ctx.fillStyle='#0a1426';ctx.beginPath();ctx.arc(0,0,58,0,7);ctx.fill();ctx.lineWidth=5;ctx.strokeStyle=AM;glow(AM,24);ctx.stroke();noGlow();txt('=',0,2,72,AM,'center',800);ctx.restore();}
     tag(L('AYNI YÜZ','SAME FACE'),540,1230,AM,sm(50.7,51.0,t));
@@ -417,41 +440,41 @@ function sMirror(t){
 // ================= ALTYAZILAR =================
 const W1='#fff';
 function caps(t){
-  caption(L([[['Bal yiyorsun,',W1]],[['normal.',TE]]],[[['You eat honey —',W1]],[['normal.',TE]]]),0.3,2.55,t);
-  caption(L([[['Böcek yiyen',W1]],[['iğrenç mi?',RED]]],[[['Someone eats bugs —',W1]],[['gross?',RED]]]),2.5,3.9,t);
-  caption(L([[['Hadi, düşünmeden söyle.',AM]]],[[['Quick, don\'t think.',AM]]]),3.85,5.4,t);
-  caption(L([[['Sabah, kahvaltı masası.',W1]]],[[['Breakfast table.',W1]]]),5.5,7.55,t);
-  caption(L([[['Ekmeği ',W1],['bala',AM],[' banıyorsun.',W1]]],[[['You dip bread in ',W1],['honey.',AM]]]),7.5,8.95,t);
-  caption(L([[['Bala ',AM],['bayılıyorsun.',W1]]],[[['You ',W1],['love',AM],[' it.',W1]]]),8.9,10.65,t);
-  caption(L([[['Normal.',TE]]],[[['Normal.',TE]]]),9.95,10.65,t,62,316);
-  caption(L([[['Peki bu bal',W1]],[['nereden geliyor?',AM]]],[[['But where does',W1]],[['honey come from?',AM]]]),10.7,12.5,t);
-  caption(L([[['Biliyor musun?',AM]]],[[['Do you know?',AM]]]),12.45,13.3,t,70);
-  caption(L([[['Arı çiçekten',W1]],[['nektar',AM],[' topluyor.',W1]]],[[['Bees collect',W1]],[['nectar',AM],[' from flowers.',W1]]]),13.4,15.45,t);
-  caption(L([[['Kovana dönünce',W1]],[['ağzından geri veriyor.',AM]]],[[['Back at the hive,',W1]],[['they spit it back up.',AM]]]),15.4,17.85,t);
-  caption(L([[['Bal ',AM],['öyle oluyor.',W1]]],[[['That\'s ',W1],['honey.',AM]]]),17.8,19.0,t,70);
-  caption(L([[['Yani ekmeğe sürdüğün şey',W1]]],[[['So what\'s on your bread',W1]]]),19.1,20.65,t);
-  caption(L([[['arının ',W1],['ağzından',AM],[' çıktı.',W1]]],[[['came out of a ',W1],['bee\'s mouth.',AM]]]),20.6,22.1,t);
+  caption(L([[['Bal yiyorsun,',W1]],[['normal.',TE]]],[[['You eat honey,',W1]],[['that\'s ',W1],['normal.',TE]]]),0.3,2.55,t);
+  caption(L([[['Böcek yiyen',W1]],[['iğrenç mi?',RED]]],[[['But eating bugs',W1]],[['is ',W1],['gross?',RED]]]),2.5,T(3.9,4.15),t);
+  caption(L([[['Hadi, düşünmeden söyle.',AM]]],[[['Quick, don\'t think.',AM]]]),T(3.85,4.1),5.4,t);
+  caption(L([[['Sabah, kahvaltı masası.',W1]]],[[['Morning. Breakfast table.',W1]]]),5.5,7.55,t);
+  caption(L([[['Ekmeği ',W1],['bala',AM],[' banıyorsun.',W1]]],[[['You dip your bread',W1]],[['in ',W1],['honey.',AM]]]),7.5,T(8.95,9.15),t);
+  caption(L([[['Bala ',AM],['bayılıyorsun.',W1]]],[[['You ',W1],['love',AM],[' it.',W1]]]),T(8.9,9.1),10.65,t);
+  caption(L([[['Normal.',TE]]],[[['Normal.',TE]]]),T(9.95,10.1),10.65,t,62,316);
+  caption(L([[['Peki bu bal',W1]],[['nereden geliyor?',AM]]],[[['So where does',W1]],[['honey come from?',AM]]]),10.7,12.5,t);
+  caption(L([[['Biliyor musun?',AM]]],[[['Any idea?',AM]]]),12.45,13.3,t,70);
+  caption(L([[['Arı çiçekten',W1]],[['nektar',AM],[' topluyor.',W1]]],[[['Bees collect',W1]],[['nectar',AM],[' from flowers.',W1]]]),13.4,T(15.45,15.95),t);
+  caption(L([[['Kovana dönünce',W1]],[['ağzından geri veriyor.',AM]]],[[['Back at the hive,',W1]],[['they spit it up.',AM]]]),T(15.4,15.9),T(17.85,18.25),t);
+  caption(L([[['Bal ',AM],['öyle oluyor.',W1]]],[[['That\'s ',W1],['honey.',AM]]]),T(17.8,18.2),19.0,t,70);
+  caption(L([[['Yani ekmeğe sürdüğün şey',W1]]],[[['So the stuff on your toast',W1]]]),19.1,T(20.65,20.4),t);
+  caption(L([[['arının ',W1],['ağzından',AM],[' çıktı.',W1]]],[[['came out of a ',W1],['bee\'s mouth.',AM]]]),T(20.6,20.35),22.1,t);
   caption(L([[['Yine de ',W1],['normal.',TE]]],[[['Still ',W1],['normal.',TE]]]),22.05,23.0,t,70);
   caption(L([[['Şimdi başka bir ülke.',W1]]],[[['Now, another country.',W1]]]),23.2,24.85,t);
-  caption(L([[['Tezgâhta',W1]],[['çekirge kızartması.',AM]]],[[['At the stall:',W1]],[['fried grasshoppers.',AM]]]),24.8,27.0,t);
-  caption(L([[['Bizimkiler bağırıyor:',W1]]],[[['Our crowd yells:',W1]]]),26.95,28.8,t);
+  caption(L([[['Tezgâhta',W1]],[['çekirge kızartması.',AM]]],[[['Street stall:',W1]],[['fried grasshoppers.',AM]]]),24.8,27.0,t);
+  caption(L([[['Bizimkiler bağırıyor:',W1]]],[[['We all yell:',W1]]]),26.95,28.8,t);
   caption(L([[['İğrenç!',RED]]],[[['Gross!',RED]]]),28.25,28.8,t,70,318);
-  caption(L([[['Ama oradaki çocuk',W1]],[['onu cips gibi...',W1]]],[[['But the local kid',W1]],[['eats them like chips...',W1]]]),28.9,31.1,t);
-  caption(L([[['kıtır kıtır',AM],[' yiyor.',W1]]],[[['crunch, ',AM],['crunch.',AM]]]),31.05,32.5,t,70);
-  caption(L([[['Ona göre ',W1],['normal.',TE]]],[[['To him? ',W1],['Normal.',TE]]]),32.45,33.5,t,70);
+  caption(L([[['Ama oradaki çocuk',W1]],[['onu cips gibi...',W1]]],[[['But the local kid',W1]],[['eats them like chips...',W1]]]),28.9,T(31.1,31.25),t);
+  caption(L([[['kıtır kıtır',AM],[' yiyor.',W1]]],[[['crunch, ',AM],['crunch.',AM]]]),T(31.05,31.2),T(32.5,32.95),t,70);
+  caption(L([[['Ona göre ',W1],['normal.',TE]]],[[['Normal.',TE]]]),T(32.45,32.9),33.5,t,70);
   caption(L([[['Fransa\'da ',W1],['salyangoz.',TE]]],[[['Snails',TE],[' in France.',W1]]]),33.6,35.25,t);
-  caption(L([[['Peynirin içinde ',W1],['küf.',AM]]],[[['Mold',AM],[' in cheese.',W1]]]),35.2,36.95,t);
-  caption(L([[['Biri yüzünü ',W1],['ekşitiyor,',RED]]],[[['One makes a ',W1],['face,',RED]]]),36.9,38.35,t);
+  caption(L([[['Peynirin içinde ',W1],['küf.',AM]]],[[['Mold',AM],[' in cheese.',W1]]]),35.2,T(36.95,36.75),t);
+  caption(L([[['Biri yüzünü ',W1],['ekşitiyor,',RED]]],[[['One makes a ',W1],['face,',RED]]]),T(36.9,36.7),38.35,t);
   caption(L([[['öbürü ',W1],['afiyetle',TE],[' yiyor.',W1]]],[[['the other ',W1],['digs in.',TE]]]),38.3,39.7,t);
-  caption(L([[['Bize kokoreç ',W1],['lezzet.',AM]]],[[['To us, kokoreç is a ',W1],['treat.',AM]]]),39.8,41.4,t);
-  caption(L([[['Turiste sorsan...',W1]]],[[['Ask a tourist...',W1]]]),41.35,43.2,t);
-  caption(L([[['iğrenç.',RED]]],[[['gross.',RED]]]),42.55,43.2,t,70,318);
-  caption(L([[['Geçen akşam',W1]],[['kokoreç',AM],[' yerken...',W1]]],[[['Last night,',W1]],[['eating ',W1],['kokoreç...',AM]]]),43.3,45.45,t);
-  caption(L([[['yan masadaki turist',W1]],[['yüzünü buruşturdu.',RED]]],[[['the tourist next table',W1]],[['made a face.',RED]]]),45.4,47.75,t);
-  caption(L([[['Güldün.',CO]]],[[['You laughed.',CO]]]),47.7,48.45,t,74);
-  caption(L([[['Sonra ',W1],['durdun.',CO]]],[[['Then you ',W1],['stopped.',CO]]]),48.5,49.8,t,70);
-  caption(L([[['Sen de ',W1],['çekirgeye',AM]],[['aynı yüzü',RED],[' yapmıştın.',W1]]],[[['You made that ',W1],['same face',RED]],[['at the ',W1],['grasshoppers.',AM]]]),49.75,51.95,t);
-  caption(L([[['Normal dediğin,',TE]],[['büyüdüğün sofra.',W1]]],[[['Normal is just',TE]],[['the table you grew up at.',W1]]]),51.95,54.0,t);
+  caption(L([[['Bize kokoreç ',W1],['lezzet.',AM]]],[[['Hot dogs? ',AM],['Classic.',W1]]]),39.8,41.4,t);
+  caption(L([[['Turiste sorsan...',W1]]],[[['To a tourist?',W1]]]),41.35,43.2,t);
+  caption(L([[['iğrenç.',RED]]],[[['Gross.',RED]]]),T(42.55,42.85),43.2,t,70,318);
+  caption(L([[['Geçen akşam',W1]],[['kokoreç',AM],[' yerken...',W1]]],[[['Last night,',W1]],[['eating a ',W1],['hot dog...',AM]]]),43.3,T(45.45,45.6),t);
+  caption(L([[['yan masadaki turist',W1]],[['yüzünü buruşturdu.',RED]]],[[['the tourist next to you',W1]],[['made a face.',RED]]]),T(45.4,45.55),T(47.75,47.95),t);
+  caption(L([[['Güldün.',CO]]],[[['You laughed.',CO]]]),T(47.7,47.95),T(48.45,48.6),t,74);
+  caption(L([[['Sonra ',W1],['durdun.',CO]]],[[['Then you ',W1],['froze.',CO]]]),T(48.5,48.65),T(49.8,50.1),t,70);
+  caption(L([[['Sen de ',W1],['çekirgeye',AM]],[['aynı yüzü',RED],[' yapmıştın.',W1]]],[[['You made that ',W1],['same face',RED]],[['at the ',W1],['grasshoppers.',AM]]]),T(49.75,50.05),T(51.95,52.4),t);
+  caption(L([[['Normal dediğin,',TE]],[['büyüdüğün sofra.',W1]]],[[['Normal is just',TE]],[['how you grew up.',W1]]]),T(51.95,52.35),54.0,t);
 }
 
 function scene(t){
@@ -470,9 +493,9 @@ function scene(t){
   if(t<54.05) caps(t);
   // final
   fade(0.95*sm(53.95,54.4,t),'5,10,20');
-  caption(L([[['Bir dahaki sefere',W1]],[['"iğrenç" demeden önce...',W1]]],[[['Next time, before',W1]],[['you say "gross"...',W1]]]),54.1,61,t,70,700);
-  caption(L([[['bir sor:',W1]]],[[['ask:',W1]]]),56.6,61,t,74,930);
-  caption(L([[['Kime göre?',AM]]],[[['Says who?',AM]]]),57.35,61,t,110,1080);
+  caption(L([[['Bir dahaki sefere',W1]],[['"iğrenç" demeden önce...',W1]]],[[['Next time you\'re about',W1]],[['to say "gross"...',W1]]]),54.1,61,t,70,700);
+  caption(L([[['bir sor:',W1]]],[[['ask yourself:',W1]]]),T(56.6,56.45),61,t,74,930);
+  caption(L([[['Kime göre?',AM]]],[[['Says who?',AM]]]),T(57.35,57.45),61,t,110,1080);
   endCard(t,58.4);
 }
 K.run(DURATION, scene);

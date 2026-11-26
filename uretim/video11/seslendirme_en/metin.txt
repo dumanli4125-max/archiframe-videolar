@@ -1,0 +1,13 @@
+# Ses: Cartesia "Kyle" (sonic-3.5, Speko, speed 1.0). Satır = dosya, videodaki başlangıç saniyesi, audio_en.py tempo.
+l01 0.3   1.0   When did you last hug someone for no reason? Don't think. Just say it.
+l02 4.8   1.0   Morning. It's seven-twelve. You're both in the bathroom, side by side.
+l03 9.9   1.08  You're brushing your teeth. So are they. Eyes glued to your phones.
+l04 13.9  1.0   Then the rush starts. Shoes... keys... door... And you're out without even saying bye.
+l05 20.8  1.0   Evening. Same couch. But you're staring at two different screens.
+l06 25.3  1.02  Even "good night" comes through a screen. From the same bed.
+l07 29.1  1.07  Same house. Same sink. Same mirror.
+l08 32.4  1.0   So when did you last hug them... for no reason at all?
+l09 36.0  1.04  Birthdays, holidays, apologies... there's gotta be a reason.
+l10 40.3  1.0   Next morning, same bathroom. You put the brush down and hug them from behind.
+l11 45.0  1.08  They're surprised. "What's wrong?" You say, "Nothing." They smile and hug you back.
+l12 50.6  1.0   When you get home today... hug them for no reason. If they ask why... say, "nothing."

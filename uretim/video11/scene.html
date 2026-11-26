@@ -8,6 +8,10 @@
 const DURATION = 59.0;
 const AM=C.amber, CO=C.coral, TE=C.teal, CR=C.cream;
 const SEV=L('SEVGİLİ','PARTNER');
+const T=(tr,en)=>L(tr,en); // yalnız İngilizcede olay kaydırma
+// EN: l11 kelimeleri TR'den geç düşüyor; sBath2'yi 45 sn sonrası için zaman-eğriyle oynat (TR'de birebir)
+const W2=[[45.0,45.0],[46.3,45.8],[48.33,47.0],[49.26,48.35],[49.9,49.15],[60,59.25]];
+const warp2=t=>LANG==='en'&&t>45?keyed(t,W2):t;
 
 // ---------- yardımcılar ----------
 let REF=0; // 1 = aynadaki yansıma çiziliyor (etiket/balon yok, soluk)
@@ -100,7 +104,7 @@ function sBath1(t){
   const ha=sm(0.4,1.0,t)*(1-sm(4.3,4.9,t));
   if(ha>0){const pu=1+0.06*Math.sin(t*6);heartLine(545,900,60*pu,CO,ha*0.9);bigText('?',545,880,64,CO,ha);}
   fade((1-lit)*0.5,'5,10,20');
-  if(t>5.6){const flip=t>6.75;clockPanel(540,480,flip?'07:12':'07:11',flip?1-sm(6.75,7.6,t):0,sm(5.6,5.9,t));}
+  if(t>5.6){const fT=T(6.75,6.2),flip=t>fT;clockPanel(540,480,flip?'07:12':'07:11',flip?1-sm(fT,fT+0.85,t):0,sm(5.6,5.9,t));}
   tag(L('BANYO','BATHROOM'),540,580,TE,sm(5.2,5.6,t));
 }
 // Koridor (13.85 – 20.6): telaş
@@ -121,7 +125,7 @@ function sHall(t){
   const x=keyed(t,HALLX), x2=keyed(t+0.05,HALLX), f=x2>=x?1:-1;
   const a=1-sm(19.5,19.85,t);
   if(a>0){const sp=person({...walker(x,t*12,f),color:CO,lean:12,alpha:a,ua2:30,fa2:60},'SEN',CO);mouth(sp,f,1,0);
-    popIcon('shoe',sp.head[0],sp.head[1]-200,16.0,t);popIcon('key',sp.head[0],sp.head[1]-200,16.8,t);}
+    popIcon('shoe',sp.head[0],sp.head[1]-200,T(16.0,15.5),t);popIcon('key',sp.head[0],sp.head[1]-200,T(16.8,16.4),t);}
 }
 // Kanepe (20.6 – 25.2)
 function sSofa(t){
@@ -131,7 +135,7 @@ function sSofa(t){
   const sc=Math.sin(t*9)*3, sc2=Math.sin(t*8+2)*3;
   const sp=person({x:390,y:1300,color:CO,...POSE.sitPhone,facing:-1,fa:140+sc,look:4,nodY:3},'SEN',CO);mouth(sp,-1,1,-0.2);
   const pp=person({x:700,y:1300,color:CR,...POSE.sitPhone,facing:1,fa:140+sc2,look:4,nodY:3},SEV,CR);mouth(pp,1,1,-0.2);
-  const two=sm(23.2,23.6,t);
+  const two=sm(T(23.2,23.7),T(23.6,24.1),t);
   phoneOf(sp,-1,false,t,{color:TE});phoneOf(pp,1,false,t,{color:TE});
   if(two>0){ctx.save();ctx.globalAlpha=two;ctx.setLineDash([12,12]);ctx.strokeStyle=hexA(CO,0.8);ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(545,1000);ctx.lineTo(545,1340);ctx.stroke();ctx.restore();
     for(const p of [[sp,-1],[pp,1]]){const hx=p[0].hand[0]+p[1]*6,hy=p[0].hand[1]-16;ctx.save();ctx.globalAlpha=two*(0.6+0.4*Math.sin(t*8));ctx.strokeStyle=TE;ctx.lineWidth=4;glow(TE,20);ctx.beginPath();ctx.arc(hx,hy,52,0,7);ctx.stroke();ctx.restore();}}
@@ -139,7 +143,7 @@ function sSofa(t){
 // Yatak (25.2 – 29.0)
 function sBed(t){
   room();windowNight(640,640,300,330,{moon:true});
-  const off=sm(28.0,28.3,t);
+  const off=sm(T(28.0,28.5),T(28.3,28.8),t);
   // komodin lambası
   ctx.fillStyle='#1d3254';ctx.fillRect(40,1200,90,200);ctx.save();ctx.globalAlpha=1-off*0.85;ctx.fillStyle=AM;glow(AM,40);ctx.beginPath();ctx.moveTo(55,1150);ctx.lineTo(115,1150);ctx.lineTo(100,1105);ctx.lineTo(70,1105);ctx.closePath();ctx.fill();ctx.restore();noGlow();
   if(off<1)lampCone(85,1150,300,250,1-off);
@@ -185,10 +189,10 @@ function sApart(t){
 // Sebep kartları (35.9 – 40.2)
 function sCards(t){
   room();
-  reasonCard(200,800,'cake',L('DOĞUM GÜNÜ','BIRTHDAY'),sm(36.1,36.45,t),sm(38.65,38.85,t));
-  reasonCard(540,800,'gift',L('BAYRAM','HOLIDAY'),sm(37.0,37.35,t),sm(38.85,39.05,t));
-  reasonCard(880,800,'flower',L('ÖZÜR','SORRY'),sm(37.8,38.15,t),sm(39.05,39.25,t));
-  const shrug=sm(38.6,39.0,t);
+  reasonCard(200,800,'cake',L('DOĞUM GÜNÜ','BIRTHDAY'),sm(36.1,36.45,t),sm(T(38.65,39.35),T(38.85,39.55),t));
+  reasonCard(540,800,'gift',L('BAYRAM','HOLIDAY'),sm(37.0,37.35,t),sm(T(38.85,39.55),T(39.05,39.75),t));
+  reasonCard(880,800,'flower',L('ÖZÜR','SORRY'),sm(37.8,38.15,t),sm(T(39.05,39.75),T(39.25,39.95),t));
+  const shrug=sm(T(38.6,39.2),T(39.0,39.6),t);
   const sp=person({x:430,y:standY(0.85),s:0.85,color:CO,...blend(POSE.stand,POSE.shrug,shrug),facing:1},'SEN',CO);mouth(sp,1,0.85,-0.3*shrug);
   const pp=person({x:650,y:standY(0.85),s:0.85,color:CR,...blend(POSE.stand,POSE.shrug,shrug),facing:-1},SEV,CR);mouth(pp,-1,0.85,-0.3*shrug);
 }
@@ -246,28 +250,28 @@ function sBath2(t){
 // ================= ALTYAZILAR =================
 function caps(t){
   if(LANG==='en'){
-  caption([[["When's the last time you",'#fff']],[['hugged someone ','#fff'],['for no reason?',CO]]],0.3,2.95,t,60);
-  caption([[["Don't think. ",'#fff'],['Just answer.',AM]]],2.9,4.7,t);
-  caption([[['Morning. ','#fff'],['7:12.',AM]]],4.8,7.6,t,70);
-  caption([[["You're both in the bathroom,",'#fff']],[['side by side.',TE]]],7.55,9.8,t,58);
-  caption([[["You're ",'#fff'],['brushing your teeth.',AM]],[['So are they.','#fff']]],9.9,12.1,t,60);
-  caption([[['Both of you, eyes','#fff']],[['on your ','#fff'],['phones.',TE]]],12.05,13.85,t);
-  caption([[['Then the ','#fff'],['rush.',CO]]],13.9,15.85,t,70);
-  caption([[['Shoes, keys, ','#fff'],['door...',AM]]],15.8,18.6,t,70);
-  caption([[['You leave without','#fff']],[['even saying ','#fff'],['bye.',CO]]],18.55,20.5,t);
-  caption([[['Evening. ','#fff'],['Same couch.',AM]]],20.8,22.9,t,70);
-  caption([[['Two ','#fff'],['different',TE]],[['screens.','#fff']]],22.85,25.1,t,70);
-  caption([[['Even ','#fff'],['"good night"',TE]],[['comes through a screen.','#fff']]],25.3,27.3,t);
-  caption([[['From the ','#fff'],['same bed.',CO]]],27.25,28.95,t,70);
-  caption([[['Same house.','#fff']],[['Same ','#fff'],['sink.',AM],[' Same ','#fff'],['mirror.',AM]]],29.1,32.2,t);
-  caption([[["So when's the last time",'#fff']],[['you hugged them ','#fff'],['for no reason?',CO]]],32.4,35.85,t,56);
-  caption([[['Birthdays, holidays,','#fff']],[['apologies...','#fff']]],36.0,38.5,t);
-  caption([[["There's always ",'#fff'],['a reason.',CO]]],38.45,40.1,t);
-  caption([[['Next morning,',AM],[' same bathroom.','#fff']]],40.3,42.4,t,58);
-  caption([[['You put the brush down','#fff']],[['and ','#fff'],['hug them from behind.',CO]]],42.35,45.0,t,56);
-  caption([[["They're surprised: ",'#fff']],[['"What\'s wrong?"',TE]]],45.0,46.4,t);
-  caption([[['You say: ','#fff'],['"Nothing."',CO]]],46.4,48.1,t,66);
-  caption([[['They smile...','#fff']],[['and ','#fff'],['hug you back.',AM]]],48.05,50.3,t);
+  caption([[['When did you last hug','#fff']],[['someone ','#fff'],['for no reason?',CO]]],0.3,2.95,t,64);
+  caption([[["Don't think. ",'#fff'],['Just say it.',AM]]],2.9,4.75,t,64);
+  caption([[['Morning. ','#fff'],["It's ",'#fff'],['7:12.',AM]]],4.8,6.75,t,66);
+  caption([[["You're both in the bathroom,",'#fff']],[['side by side.',TE]]],6.7,9.8,t,58);
+  caption([[["You're ",'#fff'],['brushing your teeth.',AM]],[['So are they.','#fff']]],9.9,12.5,t,60);
+  caption([[['Eyes glued','#fff']],[['to your ','#fff'],['phones.',TE]]],12.45,13.85,t,66);
+  caption([[['Then the ','#fff'],['rush',CO],[' starts.','#fff']]],13.9,15.4,t,66);
+  caption([[['Shoes, keys, ','#fff'],['door...',AM]]],15.35,18.4,t,66);
+  caption([[["And you're out without",'#fff']],[['even saying ','#fff'],['bye.',CO]]],18.35,20.5,t,60);
+  caption([[['Evening. ','#fff'],['Same couch.',AM]]],20.8,22.9,t,66);
+  caption([[["But you're staring at",'#fff']],[['two different',TE],[' screens.','#fff']]],22.85,25.1,t,60);
+  caption([[['Even ','#fff'],['"good night"',TE]],[['comes through a screen.','#fff']]],25.3,27.9,t,60);
+  caption([[['From the ','#fff'],['same bed.',CO]]],27.85,29.0,t,66);
+  caption([[['Same house.','#fff']],[['Same ','#fff'],['sink.',AM],[' Same ','#fff'],['mirror.',AM]]],29.1,32.2,t,64);
+  caption([[['So when did you last','#fff']],[['hug them ','#fff'],['for no reason?',CO]]],32.4,35.85,t,60);
+  caption([[['Birthdays, holidays,','#fff']],[['apologies...','#fff']]],36.0,39.1,t,64);
+  caption([[["There's gotta be ",'#fff']],[['a reason.',CO]]],39.05,40.1,t,64);
+  caption([[['Next morning,',AM],[' same bathroom.','#fff']]],40.3,42.6,t,58);
+  caption([[['You put the brush down','#fff']],[['and ','#fff'],['hug them from behind.',CO]]],42.55,45.0,t,56);
+  caption([[["They're surprised: ",'#fff']],[['"What\'s wrong?"',TE]]],45.0,47.7,t,64);
+  caption([[['You say: ','#fff'],['"Nothing."',CO]]],47.65,49.15,t,66);
+  caption([[['They smile...','#fff']],[['and ','#fff'],['hug you back.',AM]]],49.1,50.4,t,64);
   return;}
   caption([[['En son ne zaman','#fff']],[['sebepsiz ',AM],['sarıldın?',CO]]],0.3,2.95,t,74);
   caption([[['Hadi, ','#fff'],['düşünmeden',AM],[' söyle.','#fff']]],2.9,4.7,t);
@@ -301,16 +305,16 @@ function scene(t){
   else if(t<32.3)sSink(t);
   else if(t<35.9)sApart(t);
   else if(t<40.2)sCards(t);
-  else sBath2(t);
+  else sBath2(warp2(t));
   for(const c of [13.85,20.6,25.2,29.0,32.3,35.9,40.2]) fade(0.9*(1-clamp(Math.abs(t-c)/0.22)),'5,10,20');
   if(t<50.4)caps(t);
   // final
   fade(0.86*sm(50.3,50.9,t),'5,10,20');
-  caption(L([[['Bugün eve girince...','#fff']]],[[['Tonight, when you get home...','#fff']]]),50.8,DURATION,t,L(70,60),700);
-  caption(L([[['hiçbir sebep olmadan','#fff']],[['sarıl.',CO]]],[[['hug them','#fff']],[['for no reason.',CO]]]),L(52.0,52.0),DURATION,t,76,860);
-  caption(L([[['Sebep sorarsa,','#fff']],[['"hiç" de.',AM]]],[[['If they ask why,','#fff']],[['say "nothing."',AM]]]),L(53.7,53.7),DURATION,t,70,1110);
+  caption(L([[['Bugün eve girince...','#fff']]],[[['When you get home today...','#fff']]]),50.8,DURATION,t,L(70,60),700);
+  caption(L([[['hiçbir sebep olmadan','#fff']],[['sarıl.',CO]]],[[['hug them','#fff']],[['for no reason.',CO]]]),T(52.0,52.2),DURATION,t,76,860);
+  caption(L([[['Sebep sorarsa,','#fff']],[['"hiç" de.',AM]]],[[['If they ask why,','#fff']],[['say "nothing."',AM]]]),T(53.7,54.0),DURATION,t,70,1110);
   if(t>50.9){heart(540,575,26*(1+0.08*Math.sin(t*4)),CO,sm(50.9,51.4,t));}
-  endCard(t,56.3);
+  endCard(t,T(56.3,56.9));
 }
 K.run(DURATION, scene);
 </script></body></html>

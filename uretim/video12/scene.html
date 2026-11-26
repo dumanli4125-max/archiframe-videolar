@@ -5,11 +5,12 @@
 <script>
 // 12 — Metroda sıradan. Satır başlangıçları audio.py VO ile AYNI.
 const DURATION = 59.5;
+const T=(tr,en)=>L(tr,en);   // yalnız İngilizcede olay kaydırma
 const AX=330, SX=560, GX=790, IX=1000;   // amca, SEN, genç, işçi (kalça x)
 const POLE=41;                            // direk = kalça x + 41 (arka el)
 const CLK=7.0;                            // "kırk": 07:40
 const DOOR=39.5, AIN0=40.3, AIN1=41.6;    // kapı açılır, amca girer
-const HELLO=44.3, SMILE=47.1, NAME=49.9;  // günaydın, gülümser, "Ben Hasan"
+const HELLO=44.3, SMILE=47.1, NAME=T(49.9,50.4);  // günaydın, gülümser, "Ben Hasan"
 function fmt12(min){min=Math.floor(min);const h=Math.floor(min/60)%12||12,m=min%60;return h+':'+String(m).padStart(2,'0');}
 
 // ---------- günler ----------
@@ -131,7 +132,7 @@ function elbowOf(x,y,o,f){ // figure() ile aynı geometri: ön dirsek
 
 // ---------- SIRADAN bandı ----------
 function ordinaryBand(t){
-  const flick=t>37.0&&t<38.0?(0.55+0.45*Math.abs(Math.sin(t*31))):1;
+  const flick=t>T(37.0,37.6)&&t<T(38.0,38.5)?(0.55+0.45*Math.abs(Math.sin(t*31))):1;
   const gone=sm(NAME+0.1,NAME+1.0,t);
   const a=sm(0.3,0.9,t)*flick*(1-gone); if(a<=0.001)return;
   const y=905, x0=225, x1=1060;
@@ -153,7 +154,7 @@ function ordinaryBand(t){
 function amca(t){
   const absent=t>=30.4&&t<AIN0;
   if(absent){ // boş köşe: kesik çizgili silüet
-    const a=sm(32.2,32.8,t)*0.55;if(a>0){ctx.save();ctx.globalAlpha=a;ctx.setLineDash([12,10]);ctx.strokeStyle=C.cream;ctx.lineWidth=3;
+    const a=sm(T(32.2,32.9),T(32.8,33.5),t)*0.55;if(a>0){ctx.save();ctx.globalAlpha=a;ctx.setLineDash([12,10]);ctx.strokeStyle=C.cream;ctx.lineWidth=3;
       ctx.beginPath();ctx.arc(AX+4,1080,40,0,7);ctx.stroke();rr(AX-30,1120,62,150,30);ctx.stroke();ctx.setLineDash([]);ctx.restore();}
     return null;}
   let x=AX,y=STAND_Y,o,f=1,back=t>=AIN0;
@@ -213,7 +214,7 @@ function scene(t){
   const amcaTagA=(sm(10.6,11.0,t)*(1-sm(24.8,25.2,t)))+sm(25.4,25.8,t)*(1-sm(30.0,30.4,t))+sm(AIN1,AIN1+0.4,t)*(1-sm(51.0,51.4,t));
   if(fa) tag(t>NAME?L('HASAN','HAROLD'):L('AMCA','OLD MAN'),AX+4,1480,t>NAME?C.amber:C.cream,clamp(amcaTagA));
   tag(L('GENÇ','THE KID'),GX+4,1480,C.cream,sm(12.2,12.6,t)*(1-sm(24.8,25.2,t)));
-  tag(L('İŞÇİ','WORKER'),IX-30,1480,C.cream,sm(14.5,14.9,t)*(1-sm(24.8,25.2,t)));
+  tag(L('İŞÇİ','WORKER'),IX-30,1480,C.cream,sm(T(14.5,13.4),T(14.9,13.8),t)*(1-sm(24.8,25.2,t)));
   // "?" adı yok
   if(fa) bubble(fa.head[0],fa.head[1]-120,'?',sm(28.4,28.8,t)*(1-sm(29.9,30.3,t)),C.coral);
   // günaydın balonları
@@ -233,13 +234,13 @@ function scene(t){
   fade(0.18*sm(30.4,31.0,t)*(1-sm(38.6,38.8,t)),'3,6,14');
 
   // altyazılar
-  caption(L([[['Her sabah aynı vagon,','#fff']],[['aynı yüzler.','#ffb547']]],[[['Same train car,','#fff']],[['same faces.','#ffb547']]]),0.2,2.75,t,74,210);
-  caption(L([[['Hiçbirinin ','#fff'],['adını','#ff6b5b']],[['biliyor musun?','#fff']]],[[['Do you know','#fff']],[['a single ','#fff'],['name?','#ff6b5b']]]),2.75,4.8,t,84,210);
-  caption(L([[['Her sabah... ','#fff'],['07:40','#ffb547']]],[[['Every morning... ','#fff'],['7:40','#ffb547']]]),5.0,7.9,t,70);
+  caption(L([[['Her sabah aynı vagon,','#fff']],[['aynı yüzler.','#ffb547']]],[[['Same train car,','#fff']],[['same faces.','#ffb547']]]),T(0.2,0.1),T(2.75,3.4),t,74,210);
+  caption(L([[['Hiçbirinin ','#fff'],['adını','#ff6b5b']],[['biliyor musun?','#fff']]],[[['Do you know a single','#fff']],[['one of their ','#fff'],['names?','#ff6b5b']]]),T(2.75,3.4),T(4.8,5.25),t,L(84,74),210);
+  caption(L([[['Her sabah... ','#fff'],['07:40','#ffb547']]],[[['Every morning... ','#fff'],['7:40','#ffb547']]]),T(5.0,5.25),7.9,t,70);
   caption(L([[['Aynı vagon, ','#fff'],['aynı köşe.','#ffb547']]],[[['Same car, ','#fff'],['same corner.','#ffb547']]]),7.9,9.7,t);
-  caption(L([[['Kitap okuyan bir ','#fff'],['amca.','#efe4cf']]],[[['An old man ','#efe4cf'],['with a book.','#fff']]]),9.9,11.9,t);
-  caption(L([[['Kulaklıklı bir ','#fff'],['genç.','#5fd3c6']]],[[['A kid with ','#fff'],['headphones.','#5fd3c6']]]),11.9,13.3,t);
-  caption(L([[['Bir de ayakta uyuyan','#fff']],[['bir ','#fff'],['işçi.','#ffb547']]],[[['And a worker,','#ffb547']],[['asleep on his feet.','#fff']]]),13.3,15.3,t);
+  caption(L([[['Kitap okuyan bir ','#fff'],['amca.','#efe4cf']]],[[['An old man ','#efe4cf'],['with a book.','#fff']]]),9.9,T(11.9,11.5),t);
+  caption(L([[['Kulaklıklı bir ','#fff'],['genç.','#5fd3c6']]],[[['A kid in ','#fff'],['headphones.','#5fd3c6']]]),T(11.9,11.5),T(13.3,13.0),t);
+  caption(L([[['Bir de ayakta uyuyan','#fff']],[['bir ','#fff'],['işçi.','#ffb547']]],[[['And a worker,','#ffb547']],[['asleep on his feet.','#fff']]]),T(13.3,13.0),15.3,t);
   caption(L([[['Pazartesi... salı...','#fff']],[['çarşamba...','#ffb547']]],[[['Monday... Tuesday...','#fff']],[['Wednesday...','#ffb547']]]),15.5,18.2,t);
   caption(L([[['Hep aynı tren,','#fff']],[['hep aynı sıra.','#ffb547']]],[[['Same train,','#fff']],[['same spot.','#ffb547']]]),18.2,20.6,t);
   caption(L([[['Herkes ','#5fd3c6'],['telefonunda.','#fff']]],[[["Everyone's ",'#5fd3c6'],['on their phone.','#fff']]]),20.8,22.3,t);
@@ -247,23 +248,23 @@ function scene(t){
   caption(L([[['Sen ','#ff6b5b'],['de öylesin.','#fff']]],[[['Including ','#fff'],['you.','#ff6b5b']]]),23.9,25.1,t,70);
   caption(L([[['Üç yıldır ','#ffb547'],['aynı amcayla','#fff']],[['yan yana duruyorsun.','#fff']]],[[['Three years ','#ffb547'],['next to','#fff']],[['the same old man.','#fff']]]),25.3,28.4,t);
   caption(L([[['Adını ','#ff6b5b'],['bilmiyorsun.','#fff']]],[[["You don't know ",'#fff'],['his name.','#ff6b5b']]]),28.4,30.0,t);
-  caption(L([[['Bir sabah vagona bindin.','#fff']]],[[['Then one morning...','#fff']]]),30.4,32.2,t);
-  caption(L([[['Köşe ','#fff'],['boş.','#ff6b5b']],[['Amca ','#fff'],['yok.','#ff6b5b']]],[[['His corner ','#fff'],['is empty.','#ff6b5b']]]),32.2,34.4,t);
-  caption(L([[['Telefona baktın,','#fff']],[['ama aklın ','#fff'],['o köşede.','#ffb547']]],[[['You check your phone...','#fff']],[['but your mind is ','#fff'],['there.','#ffb547']]]),34.6,36.9,t,L(62,60));
-  caption(L([[['Bir şey ','#fff'],['eksik.','#ff6b5b']]],[[["Something's ",'#fff'],['missing.','#ff6b5b']]]),36.9,38.5,t,70);
-  caption(L([[['Ertesi sabah','#fff']],[['kapı açıldı.','#ffb547']]],[[['Next morning,','#fff']],[['the doors open.','#ffb547']]]),38.7,40.4,t);
-  caption(L([[['Amca geldi...','#fff']],[['kolu ','#fff'],['alçıda.','#efe4cf']]],[[['There he is...','#fff']],[['arm in a ','#fff'],['cast.','#efe4cf']]]),40.4,42.7,t);
+  caption(L([[['Bir sabah vagona bindin.','#fff']]],[[['Then one morning,','#fff']],[['you get on.','#fff']]]),30.4,T(32.2,32.85),t);
+  caption(L([[['Köşe ','#fff'],['boş.','#ff6b5b']],[['Amca ','#fff'],['yok.','#ff6b5b']]],[[["His corner's ",'#fff'],['empty.','#ff6b5b']]]),T(32.2,32.85),T(34.4,34.2),t);
+  caption(L([[['Telefona baktın,','#fff']],[['ama aklın ','#fff'],['o köşede.','#ffb547']]],[[['You check your phone,','#fff']],[["but your mind's ",'#fff'],['still there.','#ffb547']]]),T(34.6,34.3),T(36.9,37.5),t,L(62,58));
+  caption(L([[['Bir şey ','#fff'],['eksik.','#ff6b5b']]],[[["Something's ",'#fff'],['missing.','#ff6b5b']]]),T(36.9,37.5),38.5,t,70);
+  caption(L([[['Ertesi sabah','#fff']],[['kapı açıldı.','#ffb547']]],[[['Next morning,','#fff']],[['the doors open.','#ffb547']]]),T(38.7,38.65),T(40.4,40.7),t);
+  caption(L([[['Amca geldi...','#fff']],[['kolu ','#fff'],['alçıda.','#efe4cf']]],[[['There he is,','#fff']],[['arm in a ','#fff'],['cast.','#efe4cf']]]),T(40.4,40.7),42.7,t);
   caption(L([[['Telefonu ','#fff'],['indirdin.','#5fd3c6']]],[[['You put your ','#fff'],['phone down.','#5fd3c6']]]),42.9,44.2,t);
   caption(L([[['"Günaydın amca,','#fff']],[['iyi misiniz?"','#ff6b5b']]],[[['"Morning!','#fff']],[['You okay?"','#ff6b5b']]]),44.2,46.4,t);
-  caption(L([[['Amca ','#fff'],['gülümsedi.','#ffb547']]],[[['He ','#fff'],['smiles.','#ffb547']]]),46.6,48.0,t,70);
-  caption(L([[['"İyiyim evladım, sağ ol."','#fff']]],[[['"I\'m alright, kid. Thanks."','#fff']]]),48.0,49.8,t,L(62,58));
-  caption(L([[['"Ben ','#fff'],['Hasan."','#ffb547']]],[[['"I\'m ','#fff'],['Harold."','#ffb547']]]),49.8,51.1,t,84,220);
+  caption(L([[['Amca ','#fff'],['gülümsedi.','#ffb547']]],[[['He ','#fff'],['smiles.','#ffb547']]]),46.6,T(48.0,48.4),t,70);
+  caption(L([[['"İyiyim evladım, sağ ol."','#fff']]],[[['"I\'m alright, kid. Thanks."','#fff']]]),T(48.0,48.4),T(49.8,50.3),t,L(62,58));
+  caption(L([[['"Ben ','#fff'],['Hasan."','#ffb547']]],[[['"I\'m ','#fff'],['Harold."','#ffb547']]]),T(49.8,50.3),51.1,t,84,220);
 
   // final
   fade(0.84*sm(51.0,51.8,t),'5,10,20');
   caption(L([[['Yarın sabah...','#fff']]],[[['Tomorrow morning...','#fff']]]),51.3,59.4,t,70,660);
   caption(L([[['yanındakine bir','#fff']],[['günaydın ','#ffb547'],['de.','#fff']]],[[['say ','#fff'],['good morning','#ffb547']],[['to the person next to you.','#fff']]]),52.4,59.4,t,L(80,62),840);
-  caption(L([[['Belki bir ','#fff'],['adı ','#ff6b5b'],['vardır.','#fff']]],[[['They might ','#fff'],['have a name.','#ff6b5b']]]),54.3,59.4,t,L(76,70),1130);
+  caption(L([[['Belki bir ','#fff'],['adı ','#ff6b5b'],['vardır.','#fff']]],[[['Maybe they ','#fff'],['have a name.','#ff6b5b']]]),T(54.3,54.8),59.4,t,L(76,70),1130);
   endCard(t,56.8);
 }
 K.run(DURATION, scene);
