@@ -1,5 +1,5 @@
 import numpy as np, wave, sys, subprocess, os
-SR=44100; D=63; N=int(SR*D); t=np.arange(N)/SR; sfx=np.zeros(N)
+SR=44100; D=61.5; N=int(SR*D); t=np.arange(N)/SR; sfx=np.zeros(N)
 rng=np.random.default_rng(1); HERE=os.path.dirname(os.path.abspath(__file__))
 def env(t0,dur,a=0.005,r=None):
     r=r or dur; x=t-t0; e=np.zeros(N); m=(x>=0)&(x<dur*3)
@@ -23,7 +23,7 @@ music=pad*padgain
 # hüzünlü piyano benzeri notalar (çocuk sahnesi ve final)
 def note(t0,f,g=0.08,dur=2.5):
     e=env(t0,dur,0.01,dur); return g*e*(np.sin(2*np.pi*f*t)+0.3*np.sin(2*np.pi*2*f*t)+0.1*np.sin(2*np.pi*3*f*t))
-for t0,f in [(34.2,440),(35.4,392),(36.6,349.2),(39.2,329.6),(40.6,293.7),(42.4,261.6),(50.6,220),(52.9,196),(56.3,261.6),(58.0,329.6),(60.2,392)]:
+for t0,f in [(34.2,440),(35.4,392),(36.6,349.2),(39.2,329.6),(40.6,293.7),(42.4,261.6),(50.6,220),(52.9,196),(56.3,261.6),(58.0,329.6),(59.3,392)]:
     music+=note(t0,f)
 # --- efektler
 for kk in np.arange(0.3,7.6,0.11):

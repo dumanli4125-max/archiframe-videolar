@@ -10,7 +10,7 @@ const C = {
   line:'#2a4166', amber:'#ffb547', coral:'#ff6b5b', cream:'#efe4cf',
   teal:'#5fd3c6', ink:'#081120'
 };
-const HANDLE = '@antitez.tr';
+const HANDLE = '@syntetic.tr';
 const W = 1080, H = 1920, FLOOR = 1400;
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
 
@@ -330,9 +330,9 @@ function homeCaps(t){
 function finaleCaps(t){
   caption([[['Maaşın','#fff']],[['sekiz saatini ','#ffb547'],['ödüyor.','#fff']]],50.6,55.9,t,74,700);
   caption([[['Akşamlarını ise','#fff']],[['bedavaya ','#ff6b5b'],['veriyorsun.','#fff']]],52.9,55.9,t,74,960);
-  caption([[['Bu akşam','#fff']],[['telefonu ','#fff'],['sessize al.','#5fd3c6']]],56.3,63,t,74,760);
-  caption([[['O saatler ','#fff'],['senin.','#ffb547']]],58.0,63,t,74,1000);
-  const a=sm(60.2,60.8,t);
+  caption([[['Bu akşam','#fff']],[['telefonu ','#fff'],['sessize al.','#5fd3c6']]],56.3,62,t,74,760);
+  caption([[['O saatler ','#fff'],['senin.','#ffb547']]],58.0,62,t,74,1000);
+  const a=sm(59.3,59.9,t);
   if(a>0){ctx.save();ctx.globalAlpha=a;ctx.textAlign='center';ctx.font='700 40px Inter';ctx.letterSpacing='6px';ctx.fillStyle=C.amber;ctx.fillText(HANDLE.toUpperCase(),W/2,1380);
     ctx.font='500 32px Inter';ctx.letterSpacing='1px';ctx.fillStyle='rgba(239,228,207,.7)';ctx.fillText('Takip et, sorgulamaya devam et.',W/2,1440);ctx.restore();}
 }
@@ -345,7 +345,7 @@ function post(t,frame){
   ctx.save();ctx.globalAlpha=0.55;ctx.font='600 26px Inter';ctx.letterSpacing='3px';ctx.fillStyle=C.cream;ctx.textAlign='center';ctx.fillText(HANDLE,W/2,1780);ctx.restore();
 }
 
-const DURATION=63;
+const DURATION=61.5;
 function render(t,frame=0){
   window.__t=t;
   ctx.save();ctx.letterSpacing='0px';
