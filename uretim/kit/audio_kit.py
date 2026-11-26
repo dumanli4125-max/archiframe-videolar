@@ -75,13 +75,16 @@ class Mix:
         t = self.t; self.sfx += gain * np.sin(2*np.pi*f*t*(1+0.3*np.exp(-np.clip(t-t0, 0, None)*8))) * self.env(t0, 1.5, 0.005, 1.2)
     def whoosh(self, t0, dur=0.5, gain=0.12):
         n = self.rng.standard_normal(self.N); e = self.env(t0, dur, dur*0.6, dur)
-        k = int(0.002*SR); self.sfx += gain * np.convolve(n, np.ones(k)/k, 'same') * e
+        k = int(0.002*SR); c = np.concatenate([[0], np.cumsum(n)]); sm_ = (c[k:] - c[:-k]) / k
+        self.sfx += gain * np.pad(sm_, (0, self.N - len(sm_))) * e
     def ding(self, t0, gain=0.15):  # doğru cevap
         for f, d in [(1046.5, 0), (1318.5, 0.12), (1568, 0.24)]:
             self.sfx += gain * np.sin(2*np.pi*f*self.t) * self.env(t0 + d, 0.4, 0.003, 0.35)
 
     def write(self, path):
-        k = int(0.25 * SR); duck = 1 - 0.55 * np.convolve(self.act, np.ones(k) / k, 'same')
+        k = int(0.25 * SR); c = np.concatenate([[0], np.cumsum(self.act)])  # hızlı kayan ortalama
+        lo = np.clip(np.arange(self.N) - k // 2, 0, self.N); hi = np.clip(np.arange(self.N) + k // 2, 0, self.N)
+        duck = 1 - 0.55 * (c[hi] - c[lo]) / k
         out = self.v + (self.music + self.sfx) * duck
         out *= np.clip((self.D - self.t) / 2, 0, 1)
         out /= np.max(np.abs(out)) * 1.12
