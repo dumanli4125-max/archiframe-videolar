@@ -8,6 +8,7 @@
 | 26.11.2026 22:23 (Business Suite "Planla" seçildi ama hemen yayınladı) | Instagram @syntetic.tr | 02-dikkat-testi.mp4 | https://www.instagram.com/syntetic.tr/reel/DgN2OPoihPi/ |
 | 26.11.2026 22:24 (Business Suite hemen yayınladı) | Instagram @syntetic.tr | 05-annen-elde-yikardi.mp4 | https://www.instagram.com/syntetic.tr/reel/DgN2PMQCpkS/ |
 | 26.11.2026 22:25 (Business Suite hemen yayınladı) | Instagram @syntetic.tr | 01-mesai-bitmiyor.mp4 | https://www.instagram.com/syntetic.tr/reel/DgN2cBdimOv/ |
+| 27.11.2026 15:00 (Chrome; 12:30 slotu boş kalmıştı, sıradaki video paylaşıldı) | Instagram @syntetic.tr | 06-evde-surat.mp4 | https://www.instagram.com/syntetic.tr/reel/DgPn3RUP7s8/ |
 | 28.11.2026 12:30 (planlı, Studio/Chrome) | YouTube Syntetic | 06-evde-surat.mp4 | https://youtube.com/shorts/oq9Dh8IYT2w |
 | 28.11.2026 18:30 (planlı, Studio/Chrome) | YouTube Syntetic | 04-annenin-aramalari.mp4 | https://youtube.com/shorts/En2cugfIbXA |
 | 28.11.2026 21:30 (planlı, Studio/Chrome) | YouTube Syntetic | 03-taksit.mp4 | https://youtube.com/shorts/XpCXn4aU8jc |
