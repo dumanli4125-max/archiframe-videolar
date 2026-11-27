@@ -10,8 +10,10 @@
 | 26.11.2026 22:25 (Business Suite hemen yayınladı) | Instagram @syntetic.tr | 01-mesai-bitmiyor.mp4 | https://www.instagram.com/syntetic.tr/reel/DgN2cBdimOv/ |
 | 27.11.2026 15:00 (Chrome; 12:30 slotu boş kalmıştı, sıradaki video paylaşıldı) | Instagram @syntetic.tr | 06-evde-surat.mp4 | https://www.instagram.com/syntetic.tr/reel/DgPn3RUP7s8/ |
 | 27.11.2026 18:26 (Chrome, görev) | Instagram @syntetic.tr | 04-annenin-aramalari.mp4 | https://www.instagram.com/syntetic.tr/reel/DgP_y4nvRm-/ |
+| 27.11.2026 21:27 (Chrome, görev) | Instagram @syntetic.tr | 03-taksit.mp4 | https://www.instagram.com/syntetic.tr/reel/DgQUj_dv8Ug/ |
 | 28.11.2026 12:30 (planlı, Studio/Chrome) | YouTube Syntetic | 06-evde-surat.mp4 | https://youtube.com/shorts/oq9Dh8IYT2w |
 | 28.11.2026 18:30 (planlı, Studio/Chrome) | YouTube Syntetic | 04-annenin-aramalari.mp4 | https://youtube.com/shorts/En2cugfIbXA |
+| 27.11.2026 21:27 (Chrome, görev) | Instagram @syntetic.tr | 03-taksit.mp4 | https://www.instagram.com/syntetic.tr/reel/DgQUj_dv8Ug/ |
 | 28.11.2026 21:30 (planlı, Studio/Chrome) | YouTube Syntetic | 03-taksit.mp4 | https://youtube.com/shorts/XpCXn4aU8jc |
 | 29.11.2026 12:30 (planlı, Studio/Chrome) | YouTube Syntetic | 07-gece-ikide-mutfak.mp4 | https://youtube.com/shorts/E3Zt-C5nDA4 |
 | 29.11.2026 18:30 (planlı, Studio/Chrome) | YouTube Syntetic | 08-fotograf-temiz.mp4 | https://youtube.com/shorts/V3RVLdq761c |
